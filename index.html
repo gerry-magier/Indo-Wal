@@ -13,6 +13,50 @@
   <meta property="og:image" content="assets/hero.jpg" />
 
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Footer enhancements */
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 750;
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+    .footer-link-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-weight: 750;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
+      font-size: inherit;
+      transition: color 0.2s ease;
+    }
+    .footer-link-btn:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+    @media (max-width: 680px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .footer-links {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -316,7 +360,7 @@
             <div class="crew-card">
               <div class="crew-role">Co-founder</div>
               <div class="crew-name">Bennet Marx</div>
-              <div class="crew-meta">Operations</div>
+              <div class="crew-meta">Expedition lead</div>
             </div>
           </div>
 
@@ -325,18 +369,18 @@
           <div class="crew-row locals">
             <div class="crew-card">
               <div class="crew-role">Local crew</div>
-              <div class="crew-name">Crew member 1</div>
-              <div class="crew-meta">Traits: (add later)</div>
+              <div class="crew-name">Nata</div>
+              <div class="crew-meta">Ocean scanning, whale watching</div>
             </div>
             <div class="crew-card">
               <div class="crew-role">Local crew</div>
-              <div class="crew-name">Crew member 2</div>
-              <div class="crew-meta">Traits: (add later)</div>
+              <div class="crew-name">Orlando</div>
+              <div class="crew-meta">Captain</div>
             </div>
             <div class="crew-card">
               <div class="crew-role">Local crew</div>
-              <div class="crew-name">Crew member 3</div>
-              <div class="crew-meta">Traits: (add later)</div>
+              <div class="crew-name">Jessie</div>
+              <div class="crew-meta">Boat positioning</div>
             </div>
           </div>
         </div>
@@ -384,11 +428,108 @@
         <div class="section-head">
           <h2 class="section-title">On the water</h2>
           <p class="section-lead">
-            Click any image to view it full screen — especially helpful for portrait shots.
+            Use arrows or swipe to browse through our gallery — all photos from real expeditions.
           </p>
         </div>
 
-        <div class="photo-mosaic">
+        <!-- Gallery Carousel -->
+        <div class="gallery-carousel reveal">
+          <div class="carousel-container">
+            <div class="carousel-counter">
+              <span id="currentSlide">1</span> / <span id="totalSlides">13</span>
+            </div>
+
+            <div class="carousel-track" id="carouselTrack">
+              <!-- Slide 1 -->
+              <div class="carousel-slide">
+                <img src="./assets/pusten.jpg" alt="Whale blow at the surface" loading="lazy" />
+                <div class="carousel-caption">Sometimes it starts with a blow line on the horizon.</div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-slide">
+                <img src="./assets/tauchen.jpg" alt="Underwater whale encounter" loading="lazy" />
+                <div class="carousel-caption">Big, readable moments — whales should never feel like thumbnails.</div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-slide">
+                <img src="./assets/Schwimmen.jpg" alt="Swimming with whales" loading="lazy" />
+                <div class="carousel-caption">Quiet entry. Calm floating. Respectful distance.</div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="carousel-slide">
+                <img src="./assets/Ausschau.jpg" alt="Scanning the horizon" loading="lazy" />
+                <div class="carousel-caption">Scanning the horizon — looking for blows and birds.</div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="carousel-slide">
+                <img src="./assets/Boot1.jpg" alt="Traditional fisherboat" loading="lazy" />
+                <div class="carousel-caption">Our traditional fisherboat — simple, reliable, local.</div>
+              </div>
+
+              <!-- Slide 6 -->
+              <div class="carousel-slide">
+                <img src="./assets/Bootoben.jpg" alt="View from the boat" loading="lazy" />
+                <div class="carousel-caption">Early morning on deck.</div>
+              </div>
+
+              <!-- Slide 7 -->
+              <div class="carousel-slide">
+                <img src="./assets/Bootunten.jpg" alt="Inside the boat" loading="lazy" />
+                <div class="carousel-caption">Simple setup — everything you need, nothing you don't.</div>
+              </div>
+
+              <!-- Slide 8 -->
+              <div class="carousel-slide">
+                <img src="./assets/Wir+crew.jpg" alt="Team photo with crew" loading="lazy" />
+                <div class="carousel-caption">The team: Gerret, Bennet, Nata, Orlando, and Jessie.</div>
+              </div>
+
+              <!-- Slide 9 -->
+              <div class="carousel-slide">
+                <img src="./assets/Walsuchen.jpg" alt="Searching for whales" loading="lazy" />
+                <div class="carousel-caption">The search — sometimes patient, sometimes rewarded quickly.</div>
+              </div>
+
+              <!-- Slide 10 -->
+              <div class="carousel-slide">
+                <img src="./assets/Localwal.jpg" alt="Local whale encounter" loading="lazy" />
+                <div class="carousel-caption">When it happens — quiet, respectful, unforgettable.</div>
+              </div>
+
+              <!-- Slide 11 -->
+              <div class="carousel-slide">
+                <img src="./assets/Kokusnuss.jpg" alt="Fresh coconut break" loading="lazy" />
+                <div class="carousel-caption">Fresh coconut breaks between searches.</div>
+              </div>
+
+              <!-- Slide 12 -->
+              <div class="carousel-slide">
+                <img src="./assets/Kroko.jpg" alt="Timor wildlife" loading="lazy" />
+                <div class="carousel-caption">Timor-Leste wildlife — not just in the water.</div>
+              </div>
+
+              <!-- Slide 13 -->
+              <div class="carousel-slide">
+                <img src="./assets/Locallegend.jpg" alt="Local fisher" loading="lazy" />
+                <div class="carousel-caption">Local knowledge — generations of experience.</div>
+              </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="carousel-nav carousel-prev" id="carouselPrev" aria-label="Previous image">‹</button>
+            <button class="carousel-nav carousel-next" id="carouselNext" aria-label="Next image">›</button>
+
+            <!-- Indicators (dots) -->
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+          </div>
+        </div>
+
+        <!-- Keep old mosaic hidden (for compatibility) -->
+        <div class="photo-mosaic" style="display:none;">
           <figure class="mosaic-item landscape reveal">
             <img src="./assets/pusten.jpg" alt="Whale blow at the surface" loading="lazy" data-lightbox />
             <figcaption>Sometimes it starts with a blow line on the horizon.</figcaption>
@@ -402,6 +543,56 @@
           <figure class="mosaic-item portrait hero reveal">
             <img src="./assets/Schwimmen.jpg" alt="Swimming with whales" loading="lazy" data-lightbox />
             <figcaption>Quiet entry. Calm floating. Respectful distance.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item landscape reveal">
+            <img src="./assets/Ausschau.jpg" alt="Scanning the horizon for whales" loading="lazy" data-lightbox />
+            <figcaption>Scanning the horizon — looking for blows and birds.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item landscape reveal">
+            <img src="./assets/Boot1.jpg" alt="Traditional fisherboat" loading="lazy" data-lightbox />
+            <figcaption>Our traditional fisherboat — simple, reliable, local.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item portrait reveal">
+            <img src="./assets/Bootoben.jpg" alt="View from the boat" loading="lazy" data-lightbox />
+            <figcaption>Early morning on deck.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item landscape reveal">
+            <img src="./assets/Bootunten.jpg" alt="Inside the boat" loading="lazy" data-lightbox />
+            <figcaption>Simple setup — everything you need, nothing you don't.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item landscape reveal">
+            <img src="./assets/Wir+crew.jpg" alt="Team photo with local crew" loading="lazy" data-lightbox />
+            <figcaption>The team: Gerret, Bennet, Nata, Orlando, and Jessie.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item landscape reveal">
+            <img src="./assets/Walsuchen.jpg" alt="Searching for whales" loading="lazy" data-lightbox />
+            <figcaption>The search — sometimes patient, sometimes rewarded quickly.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item landscape reveal">
+            <img src="./assets/Localwal.jpg" alt="Local whale encounter" loading="lazy" data-lightbox />
+            <figcaption>When it happens — quiet, respectful, unforgettable.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item landscape reveal">
+            <img src="./assets/Kokusnuss.jpg" alt="Fresh coconut break" loading="lazy" data-lightbox />
+            <figcaption>Fresh coconut breaks between searches.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item landscape reveal">
+            <img src="./assets/Kroko.jpg" alt="Wildlife surprise" loading="lazy" data-lightbox />
+            <figcaption>Timor-Leste wildlife — not just in the water.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item landscape reveal">
+            <img src="./assets/Locallegend.jpg" alt="Local fisher" loading="lazy" data-lightbox />
+            <figcaption>Local knowledge — generations of experience.</figcaption>
           </figure>
         </div>
 
@@ -481,7 +672,7 @@
 
         <div class="card reveal contact-card">
           <ul class="contact-list">
-            <li>📧 Email: <a href="mailto:Gerret.marx@gmail.com">Gerret.marx@gmail.com</a></li>
+            <li>📧 Email: <a href="/cdn-cgi/l/email-protection#7d3a180f0f180953101c0f053d1a101c1411531e1210"><span class="__cf_email__" data-cfemail="2b6c4e59594e5f05464a59536b4c464a424705484446">[email&#160;protected]</span></a></li>
             <li>💬 WhatsApp: <a href="tel:+4915225655405">+49 15225655405</a></li>
             <li>📍 Base: Dili, Timor-Leste (seasonal operations)</li>
           </ul>
@@ -498,10 +689,16 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <span>© 2026 Twin Adventures GbR</span>
-      <span class="footer-note">
-        <a href="#" id="openPrivacy">Privacy Policy</a> · <a href="#contact" data-scroll>Contact</a>
-      </span>
+      <div class="footer-note">
+        © 2025 Blue Whales of Timor Leste · Local · Private · Ethical positioning
+      </div>
+      
+      <div class="footer-links">
+        <button class="footer-link-btn" data-open-request data-mode="contact" type="button">Contact</button>
+        <a href="#" id="openAgbFooter" class="footer-link">AGB</a>
+        <a href="#" id="openImpressumFooter" class="footer-link">Impressum</a>
+        <a href="#" id="openPrivacy" class="footer-link">Privacy</a>
+      </div>
     </div>
   </footer>
 
@@ -715,7 +912,7 @@
       </div>
 
       <div class="booking-foot">
-        <div class="micro subtle">Prefer email? <a href="mailto:Gerret.marx@gmail.com">Gerret.marx@gmail.com</a></div>
+        <div class="micro subtle">Prefer email? <a href="/cdn-cgi/l/email-protection#5d1a382f2f382973303c2f251d3a303c3431733e3230"><span class="__cf_email__" data-cfemail="9ed9fbececfbeab0f3ffece6def9f3fff7f2b0fdf1f3">[email&#160;protected]</span></a></div>
       </div>
     </div>
   </section>
@@ -735,7 +932,7 @@
         <p>
           <strong>Twin Adventures GbR</strong> (Gerret Marx &amp; Bennet Marx)<br />
           Immenstraße 13, 14542 Werder, Germany<br />
-          Email: <a href="mailto:Gerret.marx@gmail.com">Gerret.marx@gmail.com</a><br />
+          Email: <a href="/cdn-cgi/l/email-protection#622507101007164c0f03101a22050f030b0e4c010d0f"><span class="__cf_email__" data-cfemail="f4b39186869180da9995868cb49399959d98da979b99">[email&#160;protected]</span></a><br />
           Phone/WhatsApp: <a href="tel:+4915225655405">+49 15225655405</a>
         </p>
 
@@ -766,14 +963,184 @@
   </section>
 
   <!-- LIGHTBOX -->
+  <section class="lightbox" id="ligh  <!-- LIGHTBOX -->
   <section class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Image preview">
-      <button class="icon-btn lightbox-close" id="lightboxClose" type="button" aria-label="Close image">✕</button>
-      <img id="lightboxImg" alt="" />
+    <div class="lightbox-inner">
+      <button class="icon-btn lightbox-close" id="lightboxClose" type="button" aria-label="Close">✕</button>
+      <img id="lightboxImg" src="" alt="" />
       <div class="lightbox-cap" id="lightboxCap"></div>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- AGB MODAL -->
+  <section class="privacy-modal" id="agbModal" aria-hidden="true">
+    <div class="privacy-panel" role="dialog" aria-modal="true" aria-label="Allgemeine Geschäftsbedingungen">
+      <div class="privacy-head">
+        <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
+        <button class="icon-btn" id="closeAgb" type="button" aria-label="Close AGB">✕</button>
+      </div>
+
+      <div class="privacy-body">
+        <h3>1. Geltungsbereich</h3>
+        <p>
+          Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Buchungen von Blauwal-Touren in Timor-Leste, 
+          die über unsere Website, per E-Mail oder in sonstiger Textform (§ 126b BGB) erfolgen. Mit der Buchung 
+          erkennt der Kunde diese AGB als verbindlich an.
+        </p>
+
+        <h3>2. Vertragsschluss und Zahlung</h3>
+        <ul class="clean">
+          <li>Die Buchung erfolgt über unser Online-Buchungsformular oder in Textform.</li>
+          <li>Der Vertrag kommt mit Zugang der Buchungsbestätigung beim Kunden zustande.</li>
+          <li>Der Gesamtpreis ist mit Vertragsschluss sofort fällig.</li>
+          <li>Erst nach vollständigem Zahlungseingang besteht ein Anspruch auf Teilnahme an der Tour.</li>
+        </ul>
+
+        <h3>3. Preise und Zahlungsmodalitäten</h3>
+        <ul class="clean">
+          <li>Alle Preise sind in Euro angegeben und beinhalten die jeweils anwendbaren Steuern.</li>
+          <li>Akzeptierte Zahlungsmethoden sind PayPal und Banküberweisung.</li>
+          <li>Es gilt der bei Buchung bestätigte Preis. Preisänderungen nach Vertragsschluss sind ausgeschlossen.</li>
+          <li>Die Preise richten sich nach Personenzahl und Tourdauer.</li>
+        </ul>
+
+        <h3>4. Stornierung durch den Kunden</h3>
+        <h4>4.1 Stornokosten</h4>
+        <p>
+          Der Kunde kann jederzeit vor Tourbeginn vom Vertrag zurücktreten. Maßgeblich ist der Zugang der 
+          Rücktrittserklärung beim Anbieter. In diesem Fall fallen folgende Stornokosten an:
+        </p>
+        <ul class="clean">
+          <li><strong>bis einschließlich 60 Tage vor Tourbeginn:</strong> 50 % des Gesamtpreises</li>
+          <li><strong>weniger als 60 Tage vor Tourbeginn oder bei Nichterscheinen:</strong> 100 % des Gesamtpreises</li>
+        </ul>
+        <p>
+          Dem Kunden bleibt der Nachweis vorbehalten, dass dem Anbieter kein oder ein wesentlich geringerer Schaden entstanden ist.
+        </p>
+
+        <h4>4.2 Kein Widerrufsrecht</h4>
+        <p>
+          Für Verbraucher aus der Europäischen Union besteht gemäß § 312g Abs. 2 Nr. 9 BGB kein Widerrufsrecht, 
+          da es sich um eine Freizeitdienstleistung mit festem Termin handelt.
+        </p>
+
+        <h3>5. Absage oder Änderungen durch den Anbieter</h3>
+        <ul class="clean">
+          <li>Der Anbieter ist berechtigt, Touren aus Sicherheitsgründen oder aufgrund höherer Gewalt 
+              (z. B. extreme Wetterbedingungen, starke Strömungen, Naturereignisse) abzusagen oder zu ändern.</li>
+          <li>In diesem Fall kann der Kunde zwischen einem Ersatztermin und der Rückerstattung des bereits 
+              gezahlten Tourpreises wählen.</li>
+          <li>Weitergehende Ansprüche des Kunden sind ausgeschlossen, soweit gesetzlich zulässig.</li>
+        </ul>
+
+        <h3>6. Haftung</h3>
+        <ul class="clean">
+          <li>Die Teilnahme an den Touren erfolgt auf eigene Gefahr.</li>
+          <li>Der Anbieter haftet uneingeschränkt bei Vorsatz und grober Fahrlässigkeit.</li>
+          <li>Bei einfacher Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten 
+              (Kardinalpflichten) und beschränkt auf den vorhersehbaren, vertragstypischen Schaden.</li>
+          <li>Die Haftung für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit bleibt unberührt.</li>
+          <li>Der Anbieter haftet nicht für Risiken, die sich aus dem Verhalten der Teilnehmer, aus Naturereignissen 
+              oder aus dem unvorhersehbaren Verhalten der Tiere ergeben.</li>
+          <li>Es wird dringend empfohlen, eine ausreichende Reise-, Unfall- und Krankenversicherung abzuschließen.</li>
+        </ul>
+
+        <h3>7. Haftungsausschluss vor Ort</h3>
+        <ul class="clean">
+          <li>Vor Beginn der Tour sind alle Teilnehmer verpflichtet, eine Risiko- und Haftungsinformation zu 
+              unterzeichnen, aus der sich insbesondere die besonderen Gefahren einer Bootstour im offenen Meer ergeben.</li>
+          <li>Diese Erklärung dient der Aufklärung über Risiken und stellt keinen Ausschluss der Haftung für 
+              Vorsatz, grobe Fahrlässigkeit oder Schäden an Leben, Körper oder Gesundheit dar.</li>
+          <li>Wird die Unterzeichnung verweigert, kann die Teilnahme an der Tour ausgeschlossen werden. In diesem 
+              Fall besteht kein Anspruch auf Rückerstattung, sofern der Ausschluss vom Kunden zu vertreten ist.</li>
+        </ul>
+
+        <h3>8. Pflichten und gesundheitliche Voraussetzungen der Teilnehmer</h3>
+        <ul class="clean">
+          <li>Die Teilnehmer sind verpflichtet, allen Sicherheits- und Verhaltensanweisungen der Crew und Guides Folge zu leisten.</li>
+          <li>Schwimmfähigkeit sowie eine ausreichende körperliche und gesundheitliche Eignung sind Voraussetzung für die Teilnahme.</li>
+          <li>Der Anbieter bzw. der Guide ist berechtigt, Teilnehmer aus Sicherheitsgründen von der Tour auszuschließen, 
+              wenn offensichtliche gesundheitliche oder sicherheitsrelevante Gründe vorliegen.</li>
+          <li>Erfolgt der Ausschluss aus Gründen, die der Teilnehmer zu vertreten hat, besteht kein Anspruch auf Rückerstattung.</li>
+        </ul>
+
+        <h3>9. Ersatzperson / Übertragung der Buchung</h3>
+        <p>
+          Eine Übertragung der Buchung auf eine Ersatzperson ist nur mit vorheriger Zustimmung des Anbieters möglich. 
+          Ein Anspruch auf Zustimmung besteht nicht.
+        </p>
+
+        <h3>10. Rechtswahl und internationale Kunden</h3>
+        <ul class="clean">
+          <li>Es gilt das Recht der Demokratischen Republik Timor-Leste.</li>
+          <li>Für Verbraucher mit gewöhnlichem Aufenthalt in der Europäischen Union bleiben zwingende 
+              Verbraucherschutzvorschriften des jeweiligen Aufenthaltsstaates unberührt.</li>
+        </ul>
+
+        <h3>11. Schlussbestimmungen</h3>
+        <ul class="clean">
+          <li>Änderungen dieser AGB gelten ausschließlich für zukünftige Buchungen.</li>
+          <li>Sollten einzelne Bestimmungen dieser AGB ganz oder teilweise unwirksam sein oder werden, bleibt 
+              die Wirksamkeit der übrigen Bestimmungen unberührt.</li>
+        </ul>
+
+        <p class="micro subtle" style="margin-top:1.5rem;">
+          <strong>GBR - Indo Wal</strong><br />
+          Geschäftsführer: Gerret und Bennet Marx<br />
+          Immenstraße 13, 14542 Glindow, Deutschland
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPRESSUM MODAL -->
+  <section class="privacy-modal" id="impressumModal" aria-hidden="true">
+    <div class="privacy-panel" role="dialog" aria-modal="true" aria-label="Impressum">
+      <div class="privacy-head">
+        <h2>Impressum</h2>
+        <button class="icon-btn" id="closeImpressum" type="button" aria-label="Close Impressum">✕</button>
+      </div>
+
+      <div class="privacy-body">
+        <h3>Angaben gemäß § 5 TMG</h3>
+        <p>
+          <strong>GBR - Indo Wal</strong><br />
+          Immenstraße 13<br />
+          14542 Glindow<br />
+          Deutschland
+        </p>
+
+        <h3>Vertreten durch</h3>
+        <p>
+          Geschäftsführer:<br />
+          Gerret Marx<br />
+          Bennet Marx
+        </p>
+
+        <h3>Kontakt</h3>
+        <p>
+          E-Mail: <a href="mailto:hello@bluewhalestimorleste.com">hello@bluewhalestimorleste.com</a><br />
+          Telefon/WhatsApp: <a href="tel:+4915225655405">+49 15225655405</a>
+        </p>
+
+        <h3>EU-Streitschlichtung</h3>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br />
+          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">
+            https://ec.europa.eu/consumers/odr/
+          </a><br />
+          Unsere E-Mail-Adresse finden Sie oben im Impressum.
+        </p>
+
+        <h3>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h3>
+        <p>
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
+          Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js" data-cfasync="false"></script>
 </body>
 </html>

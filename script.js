@@ -1009,6 +1009,268 @@
       unlockScrollPrivacy();
     }
 
+    // ===== Gallery Carousel
+    function initCarousel() {
+      const track = $('#carouselTrack');
+      const slides = $$('.carousel-slide');
+      const prevBtn = $('#carouselPrev');
+      const nextBtn = $('#carouselNext');
+      const indicatorsContainer = $('#carouselIndicators');
+      const currentSlideEl = $('#currentSlide');
+      const totalSlidesEl = $('#totalSlides');
+
+      if (!track || !slides.length) return;
+
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      // Update total slides counter
+      if (totalSlidesEl) totalSlidesEl.textContent = totalSlides;
+
+      // Create indicator dots
+      if (indicatorsContainer) {
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          dot.addEventListener('click', () => goToSlide(i));
+          indicatorsContainer.appendChild(dot);
+        }
+      }
+
+      const dots = $$('.carousel-dot');
+
+      function updateCarousel() {
+        // Move track
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update counter
+        if (currentSlideEl) currentSlideEl.textContent = currentIndex + 1;
+
+        // Update dots
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+      // Event listeners
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+      });
+
+      // Touch/swipe support
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, { passive: true });
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0) {
+            nextSlide(); // Swipe left
+          } else {
+            prevSlide(); // Swipe right
+          }
+        }
+      }
+
+      // Auto-play (optional - can be removed)
+      let autoplayInterval;
+      const autoplayDelay = 5000; // 5 seconds
+
+      function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, autoplayDelay);
+      }
+
+      function stopAutoplay() {
+        clearInterval(autoplayInterval);
+      }
+
+      // Start autoplay
+      startAutoplay();
+
+      // Stop autoplay on user interaction
+      [prevBtn, nextBtn].forEach(btn => {
+        if (btn) {
+          btn.addEventListener('click', () => {
+            stopAutoplay();
+            setTimeout(startAutoplay, autoplayDelay * 2);
+          });
+        }
+      });
+
+      // Stop autoplay when user manually changes slide
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          stopAutoplay();
+          setTimeout(startAutoplay, autoplayDelay * 2);
+        });
+      });
+
+      // Initialize
+      updateCarousel();
+    }
+
+    // ===== AGB modal
+    const agbModal = $('#agbModal');
+    const openAgbFooter = $('#openAgbFooter');
+    const openAgbInline = $('#openAgbInline');
+    const closeAgb = $('#closeAgb');
+
+    let agbLockedScrollY = 0;
+    let agbPrev = { overflow:'', position:'', top:'', width:'', touchAction:'' };
+
+    function lockScrollAgb() {
+      agbLockedScrollY = window.scrollY || 0;
+      agbPrev.overflow = document.body.style.overflow;
+      agbPrev.position = document.body.style.position;
+      agbPrev.top = document.body.style.top;
+      agbPrev.width = document.body.style.width;
+      agbPrev.touchAction = document.body.style.touchAction;
+
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${agbLockedScrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.touchAction = 'none';
+    }
+
+    function unlockScrollAgb() {
+      document.body.style.overflow = agbPrev.overflow || '';
+      document.body.style.position = agbPrev.position || '';
+      document.body.style.top = agbPrev.top || '';
+      document.body.style.width = agbPrev.width || '';
+      document.body.style.touchAction = agbPrev.touchAction || '';
+      window.scrollTo(0, agbLockedScrollY);
+    }
+
+    function openAgbModal(e) {
+      if (e) e.preventDefault();
+      if (!agbModal) return;
+      closeMobileMenu();
+      document.body.classList.add('agb-open');
+      agbModal.setAttribute('aria-hidden', 'false');
+      lockScrollAgb();
+      try { closeAgb?.focus({ preventScroll: true }); } catch(_) {}
+    }
+
+    function closeAgbModal() {
+      if (!agbModal) return;
+      document.body.classList.remove('agb-open');
+      agbModal.setAttribute('aria-hidden', 'true');
+      unlockScrollAgb();
+    }
+
+    function bindAgb() {
+      [openAgbFooter, openAgbInline].filter(Boolean).forEach((el) => {
+        el.addEventListener('click', openAgbModal);
+      });
+      if (closeAgb) closeAgb.addEventListener('click', closeAgbModal);
+
+      agbModal?.addEventListener('click', (e) => {
+        if (e.target === agbModal) closeAgbModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.body.classList.contains('agb-open')) closeAgbModal();
+      });
+    }
+
+    // ===== Impressum modal
+    const impressumModal = $('#impressumModal');
+    const openImpressumFooter = $('#openImpressumFooter');
+    const openImpressumInline = $('#openImpressumInline');
+    const closeImpressum = $('#closeImpressum');
+
+    let impressumLockedScrollY = 0;
+    let impressumPrev = { overflow:'', position:'', top:'', width:'', touchAction:'' };
+
+    function lockScrollImpressum() {
+      impressumLockedScrollY = window.scrollY || 0;
+      impressumPrev.overflow = document.body.style.overflow;
+      impressumPrev.position = document.body.style.position;
+      impressumPrev.top = document.body.style.top;
+      impressumPrev.width = document.body.style.width;
+      impressumPrev.touchAction = document.body.style.touchAction;
+
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${impressumLockedScrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.touchAction = 'none';
+    }
+
+    function unlockScrollImpressum() {
+      document.body.style.overflow = impressumPrev.overflow || '';
+      document.body.style.position = impressumPrev.position || '';
+      document.body.style.top = impressumPrev.top || '';
+      document.body.style.width = impressumPrev.width || '';
+      document.body.style.touchAction = impressumPrev.touchAction || '';
+      window.scrollTo(0, impressumLockedScrollY);
+    }
+
+    function openImpressumModal(e) {
+      if (e) e.preventDefault();
+      if (!impressumModal) return;
+      closeMobileMenu();
+      document.body.classList.add('impressum-open');
+      impressumModal.setAttribute('aria-hidden', 'false');
+      lockScrollImpressum();
+      try { closeImpressum?.focus({ preventScroll: true }); } catch(_) {}
+    }
+
+    function closeImpressumModal() {
+      if (!impressumModal) return;
+      document.body.classList.remove('impressum-open');
+      impressumModal.setAttribute('aria-hidden', 'true');
+      unlockScrollImpressum();
+    }
+
+    function bindImpressum() {
+      [openImpressumFooter, openImpressumInline].filter(Boolean).forEach((el) => {
+        el.addEventListener('click', openImpressumModal);
+      });
+      if (closeImpressum) closeImpressum.addEventListener('click', closeImpressumModal);
+
+      impressumModal?.addEventListener('click', (e) => {
+        if (e.target === impressumModal) closeImpressumModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.body.classList.contains('impressum-open')) closeImpressumModal();
+      });
+    }
+
     function bindPrivacy() {
       if (openPrivacy) openPrivacy.addEventListener('click', openPrivacyModal);
       if (openPrivacyInline) openPrivacyInline.addEventListener('click', openPrivacyModal);
@@ -1029,7 +1291,10 @@
     bindModal();
     bindTerms();
     bindPrivacy();
+    bindAgb();
+    bindImpressum();
     bindLightbox();
+    initCarousel();
 
     bindCalendarNav('main');
     bindCalendarNav('booking');
