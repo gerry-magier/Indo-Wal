@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Blue Whales of Timor Leste · Private Fisherboat Expeditions</title>
+  <meta name="description" content="Blue Whales of Timor Leste — private fisherboat expeditions, local crew, ethical positioning. We confirm only after a fit-check." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blue Whales of Timor Leste · Private Fisherboat Expeditions" />
+  <meta property="og:description" content="Private fisherboat expeditions. Local crew. Respectful approach. Fit-check before confirmation." />
+  <meta property="og:image" content="assets/hero.jpg" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" data-scroll aria-label="Home">
+        <span class="brand-icon">🐋</span>
+        <span class="brand-text">
+          <span class="brand-name">Blue Whales of Timor Leste</span>
+          <span class="brand-sub">Private Fisherboat Expeditions</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Main">
+        <a href="#availability" data-scroll>Availability</a>
+        <a href="#ethos" data-scroll>Ethos</a>
+        <a href="#included" data-scroll>Included</a>
+        <a href="#how" data-scroll>How it works</a>
+        <a href="#crew" data-scroll>Crew</a>
+        <a href="#surprises" data-scroll>Surprises</a>
+        <a href="#gallery" data-scroll>On the water</a>
+        <a href="#maps" data-scroll>Map</a>
+        <a href="#faq" data-scroll>FAQ</a>
+        <a href="#contact" data-scroll>Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+        <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+
+        <button class="burger" id="burger" type="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile" id="mobileMenu" hidden>
+      <div class="mobile-inner">
+        <a href="#availability" data-scroll>Availability</a>
+        <a href="#ethos" data-scroll>Ethos</a>
+        <a href="#included" data-scroll>Included</a>
+        <a href="#how" data-scroll>How it works</a>
+        <a href="#crew" data-scroll>Crew</a>
+        <a href="#surprises" data-scroll>Surprises</a>
+        <a href="#gallery" data-scroll>On the water</a>
+        <a href="#maps" data-scroll>Map</a>
+        <a href="#faq" data-scroll>FAQ</a>
+        <a href="#contact" data-scroll>Contact</a>
+
+        <div class="mobile-cta-row">
+          <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+          <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-banner" aria-label="Hero banner">
+    <div class="hero-banner-bg" aria-hidden="true"></div>
+    <div class="hero-grad hero-grad-top" aria-hidden="true"></div>
+    <div class="hero-grad hero-grad-bottom" aria-hidden="true"></div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-top">
+        <div class="hero-tag">
+          <span class="dot"></span>
+          Local · Private · Ethical positioning · Oct–Nov
+        </div>
+
+        <h1 class="hero-title">Blue Whales of Timor Leste</h1>
+        <div class="hero-sub">Private Fisherboat Expeditions</div>
+      </div>
+
+      <div class="hero-bottom">
+        <p class="hero-line">
+          Small by design. We confirm only after an honest fit-check — so expectations match the ocean.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-secondary" href="#availability" data-scroll>See dates</a>
+          <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+          <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+        </div>
+
+        <p class="hero-note">Minimal hype. Maximum respect.</p>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- AVAILABILITY (near top) -->
+    <section class="section section-soft" id="availability">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">Availability</h2>
+          <p class="section-lead">
+            Select your dates (max 5 days) + group size. “Private” means we do not mix groups — your booking stays your group.
+          </p>
+        </div>
+
+        <div class="calendar-card reveal" id="mainCalendarCard">
+          <div class="cal-top">
+            <button class="cal-nav" id="mainPrevMonth" type="button" aria-label="Previous month">‹</button>
+            <div class="cal-title" id="mainMonthName">October 2026</div>
+            <button class="cal-nav" id="mainNextMonth" type="button" aria-label="Next month">›</button>
+          </div>
+
+          <div class="cal-weekdays" aria-hidden="true">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+          </div>
+
+          <div class="calendar" id="mainCalendar"></div>
+
+          <div class="cal-controls">
+            <label for="mainPersons">Guests</label>
+            <select id="mainPersons">
+              <option value="1">1 guest</option>
+              <option value="2">2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+              <option value="5">5 guests</option>
+            </select>
+          </div>
+
+          <div class="cal-meta">
+            <div id="mainSelectedDays" class="meta-line"></div>
+            <div id="mainPrice" class="meta-line strong">Price: €0</div>
+            <div id="mainTotalPrice" class="meta-line"></div>
+            <div id="availabilityNote" class="meta-line micro subtle"></div>
+          </div>
+
+          <div class="cal-cta two-cta">
+            <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+            <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+            <p class="micro subtle">
+              <strong>Private:</strong> If you request for 3 people, you go as 3 — we don’t combine groups.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETHOS -->
+    <section class="section" id="ethos">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">Ethos</h2>
+          <p class="section-lead">
+            This is not a mass-tour product. It’s a real morning offshore with a local boat — built for guests who value calm, ethics, and honesty.
+          </p>
+        </div>
+
+        <div class="grid three">
+          <article class="card reveal">
+            <h3>🛶 Local by design</h3>
+            <p>Local fisherboat + local crew. Simple setup, serious seamanship.</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>♻️ Guidelines first</h3>
+            <p>No chasing, no touching, no crossing paths. We position ahead and wait.</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>🤝 Fit-check before confirmation</h3>
+            <p>We confirm only if expectations and safety match. That protects you, the whales, and the crew.</p>
+          </article>
+        </div>
+
+        <!-- FULL BLEED EXPERIENCE DIVIDER (BIG) -->
+        <figure class="full-bleed reveal">
+          <img src="./assets/drohne.jpg" alt="Drone view: expedition scale and coastline" loading="lazy" data-lightbox />
+          <figcaption>
+            Private expeditions, local scale — built around the ocean morning, not a timetable.
+          </figcaption>
+        </figure>
+
+        <div class="cta-row reveal">
+          <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+          <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- INCLUDED / NOT INCLUDED (back with emojis) -->
+    <section class="section section-soft" id="included">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">What’s included</h2>
+          <p class="section-lead">
+            Clear checklists reduce uncertainty — and keep expectations honest.
+          </p>
+        </div>
+
+        <div class="grid two">
+          <article class="card reveal">
+            <h3>✅ Included</h3>
+            <ul class="checklist">
+              <li>🛶 Private fisherboat for your group only</li>
+              <li>🧭 Guide + local crew</li>
+              <li>🧾 Safety briefing & positioning guidelines</li>
+              <li>💧 Water (snacks optional depending on trip)</li>
+              <li>📸 Trip memories (when conditions allow)</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>❌ Not included</h3>
+            <ul class="checklist">
+              <li>🚗 Transport to the harbor</li>
+              <li>🏨 Accommodation</li>
+              <li>🍽️ Meals (unless agreed)</li>
+              <li>💰 Tips</li>
+              <li>🧾 Insurance (recommended)</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="micro subtle reveal">
+          <strong>Short cancellation summary:</strong> up to and including 60 days before start → 50% fee. Less than 60 days or no-show → 100% fee.
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">How it works</h2>
+          <p class="section-lead">
+            Read direction, position ahead, wait, enter calmly — never chase.
+          </p>
+        </div>
+
+        <div class="how-grid">
+          <div class="timeline">
+            <div class="step reveal">
+              <div class="step-ic">🧾</div>
+              <div><h3>Briefing</h3><p>Conditions, rules, calm behavior, and safety.</p></div>
+            </div>
+            <div class="step reveal">
+              <div class="step-ic">🔭</div>
+              <div><h3>Search</h3><p>We scan for blows, birds, and sea patterns.</p></div>
+            </div>
+            <div class="step reveal">
+              <div class="step-ic">🛶</div>
+              <div><h3>Position ahead</h3><p>Estimate direction and speed, then wait in front — not behind.</p></div>
+            </div>
+            <div class="step reveal">
+              <div class="step-ic">🤿</div>
+              <div><h3>Quiet entry</h3><p>Swimmers enter calmly and wait.</p></div>
+            </div>
+            <div class="step reveal">
+              <div class="step-ic">🐋</div>
+              <div><h3>Observe</h3><p>Parallel only. No touching. No crossing paths.</p></div>
+            </div>
+            <div class="step reveal">
+              <div class="step-ic">☀️</div>
+              <div><h3>Return</h3><p>Back by mid-afternoon (conditions permitting).</p></div>
+            </div>
+          </div>
+
+          <!-- Positioning visual swapped to Walroute.jpg -->
+          <aside class="media-card reveal" aria-label="Positioning visual">
+            <h3 class="media-title">Positioning & route</h3>
+            <div class="media-img">
+              <img src="./assets/Walroute.jpg" alt="Whale route and positioning concept" loading="lazy" data-lightbox />
+            </div>
+            <p class="micro subtle" style="margin: .75rem 0 0;">
+              The core idea: we position ahead and wait — no chasing.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEET THE CREW (tree) -->
+    <section class="section section-soft" id="crew">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">Meet the crew</h2>
+          <p class="section-lead">
+            A small team, consistent decisions. Built for guests who want real local expeditions.
+          </p>
+        </div>
+
+        <div class="crew-tree reveal" aria-label="Crew structure">
+          <div class="crew-row founders">
+            <div class="crew-card">
+              <div class="crew-role">Co-founder</div>
+              <div class="crew-name">Gerret Marx</div>
+              <div class="crew-meta">Expedition lead</div>
+            </div>
+
+            <div class="crew-connector" aria-hidden="true"></div>
+
+            <div class="crew-card">
+              <div class="crew-role">Co-founder</div>
+              <div class="crew-name">Bennet Marx</div>
+              <div class="crew-meta">Operations</div>
+            </div>
+          </div>
+
+          <div class="crew-down" aria-hidden="true"></div>
+
+          <div class="crew-row locals">
+            <div class="crew-card">
+              <div class="crew-role">Local crew</div>
+              <div class="crew-name">Crew member 1</div>
+              <div class="crew-meta">Traits: (add later)</div>
+            </div>
+            <div class="crew-card">
+              <div class="crew-role">Local crew</div>
+              <div class="crew-name">Crew member 2</div>
+              <div class="crew-meta">Traits: (add later)</div>
+            </div>
+            <div class="crew-card">
+              <div class="crew-role">Local crew</div>
+              <div class="crew-name">Crew member 3</div>
+              <div class="crew-meta">Traits: (add later)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SURPRISES (dolphins + more) -->
+    <section class="section" id="surprises">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">Surprises on the water</h2>
+          <p class="section-lead">
+            Timor-Leste sits in the Coral Triangle — a global hotspot of marine biodiversity. Encounters vary, but “just whales” is rarely the full story. :contentReference[oaicite:1]{index=1}
+          </p>
+        </div>
+
+        <div class="grid two surprises-grid">
+          <figure class="surprise-figure reveal">
+            <img src="./assets/delfine.jpg" alt="Dolphins" loading="lazy" data-lightbox />
+            <figcaption>
+              Dolphins are frequent companions. If conditions are safe and calm, swimming can be possible.
+            </figcaption>
+          </figure>
+
+          <article class="card reveal">
+            <h3>What else can appear?</h3>
+            <ul class="checklist">
+              <li>🦈 Whale sharks</li>
+              <li>🐢 Sea turtles</li>
+              <li>🦈 Manta rays</li>
+              <li>🐋 Sperm whales</li>
+              <li>🧭 “Unexpected moments” (birds, bait balls, currents, light)</li>
+            </ul>
+            <p class="micro subtle" style="margin: .75rem 0 0;">
+              Some surveys around Timor-Leste (e.g., Atauro area) have even been described as among the most biodiverse reef waters recorded — which matches what you feel out there. :contentReference[oaicite:2]{index=2}
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ON THE WATER (bigger whale photos; pusten stays) -->
+    <section class="section section-soft" id="gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">On the water</h2>
+          <p class="section-lead">
+            Click any image to view it full screen — especially helpful for portrait shots.
+          </p>
+        </div>
+
+        <div class="photo-mosaic">
+          <figure class="mosaic-item landscape reveal">
+            <img src="./assets/pusten.jpg" alt="Whale blow at the surface" loading="lazy" data-lightbox />
+            <figcaption>Sometimes it starts with a blow line on the horizon.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item portrait hero reveal">
+            <img src="./assets/tauchen.jpg" alt="Underwater / whale swim moment" loading="lazy" data-lightbox />
+            <figcaption>Big, readable portrait — whales should never feel like thumbnails.</figcaption>
+          </figure>
+
+          <figure class="mosaic-item portrait hero reveal">
+            <img src="./assets/Schwimmen.jpg" alt="Swimming with whales" loading="lazy" data-lightbox />
+            <figcaption>Quiet entry. Calm floating. Respectful distance.</figcaption>
+          </figure>
+        </div>
+
+        <figure class="timor-banner reveal">
+          <img src="./assets/timor.jpg" alt="Coastline of Timor-Leste" loading="lazy" data-lightbox />
+          <figcaption>Timor-Leste coastline — early mornings, warm light, and real ocean decisions.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- MAP (Timorleste huge, no frames) -->
+    <section class="section" id="maps">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">Map</h2>
+          <p class="section-lead">
+            Timor-Leste map shown large so you can actually read it.
+          </p>
+        </div>
+
+        <article class="map-hero reveal">
+          <h3 class="map-hero-title">🌏 Timor-Leste</h3>
+          <div class="map-hero-media">
+            <img src="./assets/Timorleste.jpg" alt="Timor-Leste map" loading="lazy" data-lightbox />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-soft" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">FAQ</h2>
+          <p class="section-lead">Short answers. We prefer clarity over selling.</p>
+        </div>
+
+        <div class="faq">
+          <button class="faq-q reveal" aria-expanded="false">
+            <span>Is a whale swim guaranteed?</span><span class="faq-ic">+</span>
+          </button>
+          <div class="faq-a" hidden>
+            No. Whales are wild and conditions vary. You’re booking the expedition: a serious, respectful search and the best decisions we can make that morning.
+          </div>
+
+          <button class="faq-q reveal" aria-expanded="false">
+            <span>What does “private” mean?</span><span class="faq-ic">+</span>
+          </button>
+          <div class="faq-a" hidden>
+            We do not mix groups. If you request for 3 people, you go as 3. We adapt pace and time on the water to your group size and number of days (1–5).
+          </div>
+
+          <button class="faq-q reveal" aria-expanded="false">
+            <span>How does a request work?</span><span class="faq-ic">+</span>
+          </button>
+          <div class="faq-a" hidden>
+            You can ask questions anytime. A “Request expedition” triggers an availability + expectation fit-check. We confirm only after we reply and you complete payment.
+          </div>
+
+          <div class="cta-mini reveal">
+            <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+            <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-lead">
+            If you’re unsure — perfect. Ask first. We’d rather have a clear fit than a rushed request.
+          </p>
+        </div>
+
+        <div class="card reveal contact-card">
+          <ul class="contact-list">
+            <li>📧 Email: <a href="mailto:Gerret.marx@gmail.com">Gerret.marx@gmail.com</a></li>
+            <li>💬 WhatsApp: <a href="tel:+4915225655405">+49 15225655405</a></li>
+            <li>📍 Base: Dili, Timor-Leste (seasonal operations)</li>
+          </ul>
+
+          <div class="cta-row">
+            <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+            <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Twin Adventures GbR</span>
+      <span class="footer-note">
+        <a href="#" id="openPrivacy">Privacy Policy</a> · <a href="#contact" data-scroll>Contact</a>
+      </span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">🐋</button>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- REQUEST MODAL -->
+  <section class="booking-view" id="bookingView" aria-hidden="true">
+    <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Request form">
+      <div class="booking-head">
+        <div class="booking-title">
+          <div class="booking-kicker">Request</div>
+          <h2 id="requestTitle">Ask a question</h2>
+          <p class="micro subtle" id="requestSubtitle">
+            Ask anything — we’ll reply with clear answers and whether it’s a good fit.
+          </p>
+        </div>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">✕</button>
+      </div>
+
+      <div class="booking-body">
+        <div class="mode-tabs" role="tablist" aria-label="Request mode">
+          <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Ask a question</button>
+          <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Request expedition</button>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-left">
+            <div class="card reveal" id="bookingCalendarCard">
+              <h3>Dates</h3>
+
+              <div class="cal-top">
+                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Previous month">‹</button>
+                <div class="cal-title" id="bookingMonthName">October 2026</div>
+                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Next month">›</button>
+              </div>
+
+              <div class="cal-weekdays" aria-hidden="true">
+                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+              </div>
+
+              <div class="calendar" id="bookingCalendar"></div>
+
+              <div class="cal-controls">
+                <label for="bookingPersons">Guests</label>
+                <select id="bookingPersons">
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                </select>
+              </div>
+
+              <div class="cal-meta">
+                <div id="bookingSelectedDays" class="meta-line"></div>
+                <div id="bookingPrice" class="meta-line strong">Price: €0</div>
+                <div id="bookingTotalPrice" class="meta-line"></div>
+              </div>
+            </div>
+
+            <div class="card reveal">
+              <h3>Summary</h3>
+              <p id="summaryDates">Dates: (optional)</p>
+              <p id="summaryGuests">Guests: –</p>
+              <p id="summaryPrice">Price: –</p>
+              <p class="micro subtle">Pricing is placeholder and can be adjusted later.</p>
+            </div>
+          </div>
+
+          <div class="booking-right">
+            <form class="card reveal" id="requestForm"
+              name="twin-adventures-request"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field">
+
+              <input type="hidden" name="form-name" value="twin-adventures-request" />
+              <input type="hidden" name="requestType" id="requestType" value="contact" />
+              <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
+
+              <p class="honeypot" aria-hidden="true">
+                <label>Don’t fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <h3>Your details</h3>
+
+              <div class="form-grid">
+                <div>
+                  <label for="firstName">First name</label>
+                  <input id="firstName" name="firstName" type="text" required />
+                </div>
+                <div>
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" name="lastName" type="text" required />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                  <label for="whatsapp">WhatsApp (optional)</label>
+                  <input id="whatsapp" name="whatsapp" type="tel" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourStart">Start date <span class="mini-hint" id="startHint">(optional for questions)</span></label>
+                  <input id="tourStart" name="tourStart" type="date" />
+                </div>
+                <div>
+                  <label for="tourEnd">End date <span class="mini-hint" id="endHint">(optional for questions)</span></label>
+                  <input id="tourEnd" name="tourEnd" type="date" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourPersons">Guests</label>
+                  <select id="tourPersons" name="tourPersons" required>
+                    <option value="1">1 guest</option>
+                    <option value="2">2 guests</option>
+                    <option value="3">3 guests</option>
+                    <option value="4">4 guests</option>
+                    <option value="5">5 guests</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="swimLevel">Swim level (optional)</label>
+                  <input id="swimLevel" name="swimLevel" type="text" placeholder="e.g., confident offshore / beginner / etc." />
+                </div>
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                  placeholder="Tell us your expectations (and any concerns). We’ll reply honestly about fit + feasibility."></textarea>
+              </div>
+
+              <div class="passport-wrap" id="passportWrap" hidden>
+                <div class="passport-head">
+                  <h4>Passport details (optional)</h4>
+                  <p class="micro subtle">
+                    Only required for trip paperwork <strong>after</strong> we confirm availability.
+                    If you prefer, leave it blank — we’ll collect it later via a secure channel.
+                  </p>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="nationality">Nationality (optional)</label>
+                    <input id="nationality" name="nationality" type="text" />
+                  </div>
+                  <div>
+                    <label for="passport">Passport number (optional)</label>
+                    <input id="passport" name="passport" type="text" />
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="issueDate">Passport issue date (optional)</label>
+                    <input id="issueDate" name="issueDate" type="date" />
+                  </div>
+                  <div>
+                    <label for="expiryDate">Passport expiry date (optional)</label>
+                    <input id="expiryDate" name="expiryDate" type="date" />
+                  </div>
+                </div>
+              </div>
+
+              <div id="additionalGuests"></div>
+
+              <div class="agb-wrap" id="agbWrap" hidden>
+                <h4>Terms &amp; Conditions</h4>
+                <div class="agb">
+                  <p class="micro subtle" style="margin-top:0;">
+                    Cancellation: up to and including 60 days before start → 50% fee. Less than 60 days or no-show → 100% fee.
+                    Tours may change/cancel for safety or force majeure.
+                  </p>
+                </div>
+
+                <label class="check" id="termsCheck">
+                  <input type="checkbox" id="acceptAgb" name="acceptAgb" />
+                  <span>I have read and accept the Terms &amp; Conditions.</span>
+                </label>
+              </div>
+
+              <p class="micro subtle" style="margin-top:.95rem;">
+                By submitting, you agree that we contact you about your request.
+                Read our <a href="#" id="openPrivacyInline">Privacy Policy</a>.
+              </p>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
+                <p class="micro subtle" id="submitHint">
+                  Questions don’t require passport details. Requests are confirmed only after our reply.
+                </p>
+              </div>
+
+              <div class="micro subtle">
+                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-foot">
+        <div class="micro subtle">Prefer email? <a href="mailto:Gerret.marx@gmail.com">Gerret.marx@gmail.com</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY MODAL -->
+  <section class="privacy-modal" id="privacyModal" aria-hidden="true">
+    <div class="privacy-panel" role="dialog" aria-modal="true" aria-label="Privacy Policy">
+      <div class="privacy-head">
+        <h2>Privacy Policy</h2>
+        <button class="icon-btn" id="closePrivacy" type="button" aria-label="Close privacy">✕</button>
+      </div>
+
+      <div class="privacy-body">
+        <p class="micro subtle">Last updated: <span id="privacyDate">2026-01-01</span></p>
+
+        <h3>1. Controller</h3>
+        <p>
+          <strong>Twin Adventures GbR</strong> (Gerret Marx &amp; Bennet Marx)<br />
+          Immenstraße 13, 14542 Werder, Germany<br />
+          Email: <a href="mailto:Gerret.marx@gmail.com">Gerret.marx@gmail.com</a><br />
+          Phone/WhatsApp: <a href="tel:+4915225655405">+49 15225655405</a>
+        </p>
+
+        <h3>2. What data we collect</h3>
+        <ul class="clean">
+          <li><strong>Contact data:</strong> name, email, phone/WhatsApp (if provided)</li>
+          <li><strong>Inquiry data:</strong> preferred dates, group size, swim experience, message content</li>
+          <li><strong>Booking request data (optional):</strong> passport fields</li>
+          <li><strong>Technical data:</strong> basic server logs processed by our hosting provider for security/delivery</li>
+        </ul>
+
+        <h3>3. Purposes &amp; legal bases</h3>
+        <ul class="clean">
+          <li><strong>Responding to inquiries / requests:</strong> pre-contractual steps / contract (GDPR Art. 6(1)(b))</li>
+          <li><strong>Security / abuse prevention:</strong> legitimate interests (GDPR Art. 6(1)(f))</li>
+        </ul>
+
+        <h3>4. Retention</h3>
+        <ul class="clean">
+          <li><strong>Inquiries:</strong> up to 12 months</li>
+          <li><strong>Passport details (if provided):</strong> deleted 30 days after trip completion unless legally required longer</li>
+        </ul>
+
+        <h3>5. Cookies &amp; analytics</h3>
+        <p>We do not use non-essential tracking cookies or analytics at this time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <section class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="icon-btn lightbox-close" id="lightboxClose" type="button" aria-label="Close image">✕</button>
+      <img id="lightboxImg" alt="" />
+      <div class="lightbox-cap" id="lightboxCap"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
