@@ -8,6 +8,12 @@
     const $ = (s, el = document) => el.querySelector(s);
     const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
 
+    // ============================================================
+    // WEB3FORMS CONFIGURATION
+    // ============================================================
+    // Get your free access key from: https://web3forms.com
+    const WEB3FORMS_ACCESS_KEY = "3831585c-b896-4509-8b56-d697171762c8";
+
     // ===== Smooth scroll
     function closeMobileMenu() {
       const mobile = $('#mobileMenu');
@@ -838,6 +844,13 @@
         const mode = requestType ? requestType.value : 'contact';
         if (!validateBeforeSubmit(mode)) return;
 
+        // Check if access key is configured
+        if (WEB3FORMS_ACCESS_KEY === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
+          showToast('Error: Web3Forms access key not configured. Please add your key in script.js');
+          console.error('Web3Forms access key not set. Get one free at https://web3forms.com');
+          return;
+        }
+
         if (tourStart && state.start) tourStart.value = dateToISO(state.start);
         if (tourEnd && state.end) tourEnd.value = dateToISO(state.end);
 
@@ -848,44 +861,43 @@
           submit.textContent = 'Sending…';
         }
 
-        // NOTE:
-        // Netlify Forms work only AFTER deployment on Netlify.
-        // Locally (file:// or localhost), POST will not be handled by Netlify.
-        const isLocal =
-          window.location.protocol === 'file:' ||
-          window.location.hostname === 'localhost' ||
-          window.location.hostname === '127.0.0.1';
-
-        if (isLocal) {
-          showToast('Local preview: Netlify Forms will work after you deploy this site on Netlify.');
-          if (submit) { submit.disabled = false; submit.textContent = oldText || 'Send'; }
-          return;
-        }
-
         try {
-          const body = encodeFormData(requestForm);
+          // Prepare form data for Web3Forms
+          const formData = new FormData(requestForm);
+          
+          // Add Web3Forms access key
+          formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+          
+          // Add custom subject line based on mode
+          const subject = mode === 'contact' 
+            ? '🐋 New Question - Blue Whales Timor Leste'
+            : '🐋 New Expedition Request - Blue Whales Timor Leste';
+          formData.append('subject', subject);
 
-          // Post to the current page path (more reliable than "/")
-          const action = window.location.pathname || '/';
-          const res = await fetch(action, {
+          // Send to Web3Forms
+          const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body
+            body: formData
           });
 
-          // Netlify often returns 200 or 303; treat 2xx/3xx as ok
-          if (!(res.status >= 200 && res.status < 400)) throw new Error(`HTTP ${res.status}`);
+          const result = await response.json();
 
-          requestForm.reset();
-          setMode(mode);
-          const formSel = $('#tourPersons');
-          if (formSel) formSel.value = String(state.persons);
+          if (result.success) {
+            requestForm.reset();
+            setMode(mode);
+            const formSel = $('#tourPersons');
+            if (formSel) formSel.value = String(state.persons);
 
-          showToast(mode === 'contact' ? 'Message sent — we’ll reply soon.' : 'Request sent — we’ll reply with next steps.');
-          closeModal();
+            showToast(mode === 'contact' 
+              ? 'Message sent - we will reply soon.' 
+              : 'Request sent - we will reply with next steps.');
+            closeModal();
+          } else {
+            throw new Error(result.message || 'Submission failed');
+          }
         } catch (err) {
-          console.error(err);
-          showToast('Submission failed. If you just deployed: enable Netlify Forms + notifications in the Netlify dashboard.');
+          console.error('Form submission error:', err);
+          showToast('Submission failed. Please try again or email us directly.');
         } finally {
           if (submit) {
             submit.disabled = false;
