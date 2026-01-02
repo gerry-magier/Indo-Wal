@@ -328,6 +328,13 @@
 
       if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
+      // Close modal when clicking outside the panel
+      if (bookingView) {
+        bookingView.addEventListener('click', (e) => {
+          if (e.target === bookingView) closeModal();
+        });
+      }
+
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && document.body.classList.contains('booking-open')) closeModal();
       });
@@ -358,8 +365,14 @@
     const MAX_YEAR = 2029;
     const MAX_DAYS = 5;
 
-    // placeholder pricing
-    const PRICE_PER_DAY_PER_PERSON = 160;
+    // Fixed pricing per day (total, not per person)
+    const PRICE_PER_DAY = {
+      1: 3000,
+      2: 3200,
+      3: 3400,
+      4: 3600,
+      5: 3800
+    };
 
     // ---- Google Sheet availability (CSV)
     // Paste your published CSV URL here:
@@ -529,7 +542,7 @@
       }
 
       if (sDates) sDates.textContent = `Dates: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} day${meta.nDays > 1 ? 's' : ''})`;
-      if (sPrice) sPrice.textContent = `Price: €${meta.all} (placeholder)`;
+      if (sPrice) sPrice.textContent = `Total price: €${meta.all.toLocaleString()} fixed`;
     }
 
     function updateMeta(prefix) {
@@ -555,14 +568,14 @@
       }
 
       const nDays = daysBetweenInclusive(state.start, state.end);
-      const perPerson = PRICE_PER_DAY_PER_PERSON * nDays;
-      const all = perPerson * state.persons;
+      const totalPrice = PRICE_PER_DAY[nDays] || 0;
+      const perPerson = state.persons > 0 ? Math.round(totalPrice / state.persons) : 0;
 
       selected.textContent = `Selected: ${formatNice(state.start)} → ${formatNice(state.end)} (${nDays} day${nDays > 1 ? 's' : ''})`;
-      price.textContent = `Price: €${PRICE_PER_DAY_PER_PERSON}/day/person (placeholder)`;
-      total.textContent = `Total: €${all} (${state.persons} guest${state.persons > 1 ? 's' : ''})`;
+      price.textContent = `Total price: €${totalPrice.toLocaleString()} (€${perPerson.toLocaleString()}/person)`;
+      total.textContent = `Note: Fixed total price regardless of group size`;
 
-      updateSummary({ nDays, all });
+      updateSummary({ nDays, all: totalPrice });
     }
 
     function bindCalendarNav(prefix) {

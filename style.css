@@ -70,10 +70,15 @@ a:hover{color:#056aa2}
 }
 
 .header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(245,251,255,.72);
-  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:9999;
+  background:rgba(247,251,255,.95);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--stroke);
+  box-shadow:0 2px 12px rgba(2,62,138,.06);
+  will-change:transform;
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text)}
@@ -581,7 +586,7 @@ a:hover{color:#056aa2}
 
 /* Booking modal */
 .booking-view{
-  position:fixed;inset:0;z-index:50;background:rgba(2,62,138,.22);
+  position:fixed;inset:0;z-index:10000;background:rgba(2,62,138,.22);
   backdrop-filter:blur(10px);display:grid;place-items:center;padding:1rem;
 }
 .booking-view[aria-hidden="true"]{display:none}
@@ -653,7 +658,7 @@ input:focus,select:focus,textarea:focus{
 
 /* Privacy modal */
 .privacy-modal{
-  position:fixed;inset:0;z-index:55;
+  position:fixed;inset:0;z-index:10001;
   background:rgba(2,62,138,.22);
   backdrop-filter:blur(10px);
   display:grid;place-items:center;padding:1rem;
@@ -681,7 +686,7 @@ input:focus,select:focus,textarea:focus{
 
 /* LIGHTBOX */
 .lightbox{
-  position:fixed;inset:0;z-index:80;
+  position:fixed;inset:0;z-index:10002;
   background:rgba(0,0,0,.62);
   backdrop-filter:blur(8px);
   display:grid;place-items:center;padding:1rem;
