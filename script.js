@@ -7,6 +7,90 @@
   onReady(() => {
     const $ = (s, el = document) => el.querySelector(s);
     const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+    // ============================================================
+  // PARTIALS: NAVBAR + FOOTER (root-relative, works everywhere)
+  // ============================================================
+  async function loadPartial(selector, url) {
+    const el = document.querySelector(selector);
+    if (!el) return;
+
+    try {
+      const res = await fetch(url, { cache: "no-cache" });
+      if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
+      el.innerHTML = await res.text();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  // load them
+  loadPartial("#navbar-placeholder", "/navbar.html");
+  loadPartial("#footer-placeholder", "/footer.html");
+
+  // ============================================================
+  // FOOTER MODALS (AGB / Impressum / Privacy) – event delegation
+  // works even if footer is injected after DOMContentLoaded
+  // ============================================================
+  document.addEventListener("click", (e) => {
+    const openAgb = e.target.closest("#openAgbFooter");
+    const openImpressum = e.target.closest("#openImpressumFooter");
+    const openPrivacy = e.target.closest("#openPrivacyFooter");
+
+    const closeAgb = e.target.closest("#closeAgb");
+    const closeImpressum = e.target.closest("#closeImpressum");
+    const closePrivacy = e.target.closest("#closePrivacy");
+
+    const agbModal = document.querySelector("#agbModal");
+    const impressumModal = document.querySelector("#impressumModal");
+    const privacyModal = document.querySelector("#privacyModal");
+
+    // OPEN
+    if (openAgb && agbModal) {
+      e.preventDefault();
+      document.body.classList.add("agb-open");
+      agbModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      return;
+    }
+    if (openImpressum && impressumModal) {
+      e.preventDefault();
+      document.body.classList.add("impressum-open");
+      impressumModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      return;
+    }
+    if (openPrivacy && privacyModal) {
+      e.preventDefault();
+      document.body.classList.add("privacy-open");
+      privacyModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      return;
+    }
+
+    // CLOSE
+    if (closeAgb && agbModal) {
+      e.preventDefault();
+      document.body.classList.remove("agb-open");
+      agbModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      return;
+    }
+    if (closeImpressum && impressumModal) {
+      e.preventDefault();
+      document.body.classList.remove("impressum-open");
+      impressumModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      return;
+    }
+    if (closePrivacy && privacyModal) {
+      e.preventDefault();
+      document.body.classList.remove("privacy-open");
+      privacyModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      return;
+    }
+  });
+
 
     // ============================================================
     // WEB3FORMS CONFIGURATION
