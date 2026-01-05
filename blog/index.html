@@ -131,6 +131,49 @@
       color: var(--text);
     }
 
+    /* Footer enhancements */
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 750;
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+    .footer-link-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-weight: 750;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
+      font-size: inherit;
+      transition: color 0.2s ease;
+    }
+    .footer-link-btn:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+    @media (max-width: 680px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .footer-links {
+        width: 100%;
+      }
+    }
+
     @media (max-width: 768px) {
       .blog-grid {
         grid-template-columns: 1fr;
@@ -165,6 +208,206 @@
 
   <!-- Footer will be loaded here -->
   <div id="footer-placeholder"></div>
+
+  <!-- Privacy Modal -->
+  <section class="privacy-modal" id="privacyModal" aria-hidden="true">
+    <div class="privacy-panel" role="dialog" aria-modal="true" aria-label="Privacy Policy">
+      <div class="privacy-head">
+        <h2>Privacy Policy</h2>
+        <button class="icon-btn" id="closePrivacy" type="button" aria-label="Close Privacy">✕</button>
+      </div>
+      <div class="privacy-body">
+        <p>Your privacy is important to us. This privacy policy explains what information we collect and how we use it.</p>
+        <h3>Information Collection</h3>
+        <p>We collect information you provide when you:</p>
+        <ul class="clean">
+          <li>Request an expedition or ask a question</li>
+          <li>Subscribe to our newsletter</li>
+          <li>Contact us directly</li>
+        </ul>
+        <h3>Use of Information</h3>
+        <p>We use your information to:</p>
+        <ul class="clean">
+          <li>Process and respond to your requests</li>
+          <li>Send expedition updates and confirmations</li>
+          <li>Improve our services</li>
+        </ul>
+        <h3>Data Protection</h3>
+        <p>We implement appropriate security measures to protect your personal information. We do not sell or share your data with third parties for marketing purposes.</p>
+        <h3>Your Rights</h3>
+        <p>You have the right to access, correct, or delete your personal information at any time. Contact us at info@timorbluewhales.com for any privacy-related requests.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGB MODAL -->
+  <section class="privacy-modal" id="agbModal" aria-hidden="true">
+    <div class="privacy-panel" role="dialog" aria-modal="true" aria-label="Allgemeine Geschäftsbedingungen">
+      <div class="privacy-head">
+        <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
+        <button class="icon-btn" id="closeAgb" type="button" aria-label="Close AGB">✕</button>
+      </div>
+
+      <div class="privacy-body">
+        <h3>1. Geltungsbereich</h3>
+        <p>
+          Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Buchungen von Blauwal-Touren in Timor-Leste, 
+          die über unsere Website, per E-Mail oder in sonstiger Textform (§ 126b BGB) erfolgen. Mit der Buchung 
+          erkennt der Kunde diese AGB als verbindlich an.
+        </p>
+
+        <h3>2. Vertragsschluss und Zahlung</h3>
+        <ul class="clean">
+          <li>Die Buchung erfolgt über unser Online-Buchungsformular oder in Textform.</li>
+          <li>Der Vertrag kommt mit Zugang der Buchungsbestätigung beim Kunden zustande.</li>
+          <li>Der Gesamtpreis ist mit Vertragsschluss sofort fällig.</li>
+          <li>Erst nach vollständigem Zahlungseingang besteht ein Anspruch auf Teilnahme an der Tour.</li>
+        </ul>
+
+        <h3>3. Preise und Zahlungsmodalitäten</h3>
+        <ul class="clean">
+          <li>Alle Preise sind in Euro angegeben und beinhalten die jeweils anwendbaren Steuern.</li>
+          <li>Akzeptierte Zahlungsmethoden sind PayPal und Banküberweisung.</li>
+          <li>Es gilt der bei Buchung bestätigte Preis. Preisänderungen nach Vertragsschluss sind ausgeschlossen.</li>
+          <li>Die Preise richten sich nach Personenzahl und Tourdauer.</li>
+        </ul>
+
+        <h3>4. Stornierung durch den Kunden</h3>
+        <h4>4.1 Stornokosten</h4>
+        <p>
+          Der Kunde kann jederzeit vor Tourbeginn vom Vertrag zurücktreten. Maßgeblich ist der Zugang der 
+          Rücktrittserklärung beim Anbieter. In diesem Fall fallen folgende Stornokosten an:
+        </p>
+        <ul class="clean">
+          <li><strong>bis einschließlich 60 Tage vor Tourbeginn:</strong> 50 % des Gesamtpreises</li>
+          <li><strong>weniger als 60 Tage vor Tourbeginn oder bei Nichterscheinen:</strong> 100 % des Gesamtpreises</li>
+        </ul>
+        <p>
+          Dem Kunden bleibt der Nachweis vorbehalten, dass dem Anbieter kein oder ein wesentlich geringerer Schaden entstanden ist.
+        </p>
+
+        <h4>4.2 Kein Widerrufsrecht</h4>
+        <p>
+          Für Verbraucher aus der Europäischen Union besteht gemäß § 312g Abs. 2 Nr. 9 BGB kein Widerrufsrecht, 
+          da es sich um eine Freizeitdienstleistung mit festem Termin handelt.
+        </p>
+
+        <h3>5. Absage oder Änderungen durch den Anbieter</h3>
+        <ul class="clean">
+          <li>Der Anbieter ist berechtigt, Touren aus Sicherheitsgründen oder aufgrund höherer Gewalt 
+              (z. B. extreme Wetterbedingungen, starke Strömungen, Naturereignisse) abzusagen oder zu ändern.</li>
+          <li>In diesem Fall kann der Kunde zwischen einem Ersatztermin und der Rückerstattung des bereits 
+              gezahlten Tourpreises wählen.</li>
+          <li>Weitergehende Ansprüche des Kunden sind ausgeschlossen, soweit gesetzlich zulässig.</li>
+        </ul>
+
+        <h3>6. Haftung</h3>
+        <ul class="clean">
+          <li>Die Teilnahme an den Touren erfolgt auf eigene Gefahr.</li>
+          <li>Der Anbieter haftet uneingeschränkt bei Vorsatz und grober Fahrlässigkeit.</li>
+          <li>Bei einfacher Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten 
+              (Kardinalpflichten) und beschränkt auf den vorhersehbaren, vertragstypischen Schaden.</li>
+          <li>Die Haftung für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit bleibt unberührt.</li>
+          <li>Der Anbieter haftet nicht für Risiken, die sich aus dem Verhalten der Teilnehmer, aus Naturereignissen 
+              oder aus dem unvorhersehbaren Verhalten der Tiere ergeben.</li>
+          <li>Es wird dringend empfohlen, eine ausreichende Reise-, Unfall- und Krankenversicherung abzuschließen.</li>
+        </ul>
+
+        <h3>7. Haftungsausschluss vor Ort</h3>
+        <ul class="clean">
+          <li>Vor Beginn der Tour sind alle Teilnehmer verpflichtet, eine Risiko- und Haftungsinformation zu 
+              unterzeichnen, aus der sich insbesondere die besonderen Gefahren einer Bootstour im offenen Meer ergeben.</li>
+          <li>Diese Erklärung dient der Aufklärung über Risiken und stellt keinen Ausschluss der Haftung für 
+              Vorsatz, grobe Fahrlässigkeit oder Schäden an Leben, Körper oder Gesundheit dar.</li>
+          <li>Wird die Unterzeichnung verweigert, kann die Teilnahme an der Tour ausgeschlossen werden. In diesem 
+              Fall besteht kein Anspruch auf Rückerstattung, sofern der Ausschluss vom Kunden zu vertreten ist.</li>
+        </ul>
+
+        <h3>8. Pflichten und gesundheitliche Voraussetzungen der Teilnehmer</h3>
+        <ul class="clean">
+          <li>Die Teilnehmer sind verpflichtet, allen Sicherheits- und Verhaltensanweisungen der Crew und Guides Folge zu leisten.</li>
+          <li>Schwimmfähigkeit sowie eine ausreichende körperliche und gesundheitliche Eignung sind Voraussetzung für die Teilnahme.</li>
+          <li>Der Anbieter bzw. der Guide ist berechtigt, Teilnehmer aus Sicherheitsgründen von der Tour auszuschließen, 
+              wenn offensichtliche gesundheitliche oder sicherheitsrelevante Gründe vorliegen.</li>
+          <li>Erfolgt der Ausschluss aus Gründen, die der Teilnehmer zu vertreten hat, besteht kein Anspruch auf Rückerstattung.</li>
+        </ul>
+
+        <h3>9. Ersatzperson / Übertragung der Buchung</h3>
+        <p>
+          Eine Übertragung der Buchung auf eine Ersatzperson ist nur mit vorheriger Zustimmung des Anbieters möglich. 
+          Ein Anspruch auf Zustimmung besteht nicht.
+        </p>
+
+        <h3>10. Rechtswahl und internationale Kunden</h3>
+        <ul class="clean">
+          <li>Es gilt das Recht der Demokratischen Republik Timor-Leste.</li>
+          <li>Für Verbraucher mit gewöhnlichem Aufenthalt in der Europäischen Union bleiben zwingende 
+              Verbraucherschutzvorschriften des jeweiligen Aufenthaltsstaates unberührt.</li>
+        </ul>
+
+        <h3>11. Schlussbestimmungen</h3>
+        <ul class="clean">
+          <li>Änderungen dieser AGB gelten ausschließlich für zukünftige Buchungen.</li>
+          <li>Sollten einzelne Bestimmungen dieser AGB ganz oder teilweise unwirksam sein oder werden, bleibt 
+              die Wirksamkeit der übrigen Bestimmungen unberührt.</li>
+        </ul>
+
+        <p class="micro subtle" style="margin-top:1.5rem;">
+          <strong>GBR - Indo Wal</strong><br />
+          Geschäftsführer: Gerret und Bennet Marx<br />
+          Immenstraße 13, 14542 Glindow, Deutschland
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPRESSUM MODAL -->
+  <section class="privacy-modal" id="impressumModal" aria-hidden="true">
+    <div class="privacy-panel" role="dialog" aria-modal="true" aria-label="Impressum">
+      <div class="privacy-head">
+        <h2>Impressum</h2>
+        <button class="icon-btn" id="closeImpressum" type="button" aria-label="Close Impressum">✕</button>
+      </div>
+
+      <div class="privacy-body">
+        <h3>Angaben gemäß § 5 TMG</h3>
+        <p>
+          <strong>GBR - Indo Wal</strong><br />
+          Immenstraße 13<br />
+          14542 Glindow<br />
+          Deutschland
+        </p>
+
+        <h3>Vertreten durch</h3>
+        <p>
+          Geschäftsführer:<br />
+          Gerret Marx<br />
+          Bennet Marx
+        </p>
+
+        <h3>Kontakt</h3>
+        <p>
+          E-Mail: <a href="mailto:info@timorbluewhales.com">info@timorbluewhales.com</a><br />
+          Telefon/WhatsApp: <a href="tel:+4915225655405">+49 15225655405</a>
+        </p>
+
+        <h3>EU-Streitschlichtung</h3>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br />
+          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">
+            https://ec.europa.eu/consumers/odr/
+          </a><br />
+          Unsere E-Mail-Adresse finden Sie oben im Impressum.
+        </p>
+
+        <h3>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h3>
+        <p>
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
+          Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <script>
     // Load navbar and footer
@@ -215,6 +458,77 @@
           if (contactLink) {
             contactLink.href = '../contact.html';
           }
+          
+          // Rebind footer event listeners after footer is loaded
+          setTimeout(() => {
+            const $ = (s) => document.querySelector(s);
+            
+            // Rebind AGB
+            const openAgbFooter = $('#openAgbFooter');
+            const agbModal = $('#agbModal');
+            const closeAgb = $('#closeAgb');
+            
+            if (openAgbFooter && agbModal) {
+              openAgbFooter.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.add('agb-open');
+                agbModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+              });
+            }
+            
+            if (closeAgb && agbModal) {
+              closeAgb.addEventListener('click', () => {
+                document.body.classList.remove('agb-open');
+                agbModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+              });
+            }
+            
+            // Rebind Impressum
+            const openImpressumFooter = $('#openImpressumFooter');
+            const impressumModal = $('#impressumModal');
+            const closeImpressum = $('#closeImpressum');
+            
+            if (openImpressumFooter && impressumModal) {
+              openImpressumFooter.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.add('impressum-open');
+                impressumModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+              });
+            }
+            
+            if (closeImpressum && impressumModal) {
+              closeImpressum.addEventListener('click', () => {
+                document.body.classList.remove('impressum-open');
+                impressumModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+              });
+            }
+            
+            // Rebind Privacy
+            const openPrivacyFooter = $('#openPrivacyFooter');
+            const privacyModal = $('#privacyModal');
+            const closePrivacy = $('#closePrivacy');
+            
+            if (openPrivacyFooter && privacyModal) {
+              openPrivacyFooter.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.add('privacy-open');
+                privacyModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+              });
+            }
+            
+            if (closePrivacy && privacyModal) {
+              closePrivacy.addEventListener('click', () => {
+                document.body.classList.remove('privacy-open');
+                privacyModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+              });
+            }
+          }, 100);
         })
         .catch(error => console.error('Error loading footer:', error));
     })();
@@ -228,7 +542,7 @@
         file: 'blog1.html',
         title: 'First Encounter with the Giants',
         date: '2025-10-15',
-        excerpt: 'Our first expedition of the season brought an unforgettable encounter with a mother and calf. The morning started quiet, but patience rewarded us with moments we\'ll never forget.',
+        excerpt: 'Our first expedition of the season brought an unforgettable encounter with a mother and calf. The morning started quiet, but patience rewarded us with moments we will never forget.',
         image: '../assets/hero.jpg'
       },
       {

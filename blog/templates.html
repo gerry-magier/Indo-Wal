@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- UPDATE THESE META TAGS FOR EACH BLOG POST -->
+  <title>BLOG TITLE HERE · Blue Whales of Timor Leste</title>
+  <meta name="description" content="BLOG EXCERPT HERE" />
+  
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Blog post specific styles */
+    .blog-post {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 0;
+    }
+    
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    
+    .blog-back:hover {
+      color: var(--brand);
+    }
+    
+    .blog-back:before {
+      content: '←';
+      font-size: 1.1rem;
+    }
+    
+    .blog-header {
+      margin-bottom: 2.5rem;
+    }
+    
+    .blog-date {
+      color: var(--muted2);
+      font-weight: 650;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .blog-title {
+      margin: 0 0 1rem;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    
+    .blog-subtitle {
+      color: var(--muted);
+      font-size: 1.2rem;
+      font-weight: 650;
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    .blog-featured-image {
+      width: 100%;
+      height: auto;
+      border-radius: var(--rLg);
+      margin: 2rem 0 2.5rem;
+      box-shadow: var(--shadowSoft);
+    }
+    
+    .blog-content {
+      line-height: 1.8;
+      color: var(--text);
+    }
+    
+    .blog-content h2 {
+      margin: 2.5rem 0 1rem;
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+      font-weight: 850;
+    }
+    
+    .blog-content h3 {
+      margin: 2rem 0 0.8rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+    
+    .blog-content p {
+      margin: 0 0 1.2rem;
+      font-weight: 600;
+    }
+    
+    .blog-content img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--rMd);
+      margin: 2rem 0;
+      box-shadow: var(--shadowSoft);
+    }
+    
+    .blog-content blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 1.8rem;
+      background: rgba(0,180,216,.06);
+      border-left: 4px solid var(--brand);
+      border-radius: var(--rMd);
+      font-style: italic;
+      color: var(--muted);
+    }
+    
+    .blog-content blockquote p {
+      margin: 0;
+    }
+    
+    .blog-content ul, .blog-content ol {
+      margin: 1.2rem 0;
+      padding-left: 1.8rem;
+    }
+    
+    .blog-content li {
+      margin: 0.5rem 0;
+      font-weight: 600;
+    }
+    
+    .blog-content a {
+      color: var(--brand);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.2s ease;
+    }
+    
+    .blog-content a:hover {
+      color: #056aa2;
+    }
+    
+    .blog-footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--stroke);
+    }
+    
+    .blog-cta {
+      background: linear-gradient(135deg, rgba(0,180,216,.08), rgba(0,119,182,.06));
+      border: 1px solid var(--stroke);
+      border-radius: var(--rLg);
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .blog-cta h3 {
+      margin: 0 0 0.8rem;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .blog-cta p {
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    
+    .blog-cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .blog-post {
+        padding: 2rem 0;
+      }
+      
+      .blog-cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="Home">
+        <span class="brand-icon">🐋</span>
+        <span class="brand-text">
+          <span class="brand-name">Blue Whales of Timor Leste</span>
+          <span class="brand-sub">Private Fisherboat Expeditions</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Main">
+        <a href="../index.html#availability">Availability</a>
+        <a href="../index.html#ethos">Ethos</a>
+        <a href="../index.html#included">Included</a>
+        <a href="../index.html#how">How it works</a>
+        <a href="../index.html#crew">Crew</a>
+        <a href="index.html" class="active">Blog</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+        <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+
+        <button class="burger" id="burger" type="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile" id="mobileMenu" hidden>
+      <div class="mobile-inner">
+        <a href="../index.html#availability">Availability</a>
+        <a href="../index.html#ethos">Ethos</a>
+        <a href="../index.html#included">Included</a>
+        <a href="../index.html#how">How it works</a>
+        <a href="../index.html#crew">Crew</a>
+        <a href="index.html">Blog</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="../index.html#contact">Contact</a>
+
+        <div class="mobile-cta-row">
+          <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+          <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="section">
+      <div class="wrap">
+        <div class="blog-post">
+          
+          <a href="index.html" class="blog-back">Back to Blog</a>
+          
+          <!-- BLOG HEADER -->
+          <header class="blog-header">
+            <!-- UPDATE THIS DATE -->
+            <div class="blog-date">15. Oktober 2025</div>
+            
+            <!-- UPDATE THIS TITLE -->
+            <h1 class="blog-title">Your Blog Post Title Here</h1>
+            
+            <!-- UPDATE THIS SUBTITLE (optional) -->
+            <p class="blog-subtitle">
+              A compelling subtitle or introduction that draws readers in and sets the tone for your story.
+            </p>
+          </header>
+
+          <!-- FEATURED IMAGE (optional) -->
+          <!-- UPDATE IMAGE PATH -->
+          <img src="../assets/hero.jpg" alt="Description of image" class="blog-featured-image" />
+
+          <!-- BLOG CONTENT -->
+          <div class="blog-content">
+            
+            <!-- WRITE YOUR BLOG CONTENT HERE -->
+            
+            <p>
+              Your first paragraph goes here. Start with something engaging that hooks the reader. 
+              Tell them what this post is about and why they should care.
+            </p>
+
+            <h2>Your First Section Heading</h2>
+            
+            <p>
+              Write your content here. You can use multiple paragraphs, images, quotes, and lists 
+              to make your post engaging and easy to read.
+            </p>
+
+            <p>
+              Use the style guide below to understand how to format your content properly.
+            </p>
+
+            <!-- Example: Adding an image -->
+            <!--
+            <img src="../assets/your-image.jpg" alt="Description" />
+            -->
+
+            <h3>Subsection Heading</h3>
+            
+            <p>
+              More detailed content here. Break up long sections with subheadings to improve readability.
+            </p>
+
+            <!-- Example: Adding a quote -->
+            <blockquote>
+              <p>
+                "The ocean stirs the heart, inspires the imagination and brings eternal joy to the soul."
+              </p>
+            </blockquote>
+
+            <!-- Example: Adding a list -->
+            <h2>Things to Remember</h2>
+            <ul>
+              <li>First important point</li>
+              <li>Second important point</li>
+              <li>Third important point</li>
+            </ul>
+
+            <p>
+              Your closing paragraph. Wrap up your thoughts and leave the reader with something 
+              to think about or a call to action.
+            </p>
+
+          </div>
+
+          <!-- BLOG FOOTER WITH CTA -->
+          <footer class="blog-footer">
+            <div class="blog-cta">
+              <h3>Ready for your own blue whale encounter?</h3>
+              <p>Join us on an ethical, private expedition in Timor Leste</p>
+              <div class="blog-cta-buttons">
+                <a href="../index.html#availability" class="btn btn-secondary">See availability</a>
+                <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p class="micro">&copy; 2026 Indo Wal GBR</p>
+      <div class="footer-links">
+        <button class="footer-link-btn" id="openImpressumFooter" type="button">Impressum</button>
+        <button class="footer-link-btn" id="openAgbFooter" type="button">AGB</button>
+        <button class="footer-link-btn" id="openPrivacyFooter" type="button">Privacy Policy</button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
