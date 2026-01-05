@@ -322,8 +322,13 @@
     }
 
     function bindModal() {
-      $$('[data-open-request]').forEach((btn) => {
-        btn.addEventListener('click', () => openModal(btn.dataset.mode || 'contact'));
+      // Use event delegation for dynamically loaded navbar buttons
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-open-request]');
+        if (btn) {
+          e.preventDefault();
+          openModal(btn.dataset.mode || 'contact');
+        }
       });
 
       if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -989,8 +994,8 @@
 
 // ===== Privacy modal
     const privacyModal = $('#privacyModal');
-    const openPrivacy = $('#openPrivacy');
-    const openPrivacyInline = $('#openPrivacyInline');
+    const openPrivacyFooter = $('#openPrivacyFooter');
+    const openPrivacyFooterInline = $('#openPrivacyFooterInline');
     const closePrivacy = $('#closePrivacy');
 
     let privacyLockedScrollY = 0;
@@ -1019,7 +1024,7 @@
       window.scrollTo(0, privacyLockedScrollY);
     }
 
-    function openPrivacyModal(e) {
+    function openPrivacyFooterModal(e) {
       if (e) e.preventDefault();
       if (!privacyModal) return;
       closeMobileMenu();
@@ -1297,8 +1302,8 @@
     }
 
     function bindPrivacy() {
-      if (openPrivacy) openPrivacy.addEventListener('click', openPrivacyModal);
-      if (openPrivacyInline) openPrivacyInline.addEventListener('click', openPrivacyModal);
+      if (openPrivacyFooter) openPrivacyFooter.addEventListener('click', openPrivacyFooterModal);
+      if (openPrivacyFooterInline) openPrivacyFooterInline.addEventListener('click', openPrivacyFooterModal);
       if (closePrivacy) closePrivacy.addEventListener('click', closePrivacyModal);
 
       document.addEventListener('keydown', (e) => {

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>First Encounter with the Giants · Blue Whales of Timor Leste</title>
+  <meta name="description" content="Our first expedition of the season brought an unforgettable encounter with a mother and calf." />
+  
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .blog-post {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 0;
+    }
+    
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    
+    .blog-back:hover {
+      color: var(--brand);
+    }
+    
+    .blog-back:before {
+      content: '←';
+      font-size: 1.1rem;
+    }
+    
+    .blog-header {
+      margin-bottom: 2.5rem;
+    }
+    
+    .blog-date {
+      color: var(--muted2);
+      font-weight: 650;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .blog-title {
+      margin: 0 0 1rem;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    
+    .blog-subtitle {
+      color: var(--muted);
+      font-size: 1.2rem;
+      font-weight: 650;
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    .blog-featured-image {
+      width: 100%;
+      height: auto;
+      border-radius: var(--rLg);
+      margin: 2rem 0 2.5rem;
+      box-shadow: var(--shadowSoft);
+    }
+    
+    .blog-content {
+      line-height: 1.8;
+      color: var(--text);
+    }
+    
+    .blog-content h2 {
+      margin: 2.5rem 0 1rem;
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+      font-weight: 850;
+    }
+    
+    .blog-content h3 {
+      margin: 2rem 0 0.8rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+    
+    .blog-content p {
+      margin: 0 0 1.2rem;
+      font-weight: 600;
+    }
+    
+    .blog-content img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--rMd);
+      margin: 2rem 0;
+      box-shadow: var(--shadowSoft);
+    }
+    
+    .blog-content blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 1.8rem;
+      background: rgba(0,180,216,.06);
+      border-left: 4px solid var(--brand);
+      border-radius: var(--rMd);
+      font-style: italic;
+      color: var(--muted);
+    }
+    
+    .blog-content blockquote p {
+      margin: 0;
+    }
+    
+    .blog-content ul, .blog-content ol {
+      margin: 1.2rem 0;
+      padding-left: 1.8rem;
+    }
+    
+    .blog-content li {
+      margin: 0.5rem 0;
+      font-weight: 600;
+    }
+    
+    .blog-content a {
+      color: var(--brand);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.2s ease;
+    }
+    
+    .blog-content a:hover {
+      color: #056aa2;
+    }
+    
+    .blog-footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--stroke);
+    }
+    
+    .blog-cta {
+      background: linear-gradient(135deg, rgba(0,180,216,.08), rgba(0,119,182,.06));
+      border: 1px solid var(--stroke);
+      border-radius: var(--rLg);
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .blog-cta h3 {
+      margin: 0 0 0.8rem;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .blog-cta p {
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    
+    .blog-cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .blog-post {
+        padding: 2rem 0;
+      }
+      
+      .blog-cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="Home">
+        <span class="brand-icon">🐋</span>
+        <span class="brand-text">
+          <span class="brand-name">Blue Whales of Timor Leste</span>
+          <span class="brand-sub">Private Fisherboat Expeditions</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Main">
+        <a href="../index.html#availability">Availability</a>
+        <a href="../index.html#ethos">Ethos</a>
+        <a href="../index.html#included">Included</a>
+        <a href="../index.html#how">How it works</a>
+        <a href="../index.html#crew">Crew</a>
+        <a href="index.html" class="active">Blog</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+        <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+
+        <button class="burger" id="burger" type="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile" id="mobileMenu" hidden>
+      <div class="mobile-inner">
+        <a href="../index.html#availability">Availability</a>
+        <a href="../index.html#ethos">Ethos</a>
+        <a href="../index.html#included">Included</a>
+        <a href="../index.html#how">How it works</a>
+        <a href="../index.html#crew">Crew</a>
+        <a href="index.html">Blog</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="../index.html#contact">Contact</a>
+
+        <div class="mobile-cta-row">
+          <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+          <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="section">
+      <div class="wrap">
+        <div class="blog-post">
+          
+          <a href="index.html" class="blog-back">Back to Blog</a>
+          
+          <header class="blog-header">
+            <div class="blog-date">15. Oktober 2025</div>
+            <h1 class="blog-title">First Encounter with the Giants</h1>
+            <p class="blog-subtitle">
+              Our first expedition of the season brought an unforgettable encounter with a mother and calf. The morning started quiet, but patience rewarded us with moments we'll never forget.
+            </p>
+          </header>
+
+          <img src="../assets/hero.jpg" alt="Blue whale surfacing near our boat" class="blog-featured-image" />
+
+          <div class="blog-content">
+            
+            <p>
+              The sun was barely above the horizon when we left the harbor. October marks the beginning of blue whale season in Timor Leste, and expectations were high for our first expedition. Our local crew had been preparing for weeks, checking equipment, studying weather patterns, and connecting with fellow fishermen about recent sightings.
+            </p>
+
+            <h2>The Waiting Game</h2>
+            
+            <p>
+              Anyone who's been whale watching knows that most of the experience is waiting. The ocean is vast, and even the largest animals on Earth can disappear into it completely. We positioned ourselves in an area where blues had been spotted in previous seasons, cut the engine, and listened.
+            </p>
+
+            <p>
+              Our hydrophone picked up distant sounds—clicks and low-frequency rumbles that hinted at life beneath the surface. But whale sounds can travel for miles underwater. Distance is deceptive in the open ocean.
+            </p>
+
+            <blockquote>
+              <p>
+                "The first rule of whale watching is patience. The second rule is more patience." 
+                — One of our crew members
+              </p>
+            </blockquote>
+
+            <h2>The Moment</h2>
+            
+            <p>
+              Two hours into our drift, someone spotted a blow in the distance. Then another, smaller one. Mother and calf. We waited, engines still off, as they moved in our general direction. The protocol is simple: never chase, never approach, never encircle. We let them decide.
+            </p>
+
+            <p>
+              And they decided to come closer.
+            </p>
+
+            <p>
+              The mother surfaced about 50 meters from our boat, her massive body creating a pattern of ripples that reached us seconds later. The calf followed, smaller but still enormous by any standard. They breathed, dove, and then the calf did something unexpected—it breached.
+            </p>
+
+            <h3>Understanding the Behavior</h3>
+            
+            <p>
+              Calf breaches are thought to be a form of play and learning. The youngster is practicing movements it will need throughout its life, building muscle strength, and perhaps just enjoying the sensation. For us, it was a gift—a display of pure vitality from an animal that may live to be over 100 years old.
+            </p>
+
+            <h2>The Ethics of Observation</h2>
+            
+            <p>
+              What made this encounter special wasn't just the proximity or the breach. It was the clear signs that these whales were undisturbed by our presence. They maintained their breathing patterns, stayed at the surface longer than necessary for respiration, and the calf continued its playful behavior.
+            </p>
+
+            <p>
+              This is the result of strict protocols:
+            </p>
+
+            <ul>
+              <li>Engines off or at minimum idle when whales are within 300 meters</li>
+              <li>Never position the boat directly in front of or behind whales</li>
+              <li>If approached by whales, remain still and allow them to set the distance</li>
+              <li>Limit observation time to 30 minutes per group</li>
+              <li>Only one boat per whale group</li>
+            </ul>
+
+            <p>
+              These guidelines exist not because we're required to follow them, but because we choose to. The whales' wellbeing comes first, always.
+            </p>
+
+            <h2>What We Learned</h2>
+            
+            <p>
+              This encounter reinforced something we already believed: respectful observation creates better experiences. When animals aren't stressed, they behave naturally. Natural behavior is infinitely more interesting than animals fleeing or showing signs of agitation.
+            </p>
+
+            <p>
+              The mother and calf stayed in sight for 45 minutes before slowly moving away. We didn't follow. We'd seen what we came to see, and they had places to go—feeding grounds where the calf would continue growing at a rate of about 90 kilograms per day.
+            </p>
+
+            <blockquote>
+              <p>
+                "We are guests in their home. We stay as long as they allow, and we leave when they show us it's time."
+              </p>
+            </blockquote>
+
+            <h2>The Journey Back</h2>
+            
+            <p>
+              The return to harbor was quiet. Everyone was processing what they'd seen. These moments have a way of putting things in perspective. Here's an animal that can weigh 200 tons, dive to depths of 500 meters, and travel thousands of miles—yet it chose to surface near our small wooden boat.
+            </p>
+
+            <p>
+              That's not something you take for granted.
+            </p>
+
+            <p>
+              As we tied up at the dock, our crew was already planning the next expedition. October and November are prime months, and every trip brings new insights. We've been doing this for years, and we still learn something new each time we're on the water.
+            </p>
+
+            <p>
+              That's the beauty of working with wild animals. They're always surprising, always teaching, and never predictable.
+            </p>
+
+          </div>
+
+          <footer class="blog-footer">
+            <div class="blog-cta">
+              <h3>Ready for your own blue whale encounter?</h3>
+              <p>Join us on an ethical, private expedition in Timor Leste</p>
+              <div class="blog-cta-buttons">
+                <a href="../index.html#availability" class="btn btn-secondary">See availability</a>
+                <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p class="micro">&copy; 2026 Indo Wal GBR</p>
+      <div class="footer-links">
+        <button class="footer-link-btn" id="openImpressumFooter" type="button">Impressum</button>
+        <button class="footer-link-btn" id="openAgbFooter" type="button">AGB</button>
+        <button class="footer-link-btn" id="openPrivacyFooter" type="button">Privacy Policy</button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

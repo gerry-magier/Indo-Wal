@@ -57,50 +57,25 @@
       }
     }
   </style>
+  
+  <!-- Load navbar -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+    });
+  </script>
 </head>
 
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="header" id="top">
-    <div class="wrap header-inner">
-      <a class="brand" href="#top" data-scroll aria-label="Home">
-        <span class="brand-icon">🐋</span>
-        <span class="brand-text">
-          <span class="brand-name">Blue Whales of Timor Leste</span>
-          <span class="brand-sub">Private Fisherboat Expeditions</span>
-        </span>
-      </a>
-
-      <nav class="nav" aria-label="Main">
-        <a href="#availability" data-scroll>Availability</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
-        <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
-
-        <button class="burger" id="burger" type="button" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-
-    <div class="mobile" id="mobileMenu" hidden>
-      <div class="mobile-inner">
-        <a href="#availability" data-scroll>Availability</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-
-        <div class="mobile-cta-row">
-          <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
-          <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
-        </div>
-      </div>
-    </div>
-  </header>
+  <!-- Navbar will be loaded here -->
+  <div id="navbar-placeholder"></div>
 
   <!-- HERO -->
   <section class="hero-banner" aria-label="Hero banner">
@@ -753,7 +728,7 @@
       </div>
 
       <div class="booking-foot">
-        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a></div>
+        <div class="micro subtle">Prefer email? <a href="/cdn-cgi/l/email-protection#a7d5c2d6d2c2d4d3d3d0cec9c2dfd7c2c3ced3cec8c9d4e7c0cac6cecb89c4c8ca"><span class="__cf_email__" data-cfemail="750710040010060101021c1b100d0510111c011c1a1b06351218141c195b161a18">[email&#160;protected]</span></a></div>
       </div>
     </div>
   </section>
@@ -773,7 +748,7 @@
         <p>
           <strong>Twin Adventures GbR</strong> (Gerret Marx &amp; Bennet Marx)<br />
           Immenstraße 13, 14542 Werder, Germany<br />
-          Email: <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a><br />
+          Email: <a href="/cdn-cgi/l/email-protection#d2a0b7a3a7b7a1a6a6a5bbbcb7aaa2b7b6bba6bbbdbca192b5bfb3bbbefcb1bdbf"><span class="__cf_email__" data-cfemail="50223521253523242427393e35282035343924393f3e2310373d31393c7e333f3d">[email&#160;protected]</span></a><br />
           Phone/WhatsApp: <a href="tel:+4915225655405">+49 15225655405</a>
         </p>
 
@@ -960,7 +935,7 @@
 
         <h3>Kontakt</h3>
         <p>
-          E-Mail: <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a><br />
+          E-Mail: <a href="/cdn-cgi/l/email-protection#daa8bfabafbfa9aeaeadb3b4bfa2aabfbeb3aeb3b5b4a99abdb7bbb3b6f4b9b5b7"><span class="__cf_email__" data-cfemail="ee9c8b9f9b8b9d9a9a9987808b969e8b8a879a8781809dae89838f8782c08d8183">[email&#160;protected]</span></a><br />
           Telefon/WhatsApp: <a href="tel:+4915225655405">+49 15225655405</a>
         </p>
 
