@@ -32,9 +32,9 @@
   // works even if footer is injected after DOMContentLoaded
   // ============================================================
   document.addEventListener("click", (e) => {
-    const openAgb = e.target.closest("#openAgbFooter");
-    const openImpressum = e.target.closest("#openImpressumFooter");
-    const openPrivacy = e.target.closest("#openPrivacyFooter");
+    const openAgb = e.target.closest("#openAgbFooter, #openAgbInline");
+    const openImpressum = e.target.closest("#openImpressumFooter, #openImpressumInline");
+    const openPrivacy = e.target.closest("#openPrivacyFooter, #openPrivacyInline");
 
     const closeAgb = e.target.closest("#closeAgb");
     const closeImpressum = e.target.closest("#closeImpressum");
