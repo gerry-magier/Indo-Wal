@@ -19,6 +19,11 @@ class BlogLoader {
       'blog1.html',
       'blog2.html',
       'blog3.html',
+      'blog4.html',
+      'blog5.html',
+      'blog6.html',
+      'blog7.html',
+      'blog8.html',
       // Add more as you create them:
       // 'my-amazing-whale-encounter.html',
       // 'diving-tips-timor-leste.html',
