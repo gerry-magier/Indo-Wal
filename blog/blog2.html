@@ -1,16 +1,59 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Timor-Leste – Anreise, erster Eindruck & ein ganz eigenes Gefühl · Blue Whales of Timor Leste</title>
-  <meta name="description" content="Anreise nach Timor-Leste, erste Eindrücke aus Dili, lokale Mythen, Fischer, Blauwale und warum dieses Land so einzigartig ist." />
+  <title>Timor-Leste: Arrival, First Impressions & a Feeling All Its Own · Blue Whales of Timor Leste</title>
+  <meta name="description" content="How we got to Timor-Leste, what Dili feels like on day one, local transport, early plans with fishermen, and the crocodile myth at the heart of the country." />
 
   <link rel="stylesheet" href="/style.css" />
 
   <style>
-    /* Blog post specific styles (dein existing CSS bleibt) */
+    /* Footer enhancements (same as main index) */
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 750;
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+    .footer-link-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-weight: 750;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
+      font-size: inherit;
+      transition: color 0.2s ease;
+    }
+    .footer-link-btn:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+    @media (max-width: 680px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .footer-links {
+        width: 100%;
+      }
+    }
+
+    /* Blog post specific styles */
     .blog-post { max-width: 720px; margin: 0 auto; padding: 3rem 0; }
     .blog-back { display:inline-flex;align-items:center;gap:.5rem;margin-bottom:2rem;color:var(--muted);text-decoration:none;font-weight:700;font-size:.95rem;transition:color .2s ease; }
     .blog-back:hover { color: var(--brand); }
@@ -25,12 +68,40 @@
     .blog-content h3 { margin: 2rem 0 0.8rem; font-size: 1.4rem; letter-spacing: -0.02em; font-weight: 800; }
     .blog-content p { margin: 0 0 1.2rem; font-weight: 600; }
     .blog-content img { width: 100%; height: auto; border-radius: var(--rMd); margin: 2rem 0; box-shadow: var(--shadowSoft); }
-    .blog-content ul { margin: 1.2rem 0; padding-left: 1.8rem; }
+    .blog-content blockquote { margin: 2rem 0; padding: 1.5rem 1.8rem; background: rgba(0,180,216,.06); border-left: 4px solid var(--brand); border-radius: var(--rMd); font-style: italic; color: var(--muted); }
+    .blog-content blockquote p { margin: 0; }
+    .blog-content ul, .blog-content ol { margin: 1.2rem 0; padding-left: 1.8rem; }
     .blog-content li { margin: 0.5rem 0; font-weight: 600; }
+    .blog-content a { color: var(--brand); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; transition: color 0.2s ease; }
+    .blog-content a:hover { color: #056aa2; }
+    .blog-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--stroke); }
+    .blog-cta { background: linear-gradient(135deg, rgba(0,180,216,.08), rgba(0,119,182,.06)); border: 1px solid var(--stroke); border-radius: var(--rLg); padding: 2rem; text-align: center; }
+    .blog-cta h3 { margin: 0 0 0.8rem; font-size: 1.5rem; letter-spacing: -0.02em; }
+    .blog-cta p { margin: 0 0 1.5rem; color: var(--muted); font-weight: 650; }
+    .blog-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    @media (max-width: 768px) {
+      .blog-post { padding: 2rem 0; }
+      .blog-cta-buttons { flex-direction: column; }
+    }
   </style>
 </head>
 
 <body>
+  <!-- ============================================ -->
+  <!-- BLOG METADATA - FOR AUTOMATIC INDEX LOADING -->
+  <!-- ============================================ -->
+  <script type="application/json" data-blog-metadata>
+  {
+    "title": "Timor-Leste",
+    "subtitle": "Arrival, first impressions, and a feeling all its own",
+    "excerpt": "Timor-Leste isn’t a place you end up by accident. Here’s how we arrived, what Dili felt like, and how a few fishermen shaped our first big plan.",
+    "image": "/blog/assets/locallegend.jpg",
+    "date": "2025-10-15",
+    "author": "Blue Whales of Timor Leste"
+  }
+  </script>
+  <!-- ============================================ -->
+
   <a class="skip" href="#main">Skip to content</a>
 
   <div id="navbar-placeholder"></div>
@@ -43,102 +114,106 @@
           <a href="/blog/index.html" class="blog-back">Back to Blog</a>
 
           <header class="blog-header">
-            <div class="blog-date">15. Oktober 2025</div>
+            <div class="blog-date">15 October 2025</div>
             <h1 class="blog-title">Timor-Leste</h1>
             <p class="blog-subtitle">
-              Anreise, erster Eindruck und ein ganz eigenes Gefühl
+              Arrival, first impressions, and a feeling all its own
             </p>
           </header>
 
-          <img src="/assets/images/blog/locallegend.jpg" alt="Erste Eindrücke aus Timor-Leste" class="blog-featured-image" />
+          <img src="/blog/assets/locallegend.jpg" alt="First impressions of Timor-Leste" class="blog-featured-image" />
 
           <div class="blog-content">
             <p>
-              Timor-Leste ist kein Land, in das man zufällig reist. Es gibt nur wenige Möglichkeiten zur Einreise, und genau das macht es für uns umso spannender.
+              Timor-Leste isn’t a country you stumble into by chance. There are only a handful of ways to enter—and that’s exactly what makes it so exciting.
             </p>
 
-            <h2>Anreise nach Timor-Leste</h2>
-            <p>Direktflüge gibt es:</p>
+            <h2>Getting to Timor-Leste</h2>
+            <p>There are direct flights:</p>
             <ul>
-              <li>von Denpasar (Bali) – die einfachste Option</li>
-              <li>von Kuala Lumpur (neu)</li>
-              <li>von Darwin</li>
-              <li>von Singapur (beide jedoch nur sehr vereinzelt)</li>
+              <li>from Denpasar (Bali) — the easiest option</li>
+              <li>from Kuala Lumpur (new)</li>
+              <li>from Darwin (only occasionally)</li>
+              <li>from Singapore (only occasionally)</li>
             </ul>
 
             <p>
-              Wir entschieden uns bewusst für den Landweg und damit für ein kleines Abenteuer. Unser Startpunkt war Kupang in Indonesien. Von dort ging es mit dem Bus in einer rund zwölfstündigen Fahrt nach Dili.
+              We chose the overland route on purpose—because it felt like a small adventure. Our starting point was Kupang in Indonesia.
+              From there, we took a bus on a roughly 12-hour ride to Dili.
             </p>
 
             <p>
-              <strong>Kosten:</strong> ca. 16 Euro pro Person.  
-              Wer ein bisschen Abenteuer mag, Ungemütlichkeit aushält und dabei auch noch Geld sparen will, macht mit der Landeinreise absolut nichts falsch.
+              <strong>Cost:</strong> about €16 per person.  
+              If you like a bit of adventure, can handle some discomfort, and want to save money, crossing by land is a great choice.
             </p>
 
-            <h2>Dili – andere Preise, andere Währung, andere Geschichte</h2>
+            <h2>Dili: different prices, different currency, different history</h2>
             <p>
-              In Dili angekommen merkt man schnell, dass das Preisniveau ein anderes ist als in Indonesien. Wir suchten lange nach einer bezahlbaren Unterkunft und wurden schließlich im Casa Minha Hostel fündig.
-            </p>
-
-            <p>
-              Dort bekamen wir ein Doppelzimmer für 20 US-Dollar pro Nacht – denn ja, in Timor-Leste zahlt man mit US-Dollar.
+              Once you arrive in Dili, you quickly notice that the price level is different from Indonesia. We searched for a while to find a place that felt affordable,
+              and eventually landed at Casa Minha Hostel.
             </p>
 
             <p>
-              Timor-Leste ist zudem das jüngste Land Asiens. Erst 2002 erlangte es seine Unabhängigkeit. Ein Fakt, den man im Alltag, in der Infrastruktur und im Selbstverständnis der Menschen deutlich spürt.
-            </p>
-
-            <h2>Portugiesischer Einfluss & Alltag in Dili</h2>
-            <p>
-              Am Tag nach unserer Ankunft erkundeten wir die Stadt. Der portugiesische Einfluss ist allgegenwärtig – in der Architektur, in der Sprache und vor allem im Essen.
+              We paid $20 USD per night for a double room—because yes, Timor-Leste uses the US Dollar.
             </p>
 
             <p>
-              Früh morgens gab es plötzlich richtig gute Brötchen. Etwas, das man in Südostasien nicht unbedingt erwartet.
+              Timor-Leste is also the youngest country in Asia. It gained independence only in 2002, and you can feel that in everyday life—in infrastructure,
+              and in the way people carry themselves.
             </p>
 
-            <h3>Fortbewegung: Bemo statt Taxi</h3>
+            <h2>Portuguese influence and daily life in Dili</h2>
             <p>
-              Die beste Art, sich in Dili fortzubewegen, ist das Bemo. Allein in Dili gibt es 13 verschiedene Buslinien, jede mit einer gut sichtbaren Routennummer.
-            </p>
-
-            <p>
-              Egal wie weit man fährt, es kostet immer einen Quarter (0,25 US-Dollar). Um auszusteigen, schlägt man mit der Münze gegen eine Aluminiumstange im Bus – der Fahrer hält an.
-            </p>
-
-            <img src="/assets/images/blog/walsuchen.jpg" alt="Auf der Suche nach Blauwalen vor Timor-Leste" />
-
-            <h2>Fischer, Blauwale & große Pläne</h2>
-            <p>
-              Schließlich machten wir uns auf den Weg zum Hafen. Nach stundenlangem Suchen trafen wir drei lokale Fischer, die bereit waren, mit uns ein ganz besonderes Abenteuer zu wagen: mit Blauwalen zu schwimmen.
+              The day after we arrived, we explored the city. Portuguese influence is everywhere—in architecture, language, and especially in the food.
             </p>
 
             <p>
-              Allein diese Möglichkeit zeigt, wie roh und wenig touristisch Timor-Leste noch ist. Vieles läuft hier über persönliche Kontakte, Vertrauen und spontane Absprachen.
+              Early in the morning we suddenly found really good bread rolls—something you don’t necessarily expect in Southeast Asia.
             </p>
 
-            <img src="/assets/images/blog/kroko.jpg" alt="Krokodil – zentrales Symbol in Timor-Leste" />
-
-            <h2>Das Krokodil – Herz & Mythos von Timor-Leste</h2>
+            <h3>Getting around: Bemo instead of taxis</h3>
             <p>
-              Eine bekannte Legende besagt, dass Timor-Leste aus einem Krokodil entstanden ist, das von Indonesien hierher schwamm und sich schließlich in Land verwandelte.
-            </p>
-
-            <p>
-              Deshalb haben Krokodile bis heute eine extrem hohe spirituelle Bedeutung. So hoch sogar, dass ein Polizeirevier – das Batalhão de Ordem Pública – drei Krokodile als „Haustiere“ hält.
+              The best way to move around Dili is the Bemo. In Dili alone there are 13 different lines, each with an easy-to-spot route number.
             </p>
 
             <p>
-              Besucher dürfen sie sehen, müssen als Eintritt jedoch frisches oder gefrorenes Hähnchen mitbringen. Timor-Leste eben.
+              The best rule: no matter how far you ride, it always costs one quarter ($0.25). To get off, you simply tap a coin against an aluminum bar in the bus—
+              and the driver stops. Simple, cheap, effective.
             </p>
 
-            <h2>Timor-Leste entdecken – Freiheit auf zwei Rädern</h2>
+            <img src="/blog/assets/walsuchen.jpg" alt="Heading to the harbor and looking for whales" />
+
+            <h2>Fishermen, blue whales, and big plans</h2>
             <p>
-              Wer mehr Zeit hat, sollte Timor-Leste unbedingt mit dem Roller erkunden. Man entdeckt traumhafte, leere Strände, raue ursprüngliche Natur und vor allem unglaublich freundliche, offene Menschen.
+              We eventually made our way to the harbor. After hours of asking around, we met three local fishermen who were willing to try something special with us:
+              to swim with blue whales.
             </p>
 
             <p>
-              Ein Land, das nicht perfekt ist – aber ehrlich.
+              That possibility alone shows how raw and non-touristy Timor-Leste still is. A lot runs through personal contacts, trust, and spontaneous agreements.
+            </p>
+
+            <img src="/blog/assets/kroko.jpg" alt="Crocodiles are central to Timor-Leste’s identity" />
+
+            <h2>The crocodile: myth and heart of Timor-Leste</h2>
+            <p>
+              We also learned something central about the country’s culture: the importance of the crocodile.
+              A well-known legend says Timor-Leste was formed from a crocodile that swam here from Indonesia and eventually turned into land.
+            </p>
+
+            <p>
+              Crocodiles still carry strong spiritual meaning today. So much so that one police unit—the Batalhão de Ordem Pública (BOP)—keeps three crocodiles as “pets”.
+              Visitors can see them, but as an “entry fee” you’re expected to bring fresh or frozen chicken.
+            </p>
+
+            <h2>Exploring Timor-Leste by scooter</h2>
+            <p>
+              If you have more time, exploring Timor-Leste by scooter is highly recommended. You’ll find empty, dreamlike beaches, rough and untouched nature,
+              and above all: incredibly friendly, open people.
+            </p>
+
+            <p>
+              It’s not a perfect place—but it’s an honest one.
             </p>
           </div>
 
@@ -159,6 +234,213 @@
   </main>
 
   <div id="footer-placeholder"></div>
+
+  <!-- REQUEST MODAL + main script -->
+  <section class="booking-view" id="bookingView" aria-hidden="true">
+    <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Request form">
+      <div class="booking-head">
+        <div class="booking-title">
+          <div class="booking-kicker">Request</div>
+          <h2 id="requestTitle">Ask a question</h2>
+          <p class="micro subtle" id="requestSubtitle">
+            Ask anything — we'll reply with clear answers and whether it's a good fit.
+          </p>
+        </div>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">✕</button>
+      </div>
+
+      <div class="booking-body">
+        <div class="mode-tabs" role="tablist" aria-label="Request mode">
+          <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Ask a question</button>
+          <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Request expedition</button>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-left">
+            <div class="card reveal" id="bookingCalendarCard">
+              <h3>Dates</h3>
+
+              <div class="cal-top">
+                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Previous month">‹</button>
+                <div class="cal-title" id="bookingMonthName">October 2026</div>
+                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Next month">›</button>
+              </div>
+
+              <div class="cal-weekdays" aria-hidden="true">
+                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+              </div>
+
+              <div class="calendar" id="bookingCalendar"></div>
+
+              <div class="cal-controls">
+                <label for="bookingPersons">Guests</label>
+                <select id="bookingPersons">
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                </select>
+              </div>
+
+              <div class="cal-meta">
+                <div id="bookingSelectedDays" class="meta-line"></div>
+                <div id="bookingPrice" class="meta-line strong">Price: €0</div>
+                <div id="bookingTotalPrice" class="meta-line"></div>
+              </div>
+            </div>
+
+            <div class="card reveal">
+              <h3>Summary</h3>
+              <p id="summaryDates">Dates: (optional)</p>
+              <p id="summaryGuests">Guests: –</p>
+              <p id="summaryPrice">Price: –</p>
+              <p class="micro subtle"><strong>Note:</strong> The total price is fixed regardless of group size. The per-person amount shown is for reference only.</p>
+            </div>
+          </div>
+
+          <div class="booking-right">
+            <form class="card reveal" id="requestForm" method="POST">
+              <input type="hidden" name="requestType" id="requestType" value="contact" />
+              <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
+
+              <p class="honeypot" aria-hidden="true">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <h3>Your details</h3>
+
+              <div class="form-grid">
+                <div>
+                  <label for="firstName">First name</label>
+                  <input id="firstName" name="firstName" type="text" required />
+                </div>
+                <div>
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" name="lastName" type="text" required />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                  <label for="whatsapp">WhatsApp (optional)</label>
+                  <input id="whatsapp" name="whatsapp" type="tel" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourStart">Start date <span class="mini-hint" id="startHint">(optional for questions)</span></label>
+                  <input id="tourStart" name="tourStart" type="date" />
+                </div>
+                <div>
+                  <label for="tourEnd">End date <span class="mini-hint" id="endHint">(optional for questions)</span></label>
+                  <input id="tourEnd" name="tourEnd" type="date" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourPersons">Guests</label>
+                  <select id="tourPersons" name="tourPersons" required>
+                    <option value="1">1 guest</option>
+                    <option value="2">2 guests</option>
+                    <option value="3">3 guests</option>
+                    <option value="4">4 guests</option>
+                    <option value="5">5 guests</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="swimLevel">Swim level (optional)</label>
+                  <input id="swimLevel" name="swimLevel" type="text" placeholder="e.g., confident offshore / beginner / etc." />
+                </div>
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                  placeholder="Tell us your expectations (and any concerns). We'll reply honestly about fit + feasibility."></textarea>
+              </div>
+
+              <div class="passport-wrap" id="passportWrap" hidden>
+                <div class="passport-head">
+                  <h4>Passport details (optional)</h4>
+                  <p class="micro subtle">
+                    Only required for trip paperwork <strong>after</strong> we confirm availability.
+                    If you prefer, leave it blank — we'll collect it later via a secure channel.
+                  </p>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="nationality">Nationality (optional)</label>
+                    <input id="nationality" name="nationality" type="text" />
+                  </div>
+                  <div>
+                    <label for="passport">Passport number (optional)</label>
+                    <input id="passport" name="passport" type="text" />
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="issueDate">Passport issue date (optional)</label>
+                    <input id="issueDate" name="issueDate" type="date" />
+                  </div>
+                  <div>
+                    <label for="expiryDate">Passport expiry date (optional)</label>
+                    <input id="expiryDate" name="expiryDate" type="date" />
+                  </div>
+                </div>
+              </div>
+
+              <div id="additionalGuests"></div>
+
+              <div class="agb-wrap" id="agbWrap" hidden>
+                <h4>Terms &amp; Conditions</h4>
+                <div class="agb">
+                  <p class="micro subtle" style="margin-top:0;">
+                    Cancellation: up to and including 60 days before start → 50% fee. Less than 60 days or no-show → 100% fee.
+                    Tours may change/cancel for safety or force majeure.
+                  </p>
+                </div>
+
+                <label class="check" id="termsCheck">
+                  <input type="checkbox" id="acceptAgb" name="acceptAgb" />
+                  <span>I have read and accept the Terms &amp; Conditions.</span>
+                </label>
+              </div>
+
+              <p class="micro subtle" style="margin-top:.95rem;">
+                By submitting, you agree that we contact you about your request.
+                Read our <a href="#" id="openPrivacyInline">Privacy Policy</a> and <a href="#" id="openAgbInline">Terms & Conditions</a>.
+              </p>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
+                <p class="micro subtle" id="submitHint">
+                  Questions don't require passport details. Requests are confirmed only after our reply.
+                </p>
+              </div>
+
+              <div class="micro subtle">
+                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-foot">
+        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a></div>
+      </div>
+    </div>
+  </section>
+
   <script src="/script.js" data-cfasync="false"></script>
 </body>
 </html>

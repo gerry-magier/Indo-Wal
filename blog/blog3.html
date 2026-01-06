@@ -1,21 +1,107 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Ankunft in Jayapura – unser erster Eindruck von Papua · Blue Whales of Timor Leste</title>
-  <meta name="description" content="Erste Eindrücke aus Jayapura in Papua: Ankunft, Transport, Preise, Sprache, Sicherheit und Ausblick auf die Reise zu den Korowai." />
+  <title>Arriving in Jayapura: Our First Impressions of Papua · Blue Whales of Timor Leste</title>
+  <meta name="description" content="Landing in Jayapura, getting from Sentani to town, transport tips, accommodation and price realities, language barriers, safety, and what came next: the flight to Dekai." />
 
   <link rel="stylesheet" href="/style.css" />
 
   <style>
+    /* Footer enhancements (same as main index) */
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 750;
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+    .footer-link-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-weight: 750;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
+      font-size: inherit;
+      transition: color 0.2s ease;
+    }
+    .footer-link-btn:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+    @media (max-width: 680px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .footer-links {
+        width: 100%;
+      }
+    }
+
+    /* Blog post specific styles */
     .blog-post { max-width: 720px; margin: 0 auto; padding: 3rem 0; }
+    .blog-back { display:inline-flex;align-items:center;gap:.5rem;margin-bottom:2rem;color:var(--muted);text-decoration:none;font-weight:700;font-size:.95rem;transition:color .2s ease; }
+    .blog-back:hover { color: var(--brand); }
+    .blog-back:before { content:'←'; font-size:1.1rem; }
+    .blog-header { margin-bottom: 2.5rem; }
+    .blog-date { color: var(--muted2); font-weight: 650; font-size: 0.95rem; margin-bottom: 0.8rem; }
+    .blog-title { margin: 0 0 1rem; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -0.03em; line-height: 1.2; }
+    .blog-subtitle { color: var(--muted); font-size: 1.2rem; font-weight: 650; line-height: 1.5; margin: 0; }
+    .blog-featured-image { width: 100%; height: auto; border-radius: var(--rLg); margin: 2rem 0 2.5rem; box-shadow: var(--shadowSoft); }
+    .blog-content { line-height: 1.8; color: var(--text); }
+    .blog-content h2 { margin: 2.5rem 0 1rem; font-size: 1.8rem; letter-spacing: -0.02em; font-weight: 850; }
+    .blog-content h3 { margin: 2rem 0 0.8rem; font-size: 1.4rem; letter-spacing: -0.02em; font-weight: 800; }
+    .blog-content p { margin: 0 0 1.2rem; font-weight: 600; }
     .blog-content img { width: 100%; height: auto; border-radius: var(--rMd); margin: 2rem 0; box-shadow: var(--shadowSoft); }
+    .blog-content blockquote { margin: 2rem 0; padding: 1.5rem 1.8rem; background: rgba(0,180,216,.06); border-left: 4px solid var(--brand); border-radius: var(--rMd); font-style: italic; color: var(--muted); }
+    .blog-content blockquote p { margin: 0; }
+    .blog-content ul, .blog-content ol { margin: 1.2rem 0; padding-left: 1.8rem; }
+    .blog-content li { margin: 0.5rem 0; font-weight: 600; }
+    .blog-content a { color: var(--brand); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; transition: color 0.2s ease; }
+    .blog-content a:hover { color: #056aa2; }
+    .blog-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--stroke); }
+    .blog-cta { background: linear-gradient(135deg, rgba(0,180,216,.08), rgba(0,119,182,.06)); border: 1px solid var(--stroke); border-radius: var(--rLg); padding: 2rem; text-align: center; }
+    .blog-cta h3 { margin: 0 0 0.8rem; font-size: 1.5rem; letter-spacing: -0.02em; }
+    .blog-cta p { margin: 0 0 1.5rem; color: var(--muted); font-weight: 650; }
+    .blog-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    @media (max-width: 768px) {
+      .blog-post { padding: 2rem 0; }
+      .blog-cta-buttons { flex-direction: column; }
+    }
   </style>
 </head>
 
 <body>
+  <!-- ============================================ -->
+  <!-- BLOG METADATA - FOR AUTOMATIC INDEX LOADING -->
+  <!-- ============================================ -->
+  <script type="application/json" data-blog-metadata>
+  {
+    "title": "Arriving in Jayapura",
+    "subtitle": "Our first impressions of Papua",
+    "excerpt": "Landing in Jayapura brings immediate logistics, different transport apps, and a new price reality. Here’s what surprised us—and what we learned before heading deeper inland.",
+    "image": "/blog/assets/handschlag.jpg",
+    "date": "2025-10-17",
+    "author": "Blue Whales of Timor Leste"
+  }
+  </script>
+  <!-- ============================================ -->
+
   <a class="skip" href="#main">Skip to content</a>
 
   <div id="navbar-placeholder"></div>
@@ -28,111 +114,104 @@
           <a href="/blog/index.html" class="blog-back">Back to Blog</a>
 
           <header class="blog-header">
-            <div class="blog-date">17. Oktober 2025</div>
-            <h1 class="blog-title">Ankunft in Jayapura</h1>
+            <div class="blog-date">17 October 2025</div>
+            <h1 class="blog-title">Arriving in Jayapura</h1>
             <p class="blog-subtitle">
-              Unser erster Eindruck von Papua
+              Our first impressions of Papua
             </p>
           </header>
 
-          <img src="/assets/images/blog/handschlag.jpg" alt="Erste Begegnungen in Jayapura" class="blog-featured-image" />
+          <img src="/blog/assets/handschlag.jpg" alt="First moments after arriving in Jayapura" class="blog-featured-image" />
 
           <div class="blog-content">
             <p>
-              Früh am Morgen landeten wir in Jayapura. Direkt nach der Ankunft wartete bereits die erste kleine Herausforderung: der Weg vom Flughafen in die Stadt.
+              We landed in Jayapura early in the morning—and right away we faced our first small challenge: getting from the airport into town.
             </p>
 
             <p>
-              Der Flughafen liegt nicht direkt in Jayapura selbst, sondern im rund 25 Kilometer entfernten Sentani. Die Fahrt in die Stadt dauert etwa 45 Minuten.
+              The airport isn’t actually in Jayapura. It’s in Sentani, about 25 kilometers away, which usually means around 45 minutes of driving.
             </p>
 
-            <h2>Vom Flughafen in die Stadt</h2>
+            <h2>From the airport into town</h2>
             <p>
-              In Papua funktioniert Fortbewegung anders als im restlichen Indonesien. Apps wie Grab spielen hier kaum eine Rolle. Stattdessen nutzt man Maxim oder ganz klassisch lokale Verkehrsmittel.
-            </p>
-
-            <p>
-              Wir entschieden uns für die wohl authentischste und gleichzeitig günstigste Variante: einen Bemo. Für 50.000 Rupiah pro Person ging es damit bis ins Stadtzentrum.
+              In Papua, getting around works differently than in most parts of Indonesia. Apps like Grab barely matter here.
+              Instead, people use Maxim—or they rely on local transport.
             </p>
 
             <p>
-              Wer mit mehreren Personen reist oder viel Gepäck hat, für den kann sich Maxim lohnen. Unser Tipp bleibt jedoch, zunächst den Flughafenbereich zu verlassen. Direkt dort lassen sich keine Fahrten buchen und man zahlt sonst schnell etwas mehr.
-            </p>
-
-            <h2>Übernachten & Preise in Papua</h2>
-            <p>
-              Wir übernachteten im Best Western Hotel Jayapura. Für etwa 20 Euro pro Nacht ist es ein wirklich preiswertes Hotel.
+              We chose the most authentic (and cheapest) option: a Bemo. For 50,000 Rupiah per person, it took us to the city center.
             </p>
 
             <p>
-              Generell haben wir Papua als überraschend günstig bei Unterkünften erlebt. Selbst gute Hotels und Guesthouses sind hier oft erschwinglicher als erwartet.
+              If you’re traveling with multiple people or a lot of luggage, Maxim can be worth it. Our tip is to leave the immediate airport area first—
+              rides often can’t be booked right at the terminal, and prices can jump quickly.
+            </p>
+
+            <h2>Where we stayed and how prices feel in Papua</h2>
+            <p>
+              We stayed at the Best Western Hotel Jayapura. At about €20 per night, it felt like an excellent deal.
             </p>
 
             <p>
-              Im Alltag merkt man jedoch schnell, dass Papua insgesamt teurer ist als andere Teile Indonesiens, etwa Java. Ein einfaches Nasi Goreng kostet selten unter 30.000 Rupiah, und auch Transportmittel schlagen deutlich mehr zu Buche.
+              In general, we found accommodation in Papua surprisingly affordable. Even decent hotels and guesthouses can be cheaper than you’d expect.
             </p>
 
             <p>
-              Daraus ergibt sich eine interessante Dynamik: Viele Indonesier, vor allem aus Java, kommen nach Papua, weil sie dort bessere Arbeitsmöglichkeiten und höhere Löhne finden.
+              Daily life, however, is noticeably more expensive than in other parts of Indonesia—like Java.
+              A simple nasi goreng rarely costs under 30,000 Rupiah, and transport adds up quickly as well.
             </p>
 
             <p>
-              Wir trafen unzählige Javanesen, die in ihrer Heimat keine feste Arbeit fanden und ihr Glück hier suchten. Am Ende gleichen sich höhere Löhne und höhere Lebenshaltungskosten jedoch oft wieder aus.
-            </p>
-
-            <img src="/assets/images/blog/papuaraum.jpg" alt="Einblicke in den Alltag in Papua" />
-
-            <h2>Roller mieten & Sprache</h2>
-            <p>
-              Einen Roller mieteten wir über einen neu gewonnenen Freund. Gerade in Papua ist es ein großer Vorteil, offen auf Menschen zuzugehen und Kontakte zu knüpfen.
+              That creates an interesting dynamic: many Indonesians, especially from Java, come to Papua for better job opportunities and higher wages.
+              We met countless Javanese people who couldn’t find steady work back home and tried their luck here.
             </p>
 
             <p>
-              Der Preis lag bei 100.000 Rupiah pro Tag, was absolut fair und üblich ist.
+              In the end, higher wages often meet higher living costs, and the financial advantage can be smaller than it first appears.
+            </p>
+
+            <img src="/blog/assets/papuaraum.jpg" alt="Everyday impressions from Papua" />
+
+            <h2>Renting a scooter and the language barrier</h2>
+            <p>
+              We rented a scooter through a new friend—one of the big benefits of staying open and connecting with people along the way.
+              The price was 100,000 Rupiah per day, which is fair and standard.
             </p>
 
             <p>
-              Ein ganz entscheidender Punkt in Papua ist die Sprache. Die Sprachbarriere ist hier deutlich größer als in anderen Teilen Indonesiens.
+              One key factor in Papua is language. The barrier is significantly higher than in many other parts of Indonesia—even in cities like Jayapura.
             </p>
 
             <p>
-              Wer nur Englisch spricht, wird schnell an Grenzen stoßen – selbst in Städten wie Jayapura. Wir selbst sprechen fließend Indonesisch und hatten damit keine Probleme.
+              If you only speak English, you’ll hit limits quickly. We speak Indonesian fluently, so we didn’t struggle in Jayapura—
+              but we’d still strongly recommend researching which regions are easier to travel and which are not.
             </p>
 
             <p>
-              Trotzdem würden wir jedem dringend raten, sich vorab gut zu informieren, welche Regionen einfacher zu bereisen sind und welche weniger.
+              Even for us, things became challenging later, both linguistically and logistically. We’ll share much more in our Korowai travel report.
+            </p>
+
+            <img src="/blog/assets/papuahut.jpg" alt="Traditional huts in Papua" />
+
+            <h2>Safety and atmosphere</h2>
+            <p>
+              I felt very safe in Papua, especially in Jayapura. Despite the proximity to Papua New Guinea, the city has a diverse mix of Indonesians from many regions.
             </p>
 
             <p>
-              Denn selbst wir kamen unterwegs sprachlich und organisatorisch an unsere Grenzen. Mehr dazu erzählen wir ausführlich in unserem Korowai-Reisebericht.
+              In more remote areas, it felt different. We noticed the looks from locals more strongly—not out of hostility, but mostly curiosity.
+              Speaking the language and showing respect made a huge difference.
             </p>
 
-            <img src="/assets/images/blog/papuahut.jpg" alt="Traditionelle Hütten in Papua" />
-
-            <h2>Sicherheit & Atmosphäre</h2>
+            <h2>Goodbye and what came next</h2>
             <p>
-              Ich habe mich in Papua, insbesondere in Jayapura, sehr sicher gefühlt. Trotz der Nähe zu Papua-Neuguinea ist die Stadt geprägt von einem vielfältigen Mix aus Indonesiern unterschiedlichster Regionen.
-            </p>
-
-            <p>
-              Anders war es in abgelegeneren Gegenden Papuas. Dort spürte ich die Blicke der Einheimischen deutlich stärker – weniger aus Feindseligkeit, sondern eher aus Neugier.
+              We spent two days in Jayapura. In the evening, we rode up to one of the well-known viewpoints above the city and looked out over the bay and the sea—
+              a perfect moment to breathe.
             </p>
 
             <p>
-              Auch hier half es enorm, die Sprache zu sprechen und respektvoll aufzutreten.
-            </p>
-
-            <h2>Abschied & Ausblick</h2>
-            <p>
-              Wir verbrachten insgesamt zwei Tage in Jayapura. Am Abend fuhren wir mit dem Roller zu einem der bekannten Aussichtspunkte oberhalb der Stadt und blickten über die Bucht und das Meer.
-            </p>
-
-            <p>
-              Gleichzeitig liefen bereits die letzten Vorbereitungen für unser nächstes großes Abenteuer: den Weiterflug nach Dekai und die geplante Begegnung mit den Korowai.
-            </p>
-
-            <p>
-              Ob dieser Plan wirklich so aufging, wie wir es uns vorgestellt hatten, erfahrt ihr in unserem Korowai-Reisebericht.
+              At the same time, we were already preparing for the next big step: the flight onward to Dekai and our planned encounter with the Korowai.
+              Whether the plan worked out the way we imagined is a story we’ll tell in the Korowai travel report.
             </p>
           </div>
 
@@ -153,6 +232,213 @@
   </main>
 
   <div id="footer-placeholder"></div>
+
+  <!-- REQUEST MODAL + main script -->
+  <section class="booking-view" id="bookingView" aria-hidden="true">
+    <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Request form">
+      <div class="booking-head">
+        <div class="booking-title">
+          <div class="booking-kicker">Request</div>
+          <h2 id="requestTitle">Ask a question</h2>
+          <p class="micro subtle" id="requestSubtitle">
+            Ask anything — we'll reply with clear answers and whether it's a good fit.
+          </p>
+        </div>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">✕</button>
+      </div>
+
+      <div class="booking-body">
+        <div class="mode-tabs" role="tablist" aria-label="Request mode">
+          <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Ask a question</button>
+          <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Request expedition</button>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-left">
+            <div class="card reveal" id="bookingCalendarCard">
+              <h3>Dates</h3>
+
+              <div class="cal-top">
+                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Previous month">‹</button>
+                <div class="cal-title" id="bookingMonthName">October 2026</div>
+                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Next month">›</button>
+              </div>
+
+              <div class="cal-weekdays" aria-hidden="true">
+                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+              </div>
+
+              <div class="calendar" id="bookingCalendar"></div>
+
+              <div class="cal-controls">
+                <label for="bookingPersons">Guests</label>
+                <select id="bookingPersons">
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                </select>
+              </div>
+
+              <div class="cal-meta">
+                <div id="bookingSelectedDays" class="meta-line"></div>
+                <div id="bookingPrice" class="meta-line strong">Price: €0</div>
+                <div id="bookingTotalPrice" class="meta-line"></div>
+              </div>
+            </div>
+
+            <div class="card reveal">
+              <h3>Summary</h3>
+              <p id="summaryDates">Dates: (optional)</p>
+              <p id="summaryGuests">Guests: –</p>
+              <p id="summaryPrice">Price: –</p>
+              <p class="micro subtle"><strong>Note:</strong> The total price is fixed regardless of group size. The per-person amount shown is for reference only.</p>
+            </div>
+          </div>
+
+          <div class="booking-right">
+            <form class="card reveal" id="requestForm" method="POST">
+              <input type="hidden" name="requestType" id="requestType" value="contact" />
+              <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
+
+              <p class="honeypot" aria-hidden="true">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <h3>Your details</h3>
+
+              <div class="form-grid">
+                <div>
+                  <label for="firstName">First name</label>
+                  <input id="firstName" name="firstName" type="text" required />
+                </div>
+                <div>
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" name="lastName" type="text" required />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                  <label for="whatsapp">WhatsApp (optional)</label>
+                  <input id="whatsapp" name="whatsapp" type="tel" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourStart">Start date <span class="mini-hint" id="startHint">(optional for questions)</span></label>
+                  <input id="tourStart" name="tourStart" type="date" />
+                </div>
+                <div>
+                  <label for="tourEnd">End date <span class="mini-hint" id="endHint">(optional for questions)</span></label>
+                  <input id="tourEnd" name="tourEnd" type="date" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourPersons">Guests</label>
+                  <select id="tourPersons" name="tourPersons" required>
+                    <option value="1">1 guest</option>
+                    <option value="2">2 guests</option>
+                    <option value="3">3 guests</option>
+                    <option value="4">4 guests</option>
+                    <option value="5">5 guests</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="swimLevel">Swim level (optional)</label>
+                  <input id="swimLevel" name="swimLevel" type="text" placeholder="e.g., confident offshore / beginner / etc." />
+                </div>
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                  placeholder="Tell us your expectations (and any concerns). We'll reply honestly about fit + feasibility."></textarea>
+              </div>
+
+              <div class="passport-wrap" id="passportWrap" hidden>
+                <div class="passport-head">
+                  <h4>Passport details (optional)</h4>
+                  <p class="micro subtle">
+                    Only required for trip paperwork <strong>after</strong> we confirm availability.
+                    If you prefer, leave it blank — we'll collect it later via a secure channel.
+                  </p>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="nationality">Nationality (optional)</label>
+                    <input id="nationality" name="nationality" type="text" />
+                  </div>
+                  <div>
+                    <label for="passport">Passport number (optional)</label>
+                    <input id="passport" name="passport" type="text" />
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="issueDate">Passport issue date (optional)</label>
+                    <input id="issueDate" name="issueDate" type="date" />
+                  </div>
+                  <div>
+                    <label for="expiryDate">Passport expiry date (optional)</label>
+                    <input id="expiryDate" name="expiryDate" type="date" />
+                  </div>
+                </div>
+              </div>
+
+              <div id="additionalGuests"></div>
+
+              <div class="agb-wrap" id="agbWrap" hidden>
+                <h4>Terms &amp; Conditions</h4>
+                <div class="agb">
+                  <p class="micro subtle" style="margin-top:0;">
+                    Cancellation: up to and including 60 days before start → 50% fee. Less than 60 days or no-show → 100% fee.
+                    Tours may change/cancel for safety or force majeure.
+                  </p>
+                </div>
+
+                <label class="check" id="termsCheck">
+                  <input type="checkbox" id="acceptAgb" name="acceptAgb" />
+                  <span>I have read and accept the Terms &amp; Conditions.</span>
+                </label>
+              </div>
+
+              <p class="micro subtle" style="margin-top:.95rem;">
+                By submitting, you agree that we contact you about your request.
+                Read our <a href="#" id="openPrivacyInline">Privacy Policy</a> and <a href="#" id="openAgbInline">Terms & Conditions</a>.
+              </p>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
+                <p class="micro subtle" id="submitHint">
+                  Questions don't require passport details. Requests are confirmed only after our reply.
+                </p>
+              </div>
+
+              <div class="micro subtle">
+                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-foot">
+        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a></div>
+      </div>
+    </div>
+  </section>
+
   <script src="/script.js" data-cfasync="false"></script>
 </body>
 </html>
