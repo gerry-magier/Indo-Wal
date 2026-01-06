@@ -12,7 +12,50 @@
   <link rel="stylesheet" href="/style.css" />
 
   <style>
-    /* Blog post specific styles (dein existing CSS bleibt) */
+    /* Footer enhancements (same as main index) */
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 750;
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+    .footer-link-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-weight: 750;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
+      font-size: inherit;
+      transition: color 0.2s ease;
+    }
+    .footer-link-btn:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+    @media (max-width: 680px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .footer-links {
+        width: 100%;
+      }
+    }
+    
+    /* Blog post specific styles */
     .blog-post { max-width: 720px; margin: 0 auto; padding: 3rem 0; }
     .blog-back { display:inline-flex;align-items:center;gap:.5rem;margin-bottom:2rem;color:var(--muted);text-decoration:none;font-weight:700;font-size:.95rem;transition:color .2s ease; }
     .blog-back:hover { color: var(--brand); }
@@ -46,9 +89,26 @@
 </head>
 
 <body>
+  <!-- ============================================ -->
+  <!-- BLOG METADATA - FOR AUTOMATIC INDEX LOADING -->
+  <!-- ============================================ -->
+  <!-- This metadata is read by the blog loader script -->
+  <!-- UPDATE THIS FOR EACH BLOG POST -->
+  <script type="application/json" data-blog-metadata>
+  {
+    "title": "Your Blog Post Title Here",
+    "subtitle": "A compelling subtitle or introduction that draws readers in",
+    "excerpt": "Your first 1-2 sentences that give readers a preview of what this post is about. Keep it engaging and under 200 characters.",
+    "image": "/blog/assets/your-blog-hero.jpg",
+    "date": "2025-10-15",
+    "author": "Your Name"
+  }
+  </script>
+  <!-- ============================================ -->
+
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Navbar injected here -->
+  <!-- Navbar will be loaded here by script.js -->
   <div id="navbar-placeholder"></div>
 
   <main id="main">
@@ -68,11 +128,26 @@
           </header>
 
           <!-- FEATURED IMAGE (optional) -->
-          <img src="/assets/hero.jpg" alt="Description of image" class="blog-featured-image" />
+          <img src="/blog/assets/your-blog-hero.jpg" alt="Description of image" class="blog-featured-image" />
 
           <!-- BLOG CONTENT -->
           <div class="blog-content">
-            <p>Your first paragraph goes here...</p>
+            <p>Your first paragraph goes here. This should be engaging and draw the reader into your story about blue whales in Timor Leste.</p>
+
+            <h2>Section Heading</h2>
+            <p>More content here...</p>
+
+            <!-- Additional images in content -->
+            <img src="/blog/assets/your-blog-image-2.jpg" alt="Description" />
+
+            <h3>Subheading</h3>
+            <p>Additional details and information...</p>
+
+            <blockquote>
+              <p>"A memorable quote or key insight from your experience."</p>
+            </blockquote>
+
+            <p>Continue with your story...</p>
           </div>
 
           <!-- BLOG FOOTER WITH CTA -->
@@ -92,10 +167,10 @@
     </article>
   </main>
 
-  <!-- Footer injected here -->
+  <!-- Footer will be loaded here by script.js -->
   <div id="footer-placeholder"></div>
 
-  <!-- Root-relative (works from /blog/ as well) -->
+  <!-- Main script loads navbar and footer automatically -->
   <script src="/script.js" data-cfasync="false"></script>
 </body>
 </html>
