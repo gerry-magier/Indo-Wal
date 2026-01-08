@@ -19,49 +19,6 @@
   <link rel="stylesheet" href="/style.css" />
   
   <style>
-    /* Footer enhancements (same as main index) */
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .footer-link {
-      text-decoration: none;
-      color: var(--muted);
-      font-weight: 750;
-      transition: color 0.2s ease;
-    }
-    .footer-link:hover {
-      color: var(--brand);
-      text-decoration: underline;
-    }
-    .footer-link-btn {
-      background: none;
-      border: none;
-      color: var(--muted);
-      font-weight: 750;
-      cursor: pointer;
-      padding: 0;
-      font-family: inherit;
-      font-size: inherit;
-      transition: color 0.2s ease;
-    }
-    .footer-link-btn:hover {
-      color: var(--brand);
-      text-decoration: underline;
-    }
-    @media (max-width: 680px) {
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-      .footer-links {
-        width: 100%;
-      }
-    }
-    
     /* Blog Index Styles */
     .blog-index-hero {
       text-align: center;
@@ -248,7 +205,7 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Navbar will be loaded here by script.js -->
+  <!-- Navbar will be loaded here -->
   <div id="navbar-placeholder"></div>
 
   <main id="main">
@@ -270,7 +227,7 @@
     </section>
   </main>
 
-  <!-- Footer will be loaded here by script.js -->
+  <!-- Footer will be loaded here -->
   <div id="footer-placeholder"></div>
 
   <!-- REQUEST MODAL -->
@@ -339,8 +296,6 @@
 
           <div class="booking-right">
             <form class="card reveal" id="requestForm" method="POST">
-
-              
               <input type="hidden" name="requestType" id="requestType" value="contact" />
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
@@ -481,7 +436,10 @@
     </div>
   </section>
 
-  <!-- Main script loads navbar and footer automatically -->
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">🐋</button>
+
+  <!-- Scripts: loader.js MUST be loaded before script.js -->
+  <script src="/loader.js"></script>
   <script src="/script.js" data-cfasync="false"></script>
   
   <!-- Blog Loader Script -->

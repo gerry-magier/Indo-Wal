@@ -21,49 +21,6 @@
   <link rel="stylesheet" href="/style.css" />
 
   <style>
-    /* Footer enhancements (same as main index) */
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .footer-link {
-      text-decoration: none;
-      color: var(--muted);
-      font-weight: 750;
-      transition: color 0.2s ease;
-    }
-    .footer-link:hover {
-      color: var(--brand);
-      text-decoration: underline;
-    }
-    .footer-link-btn {
-      background: none;
-      border: none;
-      color: var(--muted);
-      font-weight: 750;
-      cursor: pointer;
-      padding: 0;
-      font-family: inherit;
-      font-size: inherit;
-      transition: color 0.2s ease;
-    }
-    .footer-link-btn:hover {
-      color: var(--brand);
-      text-decoration: underline;
-    }
-    @media (max-width: 680px) {
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-      .footer-links {
-        width: 100%;
-      }
-    }
-    
     /* Blog post specific styles */
     .blog-post { max-width: 720px; margin: 0 auto; padding: 3rem 0; }
     .blog-back { display:inline-flex;align-items:center;gap:.5rem;margin-bottom:2rem;color:var(--muted);text-decoration:none;font-weight:700;font-size:.95rem;transition:color .2s ease; }
@@ -117,7 +74,7 @@
 
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Navbar will be loaded here by script.js -->
+  <!-- Navbar will be loaded here -->
   <div id="navbar-placeholder"></div>
 
   <main id="main">
@@ -176,10 +133,8 @@
     </article>
   </main>
 
-  <!-- Footer will be loaded here by script.js -->
+  <!-- Footer will be loaded here -->
   <div id="footer-placeholder"></div>
-
-  <!-- Main script loads navbar and footer automatically -->
 
   <!-- REQUEST MODAL -->
   <section class="booking-view" id="bookingView" aria-hidden="true">
@@ -247,8 +202,6 @@
 
           <div class="booking-right">
             <form class="card reveal" id="requestForm" method="POST">
-
-              
               <input type="hidden" name="requestType" id="requestType" value="contact" />
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
@@ -389,7 +342,10 @@
     </div>
   </section>
 
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">🐋</button>
 
+  <!-- Scripts: loader.js MUST be loaded before script.js -->
+  <script src="/loader.js"></script>
   <script src="/script.js" data-cfasync="false"></script>
 </body>
 </html>

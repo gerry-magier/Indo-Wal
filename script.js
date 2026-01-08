@@ -7,30 +7,11 @@
   onReady(() => {
     const $ = (s, el = document) => el.querySelector(s);
     const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+    
     // ============================================================
-  // PARTIALS: NAVBAR + FOOTER (root-relative, works everywhere)
-  // ============================================================
-  async function loadPartial(selector, url) {
-    const el = document.querySelector(selector);
-    if (!el) return;
-
-    try {
-      const res = await fetch(url, { cache: "no-cache" });
-      if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
-      el.innerHTML = await res.text();
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  // load them
-  loadPartial("#navbar-placeholder", "/navbar.html");
-  loadPartial("#footer-placeholder", "/footer.html");
-
-  // ============================================================
-  // FOOTER MODALS (AGB / Impressum / Privacy) – event delegation
-  // works even if footer is injected after DOMContentLoaded
-  // ============================================================
+    // FOOTER MODALS (AGB / Impressum / Privacy) – event delegation
+    // NOTE: Navbar & footer loading is now handled by loader.js
+    // ============================================================
   document.addEventListener("click", (e) => {
     const openAgb = e.target.closest("#openAgbFooter, #openAgbInline");
     const openImpressum = e.target.closest("#openImpressumFooter, #openImpressumInline");
