@@ -121,27 +121,49 @@ a:hover{color:#056aa2}
 .burger{
   width:44px;height:44px;border-radius:var(--rSm);
   border:1px solid var(--stroke2);background:rgba(255,255,255,.75);
-  display:none;cursor:pointer;
+  display:none;cursor:pointer;position:relative;
+  transition:all .2s ease;
+}
+.burger:hover{
+  background:rgba(255,255,255,.92);
+  border-color:var(--stroke2);
 }
 .burger span{
   display:block;width:20px;height:2px;margin:4px auto;background:#023e8a;border-radius:99px;
   transition:transform .2s ease,opacity .2s ease;
 }
-.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.mobile{border-top:1px solid var(--stroke);background:rgba(245,251,255,.92)}
-.mobile-inner{width:min(1120px,92%);margin:0 auto;padding:.75rem 0 1rem;display:grid;gap:.5rem}
-.mobile-inner a{
+.burger.active span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.active span:nth-child(2){opacity:0}
+.burger.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile{
+  border-top:1px solid var(--stroke);
+  background:rgba(245,251,255,.96);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.mobile-inner{
+  width:min(1120px,92%);margin:0 auto;padding:.75rem 0 1rem;display:grid;gap:.5rem;
+}
+.mobile-inner a, .mobile-inner button{
   text-decoration:none;color:var(--text);font-weight:860;
   padding:.75rem .85rem;border-radius:16px;border:1px solid var(--stroke);
   background:rgba(255,255,255,.80);
+  transition:all .2s ease;
 }
-.mobile-inner a:hover{background:rgba(255,255,255,.94)}
+.mobile-inner a:hover, .mobile-inner button:hover{
+  background:rgba(255,255,255,.96);
+  transform:translateY(-1px);
+}
 .mobile-cta-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.25rem}
 @media (max-width:980px){
   .nav{display:none}
   .burger{display:inline-block}
+  .header-actions .btn{font-size:.9rem;padding:.7rem .9rem}
+}
+@media (max-width:680px){
+  .header-actions .btn-secondary{display:none}
+  .brand-name{font-size:.95rem}
+  .brand-sub{font-size:.85rem}
 }
 
 /* HERO */
@@ -506,32 +528,56 @@ a:hover{color:#056aa2}
   font-weight:650;
 }
 
-/* Map hero (NO white frame, BIG vertical) */
+/* Map hero (improved design with better spacing and centering) */
 .map-hero{
   border-radius:var(--rLg);
   overflow:hidden;
   border:1px solid var(--stroke);
-  background:transparent;
+  background:rgba(255,255,255,.90);
   box-shadow:var(--shadowSoft);
+  margin-top:2rem;
 }
 .map-hero-title{
   margin:0;
-  padding:1rem 1.1rem .8rem;
-  background:rgba(255,255,255,.55);
+  padding:1.25rem 1.5rem;
+  background:rgba(255,255,255,.80);
   border-bottom:1px solid var(--stroke);
   font-weight:950;
   color:#023e8a;
+  text-align:center;
+  font-size:1.5rem;
+  letter-spacing:-0.02em;
+}
+.map-hero-media{
+  background:linear-gradient(180deg,rgba(2,62,138,.04),rgba(0,180,216,.02));
+  padding:1rem;
 }
 .map-hero-media img{
   width:100%;
-  height:clamp(720px,84vh,980px); /* HUGE */
+  height:auto;
+  max-height:clamp(560px,70vh,840px);
   object-fit:contain;
   display:block;
   cursor:zoom-in;
-  background:transparent;
+  margin:0 auto;
+}
+.map-cta{
+  padding:1.5rem 1.5rem 1.75rem;
+  background:rgba(255,255,255,.85);
+  border-top:1px solid var(--stroke);
+  text-align:center;
+}
+.map-cta .section-lead{
+  margin:0 auto 1.25rem;
+  text-align:center;
+}
+.map-cta .cta-row{
+  justify-content:center;
 }
 @media (max-width:520px){
-  .map-hero-media img{height:clamp(560px,76vh,860px)}
+  .map-hero-media{padding:.75rem}
+  .map-hero-media img{max-height:clamp(420px,60vh,720px)}
+  .map-cta{padding:1.25rem 1rem 1.5rem}
 }
 
 /* FAQ */
@@ -1055,10 +1101,15 @@ input:focus,select:focus,textarea:focus{
 @media (max-width: 680px) {
   .footer-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 1rem;
   }
   .footer-links {
     width: 100%;
+    justify-content: center;
+  }
+  .footer-note {
+    text-align: center;
   }
 }
