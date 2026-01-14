@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPLY0P4ZJE"></script>
 <script>
@@ -15,404 +14,211 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Twin Expeditions",
-  "alternateName": "Blue Whale Expeditions in Timor-Leste",
+  "alternateName": "Blue Whale & Marine Expeditions",
   "url": "https://twinexpeditions.com/"
 }
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Blue Whale Expeditions in Timor-Leste | Private & Ethical</title>
-<meta name="description" content="Private and ethical blue whale expeditions in Timor-Leste. Swim with pygmy blue whales in private groups, guided by local crew." />
+  <title>Twin Expeditions | Blue Whale Tours in Timor-Leste & Papua</title>
+  <meta name="description" content="Private and ethical marine expeditions. Swim with blue whales in Timor-Leste or explore Papua's underwater world. Local crew, respectful approach." />
   <meta property="og:type" content="website" />
-<meta property="og:title" content="Blue Whale Expeditions in Timor-Leste | Private & Ethical" />
-  <meta property="og:description" content="Private Fishing Boat Expeditions. Local Crew. Respectful approach." />
+  <meta property="og:title" content="Twin Expeditions | Marine Adventures" />
+  <meta property="og:description" content="Private expeditions. Local crew. Respectful approach." />
   <meta property="og:image" content="assets/hero.jpg" />
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css" />
-  
-  
-  
 </head>
+
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  
   <!-- Navbar will be loaded here -->
   <div id="navbar-placeholder"></div>
-  <!-- HERO -->
-  <section class="hero-banner" aria-label="Hero banner">
+
+  <!-- HERO SECTION -->
+  <section class="hero-banner" aria-label="Hero banner" style="min-height: 85vh; display: flex; align-items: center;">
     <div class="hero-banner-bg" aria-hidden="true"></div>
     <div class="hero-grad hero-grad-top" aria-hidden="true"></div>
     <div class="hero-grad hero-grad-bottom" aria-hidden="true"></div>
-    <div class="wrap hero-inner">
+
+    <div class="wrap hero-inner" style="text-align: center;">
       <div class="hero-top">
-        <div class="hero-tag">
+        <div class="hero-tag" style="justify-content: center;">
           <span class="dot"></span>
-          Local · Private · Ethical positioning · Oct–Nov
+          Local · Private · Ethical · Respectful
         </div>
-        <h1 class="hero-title">Blue Whales of Timor Leste</h1>
-        <div class="hero-sub">Private Fishing Boat Expeditions</div>
-      </div>
-      <div class="hero-bottom">
-        <p class="hero-line">
+
+        <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1.5rem;">
+          Marine Expeditions
+        </h1>
+        <div class="hero-sub" style="font-size: clamp(1.2rem, 2.5vw, 2rem); margin-bottom: 2rem;">
+          Choose Your Adventure
+        </div>
+        
+        <p class="hero-line" style="max-width: 700px; margin: 0 auto 3rem auto; font-size: 1.1rem;">
           Small by design. We confirm only after an honest fit-check — so expectations match the ocean.
         </p>
-        <div class="hero-cta">
-          <a class="btn btn-secondary" href="#availability" data-scroll>See dates</a>
-          <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
-          <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
-        </div>
-        <p class="hero-note">Minimal hype. Maximum respect.</p>
       </div>
     </div>
   </section>
+
   <main id="main">
-    <!-- AVAILABILITY (near top) -->
-    <section class="section section-soft" id="availability">
+    <!-- TOURS SECTION -->
+    <section class="section" id="tours" style="padding: 5rem 0;">
       <div class="wrap">
-        <div class="section-head">
-          <h2 class="section-title">Availability</h2>
-          <p class="section-lead">
-            Select your dates (max 5 days) + group size. "Private" means we do not mix groups — your booking stays your group.
+        <div class="section-head" style="text-align: center; margin-bottom: 3rem;">
+          <h2 class="section-title" style="font-size: clamp(2rem, 3vw, 3rem);">Our Expeditions</h2>
+          <p class="section-lead" style="margin: 0 auto;">
+            Two unique destinations. One commitment: authentic, respectful encounters with marine life.
           </p>
-        </div>
-        <div class="calendar-card reveal" id="mainCalendarCard">
-          <div class="cal-top">
-            <button class="cal-nav" id="mainPrevMonth" type="button" aria-label="Previous month">‹</button>
-            <div class="cal-title" id="mainMonthName">October 2026</div>
-            <button class="cal-nav" id="mainNextMonth" type="button" aria-label="Next month">›</button>
-          </div>
-          <div class="cal-weekdays" aria-hidden="true">
-            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-          </div>
-          <div class="calendar" id="mainCalendar"></div>
-          <div class="cal-controls">
-            <label for="mainPersons">Guests</label>
-            <select id="mainPersons">
-              <option value="1">1 guest</option>
-              <option value="2">2 guests</option>
-              <option value="3">3 guests</option>
-              <option value="4">4 guests</option>
-              <option value="5">5 guests</option>
-            </select>
-          </div>
-          <div class="cal-meta">
-            <div id="mainSelectedDays" class="meta-line"></div>
-            <div id="mainPrice" class="meta-line strong">Price: €0</div>
-            <div id="mainTotalPrice" class="meta-line"></div>
-            <div id="availabilityNote" class="meta-line micro subtle"></div>
-          </div>
-          <div class="cal-cta two-cta">
-            <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
-            <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
-            <p class="micro subtle">
-              <strong>Private:</strong> If you request for 3 people, you go as 3 — we don't combine groups.
-            </p>
-            <p class="micro subtle" style="margin-top: 0.75rem; padding: 1rem; background: var(--surface); border-radius: 0.5rem;">
-              <strong>💡 Pricing note:</strong> The total price is fixed per day regardless of group size. Shown per-person amounts are for reference only and do not represent a volume discount.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ETHOS -->
-    <section class="section" id="ethos">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="section-title">Ethos</h2>
-          <p class="section-lead">
-            This is not a mass-tour product. It's a real morning offshore with a local boat — built for guests who value calm, ethics, and honesty.
-          </p>
-        </div>
-        <div class="grid three">
-          <article class="card reveal">
-            <h3>🛶 Local by design</h3>
-            <p>Local fishing boat + local crew. Simple setup, serious seamanship.</p>
-          </article>
-          <article class="card reveal">
-            <h3>♻️ Guidelines first</h3>
-            <p>No chasing, no touching, no crossing paths. We position ahead and wait.</p>
-          </article>
-          <article class="card reveal">
-            <h3>🤝 Fit-check before confirmation</h3>
-            <p>We confirm only if expectations and safety match. That protects you, the whales, and the crew.</p>
-          </article>
-        </div>
-        <!-- FULL BLEED EXPERIENCE DIVIDER (BIG) -->
-        <div class="dual-image-row reveal">
-          <figure class="dual-image-item">
-            <img src="./assets/ausschau.jpg" alt="Drone view: expedition scale and coastline" loading="lazy" data-lightbox />
-            <figcaption>
-              Private expeditions, local scale — built around the ocean morning, not a timetable.
-            </figcaption>
-          </figure>
-          <figure class="dual-image-item">
-            <img src="./assets/timor.jpg" alt="Timor-Leste coastline beauty" loading="lazy" data-lightbox />
-            <figcaption>
-              Timor-Leste — where early mornings meet warm light and vast ocean horizons.
-            </figcaption>
-          </figure>
-        </div>
-        <div class="cta-row reveal">
-          <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
-          <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
-        </div>
-      </div>
-    </section>
-    <!-- INCLUDED / NOT INCLUDED (back with emojis) -->
-    <section class="section section-soft" id="included">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="section-title">What's included</h2>
-          <p class="section-lead">
-            Clear checklists reduce uncertainty — and keep expectations honest.
-          </p>
-        </div>
-        <div class="grid two">
-          <article class="card reveal">
-            <h3>✅ Included</h3>
-            <ul class="checklist">
-              <li> Private fishing boat for your group only</li>
-              <li> Guide + local crew</li>
-              <li> Safety briefing & positioning guidelines</li>
-              <li> Water (snacks optional depending on trip)</li>
-              <li> Trip memories (when conditions allow)</li>
-            </ul>
-          </article>
-          <article class="card reveal">
-            <h3>❌ Not included</h3>
-            <ul class="checklist">
-              <li> Transport to the harbor</li>
-              <li> Accommodation</li>
-              <li> Meals (unless agreed)</li>
-              <li> Tips</li>
-              <li> Insurance (recommended)</li>
-            </ul>
-          </article>
-        </div>
-        <div class="micro subtle reveal">
-          <strong>Short cancellation summary:</strong> up to and including 60 days before start → 50% fee. Less than 60 days or no-show → 100% fee.
-        </div>
-      </div>
-    </section>
-    <!-- HOW IT WORKS -->
-    <section class="section" id="how">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="section-title">How it works</h2>
-          <p class="section-lead">
-            Read direction, position ahead, wait, enter calmly — never chase.
-          </p>
-        </div>
-        <div class="how-grid">
-          <div class="timeline">
-            <div class="step reveal">
-              <div class="step-ic">🧾</div>
-              <div><h3>Briefing</h3><p>Conditions, rules, calm behavior, and safety.</p></div>
-            </div>
-            <div class="step reveal">
-              <div class="step-ic">🔭</div>
-              <div><h3>Search</h3><p>We scan for blows, birds, and sea patterns.</p></div>
-            </div>
-            <div class="step reveal">
-              <div class="step-ic">🛶</div>
-              <div><h3>Position ahead</h3><p>Estimate direction and speed, then wait in front — not behind.</p></div>
-            </div>
-            <div class="step reveal">
-              <div class="step-ic">🤿</div>
-              <div><h3>Quiet entry</h3><p>Swimmers enter calmly and wait.</p></div>
-            </div>
-            <div class="step reveal">
-              <div class="step-ic">🐋</div>
-              <div><h3>Observe</h3><p>Parallel only. No touching. No crossing paths.</p></div>
-            </div>
-            <div class="step reveal">
-              <div class="step-ic">☀️</div>
-              <div><h3>Return</h3><p>Back by mid-afternoon (conditions permitting).</p></div>
-            </div>
-          </div>
-          <!-- Positioning visual swapped to Walroute.jpg -->
-          <aside class="media-card reveal" aria-label="Positioning visual">
-            <h3 class="media-title">Positioning & route</h3>
-            <div class="media-img">
-              <img src="./assets/walroute.jpg" alt="Whale route and positioning concept" loading="lazy" data-lightbox />
-            </div>
-            <p class="micro subtle" style="margin: .75rem 0 0;">
-              The core idea: we position ahead and wait — no chasing.
-            </p>
-          </aside>
-        </div>
-      </div>
-    </section>
-    <!-- MEET THE CREW (tree) -->
-    <section class="section section-soft" id="crew">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="section-title">Meet the crew</h2>
-          <p class="section-lead">
-            A small team, consistent decisions. Built for guests who want real local expeditions.
-          </p>
-        </div>
-        <div class="crew-tree reveal" aria-label="Crew structure">
-          <div class="crew-row founders">
-            <div class="crew-card">
-              <div class="crew-role">Co-founder</div>
-              <div class="crew-name">Gerret</div>
-              <div class="crew-meta">Expedition lead</div>
-            </div>
-            <div class="crew-connector" aria-hidden="true"></div>
-            <div class="crew-card">
-              <div class="crew-role">Co-founder</div>
-              <div class="crew-name">Bennet</div>
-              <div class="crew-meta">Expedition lead</div>
-            </div>
-          </div>
-          <div class="crew-down" aria-hidden="true"></div>
-          <div class="crew-row locals">
-            <div class="crew-card">
-              <div class="crew-role">Local crew</div>
-              <div class="crew-name">Nata</div>
-              <div class="crew-meta">Ocean scanning, whale watching</div>
-            </div>
-            <div class="crew-card">
-              <div class="crew-role">Local crew</div>
-              <div class="crew-name">Orlando</div>
-              <div class="crew-meta">Captain</div>
-            </div>
-            <div class="crew-card">
-              <div class="crew-role">Local crew</div>
-              <div class="crew-name">Jessie</div>
-              <div class="crew-meta">Boat positioning</div>
-            </div>
-          </div>
-        </div>
-        <!-- Authentic crew photos -->
-        <div class="crew-photos reveal">
-          <figure class="crew-photo-item">
-            <img src="./assets/localwal.jpg" alt="Local whale encounter with crew" loading="lazy" data-lightbox />
-            <figcaption>Authentic moments at sea — respectful, calm, and focused.</figcaption>
-          </figure>
-          <figure class="crew-photo-item">
-            <img src="./assets/bootoben.jpg" alt="View from the boat deck" loading="lazy" data-lightbox />
-            <figcaption>Early morning on deck — preparing for the day ahead.</figcaption>
-          </figure>
-          <figure class="crew-photo-item">
-            <img src="./assets/wircrew.jpg" alt="Team photo with crew" loading="lazy" data-lightbox />
-            <figcaption>The team: Gerret, Bennet, Nata, Orlando, and Jessie.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-    <!-- SURPRISES (dolphins + more) -->
-    <section class="section" id="surprises">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="section-title">Surprises on the water</h2>
-          <p class="section-lead">
-            Timor-Leste sits in the Coral Triangle — a global hotspot of marine biodiversity. Encounters vary, but "just whales" is rarely the full story.
-          </p>
-        </div>
-        <div class="grid two surprises-grid">
-          <figure class="surprise-figure reveal">
-            <img src="./assets/delfine.jpg" alt="Dolphins" loading="lazy" data-lightbox />
-            <figcaption>
-              Dolphins are frequent companions. If conditions are safe and calm, swimming can be possible.
-            </figcaption>
-          </figure>
-          <article class="card reveal">
-            <h3>What else can appear?</h3>
-            <ul class="checklist">
-              <li> Whale sharks</li>
-              <li> Sea turtles</li>
-              <li> Manta rays</li>
-              <li> Sperm whales</li>
-              <li> "Unexpected moments" (birds, bait balls, currents, light)</li>
-            </ul>
-            <p class="micro subtle" style="margin: .75rem 0 0;">
-              Some surveys around Timor-Leste (e.g., Atauro area) have even been described as among the most biodiverse reef waters recorded — which matches what you feel out there.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-    <!-- ON THE WATER (simplified) -->
-    <section class="section section-soft" id="gallery">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="section-title">Blue Whales in Timor-Leste</h2>
-          <p class="section-lead">
-            Two moments that capture what we're here for — blue whales in their natural habitat.
-          </p>
-        </div>
-        <div class="whale-photo-grid reveal">
-          <figure class="whale-photo-item">
-            <img src="./assets/schwimmen.jpg" alt="Swimming with blue whale" loading="lazy" data-lightbox />
-            <figcaption>Quiet encounters — swimming alongside the largest animal on Earth.</figcaption>
-          </figure>
-          <figure class="whale-photo-item">
-            <img src="./assets/pusten.jpg" alt="Blue whale blow at surface" loading="lazy" data-lightbox />
-            <figcaption>The distinctive blow — a blue whale surfaces to breathe.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-    <!-- BLUE WHALE FACTS & CALL TO ACTION -->
-    <section class="section" id="bluewhale-info">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="section-title">Why Timor-Leste?</h2>
-          <p class="section-lead">
-            Between September and November, Timor-Leste becomes one of the best places on Earth to encounter pygmy blue whales.
-          </p>
-        </div>
-        <div class="grid two">
-          <article class="card reveal">
-            <h3>🐋 About Blue Whales</h3>
-            <ul class="checklist">
-              <li>Pygmy blue whales grow up to 25 meters long</li>
-              <li>Blue whales are the largest animals that have ever lived on Earth</li>
-              <li>They weigh between 40 to 70 tonnes</li>
-              <li>They migrate to Australian waters for feeding</li>
-            </ul>
-          </article>
-          <article class="card reveal">
-            <h3>📍 Timor-Leste in season</h3>
-            <ul class="checklist">
-              <li>Approximately 600 whales are counted annually between September and November</li>
-              <li>We follow Timor-Leste's official watch and swim regulations</li>
-              <li>Respectful distance and calm behavior are non-negotiable</li>
-              <li>This is one of the most reliable blue whale encounters in the world</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-    <!-- MAP (Timorleste huge, no frames) - IMPROVED WITH DROHNE.JPG BACKGROUND -->
-    <section class="section section-soft" id="maps" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/drohne.jpg'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; padding: 6rem 0;">
-      <div class="wrap" style="text-align: center;">
-        <div class="section-head" style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
-          <h2 class="section-title" style="color: white; font-size: 3rem; margin-bottom: 1.5rem;">Come visit us in paradise</h2>
-          <p class="section-lead" style="color: white; font-size: 1.5rem; max-width: 800px; margin: 0 auto 3rem auto;">
-            Join us for an expedition to swim with blue whales in their natural habitat. Respectful, ethical, unforgettable.
-          </p>
-          
-          <div class="cta-row" style="justify-content: center; gap: 1.5rem; margin-bottom: 4rem;">
-            <button class="btn btn-secondary" data-open-request data-mode="contact" type="button" style="font-size: 1.1rem; padding: 1rem 2rem;">Contact us</button>
-            <button class="btn btn-primary" data-open-request data-mode="booking" type="button" style="font-size: 1.1rem; padding: 1rem 2rem;">Request expedition</button>
-          </div>
         </div>
 
-        <article class="map-hero reveal" style="background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 1rem; max-width: 900px; margin: 0 auto;">
-          <h3 class="map-hero-title" style="margin-bottom: 1.5rem;">🌏 Timor-Leste</h3>
-          <div class="map-hero-media">
-            <img src="./assets/timorleste.jpg" alt="Timor-Leste map" loading="lazy" data-lightbox style="border-radius: 0.5rem;" />
-          </div>
-        </article>
+        <div class="grid two" style="gap: 3rem; margin-top: 4rem;">
+          
+          <!-- TIMOR-LESTE TOUR -->
+          <article class="card reveal" style="overflow: hidden; padding: 0; min-height: 600px; display: flex; flex-direction: column;">
+            <div style="position: relative; height: 350px; overflow: hidden;">
+              <img src="./assets/schwimmen.jpg" alt="Blue whale in Timor-Leste" loading="lazy" 
+                   style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
+                   onmouseover="this.style.transform='scale(1.05)'" 
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,119,182,0.95); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;">
+                Oct–Nov 2026
+              </div>
+            </div>
+            
+            <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+              <div style="flex: 1;">
+                <h3 style="font-size: 2rem; margin: 0 0 1rem 0; color: var(--text);">
+                  🐋 Blue Whales of Timor-Leste
+                </h3>
+                <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                  Swim with the largest animals on Earth. Private fishing boat expeditions with local crew in one of the world's most reliable blue whale encounters.
+                </p>
+                
+                <ul class="checklist" style="margin-bottom: 2rem;">
+                  <li>🛶 Private fishing boat expeditions</li>
+                  <li>🐋 Pygmy blue whales (up to 25m long)</li>
+                  <li>🌊 ~600 whales counted annually</li>
+                  <li>♻️ Ethical positioning guidelines</li>
+                  <li>🤝 Local crew & authentic experience</li>
+                </ul>
+              </div>
+              
+              <div style="display: flex; gap: 1rem; margin-top: auto;">
+                <a href="/timor-leste.html" class="btn btn-secondary" style="flex: 1; text-align: center; text-decoration: none;">
+                  Learn More
+                </a>
+                <a href="/timor-leste.html#availability" class="btn btn-primary" style="flex: 1; text-align: center; text-decoration: none;">
+                  See Dates
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PAPUA TOUR -->
+          <article class="card reveal" style="overflow: hidden; padding: 0; min-height: 600px; display: flex; flex-direction: column; position: relative;">
+            <div style="position: relative; height: 350px; overflow: hidden;">
+              <img src="./assets/timor.jpg" alt="Papua marine life" loading="lazy" 
+                   style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
+                   onmouseover="this.style.transform='scale(1.05)'" 
+                   onmouseout="this.style.transform='scale(1)'"/>
+              <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,180,216,0.95); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;">
+                Coming Soon
+              </div>
+            </div>
+            
+            <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+              <div style="flex: 1;">
+                <h3 style="font-size: 2rem; margin: 0 0 1rem 0; color: var(--text);">
+                  🌴 Papua Marine Expeditions
+                </h3>
+                <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                  Explore one of the world's most biodiverse marine ecosystems. Private expeditions in Papua's pristine waters with expert local guides.
+                </p>
+                
+                <ul class="checklist" style="margin-bottom: 2rem;">
+                  <li>🐠 World-class marine biodiversity</li>
+                  <li>🤿 Pristine coral reefs</li>
+                  <li>🦈 Unique underwater encounters</li>
+                  <li>🛶 Small group expeditions</li>
+                  <li>🌏 Remote & authentic locations</li>
+                </ul>
+              </div>
+              
+              <div style="display: flex; gap: 1rem; margin-top: auto;">
+                <a href="/papua.html" class="btn btn-secondary" style="flex: 1; text-align: center; text-decoration: none;">
+                  Learn More
+                </a>
+                <button class="btn btn-primary" data-open-request data-mode="contact" type="button" style="flex: 1;">
+                  Get Notified
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="section section-soft" id="why-us">
+      <div class="wrap">
+        <div class="section-head" style="text-align: center; margin-bottom: 3rem;">
+          <h2 class="section-title">Why Twin Expeditions?</h2>
+          <p class="section-lead" style="margin: 0 auto;">
+            We're not a mass-tour operator. We're local guides who prioritize ethics, safety, and authentic experiences.
+          </p>
+        </div>
+
+        <div class="grid three">
+          <article class="card reveal">
+            <h3>🛶 Local by Design</h3>
+            <p>Local boats, local crew, local knowledge. We work directly with communities to create authentic, sustainable expeditions.</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>♻️ Ethics First</h3>
+            <p>No chasing, no touching, respectful distance. We follow strict positioning guidelines that put marine life first.</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>🤝 Honest Fit-Check</h3>
+            <p>We only confirm bookings when expectations match reality. This protects you, the wildlife, and our crew.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section" id="cta" style="padding: 5rem 0;">
+      <div class="wrap">
+        <div class="cta-card reveal" style="text-align: center; padding: 3rem 2rem;">
+          <h3 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready for Your Adventure?</h3>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--muted);">
+            Choose your expedition and start planning an unforgettable experience.
+          </p>
+          <div class="cta-row" style="justify-content: center; gap: 1.5rem;">
+            <a href="/timor-leste.html#availability" class="btn btn-primary" style="text-decoration: none; font-size: 1.1rem; padding: 1rem 2rem;">
+              View Timor-Leste Dates
+            </a>
+            <button class="btn btn-secondary" data-open-request data-mode="contact" type="button" style="font-size: 1.1rem; padding: 1rem 2rem;">
+              Ask a Question
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
   <!-- Footer will be loaded here -->
   <div id="footer-placeholder"></div>
+
   <button class="to-top" id="toTop" type="button" aria-label="Back to top">🐋</button>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
   <!-- REQUEST MODAL -->
   <section class="booking-view" id="bookingView" aria-hidden="true">
     <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Request form">
@@ -426,57 +232,43 @@
         </div>
         <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">✕</button>
       </div>
+
       <div class="booking-body">
         <div class="mode-tabs" role="tablist" aria-label="Request mode">
           <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Ask a question</button>
           <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Request expedition</button>
         </div>
+
         <div class="booking-grid">
           <div class="booking-left">
-            <div class="card reveal" id="bookingCalendarCard">
-              <h3>Dates</h3>
-              <div class="cal-top">
-                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Previous month">‹</button>
-                <div class="cal-title" id="bookingMonthName">October 2026</div>
-                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Next month">›</button>
-              </div>
-              <div class="cal-weekdays" aria-hidden="true">
-                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-              </div>
-              <div class="calendar" id="bookingCalendar"></div>
-              <div class="cal-controls">
-                <label for="bookingPersons">Guests</label>
-                <select id="bookingPersons">
-                  <option value="1">1 guest</option>
-                  <option value="2">2 guests</option>
-                  <option value="3">3 guests</option>
-                  <option value="4">4 guests</option>
-                  <option value="5">5 guests</option>
-                </select>
-              </div>
-              <div class="cal-meta">
-                <div id="bookingSelectedDays" class="meta-line"></div>
-                <div id="bookingPrice" class="meta-line strong">Price: €0</div>
-                <div id="bookingTotalPrice" class="meta-line"></div>
-              </div>
+            <div class="card reveal">
+              <h3>Which expedition?</h3>
+              <select id="expeditionSelect" style="width: 100%; padding: 0.75rem; border: 1px solid var(--stroke2); border-radius: 0.5rem; margin-bottom: 1rem;">
+                <option value="timor-leste">Blue Whales of Timor-Leste</option>
+                <option value="papua">Papua Marine Expeditions</option>
+                <option value="general">General Inquiry</option>
+              </select>
             </div>
+
             <div class="card reveal">
               <h3>Summary</h3>
-              <p id="summaryDates">Dates: (optional)</p>
+              <p id="summaryExpedition">Expedition: Blue Whales of Timor-Leste</p>
               <p id="summaryGuests">Guests: –</p>
-              <p id="summaryPrice">Price: –</p>
-              <p class="micro subtle"><strong>Note:</strong> The total price is fixed regardless of group size. The per-person amount shown is for reference only.</p>
+              <p class="micro subtle">We'll get back to you within 24 hours.</p>
             </div>
           </div>
+
           <div class="booking-right">
             <form class="card reveal" id="requestForm" method="POST">
-              
               <input type="hidden" name="requestType" id="requestType" value="contact" />
-              <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
+              <input type="hidden" name="expedition" id="expeditionField" value="timor-leste" />
+
               <p class="honeypot" aria-hidden="true">
                 <label>Don't fill this out: <input name="bot-field" /></label>
               </p>
+
               <h3>Your details</h3>
+
               <div class="form-grid">
                 <div>
                   <label for="firstName">First name</label>
@@ -487,6 +279,7 @@
                   <input id="lastName" name="lastName" type="text" required />
                 </div>
               </div>
+
               <div class="form-grid">
                 <div>
                   <label for="email">Email</label>
@@ -497,153 +290,70 @@
                   <input id="whatsapp" name="whatsapp" type="tel" />
                 </div>
               </div>
-              <div class="form-grid">
-                <div>
-                  <label for="tourStart">Start date <span class="mini-hint" id="startHint">(optional for questions)</span></label>
-                  <input id="tourStart" name="tourStart" type="date" />
-                </div>
-                <div>
-                  <label for="tourEnd">End date <span class="mini-hint" id="endHint">(optional for questions)</span></label>
-                  <input id="tourEnd" name="tourEnd" type="date" />
-                </div>
+
+              <div>
+                <label for="tourPersons">Group size</label>
+                <select id="tourPersons" name="tourPersons" required>
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                </select>
               </div>
-              <div class="form-grid">
-                <div>
-                  <label for="tourPersons">Guests</label>
-                  <select id="tourPersons" name="tourPersons" required>
-                    <option value="1">1 guest</option>
-                    <option value="2">2 guests</option>
-                    <option value="3">3 guests</option>
-                    <option value="4">4 guests</option>
-                    <option value="5">5 guests</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="swimLevel">Swim level (optional)</label>
-                  <input id="swimLevel" name="swimLevel" type="text" placeholder="e.g., confident offshore / beginner / etc." />
-                </div>
-              </div>
+
               <div>
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required
-                  placeholder="Tell us your expectations (and any concerns). We'll reply honestly about fit + feasibility."></textarea>
+                  placeholder="Tell us about your interests and any questions you have."></textarea>
               </div>
-              <div class="passport-wrap" id="passportWrap" hidden>
-                <div class="passport-head">
-                  <h4>Passport details (optional)</h4>
-                  <p class="micro subtle">
-                    Only required for trip paperwork <strong>after</strong> we confirm availability.
-                    If you prefer, leave it blank — we'll collect it later via a secure channel.
-                  </p>
-                </div>
-                <div class="form-grid">
-                  <div>
-                    <label for="nationality">Nationality (optional)</label>
-                    <input id="nationality" name="nationality" type="text" />
-                  </div>
-                  <div>
-                    <label for="passport">Passport number (optional)</label>
-                    <input id="passport" name="passport" type="text" />
-                  </div>
-                </div>
-                <div class="form-grid">
-                  <div>
-                    <label for="issueDate">Passport issue date (optional)</label>
-                    <input id="issueDate" name="issueDate" type="date" />
-                  </div>
-                  <div>
-                    <label for="expiryDate">Passport expiry date (optional)</label>
-                    <input id="expiryDate" name="expiryDate" type="date" />
-                  </div>
-                </div>
-              </div>
-              <div id="additionalGuests"></div>
-              <div class="agb-wrap" id="agbWrap" hidden>
-                <h4>Terms &amp; Conditions</h4>
-                <div class="agb">
-                  <p class="micro subtle" style="margin-top:0;">
-                    Cancellation: up to and including 60 days before start → 50% fee. Less than 60 days or no-show → 100% fee.
-                    Tours may change/cancel for safety or force majeure.
-                  </p>
-                </div>
-                <label class="check" id="termsCheck">
-                  <input type="checkbox" id="acceptAgb" name="acceptAgb" />
-                  <span>I have read and accept the Terms &amp; Conditions.</span>
-                </label>
-              </div>
+
               <p class="micro subtle" style="margin-top:.95rem;">
                 By submitting, you agree that we contact you about your request.
                 Read our <a href="#" id="openPrivacyInline">Privacy Policy</a> and <a href="#" id="openAgbInline">Terms & Conditions</a>.
               </p>
+
               <div class="form-actions">
                 <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
-                <p class="micro subtle" id="submitHint">
-                  Questions don't require passport details. Requests are confirmed only after our reply.
-                </p>
-              </div>
-              <div class="micro subtle">
-                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
               </div>
             </form>
           </div>
         </div>
       </div>
+
       <div class="booking-foot">
-        <div class="micro subtle">Prefer email? <a href="/cdn-cgi/l/email-protection#a7d5c2d6d2c2d4d3d3d0cec9c2dfd7c2c3ced3cec8c9d4e7c0cac6cecb89c4c8ca"><span class="__cf_email__" data-cfemail="750710040010060101021c1b100d0510111c011c1a1b06351218141c195b161a18">[email&#160;protected]</span></a></div>
+        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a></div>
       </div>
     </div>
   </section>
-  
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="lightbox-inner">
-      <button class="icon-btn lightbox-close" id="closeLightbox" type="button" aria-label="Close lightbox">✕</button>
-      <img id="lightboxImg" src="" alt="" />
-      <div class="lightbox-cap" id="lightboxCap"></div>
-    </div>
-  </div>
-  
-  <!-- Scripts: loader.js MUST be loaded before script.js -->
+
+  <!-- Scripts -->
   <script src="loader.js"></script>
   <script src="script.js" data-cfasync="false"></script>
   
-  <!-- Lightbox functionality -->
+  <!-- Simple expedition selector -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightboxImg');
-      const lightboxCap = document.getElementById('lightboxCap');
-      const closeLightbox = document.getElementById('closeLightbox');
+      const expeditionSelect = document.getElementById('expeditionSelect');
+      const expeditionField = document.getElementById('expeditionField');
+      const summaryExpedition = document.getElementById('summaryExpedition');
+      const tourPersons = document.getElementById('tourPersons');
+      const summaryGuests = document.getElementById('summaryGuests');
       
-      // Open lightbox when clicking images with data-lightbox
-      document.querySelectorAll('[data-lightbox]').forEach(img => {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', function() {
-          lightboxImg.src = this.src;
-          lightboxImg.alt = this.alt;
-          lightboxCap.textContent = this.alt;
-          lightbox.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden';
+      if (expeditionSelect) {
+        expeditionSelect.addEventListener('change', function() {
+          const value = this.value;
+          const text = this.options[this.selectedIndex].text;
+          expeditionField.value = value;
+          summaryExpedition.textContent = 'Expedition: ' + text;
         });
-      });
-      
-      // Close lightbox
-      function closeLightboxFn() {
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
       }
       
-      closeLightbox.addEventListener('click', closeLightboxFn);
-      lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox) closeLightboxFn();
-      });
-      
-      // Close on ESC key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') {
-          closeLightboxFn();
-        }
-      });
+      if (tourPersons) {
+        tourPersons.addEventListener('change', function() {
+          summaryGuests.textContent = 'Guests: ' + this.options[this.selectedIndex].text;
+        });
+      }
     });
   </script>
 </body>
