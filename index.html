@@ -80,6 +80,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         padding-top: 6vh;
+        padding-left: 5%;  /* Shifted more to the right */
       }
 
       /* remove the “black frame/box” completely */
@@ -124,6 +125,7 @@
           justify-content: center;
           align-items: center;
           padding-top: 0;
+          padding-left: 0;  /* Reset padding on mobile */
         }
         .hero-left-box{
           text-align: center;
@@ -332,6 +334,30 @@
 
   </main>
 
+  <!-- CONTACT SECTION WITH BACKGROUND IMAGE -->
+  <section class="section section-soft" id="contact-paradise" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/bennet.jpg'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; padding: 6rem 0;">
+    <div class="wrap" style="text-align: center;">
+      <div class="section-head" style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+        <h2 class="section-title" style="color: white; font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 1.5rem;">Come visit us in paradise</h2>
+        <p class="section-lead" style="color: white; font-size: clamp(1rem, 3vw, 1.5rem); max-width: 800px; margin: 0 auto 3rem auto; padding: 0 1rem;">
+          Join us for an expedition to swim with blue whales in their natural habitat. Respectful, ethical, unforgettable.
+        </p>
+        
+        <div class="cta-row" style="justify-content: center; gap: 1rem; margin-bottom: 4rem; flex-wrap: wrap; padding: 0 1rem;">
+          <button class="btn btn-secondary" data-open-request data-mode="contact" type="button" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem); padding: 0.8rem 1.5rem;">Contact us</button>
+          <button class="btn btn-primary" data-open-request data-mode="booking" type="button" style="font-size: clamp(0.9rem, 2.5vw, 1.1rem); padding: 0.8rem 1.5rem;">Request expedition</button>
+        </div>
+      </div>
+
+      <article class="map-hero reveal" style="background: rgba(255, 255, 255, 0.95); padding: clamp(1rem, 4vw, 2rem); border-radius: 1rem; max-width: 900px; margin: 0 auto;">
+        <h3 class="map-hero-title" style="margin-bottom: 1.5rem; font-size: clamp(1.2rem, 3vw, 1.5rem);">🌏 Timor-Leste</h3>
+        <div class="map-hero-media">
+          <img src="./assets/timorleste.jpg" alt="Timor-Leste map" loading="lazy" style="border-radius: 0.5rem; max-width: 100%; height: auto;" />
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- Footer will be loaded here -->
   <div id="footer-placeholder"></div>
 
@@ -441,14 +467,74 @@
       </div>
 
       <div class="booking-foot">
-        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a></div>
+        <div class="micro subtle">Prefer email? <a href="/cdn-cgi/l/email-protection#fd8f988c88988e89898a949398858d989994899492938ebd9a909c9491d39e9290"><span class="__cf_email__" data-cfemail="c6b4a3b7b3a3b5b2b2b1afa8a3beb6a3a2afb2afa9a8b586a1aba7afaae8a5a9ab">[email&#160;protected]</span></a></div>
       </div>
     </div>
   </section>
 
   <!-- Scripts -->
-  <script src="loader.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="loader.js"></script>
   <script src="script.js" data-cfasync="false"></script>
+
+  <!-- Mobile Optimization Styles -->
+  <style>
+    @media (max-width: 768px) {
+      /* General mobile optimizations */
+      .section {
+        padding: 2.5rem 0 !important;
+      }
+      
+      /* Tour cards mobile */
+      .grid.two {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      
+      /* Contact section mobile */
+      #contact-paradise {
+        padding: 3rem 0 !important;
+        background-attachment: scroll !important;
+      }
+      
+      /* CTA buttons mobile */
+      .cta-row {
+        flex-direction: column !important;
+        gap: 0.8rem !important;
+      }
+      
+      .cta-row .btn {
+        width: 100% !important;
+        max-width: 300px !important;
+      }
+      
+      /* Cards mobile padding */
+      .card {
+        padding: 1.5rem !important;
+      }
+      
+      /* Why Us section mobile */
+      #why-us .wrap > div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Extra small screens */
+      .section-title {
+        font-size: 1.5rem !important;
+      }
+      
+      .section-lead {
+        font-size: 0.95rem !important;
+      }
+      
+      .btn {
+        font-size: 0.9rem !important;
+        padding: 0.7rem 1.2rem !important;
+      }
+    }
+  </style>
 
   <!-- Simple expedition selector -->
   <script>
