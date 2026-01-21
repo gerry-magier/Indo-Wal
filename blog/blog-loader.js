@@ -17,13 +17,13 @@ class BlogLoader {
   getBlogPosts() {
     return [
       'blog1.html',
-      'blog2.html',
-      'blog3.html',
-      'blog4.html',
-      'blog5.html',
-      'blog6.html',
-      'blog7.html',
-      'blog8.html',
+      'timor-leste-arrival.html',
+      'jayapura-papua-arrival.html',
+      'dekai-korowai-papua.html',
+      'agats-asmat-papua.html',
+      'nabire-kaimana-whale-sharks.html',
+      'raja-ampat-travel-stories.html',
+      'malaria-dengue-papua.html',
       // Add more as you create them:
       // 'my-amazing-whale-encounter.html',
       // 'diving-tips-timor-leste.html',
