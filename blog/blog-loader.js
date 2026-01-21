@@ -16,7 +16,6 @@ class BlogLoader {
   // ============================================
   getBlogPosts() {
     return [
-      'blog1.html',
       'timor-leste-arrival.html',
       'jayapura-papua-arrival.html',
       'dekai-korowai-papua.html',
