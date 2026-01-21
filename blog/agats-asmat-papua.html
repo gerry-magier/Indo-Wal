@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Agats and the Asmat: Finally Visiting a Local Tribe · Blue Whales of Timor Leste</title>
+  <title>Agats and the Asmat: Finally Visiting a Local Tribe · Twin Expeditions</title>
   <meta name="description" content="After Dekai didn’t work out, we traveled to Agats to meet the Asmat: homestays, mangrove boat journeys, world-famous woodcarving, and a long night on the river searching for crocodiles." />
 
   <link rel="stylesheet" href="/style.css" />
@@ -106,7 +106,7 @@
     "excerpt": "After our Korowai plan fell apart, we followed an unexpected recommendation to Agats — a journey into mangroves, Asmat villages, sacred woodcarving, and a long night on the river.",
     "image": "/blog/assets/asmat.jpg",
     "date": "2025-08-18",
-    "author": "Blue Whales of Timor Leste"
+    "author": "Twin Expeditions"
   }
   </script>
   <!-- ============================================ -->
@@ -283,11 +283,11 @@
 
           <footer class="blog-footer">
             <div class="blog-cta">
-              <h3>Ready for your own blue whale encounter?</h3>
-              <p>Join us on an ethical, private expedition in Timor Leste</p>
+              <h3>Ready for your own Papua experience?</h3>
+              <p>Join us on an ethical, private expedition in Papua</p>
               <div class="blog-cta-buttons">
                 <a href="/index.html#availability" class="btn btn-secondary">See availability</a>
-                <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+                <button class="btn btn-primary" data-open-request data-mode="contact" data-tour="Asmat Expedition" type="button">Request Papua expedition</button>
               </div>
             </div>
           </footer>
@@ -353,6 +353,18 @@
                 <div id="bookingTotalPrice" class="meta-line"></div>
               </div>
             </div>
+            
+            <div class="card reveal" id="papuaOptionCard">
+              <h3>Papua expedition</h3>
+              <label for="papuaTourSelect">Choose your expedition</label>
+              <select id="papuaTourSelect" style="width:100%; padding: 0.75rem; border: 1px solid var(--stroke2); border-radius: 0.5rem;">
+                <option value="Asmat Expedition">Asmat Expedition</option>
+                <option value="Asmat + Korowai Expedition">Asmat + Korowai Expedition</option>
+              </select>
+              <p class="micro subtle" style="margin-top:.75rem;">
+                Travel to <strong>Agats (Ewer)</strong> independently. From Agats onward, we organise all logistics.
+              </p>
+            </div>
 
             <div class="card reveal">
               <h3>Summary</h3>
@@ -366,6 +378,9 @@
           <div class="booking-right">
             <form class="card reveal" id="requestForm" method="POST">
               <input type="hidden" name="requestType" id="requestType" value="contact" />
+              <!-- PAPUA CONTEXT -->
+              <input type="hidden" name="expedition" value="Papua" />
+              <input type="hidden" name="papuaTour" id="papuaTourField" value="Asmat Expedition" />
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
               <p class="honeypot" aria-hidden="true">
@@ -505,6 +520,35 @@
     </div>
   </section>
 
-  <script src="/script.js" data-cfasync="false"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const select = document.getElementById('papuaTourSelect');
+    const hidden = document.getElementById('papuaTourField');
+
+    if (!select || !hidden) return;
+
+    // init
+    hidden.value = select.value;
+
+    // keep hidden field in sync with dropdown
+    select.addEventListener('change', function () {
+      hidden.value = this.value;
+    });
+
+    // allow buttons to preselect via data-tour
+    document.querySelectorAll('[data-tour]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tour = btn.getAttribute('data-tour');
+        const match = Array.from(select.options).find(o => o.value === tour);
+        if (match) {
+          select.value = tour;
+          hidden.value = tour;
+        }
+      });
+    });
+  });
+  </script>
+
+<script src="/script.js" data-cfasync="false"></script>
 </body>
 </html>
