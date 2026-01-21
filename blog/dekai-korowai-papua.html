@@ -78,14 +78,14 @@
     .blog-content h3 { margin: 2rem 0 0.8rem; font-size: 1.4rem; letter-spacing: -0.02em; font-weight: 800; }
     .blog-content p { margin: 0 0 1.2rem; font-weight: 600; }
     .blog-content img { width: 100%; height: auto; border-radius: var(--rMd); margin: 2rem 0; box-shadow: var(--shadowSoft); }
-    .blog-content blockquote { margin: 2rem 0; padding: 1.5rem 1.8rem; background: rgba(0,180,216,.06); border-left: 4px solid var(--brand); border-radius: var(--rMd); font-style: italic; color: var(--muted); }
+    .blog-content blockquote { margin: 2rem 0; padding: 1.5rem 1.8rem; background: rgba(0,180,216,06); border-left: 4px solid var(--brand); border-radius: var(--rMd); font-style: italic; color: var(--muted); }
     .blog-content blockquote p { margin: 0; }
     .blog-content ul, .blog-content ol { margin: 1.2rem 0; padding-left: 1.8rem; }
     .blog-content li { margin: 0.5rem 0; font-weight: 600; }
     .blog-content a { color: var(--brand); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; transition: color 0.2s ease; }
     .blog-content a:hover { color: #056aa2; }
     .blog-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--stroke); }
-    .blog-cta { background: linear-gradient(135deg, rgba(0,180,216,.08), rgba(0,119,182,.06)); border: 1px solid var(--stroke); border-radius: var(--rLg); padding: 2rem; text-align: center; }
+    .blog-cta { background: linear-gradient(135deg, rgba(0,180,216,08), rgba(0,119,182,06)); border: 1px solid var(--stroke); border-radius: var(--rLg); padding: 2rem; text-align: center; }
     .blog-cta h3 { margin: 0 0 0.8rem; font-size: 1.5rem; letter-spacing: -0.02em; }
     .blog-cta p { margin: 0 0 1.5rem; color: var(--muted); font-weight: 650; }
     .blog-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
@@ -107,7 +107,7 @@
     "excerpt": "A single daily flight, a mandatory travel permit, and a sudden shift in atmosphere: arriving in Dekai brought a reality check we didn’t expect — and a reminder of the human kindness we still found.",
     "image": "/blog/assets/dekai.jpg",
     "date": "2025-08-16",
-    "author": "Blue Whales of Timor Leste"
+    "author": "Twin Expeditions"
   }
   </script>
   <!-- ============================================ -->
@@ -180,44 +180,21 @@
             <h2>Transport and the first warning signs</h2>
             <p>
               Within the first minutes, we noticed: everything works differently here.
-              For a five-minute ride on a motorbike taxi, we paid 100,000 Rupiah per person.
-              Neither our fluent Indonesian nor any negotiation changed the price. It was fixed.
+              Prices are higher, and foreigners are rare.
             </p>
 
             <p>
-              That was the first clear sign that Dekai can’t be compared to other places in Indonesia.
-            </p>
-
-            <h2>Military instead of police — and the end of our plan</h2>
-            <p>
-              At the station, we were greeted by a visibly irritated man. It quickly became clear: this wasn’t a normal police interaction.
-              This was the military.
+              We were quoted amounts that felt unrealistic. It wasn’t even about negotiation — it was about the general situation.
+              We also noticed that people watched us in a way we hadn’t experienced elsewhere in Indonesia.
             </p>
 
             <p>
-              We were told very directly that our plan to visit the Korowai was not feasible. In the previous weeks, there had been several “rebel attacks,”
-              and one incident had reportedly ended with a rebel being killed.
+              Still, we found helpful locals. One of them was a teacher named George.
             </p>
 
+            <h2>A night hosted by a local teacher</h2>
             <p>
-              We panicked. The officer continued: our Surat Jalan should never have been issued in the first place.
-              The permit is meant to be issued only after the station contacts local authorities and checks the current security situation.
-              Apparently, that hadn’t happened in Jayapura.
-            </p>
-
-            <p>
-              Nobody explicitly ordered us — but the message was clear: we should fly back to Jayapura the next day.
-              The problem was that the next day was <strong>17 August</strong>, Indonesia’s Independence Day, and there were no flights at all.
-            </p>
-
-            <h2>One night at George’s place</h2>
-            <p>
-              The next question was simple and existential: where would we sleep?
-              Dekai felt saturated with the military — if I had to guess, over 200 armed soldiers.
-            </p>
-
-            <p>
-              Luckily, we met George, the local English teacher. He had studied in New Zealand on a scholarship.
+              George was a local teacher who had studied in New Zealand on a scholarship.
               His English wasn’t perfect anymore — but his openness and generosity were.
               He invited us to sleep at his home. We had a tent and sleeping mats with us; in the end, we only needed the mats.
             </p>
@@ -289,11 +266,11 @@
 
           <footer class="blog-footer">
             <div class="blog-cta">
-              <h3>Ready for your own blue whale encounter?</h3>
-              <p>Join us on an ethical, private expedition in Timor Leste</p>
+              <h3>Ready for your own Korowai expedition?</h3>
+              <p>Request our Korowai tour in Papua — we’ll reply with details and feasibility.</p>
               <div class="blog-cta-buttons">
                 <a href="/index.html#availability" class="btn btn-secondary">See availability</a>
-                <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+                <button class="btn btn-primary" data-open-request data-mode="contact" data-tour="Korowai Expedition" type="button">Request Korowai expedition</button>
               </div>
             </div>
           </footer>
@@ -372,6 +349,11 @@
           <div class="booking-right">
             <form class="card reveal" id="requestForm" method="POST">
               <input type="hidden" name="requestType" id="requestType" value="contact" />
+              
+              <!-- PAPUA CONTEXT -->
+              <input type="hidden" name="expedition" value="Papua" />
+              <input type="hidden" name="papuaTour" value="Korowai Expedition" />
+
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
               <p class="honeypot" aria-hidden="true">
@@ -511,6 +493,6 @@
     </div>
   </section>
 
-  <script src="/script.js" data-cfasync="false"></script>
+<script src="/script.js" data-cfasync="false"></script>
 </body>
 </html>
