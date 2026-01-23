@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Nabire & Kaimana: Whale Sharks, Timing, and Reality in Papua · Blue Whales of Timor Leste</title>
+  <title>Nabire & Kaimana: Whale Sharks, Timing, and Reality in Papua · Twin Expeditions</title>
   <meta name="description" content="Nabire and Kaimana compared for whale shark encounters: how to get there, what timing matters most, and why we changed plans. Plus: practical notes for Raja Ampat—fees, ferries, and arriving smoothly." />
 
   <link rel="stylesheet" href="/style.css" />
@@ -63,7 +63,7 @@
     "excerpt": "Nabire can work year-round, while Kaimana depends much more on season and sea state. Here’s what we learned the hard way—and practical notes for continuing to Raja Ampat.",
     "image": "/blog/assets/walhai.jpg",
     "date": "2025-08-25",
-    "author": "Blue Whales of Timor Leste"
+    "author": "Twin Expeditions"
   }
   </script>
   <!-- ============================================ -->
@@ -193,11 +193,12 @@
 
           <footer class="blog-footer">
             <div class="blog-cta">
-              <h3>Ready for your own blue whale encounter?</h3>
-              <p>Join us on an ethical, private expedition in Timor Leste</p>
+              <h3>Ready to swim with whale sharks in Nabire?</h3>
+              <p>Request a whale shark expedition without crowds</p>
               <div class="blog-cta-buttons">
                 <a href="/index.html#availability" class="btn btn-secondary">See availability</a>
-                <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+                <!-- ✅ Request-Kontext: data-tour gesetzt, damit immer Nabire vorgewählt ist -->
+                <button class="btn btn-primary" data-open-request data-mode="booking" data-tour="Nabire Whale Sharks" type="button">Request expedition</button>
               </div>
             </div>
           </footer>
@@ -208,6 +209,252 @@
   </main>
 
   <div id="footer-placeholder"></div>
+
+  <!-- ============================================ -->
+  <!-- REQUEST MODAL (Nabire-only) -->
+  <!-- ============================================ -->
+  <section class="booking-view" id="bookingView" aria-hidden="true">
+    <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Request form">
+      <div class="booking-head">
+        <div class="booking-title">
+          <div class="booking-kicker">Request</div>
+          <h2 id="requestTitle">Nabire Whale Shark Expedition</h2>
+          <p class="micro subtle" id="requestSubtitle">
+            Request Nabire whale shark logistics (Cenderawasih Bay). We’ll reply with availability, exact meeting plan, and what to expect.
+          </p>
+        </div>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">✕</button>
+      </div>
+
+      <div class="booking-body">
+        <div class="mode-tabs" role="tablist" aria-label="Request mode">
+          <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Ask a question</button>
+          <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Request expedition</button>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-left">
+            <div class="card reveal" id="bookingCalendarCard">
+              <h3>Dates</h3>
+
+              <div class="cal-top">
+                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Previous month">‹</button>
+                <div class="cal-title" id="bookingMonthName">October 2026</div>
+                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Next month">›</button>
+              </div>
+
+              <div class="cal-weekdays" aria-hidden="true">
+                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+              </div>
+
+              <div class="calendar" id="bookingCalendar"></div>
+
+              <div class="cal-controls">
+                <label for="bookingPersons">Guests</label>
+                <select id="bookingPersons">
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                </select>
+              </div>
+
+              <div class="cal-meta">
+                <div id="bookingSelectedDays" class="meta-line"></div>
+                <div id="bookingPrice" class="meta-line strong">Price: €0</div>
+                <div id="bookingTotalPrice" class="meta-line"></div>
+              </div>
+            </div>
+
+            <!-- ✅ Nabire-only Option Card (nur 1 Auswahl möglich) -->
+            <div class="card reveal" id="papuaOptionCard">
+              <h3>Nabire whale sharks</h3>
+              <label for="papuaTourSelect">Choose your expedition</label>
+              <select id="papuaTourSelect" style="width:100%; padding: 0.75rem; border: 1px solid var(--stroke2); border-radius: 0.5rem;">
+                <option value="Nabire Whale Sharks">Nabire Whale Sharks Expedition</option>
+              </select>
+              <p class="micro subtle" style="margin-top:.75rem;">
+                You travel to <strong>Nabire</strong> independently. From there we organise boat logistics and access to the whale shark bagans in the wider Cenderawasih Bay area.
+              </p>
+            </div>
+
+            <div class="card reveal">
+              <h3>Summary</h3>
+              <p id="summaryDates">Dates: (optional)</p>
+              <p id="summaryGuests">Guests: –</p>
+              <p id="summaryPrice">Price: –</p>
+              <p class="micro subtle"><strong>Note:</strong> We’ll confirm exact logistics and feasibility by email after your request.</p>
+            </div>
+          </div>
+
+          <div class="booking-right">
+            <form class="card reveal" id="requestForm" method="POST">
+              <input type="hidden" name="requestType" id="requestType" value="contact" />
+
+              <!-- CONTEXT -->
+              <input type="hidden" name="expedition" value="Papua" />
+              <input type="hidden" name="papuaTour" id="papuaTourField" value="Nabire Whale Sharks" />
+              <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
+
+              <p class="honeypot" aria-hidden="true">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <h3>Your details</h3>
+
+              <div class="form-grid">
+                <div>
+                  <label for="firstName">First name</label>
+                  <input id="firstName" name="firstName" type="text" required />
+                </div>
+                <div>
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" name="lastName" type="text" required />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                  <label for="whatsapp">WhatsApp (optional)</label>
+                  <input id="whatsapp" name="whatsapp" type="tel" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourStart">Start date <span class="mini-hint" id="startHint">(optional for questions)</span></label>
+                  <input id="tourStart" name="tourStart" type="date" />
+                </div>
+                <div>
+                  <label for="tourEnd">End date <span class="mini-hint" id="endHint">(optional for questions)</span></label>
+                  <input id="tourEnd" name="tourEnd" type="date" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourPersons">Guests</label>
+                  <select id="tourPersons" name="tourPersons" required>
+                    <option value="1">1 guest</option>
+                    <option value="2">2 guests</option>
+                    <option value="3">3 guests</option>
+                    <option value="4">4 guests</option>
+                    <option value="5">5 guests</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="swimLevel">Swim level (optional)</label>
+                  <input id="swimLevel" name="swimLevel" type="text" placeholder="e.g., confident swimmer / beginner / etc." />
+                </div>
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                  placeholder="Tell us your rough dates, group size, and any questions (moon phase, sea conditions, pickup plan in Nabire, etc.)."></textarea>
+              </div>
+
+              <div class="passport-wrap" id="passportWrap" hidden>
+                <div class="passport-head">
+                  <h4>Passport details (optional)</h4>
+                  <p class="micro subtle">
+                    Only required for trip paperwork <strong>after</strong> we confirm availability.
+                    If you prefer, leave it blank — we'll collect it later via a secure channel.
+                  </p>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="nationality">Nationality (optional)</label>
+                    <input id="nationality" name="nationality" type="text" />
+                  </div>
+                  <div>
+                    <label for="passportNumber">Passport number (optional)</label>
+                    <input id="passportNumber" name="passportNumber" type="text" />
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="passportIssue">Issue date (optional)</label>
+                    <input id="passportIssue" name="passportIssue" type="date" />
+                  </div>
+                  <div>
+                    <label for="passportExpiry">Expiry date (optional)</label>
+                    <input id="passportExpiry" name="passportExpiry" type="date" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="privacy-grid">
+                <label class="checkbox">
+                  <input type="checkbox" id="agree" required />
+                  <span>I agree to be contacted about my request.</span>
+                </label>
+              </div>
+
+              <p class="micro subtle" style="margin-top:.95rem;">
+                By submitting, you agree that we contact you about your request.
+                Read our <a href="#" id="openPrivacyInline">Privacy Policy</a> and <a href="#" id="openAgbInline">Terms & Conditions</a>.
+              </p>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
+                <p class="micro subtle" id="submitHint">
+                  Questions don't require passport details. Requests are confirmed only after our reply.
+                </p>
+              </div>
+
+              <div class="micro subtle">
+                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-foot">
+        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nabire-only sync (Request-Feld) -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const select = document.getElementById('papuaTourSelect');
+    const hidden = document.getElementById('papuaTourField');
+
+    if (!select || !hidden) return;
+
+    hidden.value = select.value;
+
+    select.addEventListener('change', function () {
+      hidden.value = this.value;
+    });
+
+    document.querySelectorAll('[data-tour]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tour = btn.getAttribute('data-tour');
+        const match = Array.from(select.options).find(o => o.value === tour);
+        if (match) {
+          select.value = tour;
+          hidden.value = tour;
+        } else {
+          // If something else tries to set a different tour, force Nabire only
+          select.value = 'Nabire Whale Sharks';
+          hidden.value = 'Nabire Whale Sharks';
+        }
+      });
+    });
+  });
+  </script>
+  <!-- ============================================ -->
 
   <script src="/script.js" data-cfasync="false"></script>
 </body>
