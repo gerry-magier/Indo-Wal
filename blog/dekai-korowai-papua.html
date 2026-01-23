@@ -337,6 +337,18 @@
               </div>
             </div>
 
+            <!-- ✅ NEU (nur Request-Feld): Papua expedition Auswahl-Card wie bei agats -->
+            <div class="card reveal" id="papuaOptionCard">
+              <h3>Papua expedition</h3>
+              <label for="papuaTourSelect">Choose your expedition</label>
+              <select id="papuaTourSelect" style="width:100%; padding: 0.75rem; border: 1px solid var(--stroke2); border-radius: 0.5rem;">
+                <option value="Korowai Expedition">Korowai Expedition</option>
+              </select>
+              <p class="micro subtle" style="margin-top:.75rem;">
+                Travel to <strong>Dekai</strong> independently. From there onward, we organise all logistics.
+              </p>
+            </div>
+
             <div class="card reveal">
               <h3>Summary</h3>
               <p id="summaryDates">Dates: (optional)</p>
@@ -352,7 +364,8 @@
               
               <!-- PAPUA CONTEXT -->
               <input type="hidden" name="expedition" value="Papua" />
-              <input type="hidden" name="papuaTour" value="Korowai Expedition" />
+              <!-- ✅ geändert (nur Request-Feld): id hinzugefügt wie bei agats -->
+              <input type="hidden" name="papuaTour" id="papuaTourField" value="Korowai Expedition" />
 
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
@@ -492,6 +505,36 @@
       </div>
     </div>
   </section>
+
+  <!-- ✅ NEU (nur Request-Feld): Sync Script wie bei agats -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const select = document.getElementById('papuaTourSelect');
+    const hidden = document.getElementById('papuaTourField');
+
+    if (!select || !hidden) return;
+
+    // init
+    hidden.value = select.value;
+
+    // keep hidden field in sync with dropdown
+    select.addEventListener('change', function () {
+      hidden.value = this.value;
+    });
+
+    // allow buttons to preselect via data-tour
+    document.querySelectorAll('[data-tour]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tour = btn.getAttribute('data-tour');
+        const match = Array.from(select.options).find(o => o.value === tour);
+        if (match) {
+          select.value = tour;
+          hidden.value = tour;
+        }
+      });
+    });
+  });
+  </script>
 
 <script src="/script.js" data-cfasync="false"></script>
 </body>
