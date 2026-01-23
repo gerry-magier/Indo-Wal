@@ -316,14 +316,14 @@
         <div class="cta-card reveal" style="text-align: center; padding: 3rem 2rem;">
           <h3 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready for Your Adventure?</h3>
           <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--muted);">
-            Start with Timor-Leste — or get notified for Papua.
+            Choose one or multiple expeditions — we’ll reply with a clear fit-check.
           </p>
           <div class="cta-row" style="justify-content: center; gap: 1.5rem;">
             <a href="/timor-leste.html#availability" class="btn btn-primary" style="text-decoration: none; font-size: 1.1rem; padding: 1rem 2rem;">
               View Timor-Leste Dates
             </a>
             <button class="btn btn-secondary" data-open-request data-mode="contact" type="button" style="font-size: 1.1rem; padding: 1rem 2rem;">
-              Ask a Question
+              Choose Expeditions / Ask
             </button>
           </div>
         </div>
@@ -380,16 +380,41 @@
           <div class="booking-left">
             <div class="card reveal">
               <h3>Which expedition?</h3>
-              <select id="expeditionSelect" style="width: 100%; padding: 0.75rem; border: 1px solid var(--stroke2); border-radius: 0.5rem; margin-bottom: 1rem;">
-                <option value="timor-leste">Blue Whales of Timor-Leste</option>
-                <option value="papua">Papua (Indonesia) — Overland Journeys</option>
-                <option value="general">General Inquiry</option>
-              </select>
+
+              <label class="check" style="display:flex; gap:.6rem; align-items:flex-start; margin:.4rem 0;">
+                <input type="checkbox" class="exp-check" value="timor-leste" checked />
+                <span>Blue Whales of Timor-Leste</span>
+              </label>
+
+              <label class="check" style="display:flex; gap:.6rem; align-items:flex-start; margin:.4rem 0;">
+                <input type="checkbox" class="exp-check" value="papua" />
+                <span>Papua (Indonesia) — Overland Journeys</span>
+              </label>
+
+              <label class="check" style="display:flex; gap:.6rem; align-items:flex-start; margin:.4rem 0;">
+                <input type="checkbox" class="exp-check" value="general" />
+                <span>General Inquiry</span>
+              </label>
+
+              <div id="papuaOptionWrap" hidden style="margin-top: 1rem;">
+                <h4 style="margin: 0 0 .6rem 0;">Papua option</h4>
+                <label for="papuaTourSelect" class="micro subtle" style="display:block; margin-bottom:.35rem;">Choose an option (optional)</label>
+                <select id="papuaTourSelect" style="width: 100%; padding: 0.75rem; border: 1px solid var(--stroke2); border-radius: 0.5rem; margin-bottom: .25rem;">
+                  <option value="Asmat Expedition">Asmat Expedition</option>
+                  <option value="Korowai Expedition">Korowai Expedition</option>
+                  <option value="Asmat + Korowai Expedition">Asmat + Korowai Expedition</option>
+                  <option value="Nabire Whale Sharks">Nabire Whale Sharks</option>
+                </select>
+                <p class="micro subtle" style="margin: .4rem 0 0 0;">
+                  We’ll reply with feasibility + next steps.
+                </p>
+              </div>
             </div>
 
             <div class="card reveal">
               <h3>Summary</h3>
-              <p id="summaryExpedition">Expedition: Blue Whales of Timor-Leste</p>
+              <p id="summaryExpedition">Expeditions: Blue Whales of Timor-Leste</p>
+              <p id="summaryPapua" hidden>Papua option: –</p>
               <p id="summaryGuests">Guests: –</p>
               <p class="micro subtle">We'll get back to you within 24 hours.</p>
             </div>
@@ -399,6 +424,8 @@
             <form class="card reveal" id="requestForm" method="POST">
               <input type="hidden" name="requestType" id="requestType" value="contact" />
               <input type="hidden" name="expedition" id="expeditionField" value="timor-leste" />
+              <input type="hidden" name="expeditions" id="expeditionsField" value="timor-leste" />
+              <input type="hidden" name="papuaTour" id="papuaTourField" value="Asmat Expedition" />
 
               <p class="honeypot" aria-hidden="true">
                 <label>Don't fill this out: <input name="bot-field" /></label>
@@ -575,21 +602,88 @@
   <!-- Simple expedition selector -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const expeditionSelect = document.getElementById('expeditionSelect');
-      const expeditionField = document.getElementById('expeditionField');
-      const summaryExpedition = document.getElementById('summaryExpedition');
-      const tourPersons = document.getElementById('tourPersons');
-      const summaryGuests = document.getElementById('summaryGuests');
+      const checks = Array.from(document.querySelectorAll('.exp-check'));
+      const expeditionField = document.getElementById('expeditionField'); // legacy single
+      const expeditionsField = document.getElementById('expeditionsField'); // new multi
+      const papuaWrap = document.getElementById('papuaOptionWrap');
+      const papuaSelect = document.getElementById('papuaTourSelect');
+      const papuaHidden = document.getElementById('papuaTourField');
 
-      if (expeditionSelect) {
-        expeditionSelect.addEventListener('change', function() {
-          const value = this.value;
-          const text = this.options[this.selectedIndex].text;
-          expeditionField.value = value;
-          summaryExpedition.textContent = 'Expedition: ' + text;
+      const summaryExpedition = document.getElementById('summaryExpedition');
+      const summaryPapua = document.getElementById('summaryPapua');
+
+      function selectedValues() {
+        return checks.filter(c => c.checked).map(c => c.value);
+      }
+
+      function ensureAtLeastOne() {
+        const vals = selectedValues();
+        if (vals.length === 0) {
+          const timor = checks.find(c => c.value === 'timor-leste');
+          if (timor) timor.checked = true;
+        }
+      }
+
+      function prettyName(v) {
+        if (v === 'timor-leste') return 'Blue Whales of Timor-Leste';
+        if (v === 'papua') return 'Papua (Indonesia) — Overland Journeys';
+        if (v === 'general') return 'General Inquiry';
+        return v;
+      }
+
+      function syncPapua() {
+        const vals = selectedValues();
+        const hasPapua = vals.includes('papua');
+
+        if (papuaWrap) papuaWrap.hidden = !hasPapua;
+
+        if (summaryPapua) {
+          summaryPapua.hidden = !hasPapua;
+          if (hasPapua) {
+            const txt = papuaSelect ? (papuaSelect.options[papuaSelect.selectedIndex]?.text || papuaSelect.value) : '–';
+            summaryPapua.textContent = 'Papua option: ' + txt;
+          }
+        }
+
+        if (papuaSelect && papuaHidden) {
+          papuaHidden.value = papuaSelect.value;
+        }
+      }
+
+      function syncFieldsAndSummary() {
+        ensureAtLeastOne();
+
+        const vals = selectedValues();
+
+        // multi field (CSV)
+        if (expeditionsField) expeditionsField.value = vals.join(',');
+
+        // legacy single field = first selected
+        if (expeditionField) expeditionField.value = vals[0] || 'timor-leste';
+
+        if (summaryExpedition) {
+          const names = vals.map(prettyName);
+          summaryExpedition.textContent = 'Expeditions: ' + names.join(' + ');
+        }
+
+        syncPapua();
+      }
+
+      // init
+      syncFieldsAndSummary();
+
+      // events
+      checks.forEach(c => c.addEventListener('change', syncFieldsAndSummary));
+
+      if (papuaSelect) {
+        papuaSelect.addEventListener('change', function() {
+          if (papuaHidden) papuaHidden.value = this.value;
+          syncPapua();
         });
       }
 
+      const tourPersons = document.getElementById('tourPersons');
+      const summaryGuests = document.getElementById('summaryGuests');
       if (tourPersons) {
         tourPersons.addEventListener('change', function() {
           const n = this.value;
