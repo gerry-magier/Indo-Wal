@@ -32,10 +32,15 @@
   }
 
   async function initLoader() {
+    // Decide which partials to load (EN root vs DE folder)
+    const isDE = window.location.pathname.startsWith("/de/");
+    const navPath = isDE ? "/de/navbar.html" : "/navbar.html";
+    const footPath = isDE ? "/de/footer.html" : "/footer.html";
+
     // Load navbar and footer in parallel
     await Promise.all([
-      loadPartial("#navbar-placeholder", "/navbar.html"),
-      loadPartial("#footer-placeholder", "/footer.html")
+      loadPartial("#navbar-placeholder", navPath),
+      loadPartial("#footer-placeholder", footPath)
     ]);
 
     // After footer is loaded, initialize burger menu
