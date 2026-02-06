@@ -764,6 +764,109 @@
       }
     });
   </script>
+<script>
+(function () {
+  let papuaAgbHTML = null;
+
+  function keepOnlyPapuaAgb() {
+    const all = document.querySelectorAll('#agbModal');
+    all.forEach((el) => {
+      if (el.dataset.variant !== 'papua') el.remove();
+    });
+  }
+
+  function injectPapuaAgbIfMissing() {
+    // wenn keine Papua-AGB vorhanden → neu einfügen
+    const existing = Array.from(document.querySelectorAll('#agbModal'))
+      .find(el => el.dataset.variant === 'papua');
+
+    if (existing || !papuaAgbHTML) return;
+
+    document.body.insertAdjacentHTML('beforeend', papuaAgbHTML);
+    const inserted = document.querySelector('#agbModal:last-of-type') || document.getElementById('agbModal');
+    if (inserted) inserted.dataset.variant = 'papua';
+
+    // danach alle anderen (Timor) löschen
+    keepOnlyPapuaAgb();
+  }
+
+  // 1) Deutsche Papua-AGB sofort laden
+  fetch('/de/agb2.html')
+    .then(r => r.text())
+    .then(html => {
+      papuaAgbHTML = html;
+
+      // vorhandene (Timor) AGB entfernen
+      const old = document.getElementById('agbModal');
+      if (old) old.remove();
+
+      // Papua-AGB einfügen
+      document.body.insertAdjacentHTML('beforeend', papuaAgbHTML);
+      const inserted = document.getElementById('agbModal');
+      if (inserted) inserted.dataset.variant = 'papua';
+
+      console.log('[Papua AGB DE] agb2.html geladen');
+
+      // sicherstellen, dass nur Papua bleibt
+      keepOnlyPapuaAgb();
+    })
+    .catch(err => console.error('[Papua AGB DE] Fehler beim Laden von /de/agb2.html', err));
+
+  // 2) Wenn Footer später Timor-AGB nachlädt → wieder entfernen
+  const obs = new MutationObserver(() => {
+    injectPapuaAgbIfMissing();
+    keepOnlyPapuaAgb();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+
+  // 3) Klick-Handler (Capture-Modus)
+  document.addEventListener('click', function (e) {
+    const openBtn = e.target.closest('#openAgbFooter, #openAgbInline');
+    if (openBtn) {
+      e.preventDefault();
+      const agbModal = Array.from(document.querySelectorAll('#agbModal'))
+        .find(el => el.dataset.variant === 'papua') || document.getElementById('agbModal');
+
+      if (!agbModal) {
+        console.error('[Papua AGB DE] #agbModal nicht gefunden');
+        return;
+      }
+      document.body.classList.add('agb-open');
+      agbModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+
+    const closeBtn = e.target.closest('#closeAgb');
+    if (closeBtn) {
+      e.preventDefault();
+      const agbModal = Array.from(document.querySelectorAll('#agbModal'))
+        .find(el => el.dataset.variant === 'papua') || document.getElementById('agbModal');
+
+      if (!agbModal) return;
+      document.body.classList.remove('agb-open');
+      agbModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      return;
+    }
+  }, true);
+
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key !== 'Escape') return;
+
+    const agbModal = Array.from(document.querySelectorAll('#agbModal'))
+      .find(el => el.dataset.variant === 'papua') || document.getElementById('agbModal');
+
+    if (!agbModal) return;
+    if (agbModal.getAttribute('aria-hidden') === 'false') {
+      document.body.classList.remove('agb-open');
+      agbModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }, true);
+
+})();
+</script>
 
 </body>
 </html>

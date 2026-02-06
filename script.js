@@ -1405,3 +1405,108 @@
     loadAvailability();
   });
 })();
+/* === GLOBAL AGB SELECTOR (Option B) === */
+(function () {
+
+  function isGerman() {
+    return window.location.pathname.startsWith('/de/');
+  }
+
+  function isNeutralPage() {
+    const p = window.location.pathname.toLowerCase();
+    return (
+      p === '/' ||
+      p === '/de/' ||
+      p.includes('/faq') ||
+      p.includes('/contact') ||
+      p.includes('/blog')
+    );
+  }
+
+  function isPapuaPage() {
+    return window.location.pathname.toLowerCase().includes('papua');
+  }
+
+  function closeAnyAgbLikeModal() {
+    const m = document.querySelector('#agbModal, #agbSelectModal');
+    if (m) m.remove();
+    document.body.classList.remove('agb-open');
+    document.body.style.overflow = '';
+  }
+
+  function openModalElement(modal) {
+    if (!modal) return;
+    document.body.classList.add('agb-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function injectAndOpen(url) {
+    return fetch(url)
+      .then(r => r.text())
+      .then(html => {
+        closeAnyAgbLikeModal();
+        document.body.insertAdjacentHTML('beforeend', html);
+        const modal = document.querySelector('#agbModal, #agbSelectModal');
+        openModalElement(modal);
+        return modal;
+      });
+  }
+
+  function openAgbSelector() {
+    const url = isGerman() ? '/de/agb-select.html' : '/agb-select.html';
+    injectAndOpen(url).then(() => {
+      const timorBtn = document.getElementById('openAgbTimor');
+      const papuaBtn = document.getElementById('openAgbPapua');
+
+      if (timorBtn) timorBtn.addEventListener('click', () => {
+        const agbUrl = isGerman() ? '/de/agb.html' : '/agb.html';
+        injectAndOpen(agbUrl);
+      });
+
+      if (papuaBtn) papuaBtn.addEventListener('click', () => {
+        const agbUrl = isGerman() ? '/de/agb2.html' : '/agb2.html';
+        injectAndOpen(agbUrl);
+      });
+    });
+  }
+
+  function openDirectAgb() {
+    const override = window.AGB_FILE;
+    const url = override
+      ? override
+      : (isGerman() ? '/de/agb.html' : '/agb.html');
+
+    injectAndOpen(url);
+  }
+
+  document.addEventListener('click', function (e) {
+    const open = e.target.closest('#openAgbFooter, #openAgbInline');
+    const closeSelect = e.target.closest('#closeAgbSelect');
+    const closeAgb = e.target.closest('#closeAgb');
+
+    if (isPapuaPage()) return;
+
+    if (open) {
+      e.preventDefault();
+      if (isNeutralPage()) openAgbSelector();
+      else openDirectAgb();
+      return;
+    }
+
+    if (closeSelect || closeAgb) {
+      e.preventDefault();
+      closeAnyAgbLikeModal();
+      return;
+    }
+  }, true);
+
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key !== 'Escape') return;
+    const modal = document.querySelector('#agbModal, #agbSelectModal');
+    if (modal && modal.getAttribute('aria-hidden') === 'false') {
+      closeAnyAgbLikeModal();
+    }
+  }, true);
+
+})();

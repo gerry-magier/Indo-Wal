@@ -818,6 +818,111 @@
       }
     });
   </script>
+<script>
+(function () {
+  let papuaAgbHTML = null;
+
+  function keepOnlyPapuaAgb() {
+    const all = document.querySelectorAll('#agbModal');
+    all.forEach((el) => {
+      if (el.dataset.variant !== 'papua') el.remove();
+    });
+  }
+
+  function injectPapuaAgbIfMissing() {
+    // if no Papua AGB is present, (re)insert it
+    const existing = Array.from(document.querySelectorAll('#agbModal'))
+      .find(el => el.dataset.variant === 'papua');
+
+    if (existing || !papuaAgbHTML) return;
+
+    document.body.insertAdjacentHTML('beforeend', papuaAgbHTML);
+    const inserted = document.querySelector('#agbModal:last-of-type') || document.getElementById('agbModal');
+    if (inserted) inserted.dataset.variant = 'papua';
+
+    // after inserting, delete any other (Timor) duplicates
+    keepOnlyPapuaAgb();
+  }
+
+  // 1) Load Papua AGB immediately
+  fetch('agb2.html')
+    .then(r => r.text())
+    .then(html => {
+      papuaAgbHTML = html;
+      // remove any existing (Timor) agb modal if already present
+      const old = document.getElementById('agbModal');
+      if (old) old.remove();
+
+      // insert Papua AGB
+      document.body.insertAdjacentHTML('beforeend', papuaAgbHTML);
+      const inserted = document.getElementById('agbModal');
+      if (inserted) inserted.dataset.variant = 'papua';
+
+      console.log('[Papua AGB] agb2.html injected (papua)');
+
+      // remove any non-papua duplicates (if any)
+      keepOnlyPapuaAgb();
+    })
+    .catch(err => console.error('[Papua AGB] failed to load agb2.html', err));
+
+  // 2) If footer loads later and injects Timor AGB again, remove it
+  const obs = new MutationObserver(() => {
+    // If any AGB modal exists but Papua one is missing, re-inject
+    injectPapuaAgbIfMissing();
+
+    // Always enforce: only Papua AGB stays
+    keepOnlyPapuaAgb();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+
+  // 3) Click handlers in CAPTURE mode
+  document.addEventListener('click', function (e) {
+    const openBtn = e.target.closest('#openAgbFooter, #openAgbInline');
+    if (openBtn) {
+      e.preventDefault();
+      const agbModal = Array.from(document.querySelectorAll('#agbModal'))
+        .find(el => el.dataset.variant === 'papua') || document.getElementById('agbModal');
+
+      if (!agbModal) {
+        console.error('[Papua AGB] #agbModal not found');
+        return;
+      }
+      document.body.classList.add('agb-open');
+      agbModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+
+    const closeBtn = e.target.closest('#closeAgb');
+    if (closeBtn) {
+      e.preventDefault();
+      const agbModal = Array.from(document.querySelectorAll('#agbModal'))
+        .find(el => el.dataset.variant === 'papua') || document.getElementById('agbModal');
+
+      if (!agbModal) return;
+      document.body.classList.remove('agb-open');
+      agbModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      return;
+    }
+  }, true);
+
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key !== 'Escape') return;
+
+    const agbModal = Array.from(document.querySelectorAll('#agbModal'))
+      .find(el => el.dataset.variant === 'papua') || document.getElementById('agbModal');
+
+    if (!agbModal) return;
+    if (agbModal.getAttribute('aria-hidden') === 'false') {
+      document.body.classList.remove('agb-open');
+      agbModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }, true);
+
+})();
+</script>
 
 </body>
 </html>
