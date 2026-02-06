@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SPLY0P4ZJE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SPLY0P4ZJE');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Expedition Journal | Blue Whale Expeditions in Timor-Leste</title>
+  <meta name="description" content="Stories, insights, and adventures from our blue whale expeditions in Timor Leste" />
+  
+  <link rel="stylesheet" href="/style.css" />
+  
+  <style>
+    /* Blog Index Styles */
+    .blog-index-hero {
+      text-align: center;
+      padding: 4rem 0 3rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    
+    .blog-index-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+      line-height: 1.1;
+    }
+    
+    .blog-index-hero p {
+      font-size: 1.2rem;
+      color: var(--muted);
+      font-weight: 650;
+      margin: 0;
+    }
+    
+    /* Blog Grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+    
+    /* Blog Card */
+    .blog-card {
+      background: white;
+      border: 1px solid var(--stroke);
+      border-radius: var(--rLg);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadowMd);
+    }
+    
+    .blog-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    
+    .blog-card-image {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    
+    .blog-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .blog-card:hover .blog-card-image img {
+      transform: scale(1.05);
+    }
+    
+    .blog-card-content {
+      padding: 1.5rem;
+    }
+    
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted2);
+      font-weight: 650;
+      margin-bottom: 0.8rem;
+    }
+    
+    .blog-card-author:before {
+      content: '•';
+      margin-right: 0.5rem;
+    }
+    
+    .blog-card-title {
+      font-size: 1.5rem;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin: 0 0 0.8rem;
+      color: var(--text);
+    }
+    
+    .blog-card-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 650;
+      line-height: 1.5;
+      margin: 0 0 0.8rem;
+    }
+    
+    .blog-card-excerpt {
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 600;
+      margin: 0 0 1rem;
+    }
+    
+    .blog-card-readmore {
+      color: var(--brand);
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: gap 0.2s ease;
+    }
+    
+    .blog-card:hover .blog-card-readmore {
+      gap: 0.6rem;
+    }
+    
+    /* Loading State */
+    .blog-loading {
+      text-align: center;
+      padding: 4rem 0;
+      color: var(--muted);
+    }
+    
+    .blog-loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--stroke);
+      border-top-color: var(--brand);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .blog-loading p {
+      font-weight: 650;
+      font-size: 1.1rem;
+    }
+    
+    /* Empty State */
+    .blog-empty {
+      text-align: center;
+      padding: 4rem 0;
+      color: var(--muted);
+    }
+    
+    .blog-empty p {
+      font-size: 1.1rem;
+      font-weight: 650;
+    }
+    
+    /* Error State */
+    .blog-error {
+      text-align: center;
+      padding: 4rem 0;
+      color: var(--muted);
+    }
+    
+    .blog-error p {
+      font-size: 1.1rem;
+      font-weight: 650;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Navbar will be loaded here -->
+  <div id="navbar-placeholder"></div>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        
+        <!-- Blog Hero -->
+        <div class="blog-index-hero">
+          <h1>STORIES FROM BEYOND THE MAP</h1>
+          <p>Notes from places tourism forgot.</p>
+        </div>
+        
+        <!-- Blog Posts Container (automatically populated) -->
+        <div id="blog-posts-container">
+          <!-- Blog cards will be loaded here by blog-loader.js -->
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer will be loaded here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- REQUEST MODAL -->
+  <section class="booking-view" id="bookingView" aria-hidden="true">
+    <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Request form">
+      <div class="booking-head">
+        <div class="booking-title">
+          <div class="booking-kicker">Request</div>
+          <h2 id="requestTitle">Ask a question</h2>
+          <p class="micro subtle" id="requestSubtitle">
+            Ask anything — we'll reply with clear answers and whether it's a good fit.
+          </p>
+        </div>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">✕</button>
+      </div>
+
+      <div class="booking-body">
+        <div class="mode-tabs" role="tablist" aria-label="Request mode">
+          <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Ask a question</button>
+          <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Request expedition</button>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-left">
+            <div class="card reveal" id="bookingCalendarCard">
+              <h3>Dates</h3>
+
+              <div class="cal-top">
+                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Previous month">‹</button>
+                <div class="cal-title" id="bookingMonthName">October 2026</div>
+                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Next month">›</button>
+              </div>
+
+              <div class="cal-weekdays" aria-hidden="true">
+                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+              </div>
+
+              <div class="calendar" id="bookingCalendar"></div>
+
+              <div class="cal-controls">
+                <label for="bookingPersons">Guests</label>
+                <select id="bookingPersons">
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                </select>
+              </div>
+
+              <div class="cal-meta">
+                <div id="bookingSelectedDays" class="meta-line"></div>
+                <div id="bookingPrice" class="meta-line strong">Price: €0</div>
+                <div id="bookingTotalPrice" class="meta-line"></div>
+              </div>
+            </div>
+
+            <div class="card reveal">
+              <h3>Summary</h3>
+              <p id="summaryDates">Dates: (optional)</p>
+              <p id="summaryGuests">Guests: –</p>
+              <p id="summaryPrice">Price: –</p>
+              <p class="micro subtle"><strong>Note:</strong> The total price is fixed regardless of group size. The per-person amount shown is for reference only.</p>
+            </div>
+          </div>
+
+          <div class="booking-right">
+            <form class="card reveal" id="requestForm" method="POST">
+              <input type="hidden" name="requestType" id="requestType" value="contact" />
+              <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
+
+              <p class="honeypot" aria-hidden="true">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <h3>Your details</h3>
+
+              <div class="form-grid">
+                <div>
+                  <label for="firstName">First name</label>
+                  <input id="firstName" name="firstName" type="text" required />
+                </div>
+                <div>
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" name="lastName" type="text" required />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                  <label for="whatsapp">WhatsApp (optional)</label>
+                  <input id="whatsapp" name="whatsapp" type="tel" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourStart">Start date <span class="mini-hint" id="startHint">(optional for questions)</span></label>
+                  <input id="tourStart" name="tourStart" type="date" />
+                </div>
+                <div>
+                  <label for="tourEnd">End date <span class="mini-hint" id="endHint">(optional for questions)</span></label>
+                  <input id="tourEnd" name="tourEnd" type="date" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourPersons">Guests</label>
+                  <select id="tourPersons" name="tourPersons" required>
+                    <option value="1">1 guest</option>
+                    <option value="2">2 guests</option>
+                    <option value="3">3 guests</option>
+                    <option value="4">4 guests</option>
+                    <option value="5">5 guests</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="swimLevel">Swim level (optional)</label>
+                  <input id="swimLevel" name="swimLevel" type="text" placeholder="e.g., confident offshore / beginner / etc." />
+                </div>
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                  placeholder="Tell us your expectations (and any concerns). We'll reply honestly about fit + feasibility."></textarea>
+              </div>
+
+              <div class="passport-wrap" id="passportWrap" hidden>
+                <div class="passport-head">
+                  <h4>Passport details (optional)</h4>
+                  <p class="micro subtle">
+                    Only required for trip paperwork <strong>after</strong> we confirm availability.
+                    If you prefer, leave it blank — we'll collect it later via a secure channel.
+                  </p>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="nationality">Nationality (optional)</label>
+                    <input id="nationality" name="nationality" type="text" />
+                  </div>
+                  <div>
+                    <label for="passport">Passport number (optional)</label>
+                    <input id="passport" name="passport" type="text" />
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="issueDate">Passport issue date (optional)</label>
+                    <input id="issueDate" name="issueDate" type="date" />
+                  </div>
+                  <div>
+                    <label for="expiryDate">Passport expiry date (optional)</label>
+                    <input id="expiryDate" name="expiryDate" type="date" />
+                  </div>
+                </div>
+              </div>
+
+              <div id="additionalGuests"></div>
+
+              <div class="agb-wrap" id="agbWrap" hidden>
+                <h4>Terms &amp; Conditions</h4>
+                <div class="agb">
+                  <p class="micro subtle" style="margin-top:0;">
+                    Cancellation: up to and including 60 days before start → 50% fee. Less than 60 days or no-show → 100% fee.
+                    Tours may change/cancel for safety or force majeure.
+                  </p>
+                </div>
+
+                <label class="check" id="termsCheck">
+                  <input type="checkbox" id="acceptAgb" name="acceptAgb" />
+                  <span>I have read and accept the Terms &amp; Conditions.</span>
+                </label>
+              </div>
+
+              <p class="micro subtle" style="margin-top:.95rem;">
+                By submitting, you agree that we contact you about your request.
+                Read our <a href="#" id="openPrivacyInline">Privacy Policy</a> and <a href="#" id="openAgbInline">Terms & Conditions</a>.
+              </p>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
+                <p class="micro subtle" id="submitHint">
+                  Questions don't require passport details. Requests are confirmed only after our reply.
+                </p>
+              </div>
+
+              <div class="micro subtle">
+                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-foot">
+        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a></div>
+      </div>
+    </div>
+  </section>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">🐋</button>
+
+  <!-- Scripts: loader.js MUST be loaded before script.js -->
+  <script src="/loader.js"></script>
+  <script src="/script.js" data-cfasync="false"></script>
+  
+  <!-- Blog Loader Script -->
+  <script src="/blog/blog-loader.js"></script>
+</body>
+</html>

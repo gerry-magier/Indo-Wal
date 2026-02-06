@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SPLY0P4ZJE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SPLY0P4ZJE');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · Blue Whales of Timor Leste</title>
+  <meta name="description" content="Get in touch with Blue Whales of Timor Leste expeditions" />
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="navbar-placeholder"></div>
+  
+  <main id="main">
+    <section class="section" style="padding-top: 8rem;">
+      <div class="wrap">
+        <div class="section-head">
+          <h1 class="section-title">Contact</h1>
+          <p class="section-lead">If you're unsure — perfect. Ask first. We'd rather have a clear fit than a rushed request.</p>
+        </div>
+        <div class="card reveal contact-card">
+          <ul class="contact-list">
+            <li>📧 Email: <a href="/cdn-cgi/l/email-protection#027067737767717676756b6c677a7267666b766b6d6c7142656f636b6e2c616d6f"><span class="__cf_email__" data-cfemail="176572666272646363607e79726f6772737e637e78796457707a767e7b3974787a">[email&#160;protected]</span></a></li>
+            <li>💬 WhatsApp: <a href="tel:+4915225655405">+49 15225655405</a></li>
+            <li>📍 Base: Dili, Timor-Leste (seasonal operations)</li>
+          </ul>
+          <div class="cta-row">
+            <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
+            <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">🐋</button>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <section class="booking-view" id="bookingView" aria-hidden="true">
+    <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Request form">
+      <div class="booking-head">
+        <div class="booking-title">
+          <div class="booking-kicker">Request</div>
+          <h2 id="requestTitle">Ask a question</h2>
+          <p class="micro subtle" id="requestSubtitle">
+            Ask anything — we’ll reply with clear answers and whether it’s a good fit.
+          </p>
+        </div>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">✕</button>
+      </div>
+
+      <div class="booking-body">
+        <div class="mode-tabs" role="tablist" aria-label="Request mode">
+          <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Ask a question</button>
+          <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Request expedition</button>
+        </div>
+
+        <div class="booking-grid">
+          <div class="booking-left">
+            <div class="card reveal" id="bookingCalendarCard">
+              <h3>Dates</h3>
+
+              <div class="cal-top">
+                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Previous month">‹</button>
+                <div class="cal-title" id="bookingMonthName">October 2026</div>
+                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Next month">›</button>
+              </div>
+
+              <div class="cal-weekdays" aria-hidden="true">
+                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+              </div>
+
+              <div class="calendar" id="bookingCalendar"></div>
+
+              <div class="cal-controls">
+                <label for="bookingPersons">Guests</label>
+                <select id="bookingPersons">
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                </select>
+              </div>
+
+              <div class="cal-meta">
+                <div id="bookingSelectedDays" class="meta-line"></div>
+                <div id="bookingPrice" class="meta-line strong">Price: €0</div>
+                <div id="bookingTotalPrice" class="meta-line"></div>
+              </div>
+            </div>
+
+            <div class="card reveal">
+              <h3>Summary</h3>
+              <p id="summaryDates">Dates: (optional)</p>
+              <p id="summaryGuests">Guests: –</p>
+              <p id="summaryPrice">Price: –</p>
+              <p class="micro subtle"><strong>Note:</strong> The total price is fixed regardless of group size. The per-person amount shown is for reference only.</p>
+            </div>
+          </div>
+
+          <div class="booking-right">
+            <form class="card reveal" id="requestForm" method="POST">
+
+              
+              <input type="hidden" name="requestType" id="requestType" value="contact" />
+              <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
+
+              <p class="honeypot" aria-hidden="true">
+                <label>Don’t fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <h3>Your details</h3>
+
+              <div class="form-grid">
+                <div>
+                  <label for="firstName">First name</label>
+                  <input id="firstName" name="firstName" type="text" required />
+                </div>
+                <div>
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" name="lastName" type="text" required />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                  <label for="whatsapp">WhatsApp (optional)</label>
+                  <input id="whatsapp" name="whatsapp" type="tel" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourStart">Start date <span class="mini-hint" id="startHint">(optional for questions)</span></label>
+                  <input id="tourStart" name="tourStart" type="date" />
+                </div>
+                <div>
+                  <label for="tourEnd">End date <span class="mini-hint" id="endHint">(optional for questions)</span></label>
+                  <input id="tourEnd" name="tourEnd" type="date" />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="tourPersons">Guests</label>
+                  <select id="tourPersons" name="tourPersons" required>
+                    <option value="1">1 guest</option>
+                    <option value="2">2 guests</option>
+                    <option value="3">3 guests</option>
+                    <option value="4">4 guests</option>
+                    <option value="5">5 guests</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="swimLevel">Swim level (optional)</label>
+                  <input id="swimLevel" name="swimLevel" type="text" placeholder="e.g., confident offshore / beginner / etc." />
+                </div>
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                  placeholder="Tell us your expectations (and any concerns). We’ll reply honestly about fit + feasibility."></textarea>
+              </div>
+
+              <div class="passport-wrap" id="passportWrap" hidden>
+                <div class="passport-head">
+                  <h4>Passport details (optional)</h4>
+                  <p class="micro subtle">
+                    Only required for trip paperwork <strong>after</strong> we confirm availability.
+                    If you prefer, leave it blank — we’ll collect it later via a secure channel.
+                  </p>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="nationality">Nationality (optional)</label>
+                    <input id="nationality" name="nationality" type="text" />
+                  </div>
+                  <div>
+                    <label for="passport">Passport number (optional)</label>
+                    <input id="passport" name="passport" type="text" />
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="issueDate">Passport issue date (optional)</label>
+                    <input id="issueDate" name="issueDate" type="date" />
+                  </div>
+                  <div>
+                    <label for="expiryDate">Passport expiry date (optional)</label>
+                    <input id="expiryDate" name="expiryDate" type="date" />
+                  </div>
+                </div>
+              </div>
+
+              <div id="additionalGuests"></div>
+
+              <div class="agb-wrap" id="agbWrap" hidden>
+                <h4>Terms &amp; Conditions</h4>
+                <div class="agb">
+                  <p class="micro subtle" style="margin-top:0;">
+                    Cancellation: up to and including 60 days before start → 50% fee. Less than 60 days or no-show → 100% fee.
+                    Tours may change/cancel for safety or force majeure.
+                  </p>
+                </div>
+
+                <label class="check" id="termsCheck">
+                  <input type="checkbox" id="acceptAgb" name="acceptAgb" />
+                  <span>I have read and accept the Terms &amp; Conditions.</span>
+                </label>
+              </div>
+
+              <p class="micro subtle" style="margin-top:.95rem;">
+                By submitting, you agree that we contact you about your request.
+                Read our <a href="#" id="openPrivacyInline">Privacy Policy</a> and <a href="#" id="openAgbInline">Terms & Conditions</a>.
+              </p>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
+                <p class="micro subtle" id="submitHint">
+                  Questions don’t require passport details. Requests are confirmed only after our reply.
+                </p>
+              </div>
+
+              <div class="micro subtle">
+                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-foot">
+        <div class="micro subtle">Prefer email? <a href="/cdn-cgi/l/email-protection#a7d5c2d6d2c2d4d3d3d0cec9c2dfd7c2c3ced3cec8c9d4e7c0cac6cecb89c4c8ca"><span class="__cf_email__" data-cfemail="750710040010060101021c1b100d0510111c011c1a1b06351218141c195b161a18">[email&#160;protected]</span></a></div>
+      </div>
+    </div>
+  </section>
+  
+
+ 
+
+ 
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="loader.js"></script>
+  <script src="script.js" data-cfasync="false"></script>
+
+  <!-- Load navbar and footer first, then script -->
+  <script>
+    // Load navbar
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+        const nav = document.getElementById('navbar-placeholder');
+        nav.querySelectorAll('a[href*="contact"]').forEach(link => {
+          link.classList.add('active');
+        });
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+    
+    // Load footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+        
+        // Rebind footer event listeners after footer is loaded
+        setTimeout(() => {
+          const $ = (s) => document.querySelector(s);
+          
+          // Rebind AGB
+          const openAgbFooter = $('#openAgbFooter');
+          const agbModal = $('#agbModal');
+          const closeAgb = $('#closeAgb');
+          
+          if (openAgbFooter && agbModal) {
+            openAgbFooter.addEventListener('click', (e) => {
+              e.preventDefault();
+              document.body.classList.add('agb-open');
+              agbModal.setAttribute('aria-hidden', 'false');
+              document.body.style.overflow = 'hidden';
+            });
+          }
+          
+          if (closeAgb && agbModal) {
+            closeAgb.addEventListener('click', () => {
+              document.body.classList.remove('agb-open');
+              agbModal.setAttribute('aria-hidden', 'true');
+              document.body.style.overflow = '';
+            });
+          }
+          
+          // Rebind Impressum
+          const openImpressumFooter = $('#openImpressumFooter');
+          const impressumModal = $('#impressumModal');
+          const closeImpressum = $('#closeImpressum');
+          
+          if (openImpressumFooter && impressumModal) {
+            openImpressumFooter.addEventListener('click', (e) => {
+              e.preventDefault();
+              document.body.classList.add('impressum-open');
+              impressumModal.setAttribute('aria-hidden', 'false');
+              document.body.style.overflow = 'hidden';
+            });
+          }
+          
+          if (closeImpressum && impressumModal) {
+            closeImpressum.addEventListener('click', () => {
+              document.body.classList.remove('impressum-open');
+              impressumModal.setAttribute('aria-hidden', 'true');
+              document.body.style.overflow = '';
+            });
+          }
+          
+          // Rebind Privacy
+          const openPrivacyFooter = $('#openPrivacyFooter');
+          const privacyModal = $('#privacyModal');
+          const closePrivacy = $('#closePrivacy');
+          
+          if (openPrivacyFooter && privacyModal) {
+            openPrivacyFooter.addEventListener('click', (e) => {
+              e.preventDefault();
+              document.body.classList.add('privacy-open');
+              privacyModal.setAttribute('aria-hidden', 'false');
+              document.body.style.overflow = 'hidden';
+            });
+          }
+          
+          if (closePrivacy && privacyModal) {
+            closePrivacy.addEventListener('click', () => {
+              document.body.classList.remove('privacy-open');
+              privacyModal.setAttribute('aria-hidden', 'true');
+              document.body.style.overflow = '';
+            });
+          }
+        }, 100);
+      })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
+  
+  <script src="script.js" data-cfasync="false"></script>
+</body>
+</html>
