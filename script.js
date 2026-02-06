@@ -12,64 +12,15 @@
     // FOOTER MODALS (AGB / Impressum / Privacy) – event delegation
     // NOTE: Navbar & footer loading is now handled by loader.js
     // ============================================================
+  // Delegated handler for footer modals (loaded dynamically).
+  // Calls the proper open/close functions that save & restore scroll position.
   document.addEventListener("click", (e) => {
-    const openAgb = e.target.closest("#openAgbFooter, #openAgbInline");
-    const openImpressum = e.target.closest("#openImpressumFooter, #openImpressumInline");
-    const openPrivacy = e.target.closest("#openPrivacyFooter, #openPrivacyInline");
-
-    const closeAgb = e.target.closest("#closeAgb");
-    const closeImpressum = e.target.closest("#closeImpressum");
-    const closePrivacy = e.target.closest("#closePrivacy");
-
-    const agbModal = document.querySelector("#agbModal");
-    const impressumModal = document.querySelector("#impressumModal");
-    const privacyModal = document.querySelector("#privacyModal");
-
-    // OPEN
-    if (openAgb && agbModal) {
-      e.preventDefault();
-      document.body.classList.add("agb-open");
-      agbModal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-      return;
-    }
-    if (openImpressum && impressumModal) {
-      e.preventDefault();
-      document.body.classList.add("impressum-open");
-      impressumModal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-      return;
-    }
-    if (openPrivacy && privacyModal) {
-      e.preventDefault();
-      document.body.classList.add("privacy-open");
-      privacyModal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-      return;
-    }
-
-    // CLOSE
-    if (closeAgb && agbModal) {
-      e.preventDefault();
-      document.body.classList.remove("agb-open");
-      agbModal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-      return;
-    }
-    if (closeImpressum && impressumModal) {
-      e.preventDefault();
-      document.body.classList.remove("impressum-open");
-      impressumModal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-      return;
-    }
-    if (closePrivacy && privacyModal) {
-      e.preventDefault();
-      document.body.classList.remove("privacy-open");
-      privacyModal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-      return;
-    }
+    if (e.target.closest("#openAgbFooter, #openAgbInline")) { e.preventDefault(); openAgbModal(e); return; }
+    if (e.target.closest("#closeAgb")) { e.preventDefault(); closeAgbModal(); return; }
+    if (e.target.closest("#openImpressumFooter, #openImpressumInline")) { e.preventDefault(); openImpressumModal(e); return; }
+    if (e.target.closest("#closeImpressum")) { e.preventDefault(); closeImpressumModal(); return; }
+    if (e.target.closest("#openPrivacyFooter, #openPrivacyInline")) { e.preventDefault(); openPrivacyFooterModal(e); return; }
+    if (e.target.closest("#closePrivacy")) { e.preventDefault(); closePrivacyModal(); return; }
   });
 
 
@@ -90,7 +41,9 @@
       if (!document.body.classList.contains('booking-open') &&
           !document.body.classList.contains('privacy-open') &&
           !document.body.classList.contains('terms-open') &&
-          !document.body.classList.contains('lightbox-open')) {
+          !document.body.classList.contains('lightbox-open') &&
+          !document.body.classList.contains('agb-open') &&
+          !document.body.classList.contains('impressum-open')) {
         document.body.style.overflow = '';
       }
     }
@@ -199,7 +152,7 @@
     const lightbox = $('#lightbox');
     const lightboxImg = $('#lightboxImg');
     const lightboxCap = $('#lightboxCap');
-    const lightboxClose = $('#lightboxClose');
+    const lightboxClose = $('#closeLightbox') || $('#lightboxClose');
 
     let lbScrollY = 0;
     let lbPrev = { overflow:'', position:'', top:'', width:'', touchAction:'' };

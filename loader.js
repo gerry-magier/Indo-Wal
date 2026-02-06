@@ -51,6 +51,17 @@
   function initBurgerMenu() {
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');
+
+    // Helper: check if any modal is currently open
+    function anyModalOpen() {
+      const b = document.body;
+      return b.classList.contains('booking-open') ||
+             b.classList.contains('lightbox-open') ||
+             b.classList.contains('agb-open') ||
+             b.classList.contains('impressum-open') ||
+             b.classList.contains('privacy-open') ||
+             b.classList.contains('terms-open');
+    }
     
     if (burger && mobileMenu) {
       burger.addEventListener('click', () => {
@@ -60,10 +71,10 @@
         
         if (!isExpanded) {
           mobileMenu.hidden = false;
-          document.body.style.overflow = 'hidden';
+          if (!anyModalOpen()) document.body.style.overflow = 'hidden';
         } else {
           mobileMenu.hidden = true;
-          document.body.style.overflow = '';
+          if (!anyModalOpen()) document.body.style.overflow = '';
         }
       });
 
@@ -74,7 +85,7 @@
           burger.setAttribute('aria-expanded', 'false');
           burger.classList.remove('active');
           mobileMenu.hidden = true;
-          document.body.style.overflow = '';
+          if (!anyModalOpen()) document.body.style.overflow = '';
         });
       });
     }
