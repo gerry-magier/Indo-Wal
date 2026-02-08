@@ -13,8 +13,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Expedition Journal | Blue Whale Expeditions in Timor-Leste</title>
-  <meta name="description" content="Stories, insights, and adventures from our blue whale expeditions in Timor Leste" />
+  <title>Expeditions-Journal | Blue-Whale-Expeditionen in Timor-Leste</title>
+  <meta name="description" content="Geschichten, Einblicke und Abenteuer aus unseren Blue-Whale-Expeditionen in Timor-Leste" />
   
   <link rel="stylesheet" href="/style.css" />
   
@@ -203,7 +203,7 @@
 </head>
 
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
 
   <!-- Navbar will be loaded here -->
   <div id="navbar-placeholder"></div>
@@ -214,8 +214,8 @@
         
         <!-- Blog Hero -->
         <div class="blog-index-hero">
-          <h1>STORIES FROM BEYOND THE MAP</h1>
-          <p>Notes from places tourism forgot.</p>
+          <h1>Unser Reisetagebuch</h1>
+          <p>Notizen aus Orten, die der Tourismus vergessen hat.</p>
         </div>
         
         <!-- Blog Posts Container (automatically populated) -->
@@ -232,65 +232,65 @@
 
   <!-- REQUEST MODAL -->
   <section class="booking-view" id="bookingView" aria-hidden="true">
-    <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Request form">
+    <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Anfrageformular">
       <div class="booking-head">
         <div class="booking-title">
-          <div class="booking-kicker">Request</div>
-          <h2 id="requestTitle">Ask a question</h2>
+          <div class="booking-kicker">Anfrage</div>
+          <h2 id="requestTitle">Eine Frage stellen</h2>
           <p class="micro subtle" id="requestSubtitle">
-            Ask anything — we'll reply with clear answers and whether it's a good fit.
+            Frag alles — wir antworten klar, ehrlich und sagen dir, ob es passt.
           </p>
         </div>
-        <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">✕</button>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Anfrage schließen">✕</button>
       </div>
 
       <div class="booking-body">
-        <div class="mode-tabs" role="tablist" aria-label="Request mode">
-          <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Ask a question</button>
-          <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Request expedition</button>
+        <div class="mode-tabs" role="tablist" aria-label="Anfrage-Modus">
+          <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Eine Frage stellen</button>
+          <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Expedition anfragen</button>
         </div>
 
         <div class="booking-grid">
           <div class="booking-left">
             <div class="card reveal" id="bookingCalendarCard">
-              <h3>Dates</h3>
+              <h3>Termine</h3>
 
               <div class="cal-top">
-                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Previous month">‹</button>
-                <div class="cal-title" id="bookingMonthName">October 2026</div>
-                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Next month">›</button>
+                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Vorheriger Monat">‹</button>
+                <div class="cal-title" id="bookingMonthName">Oktober 2026</div>
+                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Nächster Monat">›</button>
               </div>
 
               <div class="cal-weekdays" aria-hidden="true">
-                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                <span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span>
               </div>
 
               <div class="calendar" id="bookingCalendar"></div>
 
               <div class="cal-controls">
-                <label for="bookingPersons">Guests</label>
+                <label for="bookingPersons">Gäste</label>
                 <select id="bookingPersons">
-                  <option value="1">1 guest</option>
-                  <option value="2">2 guests</option>
-                  <option value="3">3 guests</option>
-                  <option value="4">4 guests</option>
-                  <option value="5">5 guests</option>
+                  <option value="1">1 Gast</option>
+                  <option value="2">2 Gäste</option>
+                  <option value="3">3 Gäste</option>
+                  <option value="4">4 Gäste</option>
+                  <option value="5">5 Gäste</option>
                 </select>
               </div>
 
               <div class="cal-meta">
                 <div id="bookingSelectedDays" class="meta-line"></div>
-                <div id="bookingPrice" class="meta-line strong">Price: €0</div>
+                <div id="bookingPrice" class="meta-line strong">Preis: €0</div>
                 <div id="bookingTotalPrice" class="meta-line"></div>
               </div>
             </div>
 
             <div class="card reveal">
-              <h3>Summary</h3>
-              <p id="summaryDates">Dates: (optional)</p>
-              <p id="summaryGuests">Guests: –</p>
-              <p id="summaryPrice">Price: –</p>
-              <p class="micro subtle"><strong>Note:</strong> The total price is fixed regardless of group size. The per-person amount shown is for reference only.</p>
+              <h3>Zusammenfassung</h3>
+              <p id="summaryDates">Termine: (optional)</p>
+              <p id="summaryGuests">Gäste: –</p>
+              <p id="summaryPrice">Preis: –</p>
+              <p class="micro subtle"><strong>Hinweis:</strong> Der Gesamtpreis ist unabhängig von der Gruppengröße fix. Der angezeigte Pro-Person-Betrag dient nur zur Orientierung.</p>
             </div>
           </div>
 
@@ -300,25 +300,25 @@
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
               <p class="honeypot" aria-hidden="true">
-                <label>Don't fill this out: <input name="bot-field" /></label>
+                <label>Bitte nicht ausfüllen: <input name="bot-field" /></label>
               </p>
 
-              <h3>Your details</h3>
+              <h3>Deine Angaben</h3>
 
               <div class="form-grid">
                 <div>
-                  <label for="firstName">First name</label>
+                  <label for="firstName">Vorname</label>
                   <input id="firstName" name="firstName" type="text" required />
                 </div>
                 <div>
-                  <label for="lastName">Last name</label>
+                  <label for="lastName">Nachname</label>
                   <input id="lastName" name="lastName" type="text" required />
                 </div>
               </div>
 
               <div class="form-grid">
                 <div>
-                  <label for="email">Email</label>
+                  <label for="email">E-Mail</label>
                   <input id="email" name="email" type="email" required />
                 </div>
                 <div>
@@ -329,65 +329,65 @@
 
               <div class="form-grid">
                 <div>
-                  <label for="tourStart">Start date <span class="mini-hint" id="startHint">(optional for questions)</span></label>
+                  <label for="tourStart">Startdatum <span class="mini-hint" id="startHint">(für Fragen optional)</span></label>
                   <input id="tourStart" name="tourStart" type="date" />
                 </div>
                 <div>
-                  <label for="tourEnd">End date <span class="mini-hint" id="endHint">(optional for questions)</span></label>
+                  <label for="tourEnd">Enddatum <span class="mini-hint" id="endHint">(für Fragen optional)</span></label>
                   <input id="tourEnd" name="tourEnd" type="date" />
                 </div>
               </div>
 
               <div class="form-grid">
                 <div>
-                  <label for="tourPersons">Guests</label>
+                  <label for="tourPersons">Gäste</label>
                   <select id="tourPersons" name="tourPersons" required>
-                    <option value="1">1 guest</option>
-                    <option value="2">2 guests</option>
-                    <option value="3">3 guests</option>
-                    <option value="4">4 guests</option>
-                    <option value="5">5 guests</option>
+                    <option value="1">1 Gast</option>
+                    <option value="2">2 Gäste</option>
+                    <option value="3">3 Gäste</option>
+                    <option value="4">4 Gäste</option>
+                    <option value="5">5 Gäste</option>
                   </select>
                 </div>
                 <div>
-                  <label for="swimLevel">Swim level (optional)</label>
-                  <input id="swimLevel" name="swimLevel" type="text" placeholder="e.g., confident offshore / beginner / etc." />
+                  <label for="swimLevel">Schwimmniveau (optional)</label>
+                  <input id="swimLevel" name="swimLevel" type="text" placeholder="z.B. sicher offshore / Anfänger / etc." />
                 </div>
               </div>
 
               <div>
-                <label for="message">Message</label>
+                <label for="message">Nachricht</label>
                 <textarea id="message" name="message" rows="5" required
-                  placeholder="Tell us your expectations (and any concerns). We'll reply honestly about fit + feasibility."></textarea>
+                  placeholder="Erzähl uns kurz deine Erwartungen (und ggf. Bedenken). Wir antworten ehrlich zu Passung + Machbarkeit."></textarea>
               </div>
 
               <div class="passport-wrap" id="passportWrap" hidden>
                 <div class="passport-head">
-                  <h4>Passport details (optional)</h4>
+                  <h4>Passdaten (optional)</h4>
                   <p class="micro subtle">
-                    Only required for trip paperwork <strong>after</strong> we confirm availability.
-                    If you prefer, leave it blank — we'll collect it later via a secure channel.
+                    Nur für die Reiseunterlagen <strong>nachdem</strong> wir die Verfügbarkeit bestätigt haben.
+                    Wenn du möchtest, lass es leer — wir holen das später über einen sicheren Kanal ein.
                   </p>
                 </div>
 
                 <div class="form-grid">
                   <div>
-                    <label for="nationality">Nationality (optional)</label>
+                    <label for="nationality">Nationalität (optional)</label>
                     <input id="nationality" name="nationality" type="text" />
                   </div>
                   <div>
-                    <label for="passport">Passport number (optional)</label>
+                    <label for="passport">Passnummer (optional)</label>
                     <input id="passport" name="passport" type="text" />
                   </div>
                 </div>
 
                 <div class="form-grid">
                   <div>
-                    <label for="issueDate">Passport issue date (optional)</label>
+                    <label for="issueDate">Ausstellungsdatum (optional)</label>
                     <input id="issueDate" name="issueDate" type="date" />
                   </div>
                   <div>
-                    <label for="expiryDate">Passport expiry date (optional)</label>
+                    <label for="expiryDate">Ablaufdatum (optional)</label>
                     <input id="expiryDate" name="expiryDate" type="date" />
                   </div>
                 </div>
@@ -396,34 +396,34 @@
               <div id="additionalGuests"></div>
 
               <div class="agb-wrap" id="agbWrap" hidden>
-                <h4>Terms &amp; Conditions</h4>
+                <h4>AGB</h4>
                 <div class="agb">
                   <p class="micro subtle" style="margin-top:0;">
-                    Cancellation: up to and including 60 days before start → 50% fee. Less than 60 days or no-show → 100% fee.
-                    Tours may change/cancel for safety or force majeure.
+                    Stornierung: bis einschließlich 60 Tage vor Start → 50% Gebühr. Weniger als 60 Tage oder No-Show → 100% Gebühr.
+                    Touren können aus Sicherheitsgründen oder durch höhere Gewalt geändert/abgesagt werden.
                   </p>
                 </div>
 
                 <label class="check" id="termsCheck">
                   <input type="checkbox" id="acceptAgb" name="acceptAgb" />
-                  <span>I have read and accept the Terms &amp; Conditions.</span>
+                  <span>Ich habe die AGB gelesen und akzeptiere sie.</span>
                 </label>
               </div>
 
               <p class="micro subtle" style="margin-top:.95rem;">
-                By submitting, you agree that we contact you about your request.
-                Read our <a href="#" id="openPrivacyInline">Privacy Policy</a> and <a href="#" id="openAgbInline">Terms & Conditions</a>.
+                Mit dem Absenden stimmst du zu, dass wir dich zu deiner Anfrage kontaktieren.
+                Lies unsere <a href="#" id="openPrivacyInline">Datenschutzerklärung</a> und <a href="#" id="openAgbInline">AGB</a>.
               </p>
 
               <div class="form-actions">
-                <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
+                <button class="btn btn-primary" type="submit" id="submitBtn">Senden</button>
                 <p class="micro subtle" id="submitHint">
-                  Questions don't require passport details. Requests are confirmed only after our reply.
+                  Für Fragen sind keine Passdaten nötig. Anfragen sind erst nach unserer Rückmeldung bestätigt.
                 </p>
               </div>
 
               <div class="micro subtle">
-                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
+                <strong>Datenminimierung:</strong> Passfelder sind optional und können später über einen sicheren Kanal erhoben werden.
               </div>
             </form>
           </div>
@@ -431,12 +431,12 @@
       </div>
 
       <div class="booking-foot">
-        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a></div>
+        <div class="micro subtle">Lieber per E-Mail? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a></div>
       </div>
     </div>
   </section>
 
-  <button class="to-top" id="toTop" type="button" aria-label="Back to top">🐋</button>
+  <button class="to-top" id="toTop" type="button" aria-label="Nach oben">🐋</button>
 
   <!-- Scripts: loader.js MUST be loaded before script.js -->
   <script src="/loader.js"></script>

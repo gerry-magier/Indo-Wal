@@ -1,14 +1,47 @@
 // ============================================
-// AUTOMATIC BLOG LOADER
+// BLOG LOADER (DE/EN) - Copy/Paste Version
 // ============================================
-// This script automatically discovers and displays blog posts
-// Just add new blog filenames to the list below!
+// - EN posts: /blog/<file>.html
+// - DE posts: /de/blog/<file>.html
+// Auto-detects language by URL prefix (/de/)
+// Builds links + fetch paths correctly from ANY /de/ page (e.g. /de/register)
 
 class BlogLoader {
-  constructor(containerSelector, blogFolder = '/blog/') {
+  constructor(containerSelector, options = {}) {
     this.container = document.querySelector(containerSelector);
-    this.blogFolder = blogFolder;
+
+    this.isDE = window.location.pathname.startsWith('/de/');
+    this.blogFolder = options.blogFolder
+      ? this.normalizeFolder(options.blogFolder)
+      : (this.isDE ? '/de/blog/' : '/blog/');
+
+    this.locale = options.locale || (this.isDE ? 'de-DE' : 'en-US');
+
+    this.text = this.isDE
+      ? {
+          loading: 'Blogbeiträge werden geladen...',
+          empty: 'Noch keine Blogbeiträge gefunden. Schau bald wieder vorbei!',
+          error: 'Blogbeiträge konnten nicht geladen werden. Bitte später erneut versuchen.',
+          readMore: 'Weiterlesen →',
+          by: 'von'
+        }
+      : {
+          loading: 'Loading blog posts...',
+          empty: 'No blog posts found yet. Check back soon!',
+          error: 'Unable to load blog posts. Please try again later.',
+          readMore: 'Read more →',
+          by: 'by'
+        };
+
     this.blogs = [];
+  }
+
+  // Ensure leading slash + exactly one trailing slash
+  normalizeFolder(folder) {
+    folder = String(folder || '');
+    if (!folder.startsWith('/')) folder = '/' + folder;
+    folder = folder.replace(/\/+$/, '');
+    return folder + '/';
   }
 
   // ============================================
@@ -23,125 +56,156 @@ class BlogLoader {
       'nabire-kaimana-whale-sharks.html',
       'raja-ampat-travel-stories.html',
       'malaria-dengue-papua.html',
-      // Add more as you create them:
-      // 'my-amazing-whale-encounter.html',
-      // 'diving-tips-timor-leste.html',
     ];
   }
 
+  // Always build the canonical URL for the current language
+  buildPostUrl(filename) {
+    const clean = String(filename || '').replace(/^\/+/, '');
+    return this.blogFolder + clean;
+  }
+
   async loadBlogMetadata(filename) {
+    const url = this.buildPostUrl(filename);
+
     try {
-      const response = await fetch(this.blogFolder + filename);
+      const response = await fetch(url, { cache: 'no-cache' });
       if (!response.ok) {
-        console.warn(`Blog post not found: ${filename}`);
+        console.warn(`Blog post not found (${response.status}): ${url}`);
         return null;
       }
-      
+
       const html = await response.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
-      
-      // Extract metadata from the blog post
-      const metadataScript = doc.querySelector('script[type="application/json"][data-blog-metadata]');
-      
+
+      // Preferred: JSON metadata
+      const metadataScript = doc.querySelector(
+        'script[type="application/json"][data-blog-metadata]'
+      );
+
       if (metadataScript) {
-        const metadata = JSON.parse(metadataScript.textContent);
-        return {
-          ...metadata,
-          filename: filename,
-          url: this.blogFolder + filename
-        };
+        let metadata = null;
+        try {
+          metadata = JSON.parse(metadataScript.textContent);
+        } catch (e) {
+          console.warn(`Invalid JSON metadata in ${url}`, e);
+        }
+
+        if (metadata) {
+          return {
+            ...metadata,
+            filename,
+            url // IMPORTANT: keep DE/EN URL here
+          };
+        }
       }
-      
-      // Fallback: extract data from HTML if no metadata found
-      return this.extractFallbackMetadata(doc, filename);
-      
+
+      // Fallback: extract from HTML
+      return this.extractFallbackMetadata(doc, filename, url);
     } catch (error) {
-      console.error(`Error loading blog ${filename}:`, error);
+      console.error(`Error loading blog ${url}:`, error);
       return null;
     }
   }
 
-  extractFallbackMetadata(doc, filename) {
-    const title = doc.querySelector('.blog-title, h1')?.textContent || 'Untitled Post';
-    const subtitle = doc.querySelector('.blog-subtitle')?.textContent || '';
-    const img = doc.querySelector('.blog-featured-image, img')?.src || '/assets/hero.jpg';
-    
-    // Get first paragraph for excerpt
-    const paragraphs = doc.querySelectorAll('.blog-content p');
+  extractFallbackMetadata(doc, filename, url) {
+    const title =
+      doc.querySelector('.blog-title, h1')?.textContent?.trim() ||
+      'Untitled Post';
+
+    const subtitle =
+      doc.querySelector('.blog-subtitle')?.textContent?.trim() || '';
+
+    // image
+    const imgEl = doc.querySelector('.blog-featured-image, img');
+    let image = imgEl?.getAttribute('src') || '/assets/hero.jpg';
+    if (image && !image.startsWith('http') && !image.startsWith('/')) {
+      image = '/' + image;
+    }
+
+    // excerpt
+    const paragraphs = doc.querySelectorAll('.blog-content p, p');
     let excerpt = '';
-    for (let p of paragraphs) {
-      const text = p.textContent.trim();
+    for (const p of paragraphs) {
+      const text = (p.textContent || '').trim();
       if (text.length > 50) {
-        // Get first 2 sentences or ~150 characters
         const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
-        excerpt = sentences.slice(0, 2).join(' ');
-        if (excerpt.length > 200) {
-          excerpt = excerpt.substring(0, 197) + '...';
-        }
+        excerpt = sentences.slice(0, 2).join(' ').trim();
+        if (excerpt.length > 200) excerpt = excerpt.substring(0, 197) + '...';
         break;
       }
     }
-    
-    // Try to get date from blog
-    const dateEl = doc.querySelector('.blog-date');
+
+    // date
     let date = new Date().toISOString().split('T')[0];
+    const dateEl = doc.querySelector('.blog-date, time[datetime]');
     if (dateEl) {
-      // Try to parse date from text
-      const dateText = dateEl.textContent;
+      const dtAttr = dateEl.getAttribute?.('datetime');
+      const dateText = (dtAttr || dateEl.textContent || '').trim();
       const parsedDate = new Date(dateText);
       if (!isNaN(parsedDate.getTime())) {
         date = parsedDate.toISOString().split('T')[0];
       }
     }
-    
+
     return {
       title,
       subtitle,
-      excerpt: excerpt || subtitle || 'Read more...',
-      image: img,
-      date: date,
+      excerpt: excerpt || subtitle || (this.isDE ? 'Weiterlesen...' : 'Read more...'),
+      image,
+      date,
       author: '',
-      filename: filename,
-      url: this.blogFolder + filename
+      filename,
+      url
     };
   }
 
   async loadAllBlogs() {
     const blogFiles = this.getBlogPosts();
-    const loadPromises = blogFiles.map(file => this.loadBlogMetadata(file));
-    const results = await Promise.all(loadPromises);
-    
-    // Filter out failed loads and sort by date (newest first)
+    const results = await Promise.all(blogFiles.map((f) => this.loadBlogMetadata(f)));
+
     this.blogs = results
-      .filter(blog => blog !== null)
+      .filter((b) => b !== null)
       .sort((a, b) => new Date(b.date) - new Date(a.date));
-    
+
     return this.blogs;
   }
 
   formatDate(dateString) {
     const date = new Date(dateString);
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
+    return date.toLocaleDateString(this.locale, options);
+  }
+
+  escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
   }
 
   renderBlogCard(blog) {
+    // IMPORTANT: build link from filename + current language folder (never fall back to EN)
+    const postUrl = this.buildPostUrl(blog.filename);
+
     return `
       <article class="blog-card">
-        <a href="${blog.url}" class="blog-card-link">
+        <a href="${postUrl}" class="blog-card-link">
           <div class="blog-card-image">
-            <img src="${blog.image}" alt="${blog.title}" loading="lazy">
+            <img src="${blog.image}" alt="${this.escapeHtml(blog.title)}" loading="lazy">
           </div>
           <div class="blog-card-content">
             <div class="blog-card-meta">
               <time datetime="${blog.date}">${this.formatDate(blog.date)}</time>
-              ${blog.author ? `<span class="blog-card-author">by ${blog.author}</span>` : ''}
+              ${blog.author ? `<span class="blog-card-author">${this.text.by} ${this.escapeHtml(blog.author)}</span>` : ''}
             </div>
-            <h2 class="blog-card-title">${blog.title}</h2>
-            ${blog.subtitle ? `<p class="blog-card-subtitle">${blog.subtitle}</p>` : ''}
-            <p class="blog-card-excerpt">${blog.excerpt}</p>
-            <span class="blog-card-readmore">Read more →</span>
+            <h2 class="blog-card-title">${this.escapeHtml(blog.title)}</h2>
+            ${blog.subtitle ? `<p class="blog-card-subtitle">${this.escapeHtml(blog.subtitle)}</p>` : ''}
+            <p class="blog-card-excerpt">${this.escapeHtml(blog.excerpt)}</p>
+            <span class="blog-card-readmore">${this.text.readMore}</span>
           </div>
         </a>
       </article>
@@ -153,7 +217,7 @@ class BlogLoader {
     this.container.innerHTML = `
       <div class="blog-loading">
         <div class="blog-loading-spinner"></div>
-        <p>Loading blog posts...</p>
+        <p>${this.text.loading}</p>
       </div>
     `;
   }
@@ -162,7 +226,7 @@ class BlogLoader {
     if (!this.container) return;
     this.container.innerHTML = `
       <div class="blog-empty">
-        <p>No blog posts found yet. Check back soon for exciting stories about blue whales!</p>
+        <p>${this.text.empty}</p>
       </div>
     `;
   }
@@ -171,7 +235,7 @@ class BlogLoader {
     if (!this.container) return;
     this.container.innerHTML = `
       <div class="blog-error">
-        <p>Unable to load blog posts. Please try again later.</p>
+        <p>${this.text.error}</p>
       </div>
     `;
   }
@@ -186,15 +250,14 @@ class BlogLoader {
 
     try {
       await this.loadAllBlogs();
-      
+
       if (this.blogs.length === 0) {
         this.renderEmptyState();
         return;
       }
 
-      const blogsHTML = this.blogs.map(blog => this.renderBlogCard(blog)).join('');
-      this.container.innerHTML = `<div class="blog-grid">${blogsHTML}</div>`;
-      
+      const html = this.blogs.map((b) => this.renderBlogCard(b)).join('');
+      this.container.innerHTML = `<div class="blog-grid">${html}</div>`;
     } catch (error) {
       console.error('Error rendering blogs:', error);
       this.renderError();
@@ -202,14 +265,14 @@ class BlogLoader {
   }
 }
 
-// Initialize when DOM is ready
+// Init
+function initBlogLoader() {
+  const loader = new BlogLoader('#blog-posts-container');
+  loader.render();
+}
+
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initBlogLoader);
 } else {
   initBlogLoader();
-}
-
-function initBlogLoader() {
-  const loader = new BlogLoader('#blog-posts-container');
-  loader.render();
 }
