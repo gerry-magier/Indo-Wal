@@ -1112,4 +1112,81 @@ input:focus,select:focus,textarea:focus{
   .footer-note {
     text-align: center;
   }
+
+
+
+}
+
+  /* ============================================================
+   LANGUAGE SWITCHER STYLES
+   Füge dies am Ende deiner style.css ein
+   ============================================================ */
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid var(--stroke2);
+  color: #023e8a;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 0.92rem;
+  transition: all 0.18s ease;
+  cursor: pointer;
+}
+
+.lang-switcher:hover {
+  background: rgba(255, 255, 255, 0.92);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.12);
+}
+
+.lang-switcher:active {
+  transform: translateY(0);
+}
+
+.lang-flag {
+  font-size: 1.2rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.lang-text {
+  letter-spacing: 0.02em;
+}
+
+/* Mobile Language Switcher */
+.lang-switcher-mobile {
+  justify-content: center;
+  width: 100%;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 980px) {
+  .lang-switcher {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 680px) {
+  /* Desktop Switcher auf Mobile ausblenden */
+  .header-actions .lang-switcher {
+    display: none;
+  }
+  
+  /* Mobile Switcher anzeigen */
+  .lang-switcher-mobile {
+    display: inline-flex !important;
+  }
+}
+
+/* Für größere Bildschirme: Mobile Switcher ausblenden */
+@media (min-width: 681px) {
+  .lang-switcher-mobile {
+    display: none !important;
+  }
 }
