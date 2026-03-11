@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SPLY0P4ZJE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SPLY0P4ZJE');
-</script>
+  <!-- Google Consent Mode v2 — must run before GA -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      wait_for_update: 2000
+    });
+    try {
+      if (localStorage.getItem('twin_cookie_consent') === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch(e) {}
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPLY0P4ZJE"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-SPLY0P4ZJE');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ · Blue Whales of Timor Leste</title>
@@ -278,5 +290,6 @@
   <!-- Scripts: loader.js MUST be loaded before script.js -->
   <script src="loader.js"></script>
   <script src="script.js" data-cfasync="false"></script>
+  <script src="/cookies.js"></script>
 </body>
 </html>
