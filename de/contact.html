@@ -28,7 +28,6 @@
   <title>Kontakt · Twin Expeditions</title>
   <meta name="description" content="Kontakt – Twin Expeditions. Schreib uns, wenn du Fragen hast oder eine Expedition anfragen möchtest." />
 
-  <!-- IMPORTANT: absolute path so it works under /de/ -->
   <link rel="stylesheet" href="/style.css" />
 </head>
 
@@ -42,29 +41,54 @@
       <div class="wrap">
         <div class="section-head">
           <h1 class="section-title">Kontakt</h1>
-          <p class="section-lead">Wenn du unsicher bist – perfekt. Frag zuerst. Wir bevorzugen Klarheit statt „schnell buchen“.</p>
+          <p class="section-lead">Wenn du unsicher bist, ist das völlig okay. Frag zuerst. Lieber klar sprechen als vorschnell buchen.</p>
         </div>
 
-        <div class="card reveal contact-card">
-          <ul class="contact-list">
-            <li>
-              📧 Email:
-              <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a>
-            </li>
+        <div class="card reveal contact-card" style="padding:0; overflow:hidden;">
+          <div class="contact-split" style="display:grid; grid-template-columns:minmax(320px, .95fr) minmax(0, 1.05fr); align-items:stretch;">
+            <div style="position:relative; min-height:520px; background:#09121b;">
+              <img src="/assets/wasserfall.jpg" alt="Wasserfall in Indonesien" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:center center; display:block;">
+            </div>
 
-            <li>
-              💬 WhatsApp:
-              <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">+49 1522 2454651</a>
-            </li>
+            <div style="padding:2rem 2rem 2.1rem 2rem; display:flex; flex-direction:column; justify-content:center;">
+              <p class="micro subtle" style="margin:0 0 .8rem 0; text-transform:uppercase; letter-spacing:.14em;">Kontakt</p>
 
-            <li>📍 Base: Dili, Timor-Leste (saisonal)</li>
-          </ul>
+              <ul class="contact-list" style="list-style:none; padding-left:0; margin:0;">
+                <li>
+                  <strong style="display:block; color:var(--text); margin-bottom:.2rem;">Email</strong>
+                  <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a>
+                </li>
 
-          <div class="cta-row">
-            <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Frage stellen</button>
-            <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Expedition anfragen</button>
+              </ul>
+
+              <p style="margin:1.1rem 0 0 0; color:var(--muted); line-height:1.75; font-weight:700;">
+                Off path. Our path.
+              </p>
+
+              <div style="margin-top:1.4rem;">
+                <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener" aria-label="Chatte mit uns auf WhatsApp" style="display:inline-flex; align-items:center; justify-content:center; width:54px; height:54px; border-radius:999px; background:#25D366; color:#fff; text-decoration:none; box-shadow:0 12px 30px rgba(37,211,102,.22);">
+                  <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false" style="display:block;">
+                    <path fill="currentColor" d="M19.11 17.23c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.31.2-.58.07-.27-.14-1.13-.41-2.16-1.31-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.42.12-.56.12-.12.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.48-.84-2.03-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.47.07-.72.34s-.95.93-.95 2.27.97 2.63 1.11 2.82c.14.18 1.91 2.92 4.63 4.1.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.59-.65 1.81-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+                    <path fill="currentColor" d="M16.02 3.2c-7.08 0-12.8 5.72-12.8 12.77 0 2.25.59 4.45 1.7 6.38L3 29l6.86-1.8a12.86 12.86 0 0 0 6.16 1.57h.01c7.06 0 12.78-5.72 12.78-12.77 0-3.41-1.33-6.62-3.74-9.03A12.72 12.72 0 0 0 16.02 3.2zm0 23.41h-.01a10.7 10.7 0 0 1-5.45-1.49l-.39-.23-4.07 1.07 1.09-3.96-.25-.41a10.6 10.6 0 0 1-1.64-5.61c0-5.89 4.81-10.68 10.73-10.68 2.86 0 5.54 1.11 7.56 3.12a10.58 10.58 0 0 1 3.13 7.55c0 5.89-4.82 10.68-10.7 10.68z"/>
+                  </svg>
+                </a>
+              </div>
+
+              <div class="cta-row" style="margin-top:1.4rem;">
+                <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Frage stellen</button>
+                <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Expedition anfragen</button>
+              </div>
+            </div>
           </div>
         </div>
+
+        <style>
+          @media (max-width: 900px){
+            .contact-split{
+              grid-template-columns: 1fr !important;
+            }
+          }
+        </style>
       </div>
     </section>
   </main>
@@ -282,14 +306,10 @@
     </div>
   </section>
 
-  <!-- Scripts -->
-  <!-- Use absolute paths so they work under /de/ -->
   <script src="/loader.js"></script>
   <script src="/script.js" data-cfasync="false"></script>
 
-  <!-- Load navbar and footer (DE versions) -->
   <script>
-    // Navbar (DE)
     fetch('/de/navbar.html')
       .then(r => r.text())
       .then(html => {
@@ -299,17 +319,14 @@
       })
       .catch(err => console.error('Error loading navbar:', err));
 
-    // Footer (DE)
     fetch('/de/footer.html')
       .then(r => r.text())
       .then(html => {
         document.getElementById('footer-placeholder').innerHTML = html;
 
-        // Rebind footer listeners after footer is loaded
         setTimeout(() => {
           const $ = (s) => document.querySelector(s);
 
-          // AGB
           const openAgbFooter = $('#openAgbFooter');
           const agbModal = $('#agbModal');
           const closeAgb = $('#closeAgb');
@@ -330,7 +347,6 @@
             });
           }
 
-          // Impressum
           const openImpressumFooter = $('#openImpressumFooter');
           const impressumModal = $('#impressumModal');
           const closeImpressum = $('#closeImpressum');
@@ -351,7 +367,6 @@
             });
           }
 
-          // Privacy
           const openPrivacyFooter = $('#openPrivacyFooter');
           const privacyModal = $('#privacyModal');
           const closePrivacy = $('#closePrivacy');
