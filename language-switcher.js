@@ -38,6 +38,9 @@
     
     'papua.html': 'de/papua.html',
     'de/papua.html': 'papua.html',
+
+    'flores.html': 'de/flores.html',
+    'de/flores.html': 'flores.html',
     
     'faq.html': 'de/faq.html',
     'de/faq.html': 'faq.html',
