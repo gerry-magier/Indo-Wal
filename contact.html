@@ -1,31 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Consent Mode v2 — must run before GA -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      analytics_storage: 'denied',
-      ad_storage: 'denied',
-      wait_for_update: 2000
-    });
-    try {
-      if (localStorage.getItem('twin_cookie_consent') === 'granted') {
-        gtag('consent', 'update', { analytics_storage: 'granted' });
-      }
-    } catch(e) {}
-  </script>
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPLY0P4ZJE"></script>
-  <script>
-    gtag('js', new Date());
-    gtag('config', 'G-SPLY0P4ZJE');
-  </script>
+  <script src="/analytics.js"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact · Twin Expeditions</title>
+  <title>Contact Â· Twin Expeditions</title>
   <meta name="description" content="Get in touch with Twin Expeditions. Ask questions or request an expedition." />
 
   <link rel="stylesheet" href="/style.css" />
@@ -95,7 +75,7 @@
 
   <div id="footer-placeholder"></div>
 
-  <button class="to-top" id="toTop" type="button" aria-label="Back to top">🐋</button>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">ðŸ‹</button>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
   <!-- Booking / Request View -->
@@ -106,10 +86,10 @@
           <div class="booking-kicker">Request</div>
           <h2 id="requestTitle">Ask a question</h2>
           <p class="micro subtle" id="requestSubtitle">
-            Ask anything — we’ll reply with clear answers and whether it’s a good fit.
+            Ask anything â€” weâ€™ll reply with clear answers and whether itâ€™s a good fit.
           </p>
         </div>
-        <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">✕</button>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">âœ•</button>
       </div>
 
       <div class="booking-body">
@@ -124,9 +104,9 @@
               <h3>Dates</h3>
 
               <div class="cal-top">
-                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Previous month">‹</button>
+                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Previous month">â€¹</button>
                 <div class="cal-title" id="bookingMonthName">October 2026</div>
-                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Next month">›</button>
+                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Next month">â€º</button>
               </div>
 
               <div class="cal-weekdays" aria-hidden="true">
@@ -148,7 +128,7 @@
 
               <div class="cal-meta">
                 <div id="bookingSelectedDays" class="meta-line"></div>
-                <div id="bookingPrice" class="meta-line strong">Price: €0</div>
+                <div id="bookingPrice" class="meta-line strong">Price: â‚¬0</div>
                 <div id="bookingTotalPrice" class="meta-line"></div>
               </div>
             </div>
@@ -156,8 +136,8 @@
             <div class="card reveal">
               <h3>Summary</h3>
               <p id="summaryDates">Dates: (optional)</p>
-              <p id="summaryGuests">Guests: –</p>
-              <p id="summaryPrice">Price: –</p>
+              <p id="summaryGuests">Guests: â€“</p>
+              <p id="summaryPrice">Price: â€“</p>
               <p class="micro subtle"><strong>Note:</strong> The total price is fixed regardless of group size. The per-person amount shown is for reference only.</p>
             </div>
           </div>
@@ -168,7 +148,7 @@
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
               <p class="honeypot" aria-hidden="true">
-                <label>Don’t fill this out: <input name="bot-field" /></label>
+                <label>Donâ€™t fill this out: <input name="bot-field" /></label>
               </p>
 
               <h3>Your details</h3>
@@ -226,7 +206,7 @@
               <div>
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required
-                  placeholder="Tell us your expectations (and any concerns). We’ll reply honestly about fit + feasibility."></textarea>
+                  placeholder="Tell us your expectations (and any concerns). Weâ€™ll reply honestly about fit + feasibility."></textarea>
               </div>
 
               <div class="passport-wrap" id="passportWrap" hidden>
@@ -234,7 +214,7 @@
                   <h4>Passport details (optional)</h4>
                   <p class="micro subtle">
                     Only required for trip paperwork <strong>after</strong> we confirm availability.
-                    If you prefer, leave it blank — we’ll collect it later via a secure channel.
+                    If you prefer, leave it blank â€” weâ€™ll collect it later via a secure channel.
                   </p>
                 </div>
 
@@ -267,7 +247,7 @@
                 <h4>Terms &amp; Conditions</h4>
                 <div class="agb">
                   <p class="micro subtle" style="margin-top:0;">
-                    Cancellation: up to and including 60 days before start → 50% fee. Less than 60 days or no-show → 100% fee.
+                    Cancellation: up to and including 60 days before start â†’ 50% fee. Less than 60 days or no-show â†’ 100% fee.
                     Tours may change/cancel for safety or force majeure.
                   </p>
                 </div>
@@ -286,7 +266,7 @@
               <div class="form-actions">
                 <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
                 <p class="micro subtle" id="submitHint">
-                  Questions don’t require passport details. Requests are confirmed only after our reply.
+                  Questions donâ€™t require passport details. Requests are confirmed only after our reply.
                 </p>
               </div>
 
@@ -299,7 +279,7 @@
       </div>
 
       <div class="booking-foot">
-        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> · Or <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
+        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> Â· Or <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
       </div>
     </div>
   </section>
