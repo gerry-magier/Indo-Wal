@@ -21,6 +21,29 @@
     }
   }
 
+  function getAnalyticsConsent() {
+    var stored = getStoredConsent();
+
+    if (stored === 'granted') {
+      return true;
+    }
+
+    if (stored === 'denied') {
+      return false;
+    }
+
+    if (!stored) {
+      return false;
+    }
+
+    try {
+      var parsed = JSON.parse(stored);
+      return !!(parsed && parsed.analytics);
+    } catch (error) {
+      return false;
+    }
+  }
+
   function applyConsent(state) {
     var granted = state === 'granted';
 
@@ -40,7 +63,7 @@
     wait_for_update: 1500
   });
 
-  if (getStoredConsent() === 'granted') {
+  if (getAnalyticsConsent()) {
     applyConsent('granted');
   }
 
