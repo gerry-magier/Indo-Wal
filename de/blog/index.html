@@ -105,7 +105,7 @@
     }
     
     .blog-card-author:before {
-      content: '�';
+      content: '·';
       margin-right: 0.5rem;
     }
     
@@ -235,10 +235,10 @@
           <div class="booking-kicker">Anfrage</div>
           <h2 id="requestTitle">Eine Frage stellen</h2>
           <p class="micro subtle" id="requestSubtitle">
-            Frag alles � wir antworten klar, ehrlich und sagen dir, ob es passt.
+            Frag einfach. Wir antworten klar und sagen dir, was realistisch ist.
           </p>
         </div>
-        <button class="icon-btn" id="closeBooking" type="button" aria-label="Anfrage schlie�en">?</button>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Anfrage schließen">×</button>
       </div>
 
       <div class="booking-body">
@@ -253,9 +253,9 @@
               <h3>Termine</h3>
 
               <div class="cal-top">
-                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Vorheriger Monat">�</button>
+                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Vorheriger Monat">‹</button>
                 <div class="cal-title" id="bookingMonthName">Oktober 2026</div>
-                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="N�chster Monat">�</button>
+                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Nächster Monat">›</button>
               </div>
 
               <div class="cal-weekdays" aria-hidden="true">
@@ -265,19 +265,19 @@
               <div class="calendar" id="bookingCalendar"></div>
 
               <div class="cal-controls">
-                <label for="bookingPersons">G�ste</label>
+                <label for="bookingPersons">Gäste</label>
                 <select id="bookingPersons">
                   <option value="1">1 Gast</option>
-                  <option value="2">2 G�ste</option>
-                  <option value="3">3 G�ste</option>
-                  <option value="4">4 G�ste</option>
-                  <option value="5">5 G�ste</option>
+                  <option value="2">2 Gäste</option>
+                  <option value="3">3 Gäste</option>
+                  <option value="4">4 Gäste</option>
+                  <option value="5">5 Gäste</option>
                 </select>
               </div>
 
               <div class="cal-meta">
                 <div id="bookingSelectedDays" class="meta-line"></div>
-                <div id="bookingPrice" class="meta-line strong">Preis: �0</div>
+                <div id="bookingPrice" class="meta-line strong">Preis: €0</div>
                 <div id="bookingTotalPrice" class="meta-line"></div>
               </div>
             </div>
@@ -285,9 +285,9 @@
             <div class="card reveal">
               <h3>Zusammenfassung</h3>
               <p id="summaryDates">Termine: (optional)</p>
-              <p id="summaryGuests">G�ste: �</p>
-              <p id="summaryPrice">Preis: �</p>
-              <p class="micro subtle"><strong>Hinweis:</strong> Der Gesamtpreis ist unabh�ngig von der Gruppengr��e fix. Der angezeigte Pro-Person-Betrag dient nur zur Orientierung.</p>
+              <p id="summaryGuests">Gäste: –</p>
+              <p id="summaryPrice">Preis: –</p>
+              <p class="micro subtle"><strong>Hinweis:</strong> Der Gesamtpreis ist unabhängig von der Gruppengröße fix. Der angezeigte Pro-Person-Betrag dient nur zur Orientierung.</p>
             </div>
           </div>
 
@@ -297,7 +297,7 @@
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
               <p class="honeypot" aria-hidden="true">
-                <label>Bitte nicht ausf�llen: <input name="bot-field" /></label>
+                <label>Bitte nicht ausfüllen: <input name="bot-field" /></label>
               </p>
 
               <h3>Deine Angaben</h3>
@@ -326,50 +326,50 @@
 
               <div class="form-grid">
                 <div>
-                  <label for="tourStart">Startdatum <span class="mini-hint" id="startHint">(f�r Fragen optional)</span></label>
+                  <label for="tourStart">Startdatum <span class="mini-hint" id="startHint">(optional bei Fragen)</span></label>
                   <input id="tourStart" name="tourStart" type="date" />
                 </div>
                 <div>
-                  <label for="tourEnd">Enddatum <span class="mini-hint" id="endHint">(f�r Fragen optional)</span></label>
+                  <label for="tourEnd">Enddatum <span class="mini-hint" id="endHint">(optional bei Fragen)</span></label>
                   <input id="tourEnd" name="tourEnd" type="date" />
                 </div>
               </div>
 
               <div class="form-grid">
                 <div>
-                  <label for="tourPersons">G�ste</label>
+                  <label for="tourPersons">Gäste</label>
                   <select id="tourPersons" name="tourPersons" required>
                     <option value="1">1 Gast</option>
-                    <option value="2">2 G�ste</option>
-                    <option value="3">3 G�ste</option>
-                    <option value="4">4 G�ste</option>
-                    <option value="5">5 G�ste</option>
+                    <option value="2">2 Gäste</option>
+                    <option value="3">3 Gäste</option>
+                    <option value="4">4 Gäste</option>
+                    <option value="5">5 Gäste</option>
                   </select>
                 </div>
                 <div>
                   <label for="swimLevel">Schwimmniveau (optional)</label>
-                  <input id="swimLevel" name="swimLevel" type="text" placeholder="z.B. sicher offshore / Anf�nger / etc." />
+                  <input id="swimLevel" name="swimLevel" type="text" placeholder="z.B. sicher offshore / Anfänger / etc." />
                 </div>
               </div>
 
               <div>
                 <label for="message">Nachricht</label>
                 <textarea id="message" name="message" rows="5" required
-                  placeholder="Erz�hl uns kurz deine Erwartungen (und ggf. Bedenken). Wir antworten ehrlich zu Passung + Machbarkeit."></textarea>
+                  placeholder="Erzähl uns kurz, wohin du möchtest, wann du reisen willst und welche Fragen offen sind."></textarea>
               </div>
 
               <div class="passport-wrap" id="passportWrap" hidden>
                 <div class="passport-head">
                   <h4>Passdaten (optional)</h4>
                   <p class="micro subtle">
-                    Nur f�r die Reiseunterlagen <strong>nachdem</strong> wir die Verf�gbarkeit best�tigt haben.
-                    Wenn du m�chtest, lass es leer � wir holen das sp�ter �ber einen sicheren Kanal ein.
+                    Nur nötig für die Reiseunterlagen, <strong>nachdem</strong> wir die Verfügbarkeit bestätigt haben.
+                    Du kannst es leer lassen; dann holen wir die Daten später über einen sicheren Kanal ein.
                   </p>
                 </div>
 
                 <div class="form-grid">
                   <div>
-                    <label for="nationality">Nationalit�t (optional)</label>
+                    <label for="nationality">Nationalität (optional)</label>
                     <input id="nationality" name="nationality" type="text" />
                   </div>
                   <div>
@@ -396,8 +396,8 @@
                 <h4>AGB</h4>
                 <div class="agb">
                   <p class="micro subtle" style="margin-top:0;">
-                    Stornierung: bis einschlie�lich 60 Tage vor Start ? 50% Geb�hr. Weniger als 60 Tage oder No-Show ? 100% Geb�hr.
-                    Touren k�nnen aus Sicherheitsgr�nden oder durch h�here Gewalt ge�ndert/abgesagt werden.
+                    Storno: Bis einschließlich 60 Tage vor Start fallen 50% Gebühr an. Danach oder bei No-Show sind es 100%.
+                    Touren können aus Sicherheitsgründen oder durch höhere Gewalt geändert/abgesagt werden.
                   </p>
                 </div>
 
@@ -408,19 +408,19 @@
               </div>
 
               <p class="micro subtle" style="margin-top:.95rem;">
-                Mit dem Absenden stimmst du zu, dass wir dich zu deiner Anfrage kontaktieren.
-                Lies unsere <a href="#" id="openPrivacyInline">Datenschutzerkl�rung</a> und <a href="#" id="openAgbInline">AGB</a>.
+                Mit dem Absenden erlaubst du uns, dich zu deiner Anfrage zu kontaktieren.
+                Hier findest du unsere <a href="#" id="openPrivacyInline">Datenschutzerklärung</a> und <a href="#" id="openAgbInline">AGB</a>.
               </p>
 
               <div class="form-actions">
                 <button class="btn btn-primary" type="submit" id="submitBtn">Senden</button>
                 <p class="micro subtle" id="submitHint">
-                  F�r Fragen sind keine Passdaten n�tig. Anfragen sind erst nach unserer R�ckmeldung best�tigt.
+                  Für einfache Fragen brauchen wir keine Passdaten. Eine Anfrage ist erst nach unserer Rückmeldung verbindlich.
                 </p>
               </div>
 
               <div class="micro subtle">
-                <strong>Datenminimierung:</strong> Passfelder sind optional und k�nnen sp�ter �ber einen sicheren Kanal erhoben werden.
+                <strong>Datenminimierung:</strong> Passdaten sind optional und können später über einen sicheren Kanal nachgereicht werden.
               </div>
             </form>
           </div>
@@ -428,12 +428,12 @@
       </div>
 
       <div class="booking-foot">
-        <div class="micro subtle">Lieber per E-Mail? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> � Oder <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
+        <div class="micro subtle">Lieber per E-Mail? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> · Oder <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
       </div>
     </div>
   </section>
 
-  <button class="to-top" id="toTop" type="button" aria-label="Nach oben">??</button>
+  <button class="to-top" id="toTop" type="button" aria-label="Nach oben">↑</button>
 
   <!-- Scripts: loader.js MUST be loaded before script.js -->
   <script src="/loader.js"></script>
