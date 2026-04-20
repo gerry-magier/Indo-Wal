@@ -287,88 +287,21 @@
   </section>
 
   <script src="/loader.js"></script>
+  <script src="/language-switcher.js"></script>
   <script src="/script.js" data-cfasync="false"></script>
-
   <script>
-    fetch('/de/navbar.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('navbar-placeholder').innerHTML = html;
+    (function () {
+      const timer = window.setInterval(function () {
         const nav = document.getElementById('navbar-placeholder');
-        nav.querySelectorAll('a[href*="contact"]').forEach(a => a.classList.add('active'));
-      })
-      .catch(err => console.error('Error loading navbar:', err));
+        if (!nav || !nav.querySelector('a')) return;
+        nav.querySelectorAll('a[href*="contact"]').forEach((a) => a.classList.add('active'));
+        window.clearInterval(timer);
+      }, 100);
 
-    fetch('/de/footer.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('footer-placeholder').innerHTML = html;
-
-        setTimeout(() => {
-          const $ = (s) => document.querySelector(s);
-
-          const openAgbFooter = $('#openAgbFooter');
-          const agbModal = $('#agbModal');
-          const closeAgb = $('#closeAgb');
-
-          if (openAgbFooter && agbModal) {
-            openAgbFooter.addEventListener('click', (e) => {
-              e.preventDefault();
-              document.body.classList.add('agb-open');
-              agbModal.setAttribute('aria-hidden', 'false');
-              document.body.style.overflow = 'hidden';
-            });
-          }
-          if (closeAgb && agbModal) {
-            closeAgb.addEventListener('click', () => {
-              document.body.classList.remove('agb-open');
-              agbModal.setAttribute('aria-hidden', 'true');
-              document.body.style.overflow = '';
-            });
-          }
-
-          const openImpressumFooter = $('#openImpressumFooter');
-          const impressumModal = $('#impressumModal');
-          const closeImpressum = $('#closeImpressum');
-
-          if (openImpressumFooter && impressumModal) {
-            openImpressumFooter.addEventListener('click', (e) => {
-              e.preventDefault();
-              document.body.classList.add('impressum-open');
-              impressumModal.setAttribute('aria-hidden', 'false');
-              document.body.style.overflow = 'hidden';
-            });
-          }
-          if (closeImpressum && impressumModal) {
-            closeImpressum.addEventListener('click', () => {
-              document.body.classList.remove('impressum-open');
-              impressumModal.setAttribute('aria-hidden', 'true');
-              document.body.style.overflow = '';
-            });
-          }
-
-          const openPrivacyFooter = $('#openPrivacyFooter');
-          const privacyModal = $('#privacyModal');
-          const closePrivacy = $('#closePrivacy');
-
-          if (openPrivacyFooter && privacyModal) {
-            openPrivacyFooter.addEventListener('click', (e) => {
-              e.preventDefault();
-              document.body.classList.add('privacy-open');
-              privacyModal.setAttribute('aria-hidden', 'false');
-              document.body.style.overflow = 'hidden';
-            });
-          }
-          if (closePrivacy && privacyModal) {
-            closePrivacy.addEventListener('click', () => {
-              document.body.classList.remove('privacy-open');
-              privacyModal.setAttribute('aria-hidden', 'true');
-              document.body.style.overflow = '';
-            });
-          }
-        }, 100);
-      })
-      .catch(err => console.error('Error loading footer:', err));
+      window.setTimeout(function () {
+        window.clearInterval(timer);
+      }, 5000);
+    }());
   </script>
   <script src="/cookies.js"></script>
 </body>

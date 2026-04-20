@@ -1,54 +1,207 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <script src="/analytics.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ · Blue Whales of Timor Leste</title>
-  <meta name="description" content="Frequently asked questions about Blue Whales of Timor Leste expeditions" />
+  <title>FAQ · Twin Expeditions</title>
+  <meta name="description" content="Häufige Fragen zu privaten Expeditionen in Timor-Leste, Papua und Flores." />
   <link rel="stylesheet" href="/style.css" />
-  
+  <style>
+    .faq-hero {
+      position: relative;
+      overflow: hidden;
+      padding-top: 8rem;
+      background: #07131a;
+      color: white;
+    }
+
+    .faq-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--faq-bg, url("/assets/hero.jpg"));
+      background-size: cover;
+      background-position: center;
+      opacity: .42;
+      transition: background-image .25s ease, opacity .25s ease;
+    }
+
+    .faq-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7, 19, 26, .45), rgba(7, 19, 26, .9));
+    }
+
+    .faq-hero .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-hero .section-title,
+    .faq-hero .section-lead {
+      color: white;
+    }
+
+    .faq-region-tabs {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .faq-region-tab {
+      border: 1px solid rgba(255, 255, 255, .42);
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      border-radius: 999px;
+      padding: .75rem 1.05rem;
+      font: inherit;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .faq-region-tab:hover,
+    .faq-region-tab.is-active {
+      background: white;
+      color: var(--text);
+      border-color: white;
+      transform: translateY(-1px);
+    }
+
+    .faq-general-note {
+      max-width: 820px;
+      margin: 0 auto 2rem;
+      padding: 1.15rem 1.25rem;
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: var(--rMd);
+      background: rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .92);
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .faq-panel {
+      display: none;
+      background: rgba(255, 255, 255, .96);
+      color: var(--text);
+      border-radius: var(--rLg);
+      padding: clamp(1rem, 2vw, 1.5rem);
+      box-shadow: var(--shadowSoft);
+    }
+
+    .faq-panel.is-active {
+      display: block;
+    }
+
+    .faq-panel .cta-mini {
+      margin-top: 1.4rem;
+    }
+  </style>
 </head>
 
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
   <div id="navbar-placeholder"></div>
   
   <main id="main">
-    <section class="section section-soft" style="padding-top: 8rem;">
+    <section class="section faq-hero" id="faqRegionHero" style="--faq-bg:url('/assets/hero.jpg');">
       <div class="wrap">
         <div class="section-head">
           <h1 class="section-title">FAQ</h1>
-          <p class="section-lead">Short answers. We prefer clarity over selling.</p>
+          <p class="section-lead">Wähle eine Tour. Kurze Antworten, schnell erklärt.</p>
         </div>
+
+        <div class="faq-region-tabs" role="tablist" aria-label="FAQ Region">
+          <button class="faq-region-tab is-active" type="button" data-faq-region="timor" role="tab" aria-selected="true">Timor-Leste</button>
+          <button class="faq-region-tab" type="button" data-faq-region="papua" role="tab" aria-selected="false">Papua</button>
+          <button class="faq-region-tab" type="button" data-faq-region="flores" role="tab" aria-selected="false">Flores</button>
+        </div>
+
+        <p class="faq-general-note reveal">
+          Wir bieten ausschließlich private Touren an. Keine zusammengewürfelten Gruppen, kein Standardprogramm: Tempo, Komfortlevel und Ablauf sollen zu euch passen.
+        </p>
+
         <div class="faq">
-          <button class="faq-q reveal" aria-expanded="false"><span>Is a whale swim guaranteed?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a" hidden>No. Whales are wild and conditions vary. You're booking the expedition: a serious, respectful search and the best decisions we can make that morning.</div>
-          
-          <button class="faq-q reveal" aria-expanded="false"><span>What does "private" mean?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a" hidden>We do not mix groups. If you request for 3 people, you go as 3. We adapt pace and time on the water to your group size and number of days (1–5).</div>
-          
-          <button class="faq-q reveal" aria-expanded="false"><span>How does a request work?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a" hidden>You can ask questions anytime. A "Request expedition" triggers an availability + expectation fit-check. We confirm only after we reply and you complete payment.</div>
-          
-          <button class="faq-q reveal" aria-expanded="false"><span>What's included in the price?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a" hidden>Local crew, boat fuel, safety equipment, snorkeling gear, underwater guide, drinking water, and lunch. Not included: flights, accommodation, travel insurance.</div>
-          
-          <button class="faq-q reveal" aria-expanded="false"><span>What if weather is bad?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a" hidden>Safety first. If conditions are unsafe, we reschedule or offer a refund. We make these calls based on real ocean conditions, not optimism.</div>
-          
-          <button class="faq-q reveal" aria-expanded="false"><span>Do I need diving certification?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a" hidden>No. This is snorkeling, not diving. You need to be comfortable in open water and able to swim confidently.</div>
-          
-          <button class="faq-q reveal" aria-expanded="false"><span>How far offshore do we go?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a" hidden>It varies. Blue whales migrate through deep channels. Some days we're 2km out, others 10km+. We follow the conditions, not a fixed route.</div>
-          
-          <button class="faq-q reveal" aria-expanded="false"><span>Can children participate?</span><span class="faq-ic">+</span></button>
-          <div class="faq-a" hidden>Generally 12+ is recommended. It depends on swimming ability and comfort in open ocean. We assess case-by-case during the fit-check.</div>
-          
-          <div class="cta-mini reveal">
-            <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
-            <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
+          <div class="faq-panel is-active" data-faq-panel="timor">
+            <button class="faq-q reveal" aria-expanded="false"><span>Ist eine Begegnung mit Walen garantiert?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Nein. Zwergblauwale sind wilde Tiere, und das Meer macht seine eigenen Regeln. Ihr bucht eine ernsthafte, respektvolle Suche mit lokalen Leuten, guter Vorbereitung und Entscheidungen, die am jeweiligen Morgen Sinn ergeben.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Wann ist die beste Saison?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Oktober und November sind die stärksten Monate. In dieser Zeit ziehen jährlich über 600 Zwergblauwale durch den tiefen Kanal zwischen Dili und Atauro.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Wie funktioniert der Preis in Timor-Leste?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Ihr könnt 1 bis 5 Tage buchen. Der Tagespreis bleibt gleich, egal ob ihr zu zweit, dritt oder mit maximal 5 Personen kommt. Praktisch heißt das: Je mehr Leute ihr in eurer privaten Gruppe seid, desto günstiger wird es rechnerisch pro Person.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Wie findet ihr die Wale?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Wir suchen klassisch vom Boot aus: nach Blows, Oberflächenbewegungen und typischem Walverhalten. Wenn Wetter, Situation und lokale Regeln es zulassen, nutzen wir zusätzlich Drohnenaufnahmen, um die Orientierung und Positionierung zu verbessern.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Brauche ich einen Tauchschein?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Nein. Es geht nicht ums Tauchen, sondern ums Schnorcheln. Wichtig ist, dass du dich im offenen Wasser wohlfühlst und ruhig, sicher und ohne Hektik schwimmen kannst.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Was ist inklusive?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Inklusive sind das private Boot nur für eure Gruppe, lokale Crew, Treibstoff, Sicherheitsbriefing, Schnorchelausrüstung, Unterwasser-Guide, Trinkwasser und Mittagessen. Flüge, Unterkunft und Reiseversicherung sind nicht enthalten.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Was passiert bei schlechtem Wetter?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Sicherheit geht immer vor. Wenn die Bedingungen nicht passen, verschieben wir nach Möglichkeit oder suchen eine faire Lösung. Auf dem Meer entscheiden wir nach Realität, nicht nach Wunschdenken.</div>
+
+            <div class="cta-mini reveal">
+              <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Frage stellen</button>
+              <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Expedition anfragen</button>
+            </div>
+          </div>
+
+          <div class="faq-panel" data-faq-panel="papua">
+            <button class="faq-q reveal" aria-expanded="false"><span>Für wen ist Papua geeignet?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Papua ist für fitte, flexible Reisende. Du solltest mit abgelegener Logistik, einfachen Bedingungen und Planänderungen klarkommen, denn Wetter, Boote und lokale Abläufe lassen sich dort nicht immer exakt planen.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Welche Papua-Routen gibt es?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Die wichtigsten Optionen sind Asmat, Korowai, Asmat + Korowai sowie Nabire Walhaie mit Logistik-Support. Welche Route passt, hängt von eurer Zeit, Fitness, Belastbarkeit und euren Interessen ab.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Wie funktioniert der Preis?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Preise für Papua machen wir individuell auf Anfrage. Route, Gruppengröße, Transport, Timing, lokale Unterstützung und eure Wünsche verändern den Aufwand deutlich.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Ist Korowai eine inszenierte Touristenerfahrung?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Nein. Wir verkaufen keine Show und keine künstliche Baumhaus-Romantik. Wenn wir dorthin gehen, dann mit lokaler Zustimmung, realistischem Timing und Respekt dafür, was vor Ort wirklich möglich ist.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Was ist bei Papua inklusive?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Während der Expedition planen wir die lokale Logistik ein: Boote, Wassertaxis, lokale Transporte, Guides, Dorfabsprachen und einfache Unterkünfte. Internationale Flüge und Inlandsflüge nach Papua sind nicht enthalten.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Können sich Pläne vor Ort ändern?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Ja. Papua ist abgelegen und sensibel. Wasserstände, Wetter, Bootstiming, lokale Zustimmung und Dorfrhythmus können den Ablauf verändern. Wer Papua ehrlich bereist, braucht Flexibilität.</div>
+
+            <div class="cta-mini reveal">
+              <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Fragen, ob Papua zu euch passt</button>
+              <a class="btn btn-primary" href="/de/papua.html">Papua-Routen ansehen</a>
+            </div>
+          </div>
+
+          <div class="faq-panel" data-faq-panel="flores">
+            <button class="faq-q reveal" aria-expanded="false"><span>Was macht die Flores-Route anders?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Es ist eine Überlandreise von Labuan Bajo bis Lamalera, mit Bemo und lokalen Transporten. Die Route lebt von langen Straßen, Dörfern, Landschaften, Kelimutu und dem besonderen Finale in Lamalera.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Was ist ein Bemo?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Ein Bemo ist ein kleiner lokaler Bus. In Indonesien fährt darin nicht nur man selbst mit, sondern auch Gepäck, Einkäufe und manchmal gefühlt das halbe Dorfleben. Einfach, eng, lokal und genau deshalb Teil der Reise.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Ist die Route komfortabel?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Nein, es ist keine Luxusreise. Rechnet mit langen Fahrtagen, einfachen Guesthouses oder Homestays, wechselnden Straßen und viel echtem lokalen Reisen. Genau daraus entsteht aber die Tiefe der Route.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Kann man die Walfangkultur in Lamalera erleben?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Ja. Bei gutem Wetter und passendem Dorfrhythmus ist Teilnahme oder nahes Beobachten definitiv möglich. Es ist aber nicht inszeniert und nicht auf Knopfdruck planbar; Meer, Saison, Boote und Community entscheiden mit.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Kann man länger in Lamalera bleiben?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Ja, das können wir einbauen. Mehr Zeit in Lamalera ist oft sehr wertvoll, kann die Rückreise aber anstrengender machen, weil spätere Transportetappen und Flugzeiten gut abgestimmt werden müssen.</div>
+
+            <button class="faq-q reveal" aria-expanded="false"><span>Was ist bei Flores inklusive?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a" hidden>Inklusive sind privater Bemo mit Fahrer, lokale Unterkünfte entlang der Route, geplante Aktivitäten und Besuche sowie Bootstransfers wie die Überfahrt nach Lamalera. Mahlzeiten bleiben bewusst flexibel und sind lokal meistens günstig.</div>
+
+            <div class="cta-mini reveal">
+              <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Frage zu Flores stellen</button>
+              <a class="btn btn-primary" href="/de/flores.html">Flores-Route ansehen</a>
+            </div>
           </div>
         </div>
       </div>
@@ -269,7 +422,50 @@
 
   <!-- Scripts: loader.js MUST be loaded before script.js -->
   <script src="/loader.js"></script>
+  <script src="/language-switcher.js"></script>
   <script src="/script.js" data-cfasync="false"></script>
+  <script>
+    (function () {
+      const hero = document.getElementById('faqRegionHero');
+      const tabs = Array.from(document.querySelectorAll('[data-faq-region]'));
+      const panels = Array.from(document.querySelectorAll('[data-faq-panel]'));
+      const backgrounds = {
+        timor: '/assets/hero.jpg',
+        papua: '/assets/hero2.jpg',
+        flores: '/assets/lamaleraalt2.jpg'
+      };
+
+      function setRegion(region) {
+        tabs.forEach((tab) => {
+          const active = tab.dataset.faqRegion === region;
+          tab.classList.toggle('is-active', active);
+          tab.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        panels.forEach((panel) => {
+          const active = panel.dataset.faqPanel === region;
+          panel.classList.toggle('is-active', active);
+          if (!active) {
+            panel.querySelectorAll('.faq-q').forEach((question) => {
+              question.setAttribute('aria-expanded', 'false');
+              const icon = question.querySelector('.faq-ic');
+              const answer = question.nextElementSibling;
+              if (icon) icon.textContent = '+';
+              if (answer && answer.classList.contains('faq-a')) answer.hidden = true;
+            });
+          }
+        });
+
+        if (hero && backgrounds[region]) {
+          hero.style.setProperty('--faq-bg', `url('${backgrounds[region]}')`);
+        }
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => setRegion(tab.dataset.faqRegion));
+      });
+    }());
+  </script>
   <script src="/cookies.js"></script>
 </body>
 </html>
