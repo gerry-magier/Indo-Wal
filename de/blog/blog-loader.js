@@ -49,13 +49,15 @@ class BlogLoader {
   // ============================================
   getBlogPosts() {
     return [
+      'lamalera-whaling-village-journey.html',
+      'labuan-bajo-worth-it.html',
       'timor-leste-arrival.html',
       'jayapura-papua-arrival.html',
       'dekai-korowai-papua.html',
       'agats-asmat-papua.html',
       'nabire-kaimana-whale-sharks.html',
       'raja-ampat-travel-stories.html',
-      'malaria-dengue-papua.html',
+      'malaira-dengue-papua.html',
     ];
   }
 

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <script src="/analytics.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lamalera: Das Dorf aus den Geschichten unseres Vaters · Twin Expeditions</title>
+  <meta name="description" content="Unsere persönliche Reise quer über Flores nach Lamalera: Kindheitsgeschichten, ein Vulkanausbruch, traditionelle Jagd auf See, Jefris Homestay und die stressige Rückreise nach Bali." />
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    .footer-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+    .footer-link { text-decoration: none; color: var(--muted); font-weight: 750; transition: color 0.2s ease; }
+    .footer-link:hover { color: var(--brand); text-decoration: underline; }
+    .footer-link-btn { background: none; border: none; color: var(--muted); font-weight: 750; cursor: pointer; padding: 0; font-family: inherit; font-size: inherit; transition: color 0.2s ease; }
+    .footer-link-btn:hover { color: var(--brand); text-decoration: underline; }
+    @media (max-width: 680px) {
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-links { width: 100%; }
+    }
+
+    .blog-post { max-width: 720px; margin: 0 auto; padding: 3rem 0; }
+    .blog-back { display:inline-flex;align-items:center;gap:.5rem;margin-bottom:2rem;color:var(--muted);text-decoration:none;font-weight:700;font-size:.95rem;transition:color .2s ease; }
+    .blog-back:hover { color: var(--brand); }
+    .blog-back:before { content:'‹'; font-size:1.1rem; }
+    .blog-header { margin-bottom: 2.5rem; }
+    .blog-date { color: var(--muted2); font-weight: 650; font-size: 0.95rem; margin-bottom: 0.8rem; }
+    .blog-title { margin: 0 0 1rem; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -0.03em; line-height: 1.2; }
+    .blog-subtitle { color: var(--muted); font-size: 1.2rem; font-weight: 650; line-height: 1.5; margin: 0; }
+    .blog-featured-image { width: 100%; height: auto; border-radius: var(--rLg); margin: 2rem 0 2.5rem; box-shadow: var(--shadowSoft); }
+    .blog-content { line-height: 1.8; color: var(--text); }
+    .blog-content h2 { margin: 2.8rem 0 1rem; font-size: 1.8rem; letter-spacing: -0.02em; font-weight: 850; }
+    .blog-content p { margin: 0 0 1.2rem; font-weight: 600; }
+    .blog-content img { width: 100%; height: auto; border-radius: var(--rMd); margin: 2rem 0; box-shadow: var(--shadowSoft); }
+    .blog-content figure { margin: 2rem 0; }
+    .blog-content figure img { margin: 0; }
+    .blog-content figcaption { margin-top: .7rem; color: var(--muted2); font-weight: 650; font-size: .92rem; line-height: 1.5; }
+    .blog-content blockquote { margin: 2rem 0; padding: 1.5rem 1.8rem; background: rgba(0,180,216,.06); border-left: 4px solid var(--brand); border-radius: var(--rMd); font-style: italic; color: var(--muted); }
+    .blog-content blockquote p { margin: 0; }
+    .blog-content ul { margin: 1.2rem 0; padding-left: 1.8rem; }
+    .blog-content li { margin: 0.5rem 0; font-weight: 600; }
+    .blog-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 2rem 0; }
+    .blog-photo-grid img { margin: 0; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .blog-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--stroke); }
+    .blog-cta { background: linear-gradient(135deg, rgba(0,180,216,.08), rgba(0,119,182,.06)); border: 1px solid var(--stroke); border-radius: var(--rLg); padding: 2rem; text-align: center; }
+    .blog-cta h3 { margin: 0 0 0.8rem; font-size: 1.5rem; letter-spacing: -0.02em; }
+    .blog-cta p { margin: 0 0 1.5rem; color: var(--muted); font-weight: 650; }
+    .blog-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    @media (max-width: 768px) {
+      .blog-post { padding: 2rem 0; }
+      .blog-photo-grid { grid-template-columns: 1fr; }
+      .blog-cta-buttons { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <script type="application/json" data-blog-metadata>
+  {
+    "title": "Lamalera",
+    "subtitle": "Das Dorf aus den Geschichten unseres Vaters",
+    "excerpt": "Wir sind mit Geschichten über Lamalera aufgewachsen. Jahre später fuhren wir quer über Flores, vorbei an einem ausbrechenden Vulkan, um den Ort selbst zu sehen.",
+    "image": "/assets/walschaedel-thumbnail.jpg",
+    "date": "2026-04-20",
+    "author": "Twin Expeditions"
+  }
+  </script>
+
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+  <div id="navbar-placeholder"></div>
+
+  <main id="main">
+    <article class="section">
+      <div class="wrap">
+        <div class="blog-post">
+          <a href="/de/blog/index.html" class="blog-back">Zurück zum Blog</a>
+
+          <header class="blog-header">
+            <div class="blog-date">20. April 2026</div>
+            <h1 class="blog-title">Lamalera: Das Dorf aus den Geschichten unseres Vaters</h1>
+            <p class="blog-subtitle">
+              Ein Kindheitsmythos, 750 Kilometer quer über Flores, ein ausbrechender Vulkan, eine Jagd auf See und die stressigste Rückreise nach Bali, die wir je hatten.
+            </p>
+          </header>
+
+          <img src="/assets/walschädel.jpg" alt="Walschädel im Dorf Lamalera" class="blog-featured-image" />
+
+          <div class="blog-content">
+            <h2>Lamalera, bevor wir es je gesehen hatten</h2>
+            <p>
+              Lustigerweise kennen viele Indonesier das Dorf Lamalera nicht beim Namen, wissen aber, dass es diesen Ort gibt.
+              Für uns hatte Lamalera dagegen schon immer eine ganz konkrete Bedeutung.
+            </p>
+            <p>
+              Unser Vater war vor über 30 Jahren dort. Als wir Kinder waren, erzählte er uns immer wieder Gute-Nacht-Geschichten aus diesem traditionellen
+              Walfängerdorf: ein abgelegener Ort fernab vom Tourismus, an dem Menschen noch in Holzbooten aufs Meer fahren und auf traditionelle Weise jagen.
+              Wir hatten nie ein echtes Bild davon gesehen, aber das Bild im Kopf war immer da.
+            </p>
+            <p>
+              2022 reisten wir mit unserem Vater zum ersten Mal nach Indonesien und besuchten Java. Wir waren damals 16, verliebten uns sofort in das Land,
+              begannen die Sprache zu lernen und kamen 2024 nach dem Abi mit viel Zeit, Neugier und einer ziemlich gefährlichen Portion Abenteuerlust zurück.
+            </p>
+            <p>
+              Irgendwann, als wir in Labuan Bajo waren, kam plötzlich die Frage auf: Wie weit ist Lamalera eigentlich von hier entfernt?
+              Vorher hatten wir nie ernsthaft darüber nachgedacht. Vielleicht, weil der Ort immer mehr nach Geschichte als nach erreichbarem Ziel klang.
+            </p>
+
+            <figure>
+              <img src="/assets/lamaleraalt2.jpg" alt="Historisches Bild eines traditionellen Lamalera-Bootes auf See" />
+              <figcaption>Das Bild, mit dem wir aufgewachsen sind: Lamalera als Ort von Booten, Meer, Risiko und Geschichten.</figcaption>
+            </figure>
+
+            <p>
+              Es war Anfang November und damit eigentlich nicht ideal. Die Hauptsaison für den Walfang liegt meist zwischen Mai und Ende September,
+              wenn das Meer besonders nährstoffreich ist und mehr Meeressäuger vorbeiziehen. Trotzdem ließ uns die Idee nicht mehr los.
+            </p>
+            <p>
+              Also ließen wir unsere Freundinnen in Labuan Bajo, mieteten Roller und fuhren los. Mehr als 750 Kilometer Richtung Lamalera.
+            </p>
+            <p>
+              Das Besondere an dieser Route ist, dass man die offensichtlichen touristischen Wege verlässt. Flores öffnet sich langsam:
+              Bergstraßen, Dörfer, Reisfelder, Vulkane, ruhige Küsten und lange Strecken, auf denen man fast allein mit der Straße ist.
+            </p>
+            <ul>
+              <li>Wae Rebo</li>
+              <li>Keligejo</li>
+              <li>Wae Belang und die Spinnennetz-Reisfelder</li>
+              <li>Kelimutu, der dreifarbige Vulkan</li>
+              <li>viele Dörfer und kleine Naturorte, die in keiner Standardroute auftauchen</li>
+            </ul>
+
+            <div class="blog-photo-grid">
+              <img src="/assets/roller3.jpg" alt="Rollerreise durch Flores" />
+              <img src="/assets/landschaft3.jpg" alt="Landschaft auf der Überlandroute durch Flores" />
+            </div>
+
+            <p>
+              Nach zwei vollen Tagen auf dem Roller, von morgens bis abends, hatten wir genug. In Ende, etwa 390 Kilometer von Labuan Bajo entfernt,
+              war es uns schlicht zu heiß, zu anstrengend und teilweise zu gefährlich geworden, weiter mit dem Zweirad zu fahren.
+            </p>
+            <p>
+              Also parkten wir die Roller in Ende und stiegen auf ein Bemo um, den lokalen Transportbus. Diese Entscheidung fühlte sich ungefähr fünf Minuten
+              lang vernünftig an. Dann kam das nächste Problem.
+            </p>
+
+            <figure>
+              <img src="/assets/bemo.jpg" alt="Unterwegs mit einem lokalen Bemo auf Flores" />
+              <figcaption>Aus dem Rollerabenteuer wurde irgendwann ein Bemoabenteuer.</figcaption>
+            </figure>
+
+            <h2>Der Vulkan, der die Route fast beendet hätte</h2>
+            <p>
+              Der Lewotobi Laki-Laki war ausgebrochen. Die Aschewolke war riesig. Flüge wurden gestrichen, sogar Bali war betroffen.
+              Niemand konnte uns mit voller Sicherheit sagen, ob die Straße Richtung Larantuka noch passierbar war.
+            </p>
+            <p>
+              Wir fragten Einheimische, es wurden Telefonate geführt, und irgendwann kam die Antwort: Ja, es sollte noch möglich sein.
+              Also fuhren wir weiter, vorbei an einer aktiven Vulkansituation, nur wenige Kilometer entfernt.
+            </p>
+
+            <figure>
+              <img src="/assets/vulkan.jpg" alt="Aschiger Himmel nahe Lewotobi Laki-Laki auf Flores" />
+              <figcaption>Die Luft wurde grau, Pflanzen waren von Asche bedeckt und die Sicht wurde schlechter.</figcaption>
+            </figure>
+
+            <p>
+              Ein paar Stunden später veränderte sich die Atmosphäre komplett. Die Luft wurde grau, Blätter und Pflanzen waren mit Asche überzogen,
+              und die riesige Wolke ließ die Straße weniger nach Reise und mehr nach Nachwirkung eines Ereignisses aussehen, das noch nicht vorbei war.
+            </p>
+            <p>
+              Wir hielten sogar an einem großen Evakuierungscamp, wo Spenden für betroffene Dörfer gesammelt wurden.
+              Das war einer dieser Momente, in denen eine Route sehr schnell sehr real wird. Und es sollte nicht das letzte Mal sein, dass dieser Vulkan unsere Pläne veränderte.
+            </p>
+
+            <figure>
+              <img src="/assets/vulkan2.jpg" alt="Vulkanasche und grauer Himmel während der Flores-Überlandreise" />
+              <figcaption>Der Lewotobi Laki-Laki sollte unsere Reise länger begleiten, als wir dachten.</figcaption>
+            </figure>
+
+            <h2>Jefri, die Jagd und der Wettlauf nach Bali</h2>
+            <p>
+              Schon in Ende suchten wir nach Unterkünften in Lamalera. Das war gar nicht so einfach. Vieles läuft dort eher über Google Maps,
+              WhatsApp und lokale Kontakte als über perfekt gepflegte Buchungssysteme.
+            </p>
+            <p>
+              Ein Name fiel uns sofort auf: Jefri Bataona Homestay. Jeffrey kannten wir aus den Geschichten unseres Vaters. Damals hatte unser Vater ihn sogar
+              dazu ermutigt, ein eigenes Homestay zu eröffnen. Also schrieben wir ihm, und tatsächlich erinnerte er sich noch an unseren Vater.
+            </p>
+            <p>
+              Wir verabredeten uns für zwei Tage später. Plötzlich war Lamalera nicht mehr nur ein Ort aus Gute-Nacht-Geschichten.
+              Es war ein Dorf mit einem Menschen, der auf uns wartete.
+            </p>
+
+            <div class="blog-photo-grid">
+              <img src="/assets/floreshaus.jpg" alt="Traditionelle Architektur im Osten von Flores" />
+              <img src="/assets/frau.jpg" alt="Frau aus einer Community auf Flores" />
+            </div>
+
+            <p>
+              Die ersten zwei Tage konnten wir nicht mit aufs Meer, weil eine Hochzeit stattfand. Stattdessen verbrachten wir Zeit mit den Locals,
+              spielten Fußball, unterhielten uns, beobachteten das Dorfleben und bekamen Einblicke in Handwerkskunst, darunter Schmuck aus Zähnen und Knochen von Meerestieren.
+            </p>
+
+            <div class="blog-photo-grid">
+              <img src="/assets/schmuck.jpg" alt="Lokaler Schmuck und Handwerk in Lamalera" />
+              <img src="/assets/knochen.jpg" alt="Knochen und kulturelle Details in Lamalera" />
+            </div>
+
+            <p>
+              Eine Jagd passiert nicht einfach, nur weil Besucher da sind. Mehrere Dinge müssen zusammenkommen: Die Fischer müssen bereit sein,
+              das Meer muss ruhig sein, und es braucht Anzeichen von Tieren, etwa Fontänen, springende Delfine oder einfach die passende Saison.
+            </p>
+            <p>
+              Am dritten Tag ging es endlich hinaus. Nach Stunden auf offener See sahen wir eine riesige Delfinschule, Hunderte Tiere rund um das Boot.
+              Ein Fang schien fast sicher, doch zwei Versuche blieben erfolglos. Ehrlich gesagt waren wir erleichtert. Den Tod eines Tieres mitzuerleben,
+              ist nichts, was man romantisieren sollte.
+            </p>
+
+            <figure>
+              <img src="/assets/jagd.jpg" alt="Traditionelle Jagd auf See von einem Holzboot vor Lamalera" />
+              <figcaption>Auf dem Meer wird die Grenze zwischen Faszination und Unbehagen sehr dünn.</figcaption>
+            </figure>
+
+            <p>
+              Auf dem Rückweg, nach Stunden in der Hitze, änderte sich innerhalb von Sekunden alles. Die Harpune wurde nach vorne gereicht und ins Wasser gestoßen.
+              Zuerst dachten wir, es könnte ein Orca sein, so stark war die Kraft. Dann wurde klar: Es war ein großer Manta-Rochen.
+            </p>
+            <p>
+              Der Manta war zu groß, um ihn schnell ins Boot zu bekommen. Also musste er mehrere Kilometer bis zum Strand gezogen werden.
+              Das verlangsamte uns so sehr, dass wir den einzigen Bus des Tages Richtung Hafenstadt Lewoleba verpassten.
+            </p>
+
+            <figure>
+              <img src="/assets/mantastrand.jpg" alt="Manta am Strand von Lamalera" />
+              <figcaption>Der Manta veränderte das Timing unserer gesamten Rückreise.</figcaption>
+            </figure>
+
+            <p>
+              Am selben Tag, während wir auf dem Meer waren, sahen wir live den zweiten Ausbruch des Vulkans: eine riesige Aschewolke, die immer höher in den Himmel stieg.
+              Eigentlich hätten wir bereits einen Tag früher abreisen müssen, um sicher unseren Flug von Labuan Bajo nach Bali zu erreichen, wo wir Indonesien bald verlassen mussten,
+              weil unser Visum fast ablief. Aber Lamalera zu verlassen, ohne noch einmal draußen auf dem Meer gewesen zu sein, kam für uns nicht infrage.
+            </p>
+            <p>
+              Wir wussten, dass die Rückreise stressig werden könnte. Mit einem harpunierten Manta, verpasstem Bus, zweitem Vulkanausbruch und gestrichenen Flügen hatten wir nicht gerechnet.
+            </p>
+
+            <blockquote>
+              <p>Objektiv betrachtet ergab der Stress keinen Sinn. Aber genau daraus wurde eine unserer liebsten Geschichten.</p>
+            </blockquote>
+
+            <p>
+              Der nächste Morgen begann um 4:30 Uhr. Rund um die Unterkunft lagen noch die Gäste der Hochzeit vom Vorabend:
+              einige draußen auf dem Boden, andere auf Stühlen. Die Stimmung war ruhig und fast surreal nach den Feierlichkeiten.
+            </p>
+            <p>
+              Jeffrey begleitete uns zum Bus und gab uns traditionelle Zigaretten für unseren Vater mit. Der Bus sollte eigentlich später fahren,
+              fuhr an diesem Tag zu unserem Glück aber inoffiziell früher los. Wir verabschiedeten uns mit einem festen Versprechen: Irgendwann kommen wir zurück.
+            </p>
+            <p>
+              Gegen 10:00 Uhr nahmen wir von Lewoleba ein Speedboot nach Larantuka. Kaum angekommen, suchten wir nach einem Bemo Richtung Ende.
+              Wegen des Vulkanausbruchs war die Straße, die wir auf dem Hinweg genommen hatten, inzwischen gesperrt. Wir mussten also einen Umweg fahren.
+              Erst gegen 22:00 Uhr kamen wir in Ende an, genau dort, wo unsere Roller warteten.
+            </p>
+            <p>
+              Damit komplett zurückzufahren hätte zu lange gedauert. Also banden wir am nächsten Morgen um 6:00 Uhr unseren Roller hinten an ein Bemo
+              und fuhren bis Ruteng. Als von dort kein weiteres Bemo mehr fuhr, blieb uns nichts anderes übrig, als die letzte Strecke wieder selbst zu fahren.
+            </p>
+            <p>
+              Gegen 21:00 Uhr erreichten wir schließlich Labuan Bajo, völlig erschöpft, mit genau einem Gedanken im Kopf: Pizza bei Fellas.
+            </p>
+            <p>
+              Wir hatten es innerhalb von zwei Tagen, mit kaum Schlaf und konstantem Druck, über mehrere Inseln zurück nach Labuan Bajo geschafft.
+              Am nächsten Morgen wurde unser Flug wegen der Aschewolken des erneuten Vulkanausbruchs gestrichen.
+            </p>
+            <p>
+              Danach folgte eine weitere zweitägige Kette aus Fähre, Bemo, Reisebus, Taxis, Speedboats und noch mehr Taxis, nur um rechtzeitig in Bali anzukommen.
+              Vier Tage lang waren wir im Schnitt etwa 19 Stunden pro Tag unterwegs, nur um in Bali zu erfahren, dass auch unser Weiterflug für den nächsten Tag gestrichen wurde.
+              Zur Klarstellung: Bali und Lewotobi Laki-Laki trennen über 1.350 Kilometer Luftlinie.
+            </p>
+            <p>
+              Praktisch gesehen war ein großer Teil des Stresses also umsonst. Als Geschichte aber ist er unbezahlbar geworden.
+              Und vielleicht wird sie irgendwann tatsächlich die perfekte Gute-Nacht-Geschichte.
+            </p>
+          </div>
+
+          <footer class="blog-footer">
+            <div class="blog-cta">
+              <h3>Flores abseits der einfachen Route erleben?</h3>
+              <p>Lange Straßen, Bemos, Dörfer, Vulkane und Lamalera: Wir bauen private Routen mit realistischen Erwartungen.</p>
+              <div class="blog-cta-buttons">
+                <a href="/de/flores.html" class="btn btn-secondary">Flores ansehen</a>
+                <a href="/de/contact.html" class="btn btn-primary">Anfragen</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <button class="to-top" id="toTop" type="button" aria-label="Nach oben">↑</button>
+
+  <script src="/loader.js"></script>
+  <script src="/script.js" data-cfasync="false"></script>
+  <script src="/cookies.js"></script>
+</body>
+</html>
