@@ -4,6 +4,11 @@
   <script src="/analytics.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="canonical" href="https://twinexpeditions.com/de/blog/" />
+  <link rel="alternate" hreflang="en" href="https://twinexpeditions.com/blog/" />
+  <link rel="alternate" hreflang="de" href="https://twinexpeditions.com/de/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://twinexpeditions.com/blog/" />
   
   <title>Expeditions-Journal | Blue-Whale-Expeditionen in Timor-Leste</title>
   <meta name="description" content="Geschichten, Einblicke und Abenteuer aus unseren Blue-Whale-Expeditionen in Timor-Leste" />
@@ -100,7 +105,7 @@
     }
     
     .blog-card-author:before {
-      content: '•';
+      content: 'ï¿½';
       margin-right: 0.5rem;
     }
     
@@ -230,10 +235,10 @@
           <div class="booking-kicker">Anfrage</div>
           <h2 id="requestTitle">Eine Frage stellen</h2>
           <p class="micro subtle" id="requestSubtitle">
-            Frag alles — wir antworten klar, ehrlich und sagen dir, ob es passt.
+            Frag alles ï¿½ wir antworten klar, ehrlich und sagen dir, ob es passt.
           </p>
         </div>
-        <button class="icon-btn" id="closeBooking" type="button" aria-label="Anfrage schließen">?</button>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Anfrage schlieï¿½en">?</button>
       </div>
 
       <div class="booking-body">
@@ -248,9 +253,9 @@
               <h3>Termine</h3>
 
               <div class="cal-top">
-                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Vorheriger Monat">‹</button>
+                <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Vorheriger Monat">ï¿½</button>
                 <div class="cal-title" id="bookingMonthName">Oktober 2026</div>
-                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Nächster Monat">›</button>
+                <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Nï¿½chster Monat">ï¿½</button>
               </div>
 
               <div class="cal-weekdays" aria-hidden="true">
@@ -260,19 +265,19 @@
               <div class="calendar" id="bookingCalendar"></div>
 
               <div class="cal-controls">
-                <label for="bookingPersons">Gäste</label>
+                <label for="bookingPersons">Gï¿½ste</label>
                 <select id="bookingPersons">
                   <option value="1">1 Gast</option>
-                  <option value="2">2 Gäste</option>
-                  <option value="3">3 Gäste</option>
-                  <option value="4">4 Gäste</option>
-                  <option value="5">5 Gäste</option>
+                  <option value="2">2 Gï¿½ste</option>
+                  <option value="3">3 Gï¿½ste</option>
+                  <option value="4">4 Gï¿½ste</option>
+                  <option value="5">5 Gï¿½ste</option>
                 </select>
               </div>
 
               <div class="cal-meta">
                 <div id="bookingSelectedDays" class="meta-line"></div>
-                <div id="bookingPrice" class="meta-line strong">Preis: €0</div>
+                <div id="bookingPrice" class="meta-line strong">Preis: ï¿½0</div>
                 <div id="bookingTotalPrice" class="meta-line"></div>
               </div>
             </div>
@@ -280,9 +285,9 @@
             <div class="card reveal">
               <h3>Zusammenfassung</h3>
               <p id="summaryDates">Termine: (optional)</p>
-              <p id="summaryGuests">Gäste: –</p>
-              <p id="summaryPrice">Preis: –</p>
-              <p class="micro subtle"><strong>Hinweis:</strong> Der Gesamtpreis ist unabhängig von der Gruppengröße fix. Der angezeigte Pro-Person-Betrag dient nur zur Orientierung.</p>
+              <p id="summaryGuests">Gï¿½ste: ï¿½</p>
+              <p id="summaryPrice">Preis: ï¿½</p>
+              <p class="micro subtle"><strong>Hinweis:</strong> Der Gesamtpreis ist unabhï¿½ngig von der Gruppengrï¿½ï¿½e fix. Der angezeigte Pro-Person-Betrag dient nur zur Orientierung.</p>
             </div>
           </div>
 
@@ -292,7 +297,7 @@
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
               <p class="honeypot" aria-hidden="true">
-                <label>Bitte nicht ausfüllen: <input name="bot-field" /></label>
+                <label>Bitte nicht ausfï¿½llen: <input name="bot-field" /></label>
               </p>
 
               <h3>Deine Angaben</h3>
@@ -321,50 +326,50 @@
 
               <div class="form-grid">
                 <div>
-                  <label for="tourStart">Startdatum <span class="mini-hint" id="startHint">(für Fragen optional)</span></label>
+                  <label for="tourStart">Startdatum <span class="mini-hint" id="startHint">(fï¿½r Fragen optional)</span></label>
                   <input id="tourStart" name="tourStart" type="date" />
                 </div>
                 <div>
-                  <label for="tourEnd">Enddatum <span class="mini-hint" id="endHint">(für Fragen optional)</span></label>
+                  <label for="tourEnd">Enddatum <span class="mini-hint" id="endHint">(fï¿½r Fragen optional)</span></label>
                   <input id="tourEnd" name="tourEnd" type="date" />
                 </div>
               </div>
 
               <div class="form-grid">
                 <div>
-                  <label for="tourPersons">Gäste</label>
+                  <label for="tourPersons">Gï¿½ste</label>
                   <select id="tourPersons" name="tourPersons" required>
                     <option value="1">1 Gast</option>
-                    <option value="2">2 Gäste</option>
-                    <option value="3">3 Gäste</option>
-                    <option value="4">4 Gäste</option>
-                    <option value="5">5 Gäste</option>
+                    <option value="2">2 Gï¿½ste</option>
+                    <option value="3">3 Gï¿½ste</option>
+                    <option value="4">4 Gï¿½ste</option>
+                    <option value="5">5 Gï¿½ste</option>
                   </select>
                 </div>
                 <div>
                   <label for="swimLevel">Schwimmniveau (optional)</label>
-                  <input id="swimLevel" name="swimLevel" type="text" placeholder="z.B. sicher offshore / Anfänger / etc." />
+                  <input id="swimLevel" name="swimLevel" type="text" placeholder="z.B. sicher offshore / Anfï¿½nger / etc." />
                 </div>
               </div>
 
               <div>
                 <label for="message">Nachricht</label>
                 <textarea id="message" name="message" rows="5" required
-                  placeholder="Erzähl uns kurz deine Erwartungen (und ggf. Bedenken). Wir antworten ehrlich zu Passung + Machbarkeit."></textarea>
+                  placeholder="Erzï¿½hl uns kurz deine Erwartungen (und ggf. Bedenken). Wir antworten ehrlich zu Passung + Machbarkeit."></textarea>
               </div>
 
               <div class="passport-wrap" id="passportWrap" hidden>
                 <div class="passport-head">
                   <h4>Passdaten (optional)</h4>
                   <p class="micro subtle">
-                    Nur für die Reiseunterlagen <strong>nachdem</strong> wir die Verfügbarkeit bestätigt haben.
-                    Wenn du möchtest, lass es leer — wir holen das später über einen sicheren Kanal ein.
+                    Nur fï¿½r die Reiseunterlagen <strong>nachdem</strong> wir die Verfï¿½gbarkeit bestï¿½tigt haben.
+                    Wenn du mï¿½chtest, lass es leer ï¿½ wir holen das spï¿½ter ï¿½ber einen sicheren Kanal ein.
                   </p>
                 </div>
 
                 <div class="form-grid">
                   <div>
-                    <label for="nationality">Nationalität (optional)</label>
+                    <label for="nationality">Nationalitï¿½t (optional)</label>
                     <input id="nationality" name="nationality" type="text" />
                   </div>
                   <div>
@@ -391,8 +396,8 @@
                 <h4>AGB</h4>
                 <div class="agb">
                   <p class="micro subtle" style="margin-top:0;">
-                    Stornierung: bis einschließlich 60 Tage vor Start ? 50% Gebühr. Weniger als 60 Tage oder No-Show ? 100% Gebühr.
-                    Touren können aus Sicherheitsgründen oder durch höhere Gewalt geändert/abgesagt werden.
+                    Stornierung: bis einschlieï¿½lich 60 Tage vor Start ? 50% Gebï¿½hr. Weniger als 60 Tage oder No-Show ? 100% Gebï¿½hr.
+                    Touren kï¿½nnen aus Sicherheitsgrï¿½nden oder durch hï¿½here Gewalt geï¿½ndert/abgesagt werden.
                   </p>
                 </div>
 
@@ -404,18 +409,18 @@
 
               <p class="micro subtle" style="margin-top:.95rem;">
                 Mit dem Absenden stimmst du zu, dass wir dich zu deiner Anfrage kontaktieren.
-                Lies unsere <a href="#" id="openPrivacyInline">Datenschutzerklärung</a> und <a href="#" id="openAgbInline">AGB</a>.
+                Lies unsere <a href="#" id="openPrivacyInline">Datenschutzerklï¿½rung</a> und <a href="#" id="openAgbInline">AGB</a>.
               </p>
 
               <div class="form-actions">
                 <button class="btn btn-primary" type="submit" id="submitBtn">Senden</button>
                 <p class="micro subtle" id="submitHint">
-                  Für Fragen sind keine Passdaten nötig. Anfragen sind erst nach unserer Rückmeldung bestätigt.
+                  Fï¿½r Fragen sind keine Passdaten nï¿½tig. Anfragen sind erst nach unserer Rï¿½ckmeldung bestï¿½tigt.
                 </p>
               </div>
 
               <div class="micro subtle">
-                <strong>Datenminimierung:</strong> Passfelder sind optional und können später über einen sicheren Kanal erhoben werden.
+                <strong>Datenminimierung:</strong> Passfelder sind optional und kï¿½nnen spï¿½ter ï¿½ber einen sicheren Kanal erhoben werden.
               </div>
             </form>
           </div>
@@ -423,7 +428,7 @@
       </div>
 
       <div class="booking-foot">
-        <div class="micro subtle">Lieber per E-Mail? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> · Oder <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
+        <div class="micro subtle">Lieber per E-Mail? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> ï¿½ Oder <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
       </div>
     </div>
   </section>
