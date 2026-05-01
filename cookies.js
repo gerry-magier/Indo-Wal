@@ -105,8 +105,13 @@
   }
 
   function updateGtag(granted) {
-    if (typeof gtag === 'function') {
-      gtag('consent', 'update', {
+    if (typeof window.twinUpdateAnalyticsConsent === 'function') {
+      window.twinUpdateAnalyticsConsent(granted);
+      return;
+    }
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
         analytics_storage: granted ? 'granted' : 'denied',
         ad_storage: 'denied',
         ad_user_data: 'denied',
