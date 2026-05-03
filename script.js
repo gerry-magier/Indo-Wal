@@ -21,6 +21,9 @@
     if (e.target.closest("#closeImpressum")) { e.preventDefault(); closeImpressumModal(); return; }
     if (e.target.closest("#openPrivacyFooter, #openPrivacyInline")) { e.preventDefault(); openPrivacyFooterModal(e); return; }
     if (e.target.closest("#closePrivacy")) { e.preventDefault(); closePrivacyModal(); return; }
+    if (e.target.id === "agbModal") { closeAgbModal(); return; }
+    if (e.target.id === "impressumModal") { closeImpressumModal(); return; }
+    if (e.target.id === "privacyModal") { closePrivacyModal(); return; }
   });
 
 
@@ -1011,7 +1014,6 @@
     }
 
 // ===== Privacy modal
-    const privacyModal = $('#privacyModal');
     const openPrivacyFooter = $('#openPrivacyFooter');
     const openPrivacyFooterInline = $('#openPrivacyFooterInline');
     const closePrivacy = $('#closePrivacy');
@@ -1044,6 +1046,7 @@
 
     function openPrivacyFooterModal(e) {
       if (e) e.preventDefault();
+      const privacyModal = $('#privacyModal');
       if (!privacyModal) return;
       closeMobileMenu();
       document.body.classList.add('privacy-open');
@@ -1051,6 +1054,7 @@
       lockScrollPrivacy();
     }
     function closePrivacyModal() {
+      const privacyModal = $('#privacyModal');
       if (!privacyModal) return;
       document.body.classList.remove('privacy-open');
       privacyModal.setAttribute('aria-hidden', 'true');
@@ -1190,7 +1194,6 @@
     }
 
     // ===== AGB modal
-    const agbModal = $('#agbModal');
     const openAgbFooter = $('#openAgbFooter');
     const openAgbInline = $('#openAgbInline');
     const closeAgb = $('#closeAgb');
@@ -1224,15 +1227,17 @@
 
     function openAgbModal(e) {
       if (e) e.preventDefault();
+      const agbModal = $('#agbModal');
       if (!agbModal) return;
       closeMobileMenu();
       document.body.classList.add('agb-open');
       agbModal.setAttribute('aria-hidden', 'false');
       lockScrollAgb();
-      try { closeAgb?.focus({ preventScroll: true }); } catch(_) {}
+      try { $('#closeAgb')?.focus({ preventScroll: true }); } catch(_) {}
     }
 
     function closeAgbModal() {
+      const agbModal = $('#agbModal');
       if (!agbModal) return;
       document.body.classList.remove('agb-open');
       agbModal.setAttribute('aria-hidden', 'true');
@@ -1245,7 +1250,8 @@
       });
       if (closeAgb) closeAgb.addEventListener('click', closeAgbModal);
 
-      agbModal?.addEventListener('click', (e) => {
+      $('#agbModal')?.addEventListener('click', (e) => {
+        const agbModal = $('#agbModal');
         if (e.target === agbModal) closeAgbModal();
       });
 
@@ -1255,7 +1261,6 @@
     }
 
     // ===== Impressum modal
-    const impressumModal = $('#impressumModal');
     const openImpressumFooter = $('#openImpressumFooter');
     const openImpressumInline = $('#openImpressumInline');
     const closeImpressum = $('#closeImpressum');
@@ -1289,15 +1294,17 @@
 
     function openImpressumModal(e) {
       if (e) e.preventDefault();
+      const impressumModal = $('#impressumModal');
       if (!impressumModal) return;
       closeMobileMenu();
       document.body.classList.add('impressum-open');
       impressumModal.setAttribute('aria-hidden', 'false');
       lockScrollImpressum();
-      try { closeImpressum?.focus({ preventScroll: true }); } catch(_) {}
+      try { $('#closeImpressum')?.focus({ preventScroll: true }); } catch(_) {}
     }
 
     function closeImpressumModal() {
+      const impressumModal = $('#impressumModal');
       if (!impressumModal) return;
       document.body.classList.remove('impressum-open');
       impressumModal.setAttribute('aria-hidden', 'true');
@@ -1310,7 +1317,8 @@
       });
       if (closeImpressum) closeImpressum.addEventListener('click', closeImpressumModal);
 
-      impressumModal?.addEventListener('click', (e) => {
+      $('#impressumModal')?.addEventListener('click', (e) => {
+        const impressumModal = $('#impressumModal');
         if (e.target === impressumModal) closeImpressumModal();
       });
 
