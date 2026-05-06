@@ -1374,18 +1374,19 @@
   }
 
   function isNeutralPage() {
-    const p = window.location.pathname.toLowerCase();
-    return (
-      p === '/' ||
-      p === '/de/' ||
-      p.includes('/faq') ||
-      p.includes('/contact') ||
-      p.includes('/blog')
-    );
+    return !isTimorPage() && !isPapuaPage() && !isFloresPage();
+  }
+
+  function isTimorPage() {
+    return window.location.pathname.toLowerCase().includes('timor-leste-blue-whale');
   }
 
   function isPapuaPage() {
     return window.location.pathname.toLowerCase().includes('papua');
+  }
+
+  function isFloresPage() {
+    return window.location.pathname.toLowerCase().includes('flores');
   }
 
   function closeAnyAgbLikeModal() {
@@ -1419,6 +1420,7 @@
     injectAndOpen(url).then(() => {
       const timorBtn = document.getElementById('openAgbTimor');
       const papuaBtn = document.getElementById('openAgbPapua');
+      const floresBtn = document.getElementById('openAgbFlores');
 
       if (timorBtn) timorBtn.addEventListener('click', () => {
         const agbUrl = isGerman() ? '/de/agb.html' : '/agb.html';
@@ -1429,6 +1431,11 @@
         const agbUrl = isGerman() ? '/de/agb2.html' : '/agb2.html';
         injectAndOpen(agbUrl);
       });
+
+      if (floresBtn) floresBtn.addEventListener('click', () => {
+        const agbUrl = isGerman() ? '/de/agb3.html' : '/agb3.html';
+        injectAndOpen(agbUrl);
+      });
     });
   }
 
@@ -1436,7 +1443,11 @@
     const override = window.AGB_FILE;
     const url = override
       ? override
-      : (isGerman() ? '/de/agb.html' : '/agb.html');
+      : isPapuaPage()
+        ? (isGerman() ? '/de/agb2.html' : '/agb2.html')
+        : isFloresPage()
+          ? (isGerman() ? '/de/agb3.html' : '/agb3.html')
+          : (isGerman() ? '/de/agb.html' : '/agb.html');
 
     injectAndOpen(url);
   }
@@ -1446,10 +1457,9 @@
     const closeSelect = e.target.closest('#closeAgbSelect');
     const closeAgb = e.target.closest('#closeAgb');
 
-    if (isPapuaPage()) return;
-
     if (open) {
       e.preventDefault();
+      e.stopImmediatePropagation();
       if (isNeutralPage()) openAgbSelector();
       else openDirectAgb();
       return;
@@ -1457,6 +1467,7 @@
 
     if (closeSelect || closeAgb) {
       e.preventDefault();
+      e.stopImmediatePropagation();
       closeAnyAgbLikeModal();
       return;
     }

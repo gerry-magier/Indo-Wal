@@ -47,6 +47,9 @@
     
     'contact.html': 'de/contact.html',
     'de/contact.html': 'contact.html',
+
+    'impressum.html': 'de/impressum.html',
+    'de/impressum.html': 'impressum.html',
     
     // Blog
     'blog/index.html': 'de/blog/index.html',
