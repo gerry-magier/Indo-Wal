@@ -611,7 +611,7 @@ a:hover{color:#056aa2}
 .contact-list a:hover{text-decoration:underline}
 
 /* Footer */
-.footer{padding:1.4rem 0 1.6rem;color:var(--muted2)}
+.footer{padding:1.4rem 0 1.6rem;color:var(--muted2);background:#fff}
 .footer-inner{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .footer-note{font-weight:650}
 

@@ -1,0 +1,1451 @@
+Inhaltsverzeichnis
+Datenschutzerklärung - Englische Version 
+................................................................................................................................................ 2
+Datenschutzerklärung als HTML-Quellcode - Englische Version 
+................................................................................................. 13
+                                         1 / 13
+Ihre Datenschutzerklärung (englische Version)
+Im Folgenden finden Sie die Textdaten für die englische Version Ihrer persönlichen Datenschutzerklärung für Ihre
+Website gemäß der von Ihnen getätigten Angaben. Sofern Sie in Ihrer Website einen Eingabe-Editor für Ihre Inhalte
+nutzen, können Sie den folgenden Text direkt herauskopieren und dort einfügen.
+Sofern Sie die Inhalte alternativ als HTML-Quellcode in Ihre Website integrieren möchten, können Sie den
+anschließend aufgeführten HTML-Quellcode nutzen.
+Achtung: Einwilligung erforderlich
+Zahlreiche Dienste dürfen Sie nach herrschender Auffassung der Datenschutzbehörden und Gerichte nur
+mit Einwilligung einsetzen. Das betrifft v. a. Analyse- und Marketing-Tools (z. B. Google Analytics oder Meta-
+Pixel). Eine Einwilligungspflicht besteht vor allem für die folgenden von Ihnen ausgewählten Tools:
+Google Analytics
+Achtung: Einwilligung empfohlen
+Bei bestimmten Diensten ist nicht abschließend geklärt, ob sie eine Einwilligung benötigen. Angesichts der
+derzeitigen rechtlichen Entwicklung ist es aber wahrscheinlich, dass die Datenschutzbehörden und Gerichte
+auch für diese Tools eine Einwilligungspflicht bejahen werden. Wenn Sie das rechtliche Risiko einer
+Abmahnung oder eines behördlichen Verfahrens / Bußgelds vermeiden möchten, empfehlen wir Ihnen auch
+für folgende Dienste eine Einwilligung einzuholen:
+WhatsApp
+Eine Übersicht der von uns empfohlenen Consent Tools finden Sie hier:
+https://www.e-recht24.de/mitglieder/vorteilsangebote/consent-tools/
+.
+Für das Teilen von Inhalten auf Social-Media-Plattformen bietet eRecht24 außerdem das 
+eRecht24 Safe
+Sharing Tool
+ an:
+https://www.e-recht24.de/mitglieder/tools/erecht24-safe-sharing/
+.
+Sie nutzen 
+Google Analytics
+. Wenn Sie entgegen unserer Empfehlung keine Einwilligung hierfür einholen,
+sollten Sie zumindest die Möglichkeit zum sogenannten Opt-Out unterhalb Ihrer Datenschutzerklärung
+einbinden, mit dem der Websitebesucher das Tracking seines Besuchs deaktivieren kann. Gehen Sie hierzu
+wie folgt vor:
+Fügen Sie unterhalb Ihrer Datenschutzerklärung folgenden Text ein: 
+Google Analytics deaktivieren
+Fügen Sie unterhalb dieses Texts folgenden HTML-Code ein:
+<button onclick="gaOptout();">Google Analytics deaktivieren</button>
+                                         2 / 13
+Damit dieser Button funktioniert, müssen Sie 
+folgenden HTML-Quellcode mit Javascript VOR Ihrem
+Google-Analytics-Tracking-Code platzieren
+.
+Ersetzen Sie zudem die Zeichenfolge G-XXXXXXXX durch Ihre Google Analytics Mess-ID.
+<script type="text/javascript">
+var gaProperty = 'G-XXXXXXXX';
+var disableStr = 'ga-disable-' + gaProperty;
+if (document.cookie.indexOf(disableStr + '=true') > -1) {
+window[disableStr] = true;
+}
+function gaOptout() {
+document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+window[disableStr] = true;
+alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Website deaktiviert.');
+}
+</script>
+Achten Sie darüber hinaus bitte darauf, dass der Javascript-Aufruf im Opt-Out-Button nach dem Speichern
+erhalten bleibt. Einige Content Management Systeme, wie z. B. Joomla! oder WordPress, entfernen unter
+Umständen diese Javascript-Funktion. Prüfen Sie auf Ihrer Website durch Anklicken des Opt-Out-Buttons,
+ob der Cookie gesetzt wird. Funktioniert dieser Button nicht und wird somit nach dem Klick der Opt-Out-
+Cookie nicht gesetzt, ist Ihre Google-Analytics-Einbindung ohne Verwendung eines Consent-Tools nicht
+rechtssicher!
+Englische Textversion der Datenschutzerklärung für Ihre Website
+Privacy Policy
+1. An overview of data protection
+General information
+The following information will provide you with an easy to navigate overview of what will happen with your
+personal data when you visit this website. The term personal data comprises all data that can be used to
+personally identify you. For detailed information about the subject matter of data protection, please consult
+our Data Protection Declaration, which we have included beneath this copy.
+Data recording on this website
+Who is the responsible party for the recording of data on this website (i.e., the controller)?
+The data on this website is processed by the operator of the website, whose contact information is available
+under section Information about the responsible party (referred to as the controller in the GDPR) in this
+                                         3 / 13
+Privacy Policy.
+How do we record your data?
+We collect your data as a result of your sharing of your data with us. This may, for instance be information
+you enter into our contact form.
+Other data shall be recorded by our IT systems automatically or after you consent to its recording during
+your website visit. This data comprises primarily technical information (e.g., web browser, operating system,
+or time the site was accessed). This information is recorded automatically when you access this website.
+What are the purposes we use your data for?
+A portion of the information is generated to guarantee the error free provision of the website. Other data
+may be used to analyze your user patterns. If contracts can be concluded or initiated via the website, the
+transmitted data will also be processed for contract offers, orders or other order enquiries.
+What rights do you have as far as your information is concerned?
+You have the right to receive information about the source, recipients, and purposes of your archived
+personal data at any time without having to pay a fee for such disclosures. You also have the right to demand
+that your data are rectified or eradicated. If you have consented to data processing, you have the option to
+revoke this consent at any time, which shall affect all future data processing. Moreover, you have the right to
+demand that the processing of your data be restricted under certain circumstances. Furthermore, you have
+the right to log a complaint with the competent supervising agency.
+Please do not hesitate to contact us at any time if you have questions about this or any other data protection
+related issues.
+Analysis tools and tools provided by third parties
+There is a possibility that your browsing patterns will be statistically analyzed when your visit this website.
+Such analyses are performed primarily with what we refer to as analysis programs.
+For detailed information about these analysis programs please consult our Data Protection Declaration
+below.
+2. Hosting and Content Delivery Networks (CDN)
+We are hosting the content of our website at the following provider:
+Strato
+The provider is Strato AG, Otto-Ostrowski-Straße 7, 10249 Berlin (hereinafter referred to as Strato). When
+you visit our website, Strato records various logfiles, including your IP addresses.
+For more information, please consult the Strato Data Privacy Policy:
+https://www.strato.de/datenschutz/
+.
+Strato is used on the basis of Art. 6(1)(f) GDPR. We have a legitimate interest in a depiction of our website
+that is as reliable as possible. If appropriate consent has been obtained, the processing is carried out
+exclusively on the basis of Art. 6(1)(a) GDPR and § 25 (1) TDDDG, insofar the consent includes the storage of
+cookies or the access to information in the users end device (e.g., device fingerprinting) within the meaning
+of the TDDDG. This consent can be revoked at any time.
+                                         4 / 13
+Cloudflare
+We use the Cloudflare service provided by Cloudflare Inc., 101 Townsend St., San Francisco, CA 94107,
+USA. (hereinafter referred to as Cloudflare).
+Cloudflare offers a content delivery network with DNS that is available worldwide. As a result, the
+information transfer that occurs between your browser and our website is technically routed via
+Cloudflares network. This enables Cloudflare to analyze data transactions between your browser and our
+website and to work as a filter between our servers and potentially malicious data traffic from the Internet.
+In this context, Cloudflare may also use cookies or other technologies deployed to recognize Internet users,
+which shall, however, only be used for the herein described purpose.
+The use of Cloudflare is based on our legitimate interest in a provision of our website offerings that is as
+error free and secure as possible (Art. 6(1)(f) GDPR).
+Data transmission to the US is based on the Standard Contractual Clauses (SCC) of the European
+Commission. Details and further information on security and data protection at Cloudflare can be found
+here:
+https://www.cloudflare.com/privacypolicy/
+.
+The company is certified in accordance with the EU-US Data Privacy Framework (DPF). The DPF is an
+agreement between the European Union and the US, which is intended to ensure compliance with European
+data protection standards for data processing in the US. Every company certified under the DPF is obliged to
+comply with these data protection standards. For more information, please contact the provider under the
+following link:
+https://www.dataprivacyframework.gov/participant/5666
+.
+3. General information and mandatory information
+Data protection
+The operators of this website and its pages take the protection of your personal data very seriously. Hence,
+we handle your personal data as confidential information and in compliance with the statutory data
+protection regulations and this Data Protection Declaration.
+Whenever you use this website, a variety of personal information will be collected. Personal data comprises
+data that can be used to personally identify you. This Data Protection Declaration explains which data we
+collect as well as the purposes we use this data for. It also explains how, and for which purpose the
+information is collected.
+We herewith advise you that the transmission of data via the Internet (i.e., through e-mail communications)
+may be prone to security gaps. It is not possible to completely protect data against third-party access.
+Information about the responsible party (referred to as the controller in the GDPR)
+The data processing controller on this website is:
+Gerret Marx
+Immenstraße, 13
+14542 Werder (Havel)
+Deutschland
+Phone: +49 1522 2454651
+E-mail: requesttwinexpeditions@gmail.com
+                                         5 / 13
+The controller is the natural person or legal entity that single-handedly or jointly with others makes
+decisions as to the purposes of and resources for the processing of personal data (e.g., names, e-mail
+addresses, etc.).
+Storage duration
+Unless a more specific storage period has been specified in this privacy policy, your personal data will remain
+with us until the purpose for which it was collected no longer applies. If you assert a justified request for
+deletion or revoke your consent to data processing, your data will be deleted, unless we have other legally
+permissible reasons for storing your personal data (e.g., tax or commercial law retention periods); in the
+latter case, the deletion will take place after these reasons cease to apply.
+General information on the legal basis for the data processing on this website
+If you have consented to data processing, we process your personal data on the basis of Art. 6(1)(a) GDPR or
+Art. 9 (2)(a) GDPR, if special categories of data are processed according to Art. 9 (1) DSGVO. In the case of
+explicit consent to the transfer of personal data to third countries, the data processing is also based on Art.
+49 (1)(a) GDPR. If you have consented to the storage of cookies or to the access to information in your end
+device (e.g., via device fingerprinting), the data processing is additionally based on § 25 (1) TDDDG. The
+consent can be revoked at any time. If your data is required for the fulfillment of a contract or for the
+implementation of pre-contractual measures, we process your data on the basis of Art. 6(1)(b) GDPR.
+Furthermore, if your data is required for the fulfillment of a legal obligation, we process it on the basis of Art.
+6(1)(c) GDPR. Furthermore, the data processing may be carried out on the basis of our legitimate interest
+according to Art. 6(1)(f) GDPR. Information on the relevant legal basis in each individual case is provided in
+the following paragraphs of this privacy policy.
+Recipients of personal data
+In the scope of our business activities, we cooperate with various external parties. In some cases, this also
+requires the transfer of personal data to these external parties. We only disclose personal data to external
+parties if this is required as part of the fulfillment of a contract, if we are legally obligated to do so (e.g.,
+disclosure of data to tax authorities), if we have a legitimate interest in the disclosure pursuant to Art. 6 (1)(f)
+GDPR, or if another legal basis permits the disclosure of this data. When using processors, we only disclose
+personal data of our customers on the basis of a valid contract on data processing. In the case of joint
+processing, a joint processing agreement is concluded.
+Revocation of your consent to the processing of data
+A wide range of data processing transactions are possible only subject to your express consent. You can also
+revoke at any time any consent you have already given us. This shall be without prejudice to the lawfulness
+of any data collection that occurred prior to your revocation.
+Right to object to the collection of data in special cases; right to object to direct
+advertising (Art. 21 GDPR)
+IN THE EVENT THAT DATA ARE PROCESSED ON THE BASIS OF ART. 6(1)(E) OR (F) GDPR, YOU HAVE
+THE RIGHT TO AT ANY TIME OBJECT TO THE PROCESSING OF YOUR PERSONAL DATA BASED ON
+GROUNDS ARISING FROM YOUR UNIQUE SITUATION. THIS ALSO APPLIES TO ANY PROFILING BASED
+ON THESE PROVISIONS. TO DETERMINE THE LEGAL BASIS, ON WHICH ANY PROCESSING OF DATA IS
+BASED, PLEASE CONSULT THIS DATA PROTECTION DECLARATION. IF YOU LOG AN OBJECTION, WE
+WILL NO LONGER PROCESS YOUR AFFECTED PERSONAL DATA, UNLESS WE ARE IN A POSITION TO
+PRESENT COMPELLING PROTECTION WORTHY GROUNDS FOR THE PROCESSING OF YOUR DATA,
+THAT OUTWEIGH YOUR INTERESTS, RIGHTS AND FREEDOMS OR IF THE PURPOSE OF THE
+PROCESSING IS THE CLAIMING, EXERCISING OR DEFENCE OF LEGAL ENTITLEMENTS (OBJECTION
+                                         6 / 13
+PURSUANT TO ART. 21(1) GDPR).
+IF YOUR PERSONAL DATA IS BEING PROCESSED IN ORDER TO ENGAGE IN DIRECT ADVERTISING,
+YOU HAVE THE RIGHT TO OBJECT TO THE PROCESSING OF YOUR AFFECTED PERSONAL DATA FOR
+THE PURPOSES OF SUCH ADVERTISING AT ANY TIME. THIS ALSO APPLIES TO PROFILING TO THE
+EXTENT THAT IT IS AFFILIATED WITH SUCH DIRECT ADVERTISING. IF YOU OBJECT, YOUR PERSONAL
+DATA WILL SUBSEQUENTLY NO LONGER BE USED FOR DIRECT ADVERTISING PURPOSES
+(OBJECTION PURSUANT TO ART. 21(2) GDPR).
+Right to log a complaint with the competent supervisory agency
+In the event of violations of the GDPR, data subjects are entitled to log a complaint with a supervisory
+agency, in particular in the member state where they usually maintain their domicile, place of work or at the
+place where the alleged violation occurred. The right to log a complaint is in effect regardless of any other
+administrative or court proceedings available as legal recourses.
+Right to data portability
+You have the right to have data that we process automatically on the basis of your consent or in fulfillment of
+a contract handed over to you or to a third party in a common, machine-readable format. If you should
+demand the direct transfer of the data to another controller, this will be done only if it is technically feasible.
+Information about, rectification and eradication of data
+Within the scope of the applicable statutory provisions, you have the right to demand information about
+your archived personal data, their source and recipients as well as the purpose of the processing of your data
+at any time. You may also have a right to have your data rectified or eradicated. If you have questions about
+this subject matter or any other questions about personal data, please do not hesitate to contact us at any
+time.
+Right to demand processing restrictions
+You have the right to demand the imposition of restrictions as far as the processing of your personal data is
+concerned. To do so, you may contact us at any time. The right to demand restriction of processing applies in
+the following cases:
+In the event that you should dispute the correctness of your data archived by us, we will usually need
+some time to verify this claim. During the time that this investigation is ongoing, you have the right to
+demand that we restrict the processing of your personal data.
+If the processing of your personal data was/is conducted in an unlawful manner, you have the option to
+demand the restriction of the processing of your data instead of demanding the eradication of this data.
+If we do not need your personal data any longer and you need it to exercise, defend or claim legal
+entitlements, you have the right to demand the restriction of the processing of your personal data instead
+of its eradication.
+If you have raised an objection pursuant to Art. 21(1) GDPR, your rights and our rights will have to be
+weighed against each other. As long as it has not been determined whose interests prevail, you have the
+right to demand a restriction of the processing of your personal data.
+If you have restricted the processing of your personal data, these data  with the exception of their archiving 
+may be processed only subject to your consent or to claim, exercise or defend legal entitlements or to
+protect the rights of other natural persons or legal entities or for important public interest reasons cited by
+the European Union or a member state of the EU.
+SSL and/or TLS encryption
+                                         7 / 13
+For security reasons and to protect the transmission of confidential content, such as purchase orders or
+inquiries you submit to us as the website operator, this website uses either an SSL or a TLS encryption
+program. You can recognize an encrypted connection by checking whether the address line of the browser
+switches from http:// to https:// and also by the appearance of the lock icon in the browser line.
+If the SSL or TLS encryption is activated, data you transmit to us cannot be read by third parties.
+Rejection of unsolicited e-mails
+We herewith object to the use of contact information published in conjunction with the mandatory
+information to be provided in our Site Notice to send us promotional and information material that we have
+not expressly requested. The operators of this website and its pages reserve the express right to take legal
+action in the event of the unsolicited sending of promotional information, for instance via SPAM messages.
+4. Recording of data on this website
+Cookies
+Our websites and pages use what the industry refers to as cookies. Cookies are small data packages that do
+not cause any damage to your device. They are either stored temporarily for the duration of a session
+(session cookies) or they are permanently archived on your device (permanent cookies). Session cookies are
+automatically deleted once you terminate your visit. Permanent cookies remain archived on your device
+until you actively delete them, or they are automatically eradicated by your web browser.
+Cookies can be issued by us (first-party cookies) or by third-party companies (so-called third-party cookies).
+Third-party cookies enable the integration of certain services of third-party companies into websites (e.g.,
+cookies for handling payment services).
+Cookies have a variety of functions. Many cookies are technically essential since certain website functions
+would not work in the absence of these cookies (e.g., the shopping cart function or the display of videos).
+Other cookies may be used to analyze user behavior or for promotional purposes.
+Cookies, which are required for the performance of electronic communication transactions, for the provision
+of certain functions you want to use (e.g., for the shopping cart function) or those that are necessary for the
+optimization (required cookies) of the website (e.g., cookies that provide measurable insights into the web
+audience), shall be stored on the basis of Art. 6(1)(f) GDPR, unless a different legal basis is cited. The
+operator of the website has a legitimate interest in the storage of required cookies to ensure the technically
+error-free and optimized provision of the operators services. If your consent to the storage of the cookies
+and similar recognition technologies has been requested, the processing occurs exclusively on the basis of
+the consent obtained (Art. 6(1)(a) GDPR and § 25 (1) TDDDG); this consent may be revoked at any time.
+You have the option to set up your browser in such a manner that you will be notified any time cookies are
+placed and to permit the acceptance of cookies only in specific cases. You may also exclude the acceptance of
+cookies in certain cases or in general or activate the delete-function for the automatic eradication of cookies
+when the browser closes. If cookies are deactivated, the functions of this website may be limited.
+If other cookies and services are used on this website, you can find this information in this privacy policy.
+Server log files
+The provider of this website and its pages automatically collects and stores information in so-called server
+log files, which your browser communicates to us automatically. The information comprises:
+The type and version of browser used
+                                         8 / 13
+The used operating system
+Referrer URL
+The hostname of the accessing computer
+The time of the server inquiry
+The IP address
+This data is not merged with other data sources.
+This data is recorded on the basis of Art. 6(1)(f) GDPR. The operator of the website has a legitimate interest
+in the technically error free depiction and the optimization of the operators website. In order to achieve this,
+server log files must be recorded.
+Contact form
+If you submit inquiries to us via our contact form, the information provided in the contact form as well as any
+contact information provided therein will be stored by us in order to handle your inquiry and in the event
+that we have further questions. We will not share this information without your consent.
+The processing of these data is based on Art. 6(1)(b) GDPR, if your request is related to the execution of a
+contract or if it is necessary to carry out pre-contractual measures. In all other cases the processing is based
+on our legitimate interest in the effective processing of the requests addressed to us (Art. 6(1)(f) GDPR) or
+on your agreement (Art. 6(1)(a) GDPR) if this has been requested; the consent can be revoked at any time.
+The information you have entered into the contact form shall remain with us until you ask us to eradicate the
+data, revoke your consent to the archiving of data or if the purpose for which the information is being
+archived no longer exists (e.g., after we have concluded our response to your inquiry). This shall be without
+prejudice to any mandatory legal provisions, in particular retention periods.
+Request by e-mail, telephone, or fax
+If you contact us by e-mail, telephone or fax, your request, including all resulting personal data (name,
+request) will be stored and processed by us for the purpose of processing your request. We do not pass these
+data on without your consent.
+These data are processed on the basis of Art. 6(1)(b) GDPR if your inquiry is related to the fulfillment of a
+contract or is required for the performance of pre-contractual measures. In all other cases, the data are
+processed on the basis of our legitimate interest in the effective handling of inquiries submitted to us (Art.
+6(1)(f) GDPR) or on the basis of your consent (Art. 6(1)(a) GDPR) if it has been obtained; the consent can be
+revoked at any time.
+The data sent by you to us via contact requests remain with us until you request us to delete, revoke your
+consent to the storage or the purpose for the data storage lapses (e.g. after completion of your request).
+Mandatory statutory provisions - in particular statutory retention periods - remain unaffected.
+Communication via WhatsApp
+For communication with our customers and other third parties, one of the services we use is the instant
+messaging service WhatsApp. The provider is WhatsApp Ireland Limited, Merrion Road, Dublin 4, D04
+X2K5, Ireland.
+The communication is encrypted end-to-end (peer-to-peer), which prevents WhatsApp or other third parties
+from gaining access to the communication content. However, WhatsApp does gain access to metadata
+created during the communication process (for example, sender, recipient, and time). We would also like to
+point out that WhatsApp has stated that it shares personal data of its users with its U.S.-based parent
+                                         9 / 13
+company Meta. Further details on data processing can be found in the WhatsApp privacy policy at:
+https://www.whatsapp.com/legal/#privacy-policy
+.
+The use of WhatsApp is based on our legitimate interest in communicating as quickly and effectively as
+possible with customers, interested parties and other business and contractual partners (Art. 6(1)(f) GDPR).
+If a corresponding consent has been requested, data processing is carried out exclusively on the basis of the
+consent; this consent may be revoked at any time with effect for the future.
+The communication content exchanged between you and us on WhatsApp remains with us until you request
+us to delete it, revoke your consent to storage or the purpose for which the data is stored ceases to apply
+(e.g. after your request has been processed). Mandatory legal provisions, in particular retention periods,
+remain unaffected.
+The company is certified in accordance with the EU-US Data Privacy Framework (DPF). The DPF is an
+agreement between the European Union and the US, which is intended to ensure compliance with European
+data protection standards for data processing in the US. Every company certified under the DPF is obliged to
+comply with these data protection standards. For more information, please contact the provider under the
+following link:
+https://www.dataprivacyframework.gov/participant/7735
+.
+We use WhatsApp in the WhatsApp Business variant.
+Data transmission to the US is based on the Standard Contractual Clauses (SCC) of the European
+Commission. Details can be found here:
+https://www.whatsapp.com/legal/business-data-transfer-addendum?lang=en
+.
+5. Analysis tools and advertising
+Google Analytics
+This website uses functions of the web analysis service Google Analytics. The provider of this service is
+Google Ireland Limited (Google), Gordon House, Barrow Street, Dublin 4, Ireland.
+Google Analytics enables the website operator to analyze the behavior patterns of website visitors. To that
+end, the website operator receives a variety of user data, such as pages accessed, time spent on the page, the
+utilized operating system and the users origin. This data is summarized in a user-ID and assigned to the
+respective end device of the website visitor.
+Furthermore, Google Analytics allows us to record your mouse and scroll movements and clicks, among
+other things. Google Analytics uses various modeling approaches to augment the collected data sets and
+uses machine learning technologies in data analysis.
+Google Analytics uses technologies that make the recognition of the user for the purpose of analyzing the
+user behavior patterns (e.g., cookies or device fingerprinting). The website use information recorded by
+Google is, as a rule transferred to a Google server in the United States, where it is stored.
+The use of these services occurs on the basis of your consent pursuant to Art. 6(1)(a) GDPR and § 25(1)
+TDDDG. You may revoke your consent at any time.
+Data transmission to the US is based on the Standard Contractual Clauses (SCC) of the European
+Commission. Details can be found here:
+https://business.safety.google/adscontrollerterms/sccs/
+.
+The company is certified in accordance with the EU-US Data Privacy Framework (DPF). The DPF is an
+                                       10 / 13
+agreement between the European Union and the US, which is intended to ensure compliance with European
+data protection standards for data processing in the US. Every company certified under the DPF is obliged to
+comply with these data protection standards. For more information, please contact the provider under the
+following link:
+https://www.dataprivacyframework.gov/participant/5780
+.
+IP anonymization
+Google Analytics IP anonymization is active. As a result, your IP address will be abbreviated by Google within
+the member states of the European Union or in other states that have ratified the Convention on the
+European Economic Area prior to its transmission to the United States. The full IP address will be
+transmitted to one of Googles servers in the United States and abbreviated there only in exceptional cases.
+On behalf of the operator of this website, Google shall use this information to analyze your use of this
+website to generate reports on website activities and to render other services to the operator of this website
+that are related to the use of the website and the Internet. The IP address transmitted in conjunction with
+Google Analytics from your browser shall not be merged with other data in Googles possession.
+Browser plug-in
+You can prevent the recording and processing of your data by Google by downloading and installing the
+browser plugin available under the following link:
+https://tools.google.com/dlpage/gaoptout?hl=en
+.
+For more information about the handling of user data by Google Analytics, please consult Googles Data
+Privacy Declaration at:
+https://support.google.com/analytics/answer/6004245?hl=en
+.
+Google Signals
+We use Google Signals. Whenever you visit our website, Google Analytics records, among other things, your
+location, the progression of your search and YouTube progression as well as demographic data (site visitor
+data). This data may be used for customized advertising with the assistance of Google Signal. If you have a
+Google account, your site visitor information will be linked to your Google account by Google Signal and
+used to send you customized promotional messages. The data is also used to compile anonymized statistics
+of our users online patterns.
+Contract data processing
+We have executed a contract data processing agreement with Google and are implementing the stringent
+provisions of the German data protection agencies to the fullest when using Google Analytics.
+6. eCommerce and payment service providers
+Processing of Customer and Contract Data
+We collect, process, and use personal customer and contract data for the establishment, content
+arrangement and modification of our contractual relationships. Data with personal references to the use of
+this website (usage data) will be collected, processed, and used only if this is necessary to enable the user to
+use our services or required for billing purposes. The legal basis for these processes is Art. 6(1)(b) GDPR.
+The collected customer data shall be deleted upon completion of the order or termination of the business
+relationship and upon expiration of any existing statutory archiving periods. This shall be without prejudice
+to any statutory archiving periods.
+                                       11 / 13
+Data transfer upon closing of contracts for services and digital content
+We share personal data with third parties only if this is necessary in conjunction with the handling of the
+contract; for instance, with the financial institution tasked with the processing of payments.
+Any further transfer of data shall not occur or shall only occur if you have expressly consented to the
+transfer. Any sharing of your data with third parties in the absence of your express consent, for instance for
+advertising purposes, shall not occur.
+The basis for the processing of data is Art. 6(1)(b) GDPR, which permits the processing of data for the
+fulfilment of a contract or for pre-contractual actions.
+                                       12 / 13
+HTML-Quellcode der englischen Version Ihres Datenschutzerklärung
+für Ihre Website
+Den nachfolgenden Quellcode können Sie kopieren, um die Datenschutzerklärung auf Ihrer Website einzufügen.
+Hinweis:
+ Einige Browser und PDF-Reader haben Probleme bei der vollständigen Darstellung des nachfolgenden
+HTML-Quellcodes. Wir empfehlen Ihnen für die Anzeige dieses PDF-Dokuments die Nutzung des kostenlosen Adobe
+Acrobat Reader DC (
+Download
+). 
+Powered by TCPDF (www.tcpdf.org)
+                                       13 / 13
+$"
++K°_PX@C   2 0     &   & 		  $    $  	K°lPX@A   2 0  	 	  &     &   &   $  @J   2 0  	 	  &     &   &   #   $   !	YY°8+>32#'&>54&#"#"'4632#"&!!7!!ú9DO.?gI
+c>0((0>þ¡Îü22cüu&#@[87P;+&%iu"3+(.:(3<üû/@
+?¤úg6,  ÚÿñÓ  ! ~@    +K°_PX@     $  $  K°lPX@     &  $  @"     &  #  $  !YY°8+#.54>32#".®	y	+!..""..!ýÄ-VW[44[WV-<úÕ."".-""-   
+  @   
+ 
++K°_PX@	     $  K°èPX@'	     #  $   !@-	   #   &  $    !YY°8+#"&/!#"&/3èþÞ ## "þÞ ## "   6  Q > B9@&  BA@? > >86530/*('&%# 
+	+K°_PX@-   &	  $
+    K°lPX@+	4
+ &   &    K°èPX@8	4  5
+ &  #  $  !@` 	4 		4   2   3   & 
+ 
+&    &   #   &   &   $   !YYY°8+#"&5467#+#"&546?3#7>;>;3323+32%3#TQ G÷G-OUÌAè$'H+PT÷TO!IÔ%&A³	ý÷A÷§þY"Zþ%§9FJf"þZ¦þKþº9F   jÿ$g 8 C NU@8632$"+K°	PX@HJ( I>
+ I>
+ I>
+ I>
+Ã(<K   HÿïÛ§  ' 1 E Y@VTLJB@861/,*$"
++K°PX@0     &  	 &  $ 		 $ K°"PX@4     &  	 &  $  		 $  K°_PX@8     &  	 &   $   		 $  K°lPX@9 2   &     &  	 &  		 $  @E 2 		2   &     &  	 & 		 # 		 $ 	 !YYYY°8+#".54>324.#"32>>;+#".54>324.#"32>Ã4Wt?DsV00VsDCuU11A%%A00A%%A1ûé
+54Ws?DsV00VsDCtV01A%%A00A%%A1?T[00[TV VB;;BA[99[wúRT[00[TV VB]::]BAZ99Z  Rÿðx© ? K@@ FD/-(&" 	 ??+K°PX@C8IH+% 2   $    $  $ K°_PX@A8IH+% 2   $    $   $  K°lPX@?8IH+% 2    &  $   $  @F8IH+% 2    &  #   &  $  !YYY°8+2#"&'.#">7>;#"&/#".54>7.54>3267O_7o1E.2P9"6&&-nFB,¬$^õPyJ/SrD=:5dþÌ0Nd4p²DþYjk©3To<8. 9M-#@AE&þ]CJsÞaþÐ[j6g]F}jTMNI_7ûãAcD#RD«9   3 
+ Q@
+   
+ 
++K°_PX@	      $  @ 	     #  $    !Y°8+#"&/3þÞ ## "  þÛ  @
++.54>7!nhOKiAAiKO
+imuÖþm·0sâäçzyèãât1¶þl  JþÛÅ  @	+4'&546?'.54676*mi
+OKiAAiKOhnuÖ¶1tâãèyzçäâs0·  `_¼â 0 h@
+   0 0+K°PX@"-
+$     $    @+-
+$       #     $   !Y°8+5467'767./7.=3>?'.'b!¬,¬$%#­,­#	X¬,¬!!­,­_Å"cKdeKd %ÆÅ
+R&à"üDË9^C$(F^66G1
+ ]P{©6g^P}u=þ~"l=(Í:klo??_> 9N/bf5   lÿð.© J þ@ CA;910/.&$ JJ	+K°_PX@CF
+ 2 2   &   $    $  K°lPX@AF
+ 2 2    &   &  $  @JF
+ 2 2    &   &  #  $  !YY°8+2#".'763232>54.#5>54.#"#"&/>l[o>#A9K­cr¢pHL(DeKKqK&Qp[R%'D]66G0 ]P{©4`SDkQ8%®co;9dP 		I@,1N`/:`F(&B8>< 9O.bf5  (  `   É@	 +K°_PX@    &   K°lPX@     &   $  K°èPX@
+MoGHtS-,PpCHtQ+n9mfcª~HEµp^Ôzéý#'þLErR-.RpBFqO*1Sm   n  <  j@    	+K°_PX@   $     K°lPX@   &     @   5  # $  !YY°8++>7!"&=<ý¯.'ZýP",ûS%*y  `ÿð&©  3 G Ä@54!  ?=4G5G+
+L6ic^¤zFDzªg>oji8þ;4,.£CmL
+ < Æ@97/-'%" +K°_PX@3   2 0   $     $  K°lPX@1   2 0     &  $  @:   2 0     &  #  $  !YY°8+>32#'54>54.#"#"'4>32#"."KYg<Ob8-ERG3z-EOE-":O-=W<%!..""..!4(.TxKLnS=66!¦*A99EX<+F1$û ."".-""-  VÿO Q a9@ SR [YRaSaGE;9530.&$ QQ+K°CPX@P
+X
+7   2   &  
+
+ &	   &  #  $  !K°ÇPX@W
+X	
+7   2   &  
+	
+ &	 	 #    &  #  $  !	@X
+X	
+7   2   &  
+	
+ &	  	 &    &  #  $  !	YY°8+%"&'#".54>3232>54.#"3267632#"$&54>32%2>7&#"Nb:N<X;A¿}Ce-]
+Ns·kl·Lx2VA'	?fEHW  
+  I   ¿@	 +K°_PX@    &     K°lPX@ 4    &    K°èPX@( 4  5   #  $  !@. 4   2   3   #  $  !YYY°8+!#"&'!+3!&'I ý}"=Åþá
+Zþ¦ü{G6Q
+"   +K°_PX@,  &   $     $ K°lPX@*     &  &  $ @3     &  &  #  $ !YY°8+3!2#!2>54&#%!2>54&#!®É¿{;!CeD C»xþÇ6SwM$þË RxO& þù4`W5bTB¤[l;þ&E_9o$@[6~v   Zÿð	© . Í@ 
+6Jb@s¿MM¶i@fWK&(SfrkÁ¢¢ÂkbTY
+ OÒÒL 1"  ®     w@
+	+K°_PX@  $    $     K°lPX@   &   $     @!   &    #   $    !YY°8+#!!24.#!!2>fºþüýèºfÇH¼sþ«Us¼HÌ¡þø¼gg½þø¡ÐLû¡LÐ   ®  !   @    
+	+K°_PX@%    &     $   $  K°lPX@#     &    &   $  @,     &    &   #   $   !YY°8+!!!!!!ýP-ýÓ°üþ$þ   ®  ! 	 @   	 	+K°_PX@    &     $  K°lPX@     &    &  @' 5     &   #   $   !YY°8+!!!#!ýPLý´Ãþý  Zÿð@© 4 å@ ,*%# 44+K°_PX@;!   2    &  $    $  K°lPX@9!   2   &    &   $  @C!   2   &    &   #   $   !YY°8+%2>7#"&=!#"$&546$32#"'.#"-:aVL&Þ¸6uYþü¼ig¿¨U}j.7>YySyÄJMÀ<nýÚ':'kÁ¢¤Áj/C*X(%OÑÕN  ®  8  ²@
+	 +K°_PX@     &    K°lPX@     &   $    K°èPX@$   #     &   $    !@+    #    &     &    $     !YYY°8+!#!#3!38ÃüüÃÃÃýtý  Ò    Q@ +K°_PX@      K°lPX@    $     @     #    $     !YY°8+!#3ÂÂ   <ÿðÉ  ­@
++K°PX@    $     K°_PX@!  2    $     K°lPX@  4 4   $     @'  4 4    #   $    !YYY°8+#"'>7>3232>53É;s¨mai<2BgG%Áïx¾F9(TZ®  Â  : " Ê@"! 	 +K°_PX@      & K°lPX@       & $ K°èPX@*   #     & $ !@1   #     &    &  $  !YYY°8+3267>;#".'.+#3I&-Ý
+    2   #    $   !@/ 2    #    &     $    !YYY°8+>7>;#467+"'#32o
+
+åªþ--þ
+ªï53q
+úg0ü--2ûã
+ü   ®  8  @
+	 +K°_PX@   K°lPX@   $ K°èPX@    #   $  !@'   (   #   &  $  !YYY°8+2.53#"&'#3>ªbüÃªdûÈ1÷úg70ü   ÿñá©  ' w@
+$"+K°_PX@  $    $     K°lPX@   &   $     @!   &    #   $    !YY°8+#"$&546$324.#"32>áfºþûþüºffººfÇH¼ts¼HH¼st¼HÌ¡þóÂkkÂ¡¡ÃllÃþó¡ÒNNÒÑMMÑ   Â     @    +K°_PX@   &  $      K°lPX@   &   &     @'   5   &  #  $ !YY°8+#!2#'32>54&+Á§ÉAFÈææSV,©«æýè?t¤ed¦xC,OnB   þØ$©  0 û@-+#!+K°	PX@&   5  $   $  K°PX@&  $   $      K°_PX@&   5  $   $  K°lPX@$   5   &  $  @-   5   &  #  $  !YYYY°8+#"&'#"$&546$324.#"32>á
+(ËUW,©§ÔVýª7h[LiJ(ýÇ
+&#!	+K°_PX@3=   2 0  $   $  K°lPX@1=   2 0    &  $  @:=   2 0    &  #  $  !YY°8+#".#"#"&'7>3232>54.54>32	-EaEAdC";a{{a;@{³råQ86QsSElK(;`{{`;;p¥kxÆJ¹"
+ @('  +K°_PX@#    K°lPX@#   4 K°èPX@#   4+@!#   4 4 4 4 +YYY°8+32>7>;2>7>;#&'#¡"(	Q#8!O
+
+   #     &  $  !YYY°8+	3267>;	#"&'+ûþ'Áva	¹þ%ëÀþþ	´à¹ýÂýPýYýÏ    ä  @+K°_PX@       K°lPX@   4     K°èPX@   4   +@   4  4   +YYY°8+#32>7>;ÖÁýóªHG	¬:ýÆ:_ýÓ#>>"-   V    ~@    +K°_PX@   $     $  K°lPX@    &     $  @"    &     #     $    !YY°8+!!547!5üÕ2ûÐ,üçH"ûLv  þßþý  8@    
++@"     &  #   $  !°8+!+32p©©þßFùÍF  ÿìÿ¦ïÁ 	 -@ +K°PX@  5     @
+   4 +Y°8+32#"&'L!0YK8Á" ú'"#  ZþßÊý  3@
+
++@!    &    #     $    !°8+46;#"&=!!Z©©pþÛ3Føâ  Ý  [@ +K°_PX@
+  5     K°èPX@
+    4+@
+    4 4 +YY°8+3#"&'.'+sfÄÂýz`+,+þ    þãÿ[  +@
+    +@    #   $     !°8+!5üì¥xx  &³© 	 3@
+  		+K°_PX@  5    @  4 +Y°8+2#"&'Ï! fê©ò  ÿðz 
+LT_:;gL-Bî¬ecAYA/ TÂvUZ.þ2/NE?{¬l1,<^$9'!BeE<oV7Ovy!
+:%   ÿòÁ  %_@  %%  +K°	PX@+    $   $ K°"PX@+    $   $ K°_PX@/    $   $  K°lPX@-  &     $  K°PX@,  &   %   $    @6  &  #    &  $  !YYYYY°8+33>32#"&'#"32654.³?£iXd6<q£fb3	&QW70uH#B`Áý¢IYBÁ~pÁQLD&wPIþB6Ê»c[*  Jÿò *@(&	+K°	PX@3*   2 0  $   $  K°_PX@3*   2 0  $   $  K°lPX@1*   2 0    &  $  @:*   2 0    &  #  $  !YYY°8+#".#"32>32#".54>32E#6M8JrM'*LmDAT8$2BÆn_£xE?y²sj¤?A5dXa3&AQKFÂ|qÀNE?   HÿòÅÁ  %;@ %% +K°"PX@.   $   $    K°_PX@2   $    $  K°lPX@0   &    $  K°PX@/   &  %    $   @:   &  #    & $  !YYYY°8+!"/#".54>323%267.#"[&
+A§lWd6<q¢g]4²þ=W71uG"B`%{O_CÂ~pÁQ?92ú?PIêB5Ê»c[*  JÿòÇ $ -@&% 
+%-&-	 $$	+K°	PX@4 2   &  $    $  K°_PX@4 2   &  $    $  K°lPX@2 2   &   &  $  @; 2   &   &  #  $  !YYY°8+2#!32>32#".54>"!4.#[p?ý^0TtHCaF/2!ip7i±HAz°r'"B_=s©l*`_/$A(;&GÊj¸M>gK
+@  %#  +K°	PX@&	   $    $     K°IPX@&	   $    $     K°_PX@#	      %  $  K°PX@&	 2     %  $  @0	 2   &    #   $    !YYYY°8+#"&'7>323265#".54>32X EmL!6NBÚ#.-##-.#õûÀ=iN-
+
+`IQ@>-##-/##/     øÁ @    
++K°_PX@#      &  K°lPX@%      &  $ K°PX@(    #     &  $ K°èPX@1   #   #     &  $ !@2    #     &   &  $  !YYYY°8+3267>;#"&'.+#K.@¢þ þ³2³ÁüWþs
+þþÁ   ¦  XÁ  o@
+    +K°_PX@     K°lPX@     K°PX@     $  @    #   $     !YYY°8+#X²Áú?Á    ï *@   * *'%"!		+K°PX@!
+9Q=4N4-J_c_J-0Vd:N(5'4&!(<W=FwW2E6D".<"*7' 
+#!
+	+K°	PX@E 3 2&*   4   2  0 $    $    K°PX@E 3 2&*   4   2  0 $    $    K°_PX@E 3 2&*   4   2  0 $    $    K°lPX@B 3 2&*   4   2  0     % $  @L 3 2&*   4   2  0    #  &    $   !YYYY°8+.54>?>;#".'>32+1q?B~¸wBR6.!-?*4?U;&0<¹kBçy4LsN'
+O¶ro»Q³é?1>ý"	?HJ¯å¢Àø9c  4  [¨ >/@>=64/-'%"!		+K°_PX@97+   2   &  $   $  K°lPX@77+   2   &   &  $  K°èPX@@7+   2   &   &  #  $  !@H7+   2   &      &   &  #  $  !YYY°8+46;4>32#"&'.#"!#!>3!#!5>5#4 6n¤nNy^EH
+
+
+
++K°_PX@8 !     %   $    @B !       &  #  $  !Y°8+467'7>327'#"&''7.732>54.#"ß![,h:9f+Y"![,h99e,Y"#>Q//S=$$=S//Q># 9e,Z"![,g:9f+"![,g:.Q=$$=Q./R>##>R  ,  S "@"!  +K°_PX@+
+  
+  &	  &  K°lPX@+
+  4 
+  &	  &  K°èPX@7
+  4 5 
+  &	  #	  $  !@J
+  4  4 5   
+ 
+ &   & 	  # 	 	  &   $   !
+YYY°8+!32>7>;!!!!#!5!5!2þh
+!þg3þ¬Tþ¬³þ¬Tþ¬q(ýÊ#:;"6üØfigþÅ;gi  æþ©pý   T@
+ +K°IPX@      &   $  @!      &   #   $   !Y°8+3#3#æýüæþáüå   rÿ§ H Z @FD-+(&!+K°_PX@7HXN= #   2 0   %  $  @AHXN= #   2 0    &  #  $  !Y°8+#".#"#"&'7>3232>54.5467.54>32>54.'1&7L40M51OfifO1NT1>2aj¬<
+:U?2O62RhnhR2V]2?0Vd:ý·Fm>604FOT(B6ñ*8&9/+.7G=Q&%bEFwW2E6D#->&-B3*,3F]@N}#&iK:kP0>7ý¤3G95K/$8.&##I   V{  ' o@
+$"+K° PX@   $  K°èPX@   #  $   !@!   #    &   $    !YY°8+#".54>32#".54>32ï 
+(
+(**((**   Dÿòù¨ . J bZ@_]SQEC75+
+:&%8$  ÏRD  %@ +@     #     $    !°8+!!>ýÂDu   F'Òª  ' S@
+$"+K°_PX@   %   $    @!     &  #  $  !Y°8+4>32#".732>54.#"F2XwEEwX22XwEEwX26I**H66H**I6hCvW22WvCBuW33WuA*I66I**J77J  d P"²   @    
+		+K°èPX@.    &   &   #   $   !@6    &      &   &   #   $   !Y°8+!!#!5!!!þiþkþk¾üB²þþpxü%   RQe - @ (&"  --+K°_PX@++ 2    &  $  @4+ 2    &  #   $   !Y°8+2>;2!546?>54&#"#"&/>Z4U<!*6¢/Ãþ
+Ý, <-.9	Ge6M/(E>:¥M+Û455370*jj  T|Re = ²@ 640.*
+' ==	+K°KPX@A9 2 2    &   &  $  @J9 2 2    &   &  #  $  !Y°8+2#".'763232>54.#5>54&#"#"&/>b3R; wBE*E[09T=+7+ / 'A/WG:009	C,ATe3D(-N>7T91H/ (+W<424/(5O5  ÄU© 	 3@
+   	 +K°_PX@   5 @ 4   +Y°8++7>3Uéj! ©þþò   zþ©Åõ Y@    
+	+K°IPX@&      $  K°MPX@(      $   $ K°_PX@,      $     $ K°lPX@.    "    $  $  K°èPX@2       &  & $  !@8     #     &   & $  !YYYYY°8+32673#"/#"&'#"&5,liN:²j&
+CWJp'Y&
+$    *ÿ7  ¢@    
+	+K°_PX@   23   $  K°èPX@'   23   #   $    !@2   * 0 0 3 #  $   !YY°8+##!#".54>3Ûþëh¦u??u¦hú7Éú7]=iQVe8  |½§è  %@+@    #    $   !°8+4>32#".|
+(86
+(86
+  $  K°PX@     4  $  K°IPX@$   4  4 $  @-   4  4  # $ !YYY°8+232654.'73#"&'76¬ *+
+ù:
+
+:þ{þ{  f  |    & 0µ@0.+
+&"  --+K°_PX@K710+ 2 2 		 &    &  $
+ K°lPX@H710+4 4 2 		 &    &  $
+ K°NPX@Q710+4 4 2 		 &    &  #  $
+ !	K¸èPX@U710+ 4 4 4 2 		 &   &  #  $
+ !
+@b710+
+ 4 4 4  * 2 
+
+2  		 &   & 
+ #   $   !YYYY°8+2>;2!546?>54&#"#"&/>%37#"/733!+>;f4U<!*6¢/Ãþ
+Ý, <-.9	Gük	'Þlþië,L2. Má6M/(E>:¥M+Û455370*jj3¸+X	8¾ýzUýv   D  }   N T ^a@&^YWTSGEA?;:980.
+-N>7T91H/ (+W<424/(5O5ü,þ¹Ö   ,þ 
+,RvKLjL601!§,>2/<P;,E1$."".-""- ÿÿ 
+  Iö& $    Ùk  ÿÿ 
+  Iö& $    Ûk  ÿÿ 
+  IÜ& $    Üv  ÿÿ 
+  IÒ& $    Þv  ÿÿ 
+  Iò& $    Úv  ÿÿ 
+  I-& $    Ýs   ÿè  Ú  @
+	 	+K°_PX@5     &    &    $     $ K°lPX@3       &    &    &  $ K°èPX@<       &    &    &   #  $ !@C  2      &    &    &   #   $   !YYY°8+!!!!!!!+!Ýýý</ýä=aüü1ýÔ³%ÚÑ^þ$þþ¥ñ
+6Jb@s¿MM¶i@fWK&LSé¢ZQ 9P0
+    Ù7  ÿÿ ®  !ö& (    Û7  ÿÿ ®  !Ü& (    ÜB  ÿÿ ®  !ò& (    ÚB  ÿÿÿÌ  ¼ö& ,    Ùø ÿÿ   ö& ,    Ûø ÿÿÿï  {Ü& ,    Ü ÿÿÿò  xò& ,    Ú   2  Ñ  ! á@ +K°_PX@&    &  $   $  K°lPX@$    &    &  $  K°èPX@-    &    &  #  $  !@5    &    &      &  #  $  !YYY°8+3!2#!#%4.#!!!!2>2ÅºffºþûýéÅØH¼tþ«}þUt¼Hg½þø¡¡þø¼g2ÐLþrþLÐ ÿÿ ®  8Ò& 1    ÞÚ  ÿÿ ÿñáö& 2    Ùã  ÿÿ ÿñáö& 2    Ûã  ÿÿ ÿñáÜ& 2    Üî  ÿÿ ÿñáÒ& 2    Þî  ÿÿ ÿñáò& 2    Úî    ~ ÛX  @	+		'	7	ùþ¨b_þþ_dþ§_YXöþ¨þ`bþ`dY`þ¦X  ÿáÚ ! - 8@53*(+K°PX@721&%   5   $    $     K°_PX@721&%  4  5  $    $     K°lPX@521&%  4  5   &   $     @>21&%  4  5   &    #   $    !YYY°8+#"&'+&546$327>;.#"4&'32>áfºþûl¼Od:N¿p{fºsÈSR  d¬gpûAKE<Ws¼HøA<ýqtt¼HÌ¡þóÂk10b ³¡Ãl:6oëbþê«ÓI*+NÒ~ÉHüFMÑ ÿÿ  ÿïö& 8    Ù  ÿÿ  ÿïö& 8    Û  ÿÿ  ÿïÜ& 8    Ü¨  ÿÿ  ÿïò& 8    Ú¨  ÿÿ   äö& <    Û9    Â     @    +K°_PX@!   &   &      K°lPX@#   &   &    $     @,    #   &   &    $     !YY°8+#332#'32>54&+ÁÁæÉAFÈææSV,©«æþðþø?t¤ed¦xC,OnB  ºÿðv® H ñ@ CB=;%#  HH+K°PX@* 2   $    $ K°_PX@. 2   $     $  K°lPX@, 2    &   $  @8 2 2    &  #  $  !YYY°8+2#"&'7>3232>54.54>54.#"#4>¡gb/+@K@+5P]P59dOa<
+7K5,F18TbT8-CNC-8Y?DoO+³E´®<]n3<VB203 '4-/FfNNzU-E6D".@%8F3*:SB5O?6<G0 A4!*T~Tü&àhªzB ÿÿ ÿðz©& D    C Ý  ÿÿ ÿðz©& D    v Ý  ÿÿ ÿðz& D    Å Ý  ÿÿ ÿðz& D    Ç Ý  ÿÿ ÿðz{& D    j Ý  ÿÿ ÿðzÞ& D    Æ Þ    ÿð C Q ¢@&SR XWRSMKED?=8631.-%#	 CC+K°	PX@HA; 2 2
+ &  $	   $ K°PX@HA; 2 2
+ &  $	   $ K°MPX@TA; 2 2
+ &  $	    $  $ 
+K°_PX@aA; 2 2
+ &  $	     $	    $  $ K°lPX@YA; 2 2  #	    &
+ &  $  $ 
+K°PX@]A; 2 2  #	    &
+ &  #  #  $ !
+K°ÇPX@dA; 2 
+
+2  #	    & 
+ # 
+
+ &  #  #  $ !K°NPX@fA; 2 
+
+2   & 	 	 & 
+ # 
+
+ &  #   &  $  !@gA; 2 
+
+2   & 	 	 &  
+ &  
+
+ &  #   &  $  !YYYYYYYY°8+2#!32>32#"&'#".54>754&#"#"&/>32>32>5"!4.Rg;ý.MiAE=&/!Wcj4u¿7Wjw;ErS-Bî¬ecAYA/ Tµqx!6­þ¶{¬l1dQ9cI*¼=`E
+;&qt>X8#FjH<t;2v~#*#9QPf[Xgýá#8H*WP$JnJï
+©& Â    vÓ ÿÿÿÒ  6& Â    ÅÒ ÿÿÿá  
+&
+ +@+    &      &  #  $  !°8+!!4>32#".4>32#".d¾üBb!--""--!!--""--!ã¦."".-""-ýS."".-""-   @ÿ´-I ! + 5+@-,,5-5(&!	+K°	PX@<43%$   4  5  $   $     K°_PX@<43%$   4  5  $   $     K°lPX@:43%$   4  5   &  $     @D43%$   4  5   &   #  $    !YYY°8+#"&'+7.54>327>;&#"2>54'=BC}³oL67;CBFD~³oO8D  ZüÉ;´IoLtO(7KsO(4þOFtD¿vxÀI" JÄEÂ|wÁJ&#[ý± aN86dþ$5dZ`ý·0 ÿÿ zÿðÅ©& X    C õ  ÿÿ zÿðÅ©& X    v õ  ÿÿ zÿðÅ& X    Å õ  ÿÿ zÿðÅ{& X    j õ  ÿÿ þ©ð©&     v ä    þ©Á  #~@  ##  +K°	PX@2    $   $  K°IPX@2    $   $  K°_PX@4 $   $    $    K°lPX@2  &  $    $    K°PX@0  &   &   $    @9     #  &   &     $   !YYYYY°8+3>32#"&'"32654.²?¤iWd6<p£f_3W71uH#B`þ©ý¡JYBÁ~pÁQE?þ3ÎPIþB6Ê»c[*ÿÿ þ©ð{&     j ä    ¦  Xõ  Y@
+    +K°_PX@     K°lPX@   $     @    #   $     !YY°8+#X²õüõ  ÿò'©  02@  -+#!  
+	+K°PX@3     &   $
+	 $ K°"PX@?     &   $     $
+	 $ K°,PX@K     &   $     $
+	  $ 	 $  
+K°0PX@I     &  $      $
+	  $ 	 $  
+K°_PX@G     &  $      $
+   $  		 $  
+K°lPX@C     &
+     &    &   $  		 $  @J     &
+     &    & 		 #    & 		 $ 	 !YYYYYY°8+!!!!!5#".54>3254.#"32>'ýP-ýÓ°ü¤Tþ¡ê¨\¨ê¡þT@w©hh©xAAx©hh©w@þ$þðxkÁ¡¡Ãlyðý3ÓOOÓÓNNÓ  Hÿòu 0 @ Kd@$BA21 GFAKBK:81@2@,*" 	 00+K°	PX@>.
+ 2 
+ 
+ &	  $   $ K°6PX@>.
+ 2 
+ 
+ &	  $   $ K°_PX@K.
+ 2 
+ 
+ &		  $     $   $ 	K°lPX@C.
+ 2	 	 #  
+  & 
+ 
+ & $ K°NPX@N.
+ 2	 	 #  
+  & 
+ 
+ & # $ !K¸èPX@T.
+ 2	 	 #  
+  & 
+ 
+ &  # # $ !	@U.
+ 2 	 	 &  
+ & 
+ 
+ &  #  &  $  !	YYYYYY°8+2#!32>32#"&'#".54>32>2654.#""!4.ôRg;ý.MiA=Y@-3!Wcj4w¿76Ád¤u@@w§f¾52»ý§"DhEGhE"e=`E*ü<W@z¯p
+;&swpzIÀxwÁJyni~üxÉ´Zb44bZ´É
+H7 d6/-77-/6#*D22D*
+#=60Ho0B'#=6/-*,/O8"X0O9"   ¼  %@ +@     #     $    !°8+!! üà   Î  %@ +@     #     $    !°8+!!2úÎ   :ô'ù  @ +.5467rYP7
+ô0a0Z¥E"
+,16 D&
+   ZßFä  @ +'.547>54&'&547YO7
+ä0`0[¥E"
+-16 D&  ZþìF ñ  @ +%'.547>54&'&547YO7
+ñ0`0[¥E"
+-16 D&   :ôWù  1 	@ +.5467.5467rYP7
+ÃYP7
+ô0a0Z¥E"
+,16 D&
+,0a0Z¥E"
+,16 D&
+  Zßvä  1 	@ +'.547>54&'&547%'.547>54&'&547YO7
+YO7
+ä0`0[¥E"
+-16 D&,0`0[¥E"
+-16 D&  Zþìv ñ  1 	@ +%'.547>54&'&547%'.547>54&'&547YO7
+YO7
+ñ0`0[¥E"
+-16 D&,0`0[¥E"
+-16 D&   Ð à·È  <@+K°PX@   $    @    #    $   !Y°8+4>32#".Ð;dLMe;;eMLd;SMe;;eMMd;;d  XÿñV ì  ' ; @86.,$"+K°_PX@   $ K°lPX@   $ K°èPX@   #   $  !@+    #   &   &    $   !YYY°8+74>32#".%4>32#".%4>32#".X!..""..!!..""..!ýý!..""..!n."".-""-."".-""-."".-""-   Ù¢  @+5ù:
+:þûþû    å¢  @+'&54767&'&54?åù:
+
+:þ{ ÿD  # 	 B@	+K°_PX@      K°lPX@  4     @
+  4   +YY°8+'+>;,L2. M5   "ÿñr§ G@GF@?>=9720+
+8ÎÎ % FfqOÓf
+þþ]I6TpBúY*6ü   ÿÔ
+Äö 	 @
+  		+@  4 +°8+2#"&'%  ÓþÙöËÙ ÿðvò  ' V@
+$"+K°èPX@   #  $   !@!   #    &   $    !Y°8+#".54>32#".54>32Ì
+(((''
+#@;4"%d+?'#@:4
+c
+@@ÍAAÊB+BoCDóF«GcGoG{GGGG«HjJJJ+J7JCJNJYJdJoKK$K0K<KHKTK`KLkLwLLLL§M MùNNNN
+ l l n ` ø ø    î "l VP 
+ ®Z Zâ ® ®l ®¼ Zè ®f Òx <R Â ®0 ®è ®< Æ Â<  Â$ : ´  P ö  ê à VX îÿìX Z   f &ö ^ ¦ J^ H J¢ þ 2X   üÿÈ   ¦j X X HP ^ H& d >ê ,X z  ü ð    FX ,X æX X t  ® Ú  4  ,X æî rf < D¬   ¶ d< Df  F d R Tf ÄX z: *" |f  xú H  f f D ,P 
+P 
+P 
+P 
+P 
+P 
+BÿèZ Z ® ® ® ®fÿÌf fÿïfÿò* 2è ®< < < < <  ~< ´  ´  ´  ´  ê Æ ÂÂ ºö ö ö ö ö ö ` ¦ J J J J J ÿù   ÿÒ ÿáR LX X HX HX HX HX H dX @X zX zX zX z  P     ¦ Æ Hf  f jf X j ¨ :¨ Z¨ ZØ :Ø ZØ Z Ð® Xx x fÿD " t ¤ fÿÔÿð ¢ÿì v      ¶þV  	ÿDÿC¹                Ú    x  x  º xô  '   B        tyPL @  "Jþz¶ª       õ                     ¨   &        ~ ÿ1SÆÚÜ    " & : D ¬"ÿÿ         1RÆÚÜ    " & 9 D ¬"ÿÿ ÿõÿãÿÂÿÿqýÿýìýëàµà²à±à®à«ààà
+PX!°	E °0PX!°0Y °ÀPX f a °
+PX` ° PX!°
+` °6PX!°6``YYY° +YY#° PXeYY-°,°#B°#B° #B° C°CQX°C+²  C`B°eY-°,° C E °Ec°Eb`D-°,° C E ° +#±%` E#a d ° PX!° °0PX° °@YY#° PXeY°%#aDD-°,°`  °	CJ° PX °	#BY°
+CJ° RX °
+#BY-°,° C°%B²  C`B±	%B±
+%B°# °%PX° C°%B #a°*!#°a #a°*!° C°%B°%a°*!Y°	CG°
+CG`°b °Ec°Eb`±  #D°C° >²C`B-°,  `°a³ B`±+-°, `°` C#°`C°%°%QX# <°`#°e!!Y-°	,°+°*-°
+,  G  °Ec°Eb`#a8# UX G  °Ec°Eb`#a8!Y-°, °°
+*°0-°, 5°`-°, °Ec°Eb° +°Ec°Eb° +° ´     D>#8±*-°, < G °Ec°Eb`° Ca8-°,.<-°, < G °Ec°Eb`° Ca°Cc8-°,± % . G° #B°%IG#G#ab°#B²*-°,° °%°%G#G#a°+e.#  <8-°,° °%°% .G#G#a °#B°+ °`PX °@QX³  ³&YBB# °C #G#G#a#F`°C°b` ° + a °C`d#°CadPX°Ca°C`Y°%°ba#  °&#Fa8#°CF°%°CG#G#a` °C°b`# ° +#°C`° +°%a°%°b°&a °%`d#°%`dPX!#!Y#  °&#Fa8Y-°,°    °& .G#G#a#<8-°,°  °#B   F#G° +#a8-°,° °%°%G#G#a° TX. <#!°%°%G#G#a °%°%G#G#a°%°%I°%a°Ec#bc°Eb`#.#  <8#!Y-°,°  °C .G#G#a `° `f°b#  <8-°,# .F°%FRX <Y.±	+-°,# .F°%FPX <Y.±	+-°,# .F°%FRX <Y# .F°%FPX <Y.±	+-°,°  G° #B² .°*-°,°  G° #B² .°*-°,± °*-°,°*-°#,°+# .F°%FRX <Y.±	+-°&,°+  <°#B8# .F°%FRX <Y.±	+°C.°	+-°$,° °%°& .G#G#a°+# < .#8±	+-°!,±%B° °%°% .G#G#a °#B°+ °`PX °@QX³  ³&YBB# G°C°b` ° + a °C`d#°CadPX°Ca°C`Y°%°ba°%Fa8# <#8!  F#G° +#a8!Y±	+-° ,°#B°+-°",°+.±	+-°%,°+!#  <°#B#8±	+°C.°	+-°,° E# . F#a8±	+-°',°+.±	+-°(,°+°+-°
+`f UX°%a°Ec#b°#D³	
++³+³+Y²(ERD³+            ¸  ¸ ¸    ºõ  þ©©ÿðºÿòþ      f  	      	    	    	  T*  	  ~  	  P  	  æ  	  4þ C o p y r i g h t   ( c 
+ 
+" 
++K°_PX@C   2 0     &   & 		  $    $  	K°ePX@A   2 0  	 	  &     &   &   $  @J   2 0  	 	  &     &   &   #   $   !	YY°8+>32#'&>54&#"#"'4>32#".!!7!!ï9cFpN
+(8 8
+(8 7((7   Ê¦ 
+  e@   
+ 
++K°_PX@	     $  @'	     #  $   !Y°8+#"&/!#"&/Z%*$*G%*$*¦þà,//, þà,//,    '  o¦ < @@&  @?>= < <7542/.
+,þj(
+þÀg&%þì%N²  Eÿ!:o 9 B M @97%#+K°_PX@6I H* @   4   2   0  $  @?I H* @   4   2   0  #  $  !Y°8+.'7>32.54>?>;#".'+4.'>ÏuÍHL
+!2@R8&GoD=tªn$[j9<
+6#*B.-!!(JE/òd`ëT ~M,Nk@517iü&BW1X<þPI¶6Zt>!/#1A$88;"þq?HðeþÆgNX9l`CyhTKGKd;ûì7X=!714   Z¦ 
+ Q@
+   
+ 
++K°_PX@	      $  @ 	     #  $    !Y°8+#"&/Z%*$*¦þà,//,   jþÄ"  @
++.54>7@d]nJhBBhJndsÎþr¯	Cræêð}}ñêårB¯þq  KþÄî"  @	+4'&546?'.54676dnJhBBhJn]dsÎ¯Bråêñ}}ðêærC	¯  LEÒì 3 h@
+   3 3+K° PX@"0,+($#	    $    @+0,+($#	      #     $   !Y°8+5467'7>7./7.=3>?'.'T;##:v;#"&:E·&d]d^&¹·'d[]d] *¸   [ ¨+  ?@    
+	+@%   #    &  $   !°8+!!#!5!¦þ{Èþ}þf·þd·  Pþäw  _@+K°_PX@    $  K°ePX@    $  @    #    $   !YY°8+74>32'&5467>7".P&6 &8&8R5+  4%1%/="0jjd*'#-5(6  dõjÃ  %@ +@     #     $    !°8+!!dýúÃÎ   Iÿòx  @+K°	PX@    $  K°PX@    $  K°PX@    $  K°ePX@    $  @    #    $   !YYYY°8+74>32#".I
+(8 8
+(8 7((7 ÿîÿ¡Î  -@	+K°íPX@   5  @
+  4   +Y°8++>;Ú	$(hH@-i"Ö*-   2ÿðV¶  ' w@
+$"+K°_PX@  $    $     K°ePX@   &   $     @!   &    #   $    !YY°8+#".54>324.#"32>VQÃqqÁPPÁqqÃQÿ.Md65cL--Lc56dM.Ó½þé¶YY¶½¾¶YY¶þê¾Îz11zÎÎz11zÎ   ¥  -¨  @	 +K°_PX@#   2    $  K°ePX@  4  4   $  @* 4  4    #   $   !YY°8+%!47#"&/3!!%Ð!N¹Ëüà¹K16®kwû¹  T  4¶ 0 ¶@ *($" 00+K°_PX@-, 2   $     $  K°ePX@+, 2    &   $  @4, 2    &  #   $   !YY°8+2>3!2!5467>54.#"#"/>Zd¦vB/Oj:þº0*s(/ü ·7W;8M0Ys,"V§¶;l]P|t<þ³-%R6¸8fdg94O6ZL&!hi5   ZÿðB¶ B þ@ <:64.-,+#! BB	+K°_PX@C>
+ 2 2   &   $    $  K°ePX@A>
+ 2 2    &   &  $  @J>
+ 2 2    &   &  #  $  !YY°8+2#".'763232>54.#5>54&#"#"/>qd¡r=;U6P³dm¢xTm
+ý   Lÿð¦ + à@+*'%+K°_PX@;
+ 2   &     $   $  K°ePX@9
+ 2     &   &  $  @B
+ 2     &   &  #  $  !YY°8+#!632#".'763232>54&#"'!ÝCNþr4bQr­v<QÅtDzk[$L(3DZ@DhE#ijxÊ=5BþÒDx¡]s¾J/="i" & ,Om@v&,¾   WÿðI¦  1 @ .,$"	 +K°_PX@$     &  $  K°ePX@$   4    & $  @-   4    &  # $ !YY°8+2#".5467>;>32>54.#"RvHJ½rt¸ESWYE-ÜþS*aþß!A`?;cG(&Fb;;`E%6m¢le±LJ»rf×tÏ"ýóþ?<cF'(Ha9>cE$(Ga  `  H¦  j@    	+K°_PX@   $     K°ePX@   &     @   5  # $  !YY°8++67!"&=H
+ýÝ>5³0#+ýL"¦k0;û#1QD1"§   Nÿð:¶  / C Ä@10!  ;90C1C
+!1( !±;]@"%B[6y&BZ  qÿò è  ' à@
+$"+K°	PX@  $     $  K°PX@  $     $  K°PX@  $     $  K°&PX@  $     $  K°ePX@    &    $  @!    &    #    $   !YYYYY°8+74>32#".4>32#".q
+(8 8
+(8 8
+(8 7((7é8((8 7((7  qþä è  2 ¨@
+/-%#+K°&PX@  $     $  K°_PX@    &    $  K°ePX@    &    $  @%    &    #    $   !YYY°8+74>32'&5467>7".4>32#".x&6 &8&8R5+  4%
+(8 8
+6Ù8((8 7((7    Ò£q  @+þ33küèÔ°!º»!°   þ¬   3@
+ +@!     &     #     $    !°8+!!!!vüvüL¸·  å Òýq  @ +75467%67.'%.=åk,;3þÒ°!»º!°þcd  %ÿò(¶ * >b@;91/
+(8 8
+0Y~NLoR<53 £,A96?P6$9
+(8 7((7   Cÿ1f S cB@ UT ][TcUcKI?=9720(& SS+K°;PX@S
+Z
+ ;   2   &  
+
+ &	   &  #  $  !K°MPX@Z
+Z	
+ ;   2   &  
+	
+ &	 	 #    &  #  $  !	@[
+Z	
+;   2   &  
+	
+ &	  	 &    &  #  $  !	YY°8+%"&'#".54>3232>54.#"32>7632#"$&54>32%2>7&#"Dk;L?]?:WvYMn3`$*K8!QÊxá¥]f²ñMp$"hþê²µþÌá7f°ÍpÉx?qþ50(I ">lO.7¸@GH>,Mi>9um_G
+	5`NÆCc¬ê¤ù§T% YDVrÕ2¿kÊ±j;_±ÿ k»O 
+ 4  5   #  $  !YY°8+!#"&'!+!!.'Ð#-
+lý©l/"Ñ8þÍ°#'þÙ&¦ü|á W33X!    Â¦    
+¤Àjþí@v©jþçj©v@ÓþöÀj¦k¿þöw½FüF½    "¦   @    
+	+K°_PX@%    &     $   $  K°ePX@#     &    &   $  @,     &    &   #   $   !YY°8+!!!!!"ýùþüp¦ÖþoÏþg×¦     "¦ 	 @   	 	+K°_PX@    &     $  K°ePX@     &    &  @' 5     &   #   $   !YY°8+!!!!"ýýãþñ¦ÖþT×ý³¦   >ÿð=¶ 0 å@ (&!
+	 00+K°_PX@;   2    &  $    $  K°ePX@9   2   &    &   $  @C   2   &    &   #   $   !YY°8+%267#"&=!#"$&546$32#"'.#"*[=µá7wYþöÂmjÃ­±ZN& CQeBk­zBF~®Æ!ý·(;&nÄ¡£ÄliTz%&H¼t}ÃG     V¦  ~@
+	 +K°_PX@     &    K°ePX@     &   $    @$   #     &   $    !YY°8+
+    2   #    $   !YY°8+>7>;#467+"&'#32h¬ËíþK0 % 0þEíË°X E#$F !úZ¦> üÌ7!?üZ¦üÝ    V¦  b@
+ +K°_PX@   K°ePX@   $ @    #   $  !YY°8+2.53#"&'#3÷í *ýí¦	ü9#CoúZÃ ?ü¦  Cÿðý¶  ' w@
+$"+K°_PX@  $    $     K°ePX@   &   $     @!   &    #   $    !YY°8+#"$&546$324.#"32>ýjÀþò¤¤þñÁjjÁ¤¤Àjþì?v©jjªw@@wªjj©v?ÓþñÆooÆÆopÅþñw½FF½ww½FF½    £¦   @    +K°_PX@   &  $      K°ePX@   &   &     @'   5   &  #  $ !YY°8+!!2#'32>54.+¨þó×ÔBFÒÊÊJnH$$HnJÊýþ¦Dzªei¯~FÒ%Ec=:^B#   CþåH¶  0 @-+#!+K°_PX@%   5  $   $  K°ePX@#   5   &  $  @,   5   &  #  $  !YY°8+#"&/#"$&546$324.#"32>ý(KlEoÞ0M Ô3k:¤þñÁjjÁ¤¤Àjþì?v©jjªw@@wªjj©v?Óa±1þp#êoÆÆopÅþñw½FF½ww½FF½     ¦  $ ¢@  $"  +K°_PX@%   &  $     K°ePX@#   &   &    @.  5   &  #  $ !YY°8+!!2#"&'.#'32>54&+¨þó¹Ó?+QwL3%jò#1þÐ
+s¨LqI$¬5ýË¦=nIjP6ýêÏÁ&Cnv  $ÿðõ¶ = Æ@;9*(%#	+K°_PX@3=    2 0  $   $  K°ePX@1=    2 0    &  $  @:=    2 0    &  #  $  !YY°8+#".#"#".'7>3232654.54>322D[>8S99^x}x^9CºxE{k*N:OkKs~9^x|x^9?y°qØL&0C(3D0&+9W~Zb«I2F+
+8ZcOtFPH    ¦  o@    +K°_PX@    $  K°ePX@    &  @  5    #   $    !YY°8+!!!5þMþóþK¦Ýû7ÉÝ   ÿð0¦  q@  +K°_PX@   $  K°ePX@ 4   $  @ 4   #   $   !YY°8+%2>5!#".5!ØN{U-SÞÞS-T{Ù4^SbüÛYYÛbüS_4     ¦  Y@ +K°_PX@     K°ePX@   4  @   4 +YY°8+3267>;#Ù#,T"S	."Ùý¸ó¦"ü+g9sXr&úZ     !¦ 
+  +K°_PX@$    K°ePX@$   4 @$   4+YY°8+32>7>;2>7>;#.'#â#/ö	/"O#.	ö0"Óþ?óþÄþÁó¦!ü K**K a&!ü@N'Ha$úZÜ,,ü$     B¦  q@
++K°_PX@     K°ePX@     $ @!     #   $  !YY°8+	!2>763!	!"&'+íþ3
+I-#þ.ßþó!þ±
+þ¿ üè¾ýíÛ%ýMý*	þ   ÿù  #¦  _@+K°_PX@       K°ePX@   4     @   4   +YY°8+!32>7>;þóýñí#
+ 6>@*
+
+'KPZ7AnO,=ì¯WS<P;2$-±úZb3þ &@95lX%M I#5$#FhE:q[<<gc#O¢;iWþ
+ 	+K°PX@3,   2 0  $   $  K°_PX@3,   2 0  $   $  K°ePX@1,   2 0    &  $  @:,   2 0    &  #  $  !YYY°8+#".#"32>32#".54>32U$2E3AbA #B^;;I2%G
+%+ 8**8 !:**:     :Î  Ö@    
++K°_PX@#      &  K°ePX@%      &  $ K°íPX@(    #     &  $ @1   #   #     &  $ !YYY°8+3267>;#"&'.+#~.ÿ&âþÁ$ Vß(þû8÷Îü­;þ#(þþ*Î     Î  o@
+    +K°_PX@     K°ePX@     K°íPX@     $  @    #   $     !YYY°8+#÷Îú2Î    % , î@   , ,
+ +  $   K°_PX@, +    $ K°ePX@, + &     $ @5 +    # &     $   !YYY°8+332>32>32#4&#"#4&#"0;CM.a}HVa1UZ/÷VS&A1øSQ5](-L2$iW3I.4d]ýsbc1J0ýsg^5.ý      È@    	+K°PX@     $   K°_PX@$      $  K°ePX@$    &     $ @-     #   &     $   !YYY°8+332>32#4&#"0EMX4TW-÷WW@p2-Q 4&9gVýs^g:2ý   =ÿñ4   «@ 	 +K°PX@   $   $  K°_PX@   $   $  K°ePX@    & $  @$    & # $  !YYY°8+2#".54>2654&#":s»HH»ss¼II¼s{{||JÄyzÄJJÄzyÄJü¬¦¦®¯¥¥­  þ±4  (@   ((  
++K°PX@1   $    $  K°PX@1   $    $  K°=PX@5     $   $  K°_PX@7  $   $   $    K°ePX@2   &     %  $  @<     #  &   &     $   !YYYYY°8+32>32#"&'"32>54.">¡lTe7>s£eWy0éMm/*c98[?"6Mþ±Q_GXFÃ~sÄQ5/þ¡A;þ44
+ = Æ@;9(&#!	+K°_PX@3=   2 0  $   $  K°ePX@1=   2 0    &  $  @:=   2 0    &  #  $  !YY°8+#".#"#".'7>3232>54.54>32å
+
+	J6=bþ½°ýÔ06x-.   oÿðí  Ê@    
+	+K°PX@       $ K°_PX@$       $  K°ePX@&   $     $  @-      #  &    $   !YYY°8+32673#"/#".5fWW@p2÷0 DMY3TX-ýt^g92æûþ-R 5%9hV      Y@ +K°_PX@
+      K°ePX@
+  4     @
+  4   +YY°8+!#32>7>;àþhÍ%Æ		Ë$ÃýÜ0.. $     ' . @.,"  +K°_PX@'    K°ePX@'   4 K°ÉPX@'   4+@'   4  4+YYY°8+32>7>;2>7>;#"'.'+Ä&ª$m$¨
+&»þ»Ç ¹		»(½ýÜ-V++V-&ýÐ+Q
+&    &     &  $  @1&    &     &  #  $  !Y°8+4&#52654.54>;+";2#".54>9??9,[^5	FJ
+   &   &   $     @1   &   &    #   $    !Y°8++54>;2654.54>7.54>54&+".=323"Ã,[^5	FJ(:$$:(JF	5^[,9??9/^^_1L}Y1mXL7e_/%D8
+8  7
+þ±[¯bb¯[ýëË 7((7  7((7  {ÿ"ë / 6 @/-#!
+	+K°_PX@14 3%   4   2  0   $    @:4 3%   4   2  0    #    $   !Y°8+.54>?>;#".'>32+Yp?B½z$[O6@
+'0 :5G3&D#Td4$[b[9~xQµqm½T'åC2Wý_X
+#!		+K°_PX@92'   2   &  $   $  K°ePX@72'   2   &   &  $  @@2'   2   &   &  #  $  !YY°8+46;54>32#"'.#"!#!63!#!5>5#'*
+ÂBg,h&-=
+
++K°_PX@9 !     %   $    @C !       &  #  $  !Y°8+467'7>327'#"&''7.732>54.#"Ó}+b64`*{}*b64_*{¶3D''E33E''D3¡5_*z{+b65^*{|+b6&E33E&(E33E    v¦ " ¿@"!  +K°_PX@+
+  
+  &	  &  K°ePX@+
+  4 
+  &	  &  @7
+  4 5 
+  &	  #	  $  !YY°8+!32>7>;!!!!#!5!5!þrÍ#,ÛÙ,"ÏþqþÁ?þÁ÷þÀ@þÀy-!þ-L%%M,è%üÓ_þù_   Ìþ±   T@
+ +K°=PX@      &   $  @!      &   #   $   !Y°8+3#3#ÌÀÀÀÀü×þ÷üØ   ^ÿ µ I Y @GE0.+
+$8Zq8-(Ý!, 0+(-6F<Q(%bDJ}[3".^D<(:-%*3F`BO}%'kL?qV3F9ý*=1-=$,=2,9 ÿú  ' E@
+$"+K°FPX@   $  @   #  $   !Y°8+#".54>32#".54>32'31&&13'v&32%%23&1$$13&&31$$13&&3  5ÿòú¶ + G _ú@ZXNLB@42(& 
++K°	PX@G   2   0   &   & 		 $   $  	K°PX@G   2   0   &   & 		 $   $  	K°PX@G   2   0   &   & 		 $   $  	K°_PX@G   2   0   &   & 		 $   $  	K°ePX@E   2   0  		 &   &   &  $  @N   2   0  		 &   &   &  #  $  !	YYYYY°8+2#".54>32#".#"32>%4>32#".732>54.#"ùR8ªsd¢s>F|§bp6A*@3<^A"#>U21?,"üR5`¤¼ff½¤`55`¤½ff¼¤`5]£ÜÞ¤^+NoUUmN* 	WGKG}©cfª{DJ;Y'IhADhG%Ùf½¤`55`¤½fe½£`55`£¼fâ§``§âW qQ,,Qq   QAnº 
+&"  --+K°7PX@++ 2    &  $  @4+ 2    &  #   $   !Y°8+2>;2!546?>54&#"#"&/>^:[? 
+'#!(cq":O.
+'&  ==	+K°_PX@A9 2 2    &   &  $  @J9 2 2    &   &  #  $  !Y°8+2#".'763232654.#52>54&#"#"/>h9X> 49<>.J^06VC2M% -0!9**7''#
+(¶þûó   oþ±í K@    
+	+K° PX@&      $  K°=PX@*      $    K°BPX@,      $     $ K°_PX@*       &    $ K°ePX@,       &  " $  @2       &  & $  !YYYYY°8+32673#"/#"&'#"&5fWW@p2÷0<>C&;`%z49ýt^g92æûþ-S+$!,^
+E33E('D3S'E33E''C33C   þ£
+   í@  +K°	PX@!     (  $  K°PX@!     (  $  K°"PX@     4  $  K°=PX@$   4  4 $  @-   4  4  # $ !YYYY°8+232654&'73#"&'76·!!HK-YH#@Z6
+'&" 
+	+K°_PX@@%/ 2
+  &  &	  $    K°ePX@=%/	4 4
+  &  &  $    K°MPX@F%/	4 4    #
+  &  &  $  !@J%/ 		4 4 4    #
+  &  &  $  !	YYY°8+%+>;3+#5!"&/3%37#"&/733!4673Ç;&jB>-i^<þßO«ûfM7ésþQÊÃG
+'#!&+cüM7ésþQG
+(8 8
+(8 7((7 ÿÿ   ÿ& $    Ùx  ÿÿ   ÿ& $    Ûx  ÿÿ   è& $    Ü  ÿÿ   é& $    Þ  ÿÿ   
+& $    Ú  ÿÿ   R& $    Ý   ÿä  ô¦   Ò@
+	 	+K°_PX@5     &    &     $   $ K°ePX@3       &    &    &  $ @<       &    &    &   #  $ !YY°8+!!!!!!+!!ôýJ2ýþ29üã,ýø4$Ìß1ûV#ÐþoÏþg×dþØ!¦ü|¼3Z&  >þ£¶ Hw@ DB:953-+#! HH
++K°	PX@K7; F  2 0 0  $  	  $  	K°PX@K7; F  2 0 0  $  	  $  	K°PX@K7; F  2 0 0  $  	  $  	K°PX@K7; F  2 0 0  $  	  $  	K°PX@K7; F  2 0 0  $  	  $  	K°PX@K7; F  2 0 0  $  	  $  	K°PX@K7; F  2 0 0  $  	  $  	K°PX@K7; F  2 0 0  $  	  $  	K°"PX@K7; F  2 0 0  $  	  $  	K°=PX@R7; F 2 0 0	  2  $   $  
+K°_PX@O7; F 2 0 0	  2  %  $   	K°ePX@M7; F 2 0 0	  2   &  %  @Z7; F 2 0 0   0	  0   &  # $ !
+YYYYYYYYYYYY°8+232654&'7.546$32#".#"32>7>32#"&'76x!!HK%àTlÄ¥¡ñVZ0JqWf«{EEv YKC!
+jPãYH#@Z6
+    Ù  ÿÿ   "ÿ& (    Û  ÿÿ   "è& (    Ü*  ÿÿ   "
+& (    Ú*  ÿÿÿ  Üÿ& ,    Ùð ÿÿ   ¿ÿ& ,    Ûð ÿÿÿÑ  «è& ,    Üÿ ÿÿÿà  
+& ,    Úÿ   5  í¦  ! £@ +K°_PX@&    &  $   $  K°ePX@$    &    &  $  @-    &    &  #  $  !YY°8+3!2#!#%4.#!!!!2>5´(¤ÀjjÀþò¤ýØ´¤?v©jþçiþj©v?$k¿þöþöÀjHw½FþTþKF½ ÿÿ   Vé& 1    ÞÅ  ÿÿ Cÿðýÿ& 2    ÙÔ  ÿÿ Cÿðýÿ& 2    ÛÔ  ÿÿ Cÿðýè& 2    Üä  ÿÿ Cÿðýé& 2    Þä  ÿÿ Cÿðý
+& 2    Úä    j Èh  @	+		'	7		þ»Uþ¬þ«Vþ¹GDäþ»þ¬Sþ«VGþ¹E  Cÿýè # . 9@64+
+'   5   $    $     K°_PX@7!32('  4  5  $    $     K°ePX@5!32('  4  5   &   $     @>!32('  4  5   &    #   $    !YYY°8+#"&'+&546$327>;&#"4&'32>ýjÀþò¤e²NLQ&jÃsjÁ¤nÁR;³hqûY:8Mhjªw@/-ý¼_yj©v?ÓþñÆo*(i( d"°Æo20Rödþë¦s¶B*?F½wg¨@üâ.F½ÿÿ ÿð0ÿ& 8    Ù  ÿÿ ÿð0ÿ& 8    Û  ÿÿ ÿð0è& 8    Ü  ÿÿ ÿð0
+& 8    Ú  ÿÿÿù  #ÿ& <    ÛB      £¦   @    +K°_PX@!   &   &      K°ePX@#   &   &    $     @,    #   &   &    $     !YY°8+!!32#'32>54.+¨þóÊÔBFÒÊÊJnH$$HnJÊþû¦øDzªei¯~FÒ%Ec=:^B#  °ÿð·¿ F ñ@ A@=;'%"  FF+K°PX@* 2   $    $ K°_PX@. 2   $     $  K°ePX@, 2    &   $  @8 2 2    &  #  $  !YYY°8+2#".'7>3232654.54>54.#"#4>¼u¦h0';D;'2JXJ2?lP.ZSJ:
+*2@-?N6Q^Q6*?J?*2O7÷IÂ¿Dfv3:R>.*-!0.4KjMUX-".^K</>1/?ZE9R@36>*!;+¡ü0Øj²Iÿÿ Qÿð¨¶& D    C ã  ÿÿ Qÿð¨¶& D    v ã  ÿÿ Qÿð¨¦& D    Å ã  ÿÿ Qÿð¨¡& D    Ç ã  ÿÿ Qÿð¨& D    j ã  ÿÿ Qÿð¨û& D    Æ ä    Qÿð. C Q ZK@&SR VURZSZMKED?=8631.-%#	 CC+K°PX@KA;  2 2
+ &  $	   $ K°PX@KA;  2 2
+ &  $	   $ K°;PX@WA;  2 2
+ &  $	    $  $ 
+K°_PX@dA;  2 2
+ &  $	     $	    $  $ K°ePX@A;  2 2  #	    &
+ &  $  $ 
+K°PX@`A;  2 2  #	    &
+ &  #  #  $ !
+K°MPX@hA;  2 
+
+2   & 	 	 & 
+ # 
+
+ &  #  #  $ !@iA;  2 
+
+2   & 	 	 & 
+ # 
+
+ &  #   &  $  !YYYYYYY°8+2#!32>32#"&'#".54>754&#"#"&/>32>32>5"!4.Wm>ýªnDU8&B
+&
+ +@+    &      &  #  $  !°8+!!4>32#".4>32#".[Ðü0P(8 8
+(8 8
+û·¿8((8 7((7ýX8((8 7((7   +ÿ³Ze # + 4@-,,4-4*(#!	+K°PX@8 32'&  4  5  $   $     K°_PX@8 32'&  4  5  $   $     K°ePX@6 32'&  4  5   &  $     @@ 32'&  4  5   &   #  $    !YYY°8+#"&'+7.54>327>;&#"2654&'¯@EH»sH7"Q&[BFI¼sH68züÒ x8Rþ7}E¾wzÄJ/'!ÑEÁyyÄJKýwNþ"µþ ´¦;`&þ ÿÿ oÿðí¶& X    C ÷  ÿÿ oÿðí¶& X    v ÷  ÿÿ oÿðí¦& X    Å ÷  ÿÿ oÿðí& X    j ÷  ÿÿ þ±¶&     v ê    þ±4Î  '@  ''  +K°PX@5    $   $  K°=PX@5    $   $  K°_PX@7 $   $    $    K°ePX@5  &  $    $    K°íPX@3  &   &   $    @<     #  &   &     $   !YYYYY°8+3>32#".'"32>54.÷=gTe7>s£e,J>4éMm/*c98[?"6Mþ±ý¶AMEÂ~sÄQ+þK¡A;þ44
+PX@A.
+ 2 
+ 
+ &	  $   $ K°_PX@N.
+ 2 
+ 
+ &		  $     $   $ 	K°ePX@F.
+ 2	 	 #  
+  & 
+ 
+ & $ K°MPX@Q.
+ 2	 	 #  
+  & 
+ 
+ & # $ !@W.
+ 2	 	 #  
+  & 
+ 
+ &  # # $ !	YYYYY°8+2#!32>32#"&'#".54>32>2654&#""!4.øWm>ýªn8P=0H
+00(,/-.L66L.-J55J-&33&*11  ¤¡  ò@ 
+ +K°NPX@   %  $ K°YPX@   %   $  K°[PX@!   2   %  $  K°_PX@(   2 2    %  $  @3   2 2   #   &   $   !YYYY°8+2653#".#"#4>32ª"6K-$>6/!8K,$?6.O!+8[A##*8[A$   £ Î¯  %@ +@     #     $    !°8+!!£+üÕ¯¯   £ ð¯  %@ +@     #     $    !°8+!!£Mú³¯¯   bÑ  @ +&5467¦De`M
+	$Ñoqd·L/	(/8 "M*    Vµyü  @ +'.547>54&'&5475#!e_M
+	%ü8p8d¶M/'/8 "M+   VþÜy#  @ +'.547>54&'&5475#!e_M
+	%#8p8d¶M/'/8 "M+   bÑÒ  1 	@ +&5467&5467¦De`M
+	$¶De`M
+	$Ñoqd·L/	(/8 "M* :oqd·L/	(/8 "M*   VµÅü  1 	@ +'.547>54&'&547%'.547>54&'&5475#!e_M
+	%á#!e_M
+	%ü8p8d¶M/&08 "M+ :8p8d¶M/&08 "M+   VþÜÅ#  1 	@ +'.547>54&'&547%'.547>54&'&5475#!e_M
+	%á#!e_M
+	%#8p8d¶M/&08 "M+ :8p8d¶M/&08 "M+    ¡÷  <@+K°_PX@   $    @    #    $   !Y°8+4>32#".EvZZ vEEv ZZvEQZwDDwZYvDDv  Iÿò¤  ' ; @86.,$"+K°	PX@   $ K°PX@   $ K°PX@   $ K°ePX@   $ @   #   $  !YYYY°8+74>32#".%4>32#".%4>32#".I
+(8 8
+(8 8
+(8 8
+(8 7((7 8((8 7((7 8((8 7((7  { ~ò¶  @+5{ Q&Q
+ &	ëì#&    ~¶  @ +%'.54?67&/&54?Q&Q ~&	ìë$&þt   ÿO  |¦ 	 B@	+K°_PX@      K°ePX@  4     @
+  4   +YY°8+7+>;4;&jB>-iG
+PX@
+00(,/+F22F+*E22E*'22'*00  }é  °@ 
+ +K°BPX@%   #  &   $  !K°[PX@,   2   #   &   $  !@3   2 2   #   &   $   !YY°8+2673#".#"#4>32º!0F-$C=5 2F,$D=4£ 2R:!! 1S<!     ß   _   " - 9   å     Ü Ü Ü ÜÜ¿~ª¼ü/bè ~þ,¦		¶
+³N¥f ©FoÁÈòbþ«~Úí#:|`ÜNèt*u×'¤mÊ<Åó" !!Ò"µ#$%:%Â&:&â''È(~
+PX!°	E °0PX!°0Y °ÀPX f a °
+PX` ° PX!°
+` °6PX!°6``YYY° +YY#° PXeYY-°,°#B°#B° #B° C°CQX°C+²  C`B°eY-°,° C E °Ec°Eb`D-°,° C E ° +#±%` E#a d ° PX!° °0PX° °@YY#° PXeY°%#aDD-°,°`  °	CJ° PX °	#BY°
+CJ° RX °
+#BY-°,° C°%B²  C`B±	%B±
+%B°# °%PX° C°%B #a°*!#°a #a°*!° C°%B°%a°*!Y°	CG°
+CG`°b °Ec°Eb`±  #D°C° >²C`B-°,  `°a³ B`±+-°, `°` C#°`C°%°%QX# <°`#°e!!Y-°	,°+°*-°
+,  G  °Ec°Eb`#a8# UX G  °Ec°Eb`#a8!Y-°, °°
+*°0-°, 5°`-°, °Ec°Eb° +°Ec°Eb° +° ´     D>#8±*-°, < G °Ec°Eb`° Ca8-°,.<-°, < G °Ec°Eb`° Ca°Cc8-°,± % . G° #B°%IG#G#ab°#B²*-°,° °%°%G#G#a°+e.#  <8-°,° °%°% .G#G#a °#B°+ °`PX °@QX³  ³&YBB# °C #G#G#a#F`°C°b` ° + a °C`d#°CadPX°Ca°C`Y°%°ba#  °&#Fa8#°CF°%°CG#G#a` °C°b`# ° +#°C`° +°%a°%°b°&a °%`d#°%`dPX!#!Y#  °&#Fa8Y-°,°    °& .G#G#a#<8-°,°  °#B   F#G° +#a8-°,° °%°%G#G#a° TX. <#!°%°%G#G#a °%°%G#G#a°%°%I°%a°Ec#bc°Eb`#.#  <8#!Y-°,°  °C .G#G#a `° `f°b#  <8-°,# .F°%FRX <Y.±	+-°,# .F°%FPX <Y.±	+-°,# .F°%FRX <Y# .F°%FPX <Y.±	+-°,°  G° #B² .°*-°,°  G° #B² .°*-°,± °*-°,°*-°#,°+# .F°%FRX <Y.±	+-°&,°+  <°#B8# .F°%FRX <Y.±	+°C.°	+-°$,° °%°& .G#G#a°+# < .#8±	+-°!,±%B° °%°% .G#G#a °#B°+ °`PX °@QX³  ³&YBB# G°C°b` ° + a °C`d#°CadPX°Ca°C`Y°%°ba°%Fa8# <#8!  F#G° +#a8!Y±	+-° ,°#B°+-°",°+.±	+-°%,°+!#  <°#B#8±	+°C.°	+-°,° E# . F#a8±	+-°',°+.±	+-°(,°+°+-°
+`f UX°%a°Ec#b°#D³	
++³+³+Y²(ERD³+            ÿ ½ ÿ ÿ ½ ¾¦  Ì  þ±¶ÿðÌÿñþ      f  	      	    	    	  N$  	  r  	  P  	  Ô  	  4æ C o p y r i g h t   ( c 
+ 
+Á  Åè  Àmaxpßù  ÅÈ    name:­Rs  Óø  postÃVõ  Ö  Cprep¦  Ó|   K  -  û ( 8 < @ þ@@?>=<;:975-+'%" 
++K°_PX@C   2 0     &   & 		  $    $  	K°lPX@A   2 0  	 	  &     &   &   $  @J   2 0  	 	  &     &   &   #   $   !	YY°8+>32#'.54>54&#"#"'4632#"&!!7!!ú9DO.?gI
+c>0((0>þ¡Îü22cüu&#@[87P;+&%ia/(&.8'3<üû/@
+?¤úg6,   ÿñ  ! ~@    +K°_PX@     $  $  K°lPX@     &  $  @"     &  #  $  !YY°8+#>74>32#".FuFÄ!-."".-!ýÂ-UV$VU->úÕ."".-""-   ÚË 
+  @   
+ 
++K°_PX@	     $  K°èPX@%	     #  $   !@+	   #   &  $    !YY°8+#"&=!#"&=$"%Ì$"%þß""!þß""!   6   < @;@&  @?>= < <6431.-(&%$#!	+K°_PX@-   &	  $
+    K°lPX@-	4   &  $
+    K°èPX@8	4  5
+ &  #  $  !@` 	4 		4   2   3   & 
+ 
+&    &   #   &   &   $   !YYY°8+#"&547#+#"546?3#7>;>;3323+32%3#Nqút0M+Íjé'&¡v
+-NúMvÖ&%j¶ýªûjú¨þX]þ#¨(
+7KGk þX¨	þGþµ
+7K   Gÿbf 8 C Ns@8632$"+K°	PX@<J
+G4$1'G5w|û
+~:`|A8]C%6]}F8]D%$1(G5$1'G6xcj7
+5^L=cE%8_~  »  °  |@    	+K°_PX@   $     K°lPX@   &     @$   5  # $  !YY°8++>7!"&=7°	ý'ñýD-û+¦
+*Je;TvW?;@+¦0JA>H[=NZ$û."".-""-   Mÿ°M T d9@ VU ^UdVdLJ@>9731
+	GrI9H ÿÁ     ¿@	 +K°_PX@    &     K°lPX@ 4    &    K°èPX@( 4  5   #  $  !@. 4   2   3   #  $  !YYY°8+!#"&'!+3!.'Ný¸¤	%¿½þ>ë^þ¢üzQB&&C  a  e   * ¹@  *("   +K°_PX@,  &   $     $ K°lPX@*     &  &  $ @3     &  &  #  $ !YY°8+3!2#!2>54&#%32>54&+a±¨p¡h2%JoJGÁyÌ?OxP(þ÷çQyQ(|î-SwI@tbLpc¥xBþ*NnE_q+MlAgg  dÿðø© / Î@ '%"  //+K°_PX@4  2   0  $    $  K°lPX@2  2   0   &   $  @<  2   0   &   #   $   !YY°8+%2>32#".546$32#".#"§BfN7
+EmWtÊU:g ' Qfq¥ä»6ß{2F+N
+(/(]­öo°{B  a  =   w@
+	+K°_PX@  $    $     K°lPX@   &   $     @!   &    #   $    !YY°8+#!!24.#!!2>=qÇþí¢þ±îÕPÀ7g]þÎ2xÆO1·þÓ×vZ£ãl®yAû[«õ  a  A  @
+	 +K°_PX@$    &     $    $  K°lPX@"      &    &   $  @+      &    &   #   $   !YY°8+!!!!!!.ý<üþ=uüÏ±/ þþ  a  A 	 @	 +K°_PX@    &     $   K°lPX@      &    &  @& 5      &   #   $   !YY°8+!!!#!.ý?ýêL½±/ þý  dÿð%© : Ù@ 20+
+N
+
+   5  &  #  $ !YY°8+#!2#32>54.#nBº¯r¨m6JÏtJÐUX."DhEýæ6dVq½Mìý¨4]L:A#  dþ×©  0 Ì@-+#!+K°PX@&  $   $      K°_PX@&   5  $   $  K°lPX@$   5   &  $  @-   5   &  #  $  !YYY°8+#"&'#".546$324.#"32>3^R!"5Å6q<ÓOrÉ¡ÓOÀ8g]vÆP8g]xÆO2yØ¸4þw^§æ·3Þ|_¨çm±|D_°ùm°|C^¯ù   r  U  # ç@  #"  +K°_PX@&   & $     K°lPX@$  &   &    K°èPX@/  5  &  #  $ !@5   2   3  &  #  $ !YYY°8+#!2#"'.#32>54&#vJº¯yr§m54bW 5¦1þò"%/D·UY-Yý§0YNWwS&ýÄ(­ýÛ0WwGms  ÿðÕ§ = Æ@;9(&#!	+K°_PX@3=    2 0  $   $  K°lPX@1=    2 0    &  $  @:=    2 0    &  #  $  !YY°8+#".#"#"&'7>3232>54.54>32&;T?@dE$0NeheN0FºtÉAB,DdKEoM*0NcicN0@x¬ln°9»#
+E,G3'
+ <öü
+:  :öúgO&&û±  ÿº  ì  ¥@
++K°_PX@     K°lPX@     $ K°èPX@!     #   $  !@+    4 2  #  $  !YYY°8+	3267>;	#"&'+ôþ¯© 	lÁþz¨þÜ
+þQ$»ýýäöýlüûqý­$  y  û  {@+K°_PX@      K°lPX@  4     K°èPX@  4   +@  4  4   +YYY°8+#32>7>;®G»Gþ¦î
+}!=ýÃ;^ýÂ44>    «  ~@    +K°_PX@   $     $  K°lPX@    &     $  @"    &     #     $    !YY°8+!!7>7!7«	üâü"	lý7<ûl;  !þáWü  8@    
++@"     &  #   $  !°8+!+32!ßWÅþáCùÈ	   lÿ¥q« 	 -@ +K°_PX@  5     @
+   4 +Y°8+32#"&'lI +iH2«"ú9"  ÿñþá
+/[VZ«]3ü²=lY'FatEñ   OÿòåÁ  ,q@  $",,  	+K°	PX@-     $  $ K°"PX@-     $  $ K°_PX@1     $  $  K°lPX@1     $  $  K°PX@/ 2  &  %     @;    42  &  # $ !YYYYY°8+33>32#"&'#"32>54&O²¯X&X`h6"?YmFQ*ã0b[P &j74L<
+&
++K°PX@B9$	  &   &   $    $     K°IPX@E9$ 2	  &   &  $    $     K°lPX@B9$ 2	  &   &     %  $  @L9$ 2   &	  &   &    #   $    !YYY°8+#".54>32.5467#".54>32!2>54&#"4&'.#"32>0"("
+@  %#  +K°	PX@&	   $    $     K°IPX@&	   $    $     K°lPX@#	      %  $  K°PX@&	 2     %  $  @0	 2   &    #   $    !YYYY°8+#"&'7>323267#".54>32-LiC#2GE
+î#-+!"+,#õûÀ=iN-
+
+`IQ@>-##-.##/  N  ×Á 	@    
++K°_PX@#     &  K°lPX@#     &  K°PX@"     &  % K°èPX@. 4   #    &  $ !@5 4 2   #    &  $  !YYYY°8+3267>;#"&'.+#²jOþy0þþ";°µÁüWþs
+ þþÁ  X  ºÁ  _@
+    +K°_PX@    K°lPX@    K°PX@ 5     @   4+YYY°8+33X³¯³Áú?   G  Á 0*@   0 0+
+     $ K°lPX@(     $ K°èPX@1     # &     $   !@C  2 3    #   &   &     $   !YYYY°8+332>32>32#654&#"#>54&#"GzY<K²cgbL½hpoL¯L2;+VPEA°M/;0YOD?ö<µ~2ý{1(KG+S{PýÙ0GD0[Rýð  G  ½ @    	+K°"PX@     $   K°_PX@$      $  K°lPX@$      $  K°èPX@-     #   &     $   !@1  5    #   &     $   !YYYY°8+332>32#>54&#"GyY<QËmq}L²L=A0cO:ö<Ä*ý{%RO4_Sýý  7ÿò¶  # @ ##	 +K°	PX@  $    $ K°lPX@  $    $ @$    &   #   $  !YY°8+%2>54&#"".54>32ÀIxT.nhJwT.mYSd8P½nSd8P¾}P®_O®_9ldâªb9lcâªc   þ©Ý  +L@  #!++  	+K°	PX@1   $    $  K°"PX@1   $    $  K°IPX@5     $   $  K°lPX@7  $   $   $    @<     #  &   &     $   !YYYY°8+32>32#"&'"32>54&¥Y<&Zcl8"?YmFK|*6À0cO &k74L<
+#7XI@w=4  _ÿðµ> 02@/-(&#!+K°2PX@.+ 4   2    $   $  K°_PX@,+ 4   2   &  $  K°lPX@,+ 4   2   &  $  K°èPX@5+ 4   2   &  #  $  !@;+ 4   2 0    &  #  $  !YYYY°8+74>7#"&54>?>;!!32>32#"&?qK^,
+þõ=/
+	%0}?ap¿$:/û9þ£þ
+"Q*  K  áõ  w@ +K°_PX@     K°lPX@     K°èPX@   4 +@   4 4 +YYY°8+32>7>;#K:þõýt%J$$I&ü   Q  ¹÷ . µ@.,"  +K°_PX@'    K°lPX@'    K°ÈPX@'   4+K°èPX@'   4  4+@!'  4   4 4 4 +YYYY°8+32>7>;2>7>;#"'.'+Q]Jq
+ þW{
+þÛõýt#A  A#ýp#B! C#ü"¯! ýR"  ÿÎ  ²õ  ¤@
++K°_PX@     K°lPX@     K°èPX@"     #   $  !@
+Gb:Bxsq  «þ©5ý  <@ +K°IPX@     $  @     #     $    !Y°8+3#«ýø¬  ÿðþâý G K@?=52+@5<(     &     &  #  $  !°8+3"+7>;2>5<&454>7.54>54&+"&54>5732«85JI-YV1	
+'B/"3;5@#C=
+2EfC" & 4Bhw|575ai7M
+	EoQ<?;LhA![?<rsu?FU%(Gb:Bxsq   9×   G@ 
+ +@- 4 5   #   &   $   !°8+2673#".#"#4>32¼AI%Ef@4f_V$AI%EeA4f_VeUFCpP, '!TGCpP-!'!  þ¨í  ! }@    +K°IPX@  $      $ K°lPX@     %  $  @"    &     #     $   !YY°8+>734>32#".C
+hB."--""--"þ¨-UW%VU-ýâß."".-""-   ÿ&æ / 8 ù@54/-*
+
++K°lPX@8 !     %   $    @B !       &  #  $  !Y°8+467'7>327'#"&''7.732>54.#"![,h:9f+Y"![,h99e,Z!#>Q//S=$$=S//Q># 9e,Z"![,g:9f+!![,g:.Q=$$=Q./R>##>R   ~  Ä "@"!  +K°_PX@+
+  
+  &	  &  K°lPX@+
+  4 
+  &	  &  K°èPX@7
+  4 5 
+  &	  #	  $  !@J
+  4  4 5   
+ 
+ &    & 	  # 	 	  &   $   !
+YYY°8+!32>7>;!!!!#!7!7!£6þÊÓ
+	_"þ6þ©Vþª'¬'þ©Vþ©p'ýÃ!:; =üÙcicþ¿Aci  «þ©5ý   T@
+ +K°IPX@      &   $  @!      &   #   $   !Y°8+3#3#«ýüæþáüå   ;ÿ¦ F V @DB+
+*0?R8Y'"X>AvZ5>6ý/B82V51D70#P   ^°¦  ' o@
+$"+K°_PX@   $  K°èPX@   #  $   !@!   #    &   $    !YY°8+#".54>32#".54>32? 
+(
+(**((**  ]ÿò¨ + G ab@ ZPNB@42(& +++K°	PX@H    2
+  0   &   & 		 $   $  	K°_PX@H    2
+  0   &   & 		 $   $  	K°lPX@F    2
+  0  		 &   &   &  $  @O    2
+  0  		 &   &   &  #  $  !	YYY°8+2#".54>32#".#"32>%4>32#".732>54.#";		<9¥tb¡s?Dz§bm9.2M:GpP**Kg>?V9!ü.4`¢ºee»¢_44_¢»ed»¢`4e,Qs¢XX£sR-c«èX¢sQ,Ú@BIDz¨de©yCC8A-TxKMyR+òe»£`44`£»ed»¢`44`¢ºeY¤tS--St¤Yë¯e.Sv¦  ?© - 9 ï@/. 32.9/9%#
+ --
++K°6PX@6!  2   &	   %  $  K°_PX@=!  2  2   &	  %  $  @H!  2  2   &   &	  #	 $  !YY°8+"&/#"&54>?6454&#"#"&/>32'26?.04AR%Vj(0"0$6xD,D//ÿ.G$B9*H	1 ED(K;&&.6
+(2.4G(þP&#m*"   ý   % 	@%+774¯
+o ;]4¯
+o ;þù
+þù þù
+þù    ¥>à  R@ +K°	PX@ 
+:&%8$  pÐA  %@ +@     #     $    !°8+!!~ýîAq  'ª  ' S@
+$"+K°_PX@   %   $    @!     &  #  $  !Y°8+4>32#".732>54.#"3XvDEwX22XwEDvX3}6I**I66I**I6hCvW22WvCBuW33WuA*I66I**J77J  3 PK¯   @    
+		+K°èPX@1 4 2   &   #   $   !@9 4 2    &     &   #   $   !Y°8+!!#!7!!!ß/þe--þj/ýï½üD¯þþr{ü$  ¯d - @ (&#!
+ --+K°lPX@++	 2    &  $  @4+	 2    &  #   $   !Y°8+26;2!7>?>54&#"#"&/>â`m0?"Ç2*Êþú6(6**A!CddS,HA<µ*Ü89:-0+2ji   ¥|Àd : ²@ 31.,('&% ::	+K°>PX@A6 2 2    &   &  $  @J6 2 2    &   &  #  $  !Y°8+2#".'763232>54&#7>54&#"#"&/>ö.K5980Nd48Q7"	:+!"5%FV[S5,2=@5HWd->$-E7<]?!1G/!%011Y=>,-.+4P4  ¤§ 	 3@
+   	 +K°_PX@   5 @ 4   +Y°8++7>3¤øf¦"§þÿò   þ¨½ó %P@   % %+K°IPX@%     $  K°[PX@%   5   $ K°_PX@
+(76
+(86
+  $  K°PX@     4  $  K°IPX@$   4  4 $  @-   4  4  # $ !YYY°8+232654&'73#"&'76E(+GB:k JC!;Q0&Bù	(#	R?.$9'5   äz^  @ +K°2PX@ 
+ 4  4    $   K°èPX@*
+ 4  4    #   $   !@/
+ 4  4   *     #    $   !YY°8+37#"&/733!ð6
+y õhNyþuá´,		6½ý]  <Ð¨  ! `@ !!	 +K°_PX@  %   $   @$    & # $  !Y°8+2#".54>2654&#"Ö:]A"0UxH;^A#0Wy
+ZYA?2E+@¨%Ea<R]2%Eb<Q]2ýûuKU&C^8KT  w î   % 	@%+'&54767&'&54?'&54767&'&54?Úþë5²	p!;Êþë5²	p!;þ{ þ|þ{    Ä  k   + 1Ó@10+*
+'&" 	 +K°_PX@E%/   2 2
+   &  &	 K°lPX@B%/  	4 4 2
+   &  & K°ÈPX@N%/  	4 4 25
+   &    #  $ !	K°èPX@R%/   		4 4 4 25
+   &    #  $ !
+@d%/  		4 4 4 
+
+* 0 2 3    &     #   &   $  !YYYY°8+3+#7!"&/3+>;37#"&/733!>73ýnUjþÍwü/F1!Gûu6
+y õhNyþuîþêèI±±>Íý] [ý´,		6½ý]½,þ»  É   	 7 HÝ@
+HGFEDC?=9820,*
+77	+K°_PX@JB;5  2 2
+  &  &	  $    K°lPX@GB;5 	4 4 2
+  &  &  $    K°ÈPX@PB;5 	4 4 2
+  &  &    #  $  !	K°èPX@TB;5  		4 4 4 2
+  &  &    #  $  !
+@^B;5 		4 4 4 
+
+* 2   5   &  &  #  $  !YYYY°8+%+>;26;2!7>?>54&#"#"&/>%37#"&/733!/F1!G¦`m3C$»2*Êþú6(6*/=	+ü¬6
+y õhNyþu5 [ýIdS-LC>!ª8*Ü89:-04
+@ FD<;64/-%#  JJ
++K°	PX@K9= H  2 0  $   $ 	   $  	K°PX@K9= H  2 0  $   $ 	   $  	K°IPX@R9= H 2 0	  2  $   $   $  
+K°_PX@O9= H 2 0	  2   %  $   $  	K°lPX@M9= H 2 0	  2   &   %  $  @W9= H 2 0	  2   &    &  #  $  !	YYYYY°8+232654&'7.546$32#".#"32>32#"&'76û(+GB0rµ~BtËL|fS$@(EmWtÊU:gUBfN7
+#	vd¢Ú»6ß{2F+N
+(/(]­öo°{B ' Q^o:?.$9'5ÿÿ a  Aõ& (    Ù$  ÿÿ a  Aõ& (    Û$  ÿÿ a  AÛ& (    Ü$  ÿÿ a  Aè& (    Ú$  ÿÿ V  
+õ& ,    Ù ÿÿ   õ& ,    Û ÿÿ g  ÈÛ& ,    Ü ÿÿ   ©è& ,    Ú   E    ! á@ +K°_PX@&    &  $   $  K°lPX@$    &    &  $  K°èPX@-    &    &  #  $  !@5    &    &      &  #  $  !YYY°8+3!2#!#%4.#!!!!2>S³PîÔOpÈþï¢þQ³{7f]þÍ>þ¤?2xÅN	Z£ã·þÓ×vl®yAþnýü[«õ ÿÿ a  EÐ& 1    Þ  ÿÿ dÿñõ& 2    Ù¾  ÿÿ dÿñõ& 2    Û¾  ÿÿ dÿñÛ& 2    Ü¾  ÿÿ dÿñÐ& 2    Þ¾  ÿÿ dÿñè& 2    Ú¾    l Ý9W  @	+		'	7	9þ|8fþÇþnPþÐg0øþ§þ]dþ]e[]þ¤Z  0ÿ¿Ù % 1 =@:8.," +K° PX@65*
+£^¤­6Se/D`H638&#/
+4H8>XE:@P8;0CtUüÏKW!M§Kÿÿ 0ÿò©§& D    Ci  ÿÿ 0ÿòÏ§& D    v+  ÿÿ 0ÿò¯& D    Å"  ÿÿ 0ÿòÂ& D    Ç"  ÿÿ 0ÿòÈ& D    j"  ÿÿ 0ÿò©Þ& D    Æ6    ÿð G U b3@&WV [VbWbQOIHCA<:75/.(& 
+	 GG+K°	PX@HE?" 2 2
+ &  $	   $ K°PX@HE?" 2 2
+ &  $	   $ K°,PX@TE?" 2 2
+ &  $	    $  $ 
+K°lPX@aE?" 2 2
+ &  $	     $	    $  $ K°PX@]E?" 2 2  #	    &
+ &  #  #  $ !
+K°ÈPX@^E?" 2 2   & 	 	 &
+ &  #  #  $ !
+K°NPX@_E?" 2 2   & 	 	 &
+ &  #   &  $  !
+@gE?" 2 
+
+2   & 	 	 &  
+ &  
+
+ &  #   &  $  !YYYYYYY°8+232>32#"&'#"&54>7>54#"#"&/>32>32>7">54&]<fK*7ê²zl1K;-&,3afo@i' Ydj1@ê«<U?0W±hlz<­þx¦g-NA4]K4	Ú<bI2©c(K%BY39lU7
+
+#74L1rr>W8wxGc>(³!
++GB2JqL'M¾rd38+A3E{8Q6-F6
+#	y
+CkT{â®hGDC
+K²f>eG'!63H-<?.$9'5ÿÿ ;ÿòq§& H    C ü  ÿÿ ;ÿò§& H    v Ý  ÿÿ ;ÿòq& H    Å Ý  ÿÿ ;ÿò& H    j Ý  ÿÿ =  §& Â    Cð ÿÿ _  u§& Â    vÑ ÿÿ "  ^& Â    ÅÑ ÿÿ /  w& Â    jÑ   <ÿóÍ 1 E }@32=;2E3E+
+1$>ýf2&(1$>   ÿÇä%  
++P½n}["  Z'+P¾þÂº8NJzY1áI{Y1þF7=1µ5Xâªb@.­5Wâªc¦YBZ-L´þsM´g,K ý¨, ÿÿ `ÿòÕ©& X   C ü  ±°°+ÿÿ `ÿòÕ©& X   v Ý  ±°°+ÿÿ `ÿòÕ& X   Å Ý  ±°°+ÿÿ `ÿòÕ& X   j Ý  ±°°+ÿÿ Qþ©è©&    v »  ±°°+  %þ©æÁ  ,:@  $",,  	+K°	PX@1     $   $  K°IPX@1     $   $  K°lPX@1 5    $   $  K°PX@- 5  &   &     @8    45  &  #  $  !YYYY°8+3>32#"&'#"32>54&%Ý°Y&X`h6"?YmFK{+.' 0bO!&k74L<
+.YQ3:A!*!   Q  [@ +K°_PX@   5  K°èPX@   4  +@ 4  4   +YY°8+#"&/.'+3rdwï 	  ¹kJÞ   S@
++K°PX@   %   $    @!     &  #  $  !Y°8+4>32#".732654&#"¹ 7H(
+H7 d6/-77-/6#*D22D*
+j"3A%!4-(
+&#" +K°_PX@L	4	   2 		2   &	 &  $  
+ $ 
+
+
+ 	K°lPX@J	4	   2 		2   &   &	 & 
+ $ 
+
+
+ K°èPX@S	4	   2 		2   &   &	 & 
+
+ # 
+ $ 
+
+ !	@c	4	   2 		2   &      &   &    &  	 & 
+
+ # 
+ $ 
+
+ !YYY°8+3>32#".#"!#!!#!32>32#".'#7367#T!w¡Åp²;C&6J3MoT0ýúÚþd§RoI.ASÞq­v>ÌLcWB 4f`7#H&6Ì×-6-DeqRÒcJG   ¥^à  %@ +@     #     $    !°8+!!´[ü¦à  >ÿ·» '¥@   ' '"	+K°2PX@=
+   $    $      $ K°_PX@4
+     #  %  $      K°lPX@4
+     #  %  $      K°ÙPX@7
+    2    #  %  $  K¸èPX@=
+    2   &    & $  !@B
+    2   &   #    &  $  !YYYYY°8+#!+'&5737>32#"&#"·y°kþ}f.KFc(Iz¨k''#SzU1	áü`üÀÏKX#O8]n=Z$HnK5  >ÿ³ !Z@   ! ! 
+	+K°	PX@=	  $  $      $  K°&PX@=	  $  $      $  K°2PX@A	   $   $      $  	K°_PX@9	  #    %   $   K°lPX@<	 2  #    %  $   K°PX@?	 2   2  #    %  $  K°èPX@D	 2   2   &  &  $    !@J	 2   2   &    #   &   $    !YYYYYYY°8++'&5737>32;#.#"3wg.KFb(
+BnaG5w±­ -_+uîaü¿ÏKX!Q7TpAúZ$
+7  U
+	õ 	 @
+  		+@  4 +°8+2#"&/§ëõËÒ  ¨è  ' V@
+$"+K°èPX@   #  $   !@!   #    &   $    !Y°8+#".54>32#".54>32P%##%X$$$$$$%%$$%%  
+õ  @
+    
++@ 4   +°8++7>3þàÚ
+õÒË	   f
+ÇÛ  ?@
+ +K°èPX@   4  +@ 4  4   +Y°8+#"&/+73Çr	ö©
+kkÑ   ÛÍV-   3@
++@!     &  #  $  !°8+4>32#".732654&#"Û4D&'E44E'&D4Y6/-77-/6{'B//B'&@..@&+99+-88  ÅÐ  °@ 
+ +K°[PX@%   #  &   $  !K°pPX@,   2   #   &   $  !@3   2 2   #   &   $   !YY°8+2673#".#"#>32
+R
+*Ø+Q,9,ü-.;//Ð000Ù1`1×262¸2ã3h3¶3¶4*4ü5ï67U78U8Ç9ù:Ä;;E;e<¢<Â=%=>>Â>ò?Ô@I@|A	AxAÛB#CaD¼FG3G?GKGWGcGoG{H7I³I¿IËI×IãIîIùJJJ¹JÅJÑJÝJéJõKK&LLL%L1L=LOLÉMÅMÑMÝMéMõNNP.QQQQ§Q³Q¾QÉQÔQßRRR¦R·RÈRÙRêSHTNT_TpTTT£UUUÏW0XXíYFYÙYùZZEZqZZê[9[[Åg·í^^3_D`§`Ëa1aXaaÚb]     $1N_<õ 	Ð    Ê^p    Êß.ÿþÿ-  	       ' -          { à Ú 6 G¬ Z 9ª Ú( z(ÿøà  s© 2 a© -·ÿ¯ O å / ] - D h » R Ñ© -© .+  + }á Ù MÕÿÁ§ aÒ di a+ a aE dp a6 1ÿûé r³ a  ao a¹ dh r¸ d¤ rÑ ? {? ë |Z ¨ÿº y| ( !¶ l(ÿñ ×Öÿ¡8 Mò 0 Ob < 5 ;] ?¡ÿ¾$ Oç _Ûÿg¿ NÛ X G Gí 7 ò 0¾ G
+ 
+­ _ `¸ K Q©ÿÎ¸ QZ ( 1X «(ÿð 9  {    « ~X « ;8 ^= ]x k  ¥ a= ^8 p  3  ¥8 ; k# 8  äÀ k wÃ ÄÃ ÉÃ áÿçÕÿÁÕÿÁÕÿÁÕÿÁÕÿÁÕÿÁ©ÿ¨Ò d+ a+ a+ a+ a6 V6 6 g6 ¬ Eo a¹ d¹ d¹ d¹ d¹ d l¸ 0? ? ? ?  yh ®I 3ò 0ò 0ò 0ò 0ò 0ò 0¦ b < ; ; ; ;ç =ç _ç "ç /ü < Gí 7í 7í 7í 7í 7 sí  ` ` ` `¸ Q %¸ Qç _Û d .8 Q8 ¹8 h ì  » « ¤ »¤ ¤ÿÜ ç® -V V wAÿ * ¥ >G >8 U  f Û      ¶þV  OÿþÖÿÐ ö             Ú Ò   x  x  º tô  '   B        tyPL   "Jþz¶ª       õ                     ¨   &        ~ ÿ1SÆÚÜ    " & : D ¬"ÿÿ         1RÆÚÜ    " & 9 D ¬"ÿÿ ÿõÿãÿÂÿÿqýÿýìýëàµà²à±à®à«ààà
+PX!°	E °0PX!°0Y °ÀPX f a °
+PX` ° PX!°
+` °6PX!°6``YYY° +YY#° PXeYY-°,°#B°#B° #B° C°CQX°C+²  C`B°eY-°,° C E °Ec°Eb`D-°,° C E ° +#±%` E#a d ° PX!° °0PX° °@YY#° PXeY°%#aDD-°,°`  °	CJ° PX °	#BY°
+CJ° RX °
+#BY-°,° C°%B²  C`B±	%B±
+%B°# °%PX° C°%B #a°*!#°a #a°*!° C°%B°%a°*!Y°	CG°
+CG`°b °Ec°Eb`±  #D°C° >²C`B-°,  `°a³ B`±+-°, `°` C#°`C°%°%QX# <°`#°e!!Y-°	,°+°*-°
+,  G  °Ec°Eb`#a8# UX G  °Ec°Eb`#a8!Y-°, °°
+*°0-°, 5°`-°, °Ec°Eb° +°Ec°Eb° +° ´     D>#8±*-°, < G °Ec°Eb`° Ca8-°,.<-°, < G °Ec°Eb`° Ca°Cc8-°,± % . G° #B°%IG#G#ab°#B²*-°,° °%°%G#G#a°+e.#  <8-°,° °%°% .G#G#a °#B°+ °`PX °@QX³  ³&YBB# °C #G#G#a#F`°C°b` ° + a °C`d#°CadPX°Ca°C`Y°%°ba#  °&#Fa8#°CF°%°CG#G#a` °C°b`# ° +#°C`° +°%a°%°b°&a °%`d#°%`dPX!#!Y#  °&#Fa8Y-°,°    °& .G#G#a#<8-°,°  °#B   F#G° +#a8-°,° °%°%G#G#a° TX. <#!°%°%G#G#a °%°%G#G#a°%°%I°%a°Ec#bc°Eb`#.#  <8#!Y-°,°  °C .G#G#a `° `f°b#  <8-°,# .F°%FRX <Y.±	+-°,# .F°%FPX <Y.±	+-°,# .F°%FRX <Y# .F°%FPX <Y.±	+-°,°  G° #B² .°*-°,°  G° #B² .°*-°,± °*-°,°*-°#,°+# .F°%FRX <Y.±	+-°&,°+  <°#B8# .F°%FRX <Y.±	+°C.°	+-°$,° °%°& .G#G#a°+# < .#8±	+-°!,±%B° °%°% .G#G#a °#B°+ °`PX °@QX³  ³&YBB# G°C°b` ° + a °C`d#°CadPX°Ca°C`Y°%°ba°%Fa8# <#8!  F#G° +#a8!Y±	+-° ,°#B°+-°",°+.±	+-°%,°+!#  <°#B#8±	+°C.°	+-°,° E# . F#a8±	+-°',°+.±	+-°(,°+°+-°
+`f UX°%a°Ec#b°#D³	
++³+³+Y²(ERD³+            ³  ³ ³    ºõ  þ©©ÿðºÿòþ      f  	      	    	    	  R(  	  z  	  P  	  à  	  4ö C o p y r i g h t   ( c 
+ 
+ ? : ÿT ÿT ÿT ÿT ÿT ÿT ÿT  ( 8 ÿJ 
+ÿJ ÿJ ÿÌ #ÿÑ &ÿÑ *ÿÑ - > 2ÿÑ 4ÿÑ 7ÿ| 8ÿØ 9ÿ :ÿ­ <ÿh ?ÿ WÿÇ YÿÑ Zÿà ÿÑ kÿÑ lÿJ mÿÌ oÿÌ pÿÑ rÿJ tÿI uÿI yÿÌ {ÿI |ÿJ }ÿÌ ÿÑ ÿÑ ÿÑ ÿÑ ÿÑ ÿÑ ÿÑ ÿØ ÿØ ÿØ ÿØ ÿh ¿ÿÑ ÁÿÑ ÃÿÑ ÈÿÌ ÉÿÌ ÊÿJ ËÿJ ÍÿJ ÎÿJ ÐÿÌ ÒÿÌ ÓÿÌ 
+ ÿ mÿ oÿ yÿ }ÿ Èÿ Éÿ Ðÿ Òÿ Óÿ 
+ 	ÿØ ÿØ $ÿØ ÿØ ÿØ ÿØ ÿØ ÿØ ÿØ ÿØ a  7 	ÿr 
+ 7  7 ÿ' ÿJ ÿ' ÿr ÿ ÿ " 2 #ÿ» $ÿr &ÿ» *ÿ» -ÿ8 2ÿ» 4ÿ» DÿA FÿA GÿA HÿA JÿW Pÿ Qÿ RÿA Sÿ TÿA Uÿ VÿA Xÿ ]ÿ kÿ» l 7 mÿJ oÿJ pÿ» r 7 t > u > wÿ yÿJ { > | 7 }ÿJ ÿr ÿr ÿr ÿr ÿr ÿr ÿr ÿ» ÿ» ÿ» ÿ» ÿ» ÿ» ÿ» ¢ÿA £ÿA ¤ÿA ¥ÿA ¦ÿA §ÿA ¨ÿA ©ÿA ªÿA «ÿA ¬ÿA ­ÿA ²ÿA ³ÿ ´ÿA µÿA ¶ÿA ·ÿA ¸ÿA ºÿA »ÿ ¼ÿ ½ÿ ¾ÿ Ãÿ» ÄÿA ÈÿJ ÉÿJ Ê 7 Ë 7 Ìÿ' Í 7 Î 7 Ïÿ' ÐÿJ Ñÿ' ÒÿJ ÓÿJ  ÿÉ 	ÿÜ 
+ÿÉ ÿØ ÿÉ ÿÜ $ÿÜ 7ÿ 9ÿÍ ;ÿ¼ <ÿ° =ÿ» ?ÿÍ @ÿØ `ÿØ lÿÉ rÿÉ |ÿÉ ÿÜ ÿÜ ÿÜ ÿÜ ÿÜ ÿÜ ÿÜ ÿ° ÊÿÉ ËÿÉ ÍÿÉ ÎÿÉ  ÿÄ 
+ÿÄ ÿÄ Yÿá ÿÖ lÿÄ rÿÄ tÿ uÿ {ÿ |ÿÄ ¿ÿá Áÿá ÊÿÄ ËÿÄ ÍÿÄ ÎÿÄ 
+                                                                                                                                                                                                         	"&
++,                                                                                                                                                                                                         &#'(/0                                                                                                                                                                                                         *+,                                                                                                                                                                                                                                                                                                                                                                                                $%     12                                                                                                                                                                      "&   2234                                                                                                                                                          !"#
+ 225346                                                                                                                                                      $%&7'(/  2234689:                                                                                                                                                           "&
+<h1>Privacy Policy</h1>
+<h2>1. An overview of data protection</h2>
+<h3>General information</h3> <p>The following information will provide you with an easy to navigate overview of
+what will happen with your personal data when you visit this website. The term &ldquo;personal data&rdquo;
+comprises all data that can be used to personally identify you. For detailed information about the subject matter of
+data protection, please consult our Data Protection Declaration, which we have included beneath this copy.</p>
+<h3>Data recording on this website</h3> <h4>Who is the responsible party for the recording of data on this
+website (i.e., the &ldquo;controller&rdquo;)?</h4> <p>The data on this website is processed by the operator of the
+website, whose contact information is available under section &ldquo;Information about the responsible party
+(referred to as the &ldquo;controller&rdquo; in the GDPR)&rdquo; in this Privacy Policy.</p> <h4>How do we
+record your data?</h4> <p>We collect your data as a result of your sharing of your data with us. This may, for
+instance be information you enter into our contact form.</p> <p>Other data shall be recorded by our IT systems
+automatically or after you consent to its recording during your website visit. This data comprises primarily technical
+information (e.g., web browser, operating system, or time the site was accessed). This information is recorded
+automatically when you access this website.</p> <h4>What are the purposes we use your data for?</h4> <p>A
+portion of the information is generated to guarantee the error free provision of the website. Other data may be used
+to analyze your user patterns. If contracts can be concluded or initiated via the website, the transmitted data will
+also be processed for contract offers, orders or other order enquiries.</p> <h4>What rights do you have as far as
+your information is concerned?</h4> <p>You have the right to receive information about the source, recipients, and
+purposes of your archived personal data at any time without having to pay a fee for such disclosures. You also have
+the right to demand that your data are rectified or eradicated. If you have consented to data processing, you have
+the option to revoke this consent at any time, which shall affect all future data processing. Moreover, you have the
+right to demand that the processing of your data be restricted under certain circumstances. Furthermore, you have
+the right to log a complaint with the competent supervising agency.</p> <p>Please do not hesitate to contact us at
+any time if you have questions about this or any other data protection related issues.</p>
+<h3>Analysis tools and tools provided by third parties</h3> <p>There is a possibility that your browsing patterns
+will be statistically analyzed when your visit this website. Such analyses are performed primarily with what we refer
+to as analysis programs.</p> <p>For detailed information about these analysis programs please consult our Data
+Protection Declaration below.</p>
+<h2>2. Hosting and Content Delivery Networks (CDN)</h2>
+<p>We are hosting the content of our website at the following provider:</p>
+<h3>Strato</h3> <p>The provider is Strato AG, Otto-Ostrowski-Stra&szlig;e 7, 10249 Berlin (hereinafter referred
+to as &ldquo;Strato&rdquo;). When you visit our website, Strato records various logfiles, including your IP
+addresses.</p> <p>For more information, please consult the Strato Data Privacy Policy: <a
+href="https://www.strato.de/datenschutz/" target="_blank" rel="noopener
+noreferrer">https://www.strato.de/datenschutz/</a>.</p> <p>Strato is used on the basis of Art. 6(1)(f) GDPR. We
+have a legitimate interest in a depiction of our website that is as reliable as possible. If appropriate consent has been
+obtained, the processing is carried out exclusively on the basis of Art. 6(1)(a) GDPR and &sect; 25 (1) TDDDG,
+insofar the consent includes the storage of cookies or the access to information in the user&rsquo;s end device (e.g.,
+device fingerprinting) within the meaning of the TDDDG. This consent can be revoked at any time.</p>
+<h3>Cloudflare</h3> <p>We use the &ldquo;Cloudflare&rdquo; service provided by Cloudflare Inc., 101 Townsend
+St., San Francisco, CA 94107, USA. (hereinafter referred to as &ldquo;Cloudflare&rdquo;).</p> <p>Cloudflare offers
+a content delivery network with DNS that is available worldwide. As a result, the information transfer that occurs
+between your browser and our website is technically routed via Cloudflare&rsquo;s network. This enables
+Cloudflare to analyze data transactions between your browser and our website and to work as a filter between our
+servers and potentially malicious data traffic from the Internet. In this context, Cloudflare may also use cookies or
+other technologies deployed to recognize Internet users, which shall, however, only be used for the herein described
+purpose.</p> <p>The use of Cloudflare is based on our legitimate interest in a provision of our website offerings
+that is as error free and secure as possible (Art. 6(1)(f) GDPR).</p> <p>Data transmission to the US is based on the
+Standard Contractual Clauses (SCC) of the European Commission. Details and further information on security and
+data protection at Cloudflare can be found here: <a href="https://www.cloudflare.com/privacypolicy/"
+target="_blank" rel="noopener noreferrer">https://www.cloudflare.com/privacypolicy/</a>.</p>
+<p>The company is certified in accordance with the &ldquo;EU-US Data Privacy Framework&rdquo; (DPF). The DPF
+is an agreement between the European Union and the US, which is intended to ensure compliance with European
+data protection standards for data processing in the US. Every company certified under the DPF is obliged to comply
+with these data protection standards. For more information, please contact the provider under the following link: <a
+href="https://www.dataprivacyframework.gov/participant/5666" target="_blank" rel="noopener
+noreferrer">https://www.dataprivacyframework.gov/participant/5666</a>.</p>
+<h2>3. General information and mandatory information</h2>
+<h3>Data protection</h3> <p>The operators of this website and its pages take the protection of your personal data
+very seriously. Hence, we handle your personal data as confidential information and in compliance with the statutory
+data protection regulations and this Data Protection Declaration.</p> <p>Whenever you use this website, a variety
+of personal information will be collected. Personal data comprises data that can be used to personally identify you.
+This Data Protection Declaration explains which data we collect as well as the purposes we use this data for. It also
+explains how, and for which purpose the information is collected.</p> <p>We herewith advise you that the
+transmission of data via the Internet (i.e., through e-mail communications) may be prone to security gaps. It is not
+possible to completely protect data against third-party access.</p>
+<h3>Information about the responsible party (referred to as the &ldquo;controller&rdquo; in the GDPR)</h3>
+<p>The data processing controller on this website is:</p> <p>Gerret Marx<br />
+Immenstra&szlig;e, 13<br />
+14542 Werder (Havel)<br />
+Deutschland</p>
+<p>Phone: +49 1522 2454651<br />
+E-mail: requesttwinexpeditions@gmail.com</p>
+ <p>The controller is the natural person or legal entity that single-handedly or jointly with others makes decisions as
+to the purposes of and resources for the processing of personal data (e.g., names, e-mail addresses, etc.).</p>
+<h3>Storage duration</h3> <p>Unless a more specific storage period has been specified in this privacy policy, your
+personal data will remain with us until the purpose for which it was collected no longer applies. If you assert a
+justified request for deletion or revoke your consent to data processing, your data will be deleted, unless we have
+other legally permissible reasons for storing your personal data (e.g., tax or commercial law retention periods); in the
+latter case, the deletion will take place after these reasons cease to apply.</p>
+<h3>General information on the legal basis for the data processing on this website</h3> <p>If you have consented
+to data processing, we process your personal data on the basis of Art. 6(1)(a) GDPR or Art. 9 (2)(a) GDPR, if special
+categories of data are processed according to Art. 9 (1) DSGVO. In the case of explicit consent to the transfer of
+personal data to third countries, the data processing is also based on Art. 49 (1)(a) GDPR. If you have consented to
+the storage of cookies or to the access to information in your end device (e.g., via device fingerprinting), the data
+processing is additionally based on &sect; 25 (1) TDDDG. The consent can be revoked at any time. If your data is
+required for the fulfillment of a contract or for the implementation of pre-contractual measures, we process your
+data on the basis of Art. 6(1)(b) GDPR. Furthermore, if your data is required for the fulfillment of a legal obligation,
+we process it on the basis of Art. 6(1)(c) GDPR. Furthermore, the data processing may be carried out on the basis of
+our legitimate interest according to Art. 6(1)(f) GDPR. Information on the relevant legal basis in each individual case
+is provided in the following paragraphs of this privacy policy.</p>
+<h3>Recipients of personal data</h3> <p>In the scope of our business activities, we cooperate with various
+external parties. In some cases, this also requires the transfer of personal data to these external parties. We only
+disclose personal data to external parties if this is required as part of the fulfillment of a contract, if we are legally
+obligated to do so (e.g., disclosure of data to tax authorities), if we have a legitimate interest in the disclosure
+pursuant to Art. 6 (1)(f) GDPR, or if another legal basis permits the disclosure of this data. When using processors,
+we only disclose personal data of our customers on the basis of a valid contract on data processing. In the case of
+joint processing, a joint processing agreement is concluded.</p>
+<h3>Revocation of your consent to the processing of data</h3> <p>A wide range of data processing transactions
+are possible only subject to your express consent. You can also revoke at any time any consent you have already
+given us. This shall be without prejudice to the lawfulness of any data collection that occurred prior to your
+revocation.</p>
+<h3>Right to object to the collection of data in special cases; right to object to direct advertising (Art. 21
+GDPR)</h3> <p>IN THE EVENT THAT DATA ARE PROCESSED ON THE BASIS OF ART. 6(1)(E) OR (F) GDPR, YOU
+HAVE THE RIGHT TO AT ANY TIME OBJECT TO THE PROCESSING OF YOUR PERSONAL DATA BASED ON
+GROUNDS ARISING FROM YOUR UNIQUE SITUATION. THIS ALSO APPLIES TO ANY PROFILING BASED ON
+THESE PROVISIONS. TO DETERMINE THE LEGAL BASIS, ON WHICH ANY PROCESSING OF DATA IS BASED,
+PLEASE CONSULT THIS DATA PROTECTION DECLARATION. IF YOU LOG AN OBJECTION, WE WILL NO
+LONGER PROCESS YOUR AFFECTED PERSONAL DATA, UNLESS WE ARE IN A POSITION TO PRESENT
+COMPELLING PROTECTION WORTHY GROUNDS FOR THE PROCESSING OF YOUR DATA, THAT OUTWEIGH
+YOUR INTERESTS, RIGHTS AND FREEDOMS OR IF THE PURPOSE OF THE PROCESSING IS THE CLAIMING,
+EXERCISING OR DEFENCE OF LEGAL ENTITLEMENTS (OBJECTION PURSUANT TO ART. 21(1) GDPR).</p>
+<p>IF YOUR PERSONAL DATA IS BEING PROCESSED IN ORDER TO ENGAGE IN DIRECT ADVERTISING, YOU
+HAVE THE RIGHT TO OBJECT TO THE PROCESSING OF YOUR AFFECTED PERSONAL DATA FOR THE
+PURPOSES OF SUCH ADVERTISING AT ANY TIME. THIS ALSO APPLIES TO PROFILING TO THE EXTENT THAT IT
+IS AFFILIATED WITH SUCH DIRECT ADVERTISING. IF YOU OBJECT, YOUR PERSONAL DATA WILL
+SUBSEQUENTLY NO LONGER BE USED FOR DIRECT ADVERTISING PURPOSES (OBJECTION PURSUANT TO
+ART. 21(2) GDPR).</p>
+<h3>Right to log a complaint with the competent supervisory agency</h3> <p>In the event of violations of the
+GDPR, data subjects are entitled to log a complaint with a supervisory agency, in particular in the member state
+where they usually maintain their domicile, place of work or at the place where the alleged violation occurred. The
+right to log a complaint is in effect regardless of any other administrative or court proceedings available as legal
+recourses.</p>
+<h3>Right to data portability</h3> <p>You have the right to have data that we process automatically on the basis of
+your consent or in fulfillment of a contract handed over to you or to a third party in a common, machine-readable
+format. If you should demand the direct transfer of the data to another controller, this will be done only if it is
+technically feasible.</p>
+<h3>Information about, rectification and eradication of data</h3> <p>Within the scope of the applicable statutory
+provisions, you have the right to demand information about your archived personal data, their source and recipients
+as well as the purpose of the processing of your data at any time. You may also have a right to have your data
+rectified or eradicated. If you have questions about this subject matter or any other questions about personal data,
+please do not hesitate to contact us at any time.</p>
+<h3>Right to demand processing restrictions</h3> <p>You have the right to demand the imposition of restrictions
+as far as the processing of your personal data is concerned. To do so, you may contact us at any time. The right to
+demand restriction of processing applies in the following cases:</p> <ul> <li>In the event that you should dispute
+the correctness of your data archived by us, we will usually need some time to verify this claim. During the time that
+this investigation is ongoing, you have the right to demand that we restrict the processing of your personal data.</li>
+<li>If the processing of your personal data was/is conducted in an unlawful manner, you have the option to demand
+the restriction of the processing of your data instead of demanding the eradication of this data.</li> <li>If we do not
+need your personal data any longer and you need it to exercise, defend or claim legal entitlements, you have the right
+to demand the restriction of the processing of your personal data instead of its eradication.</li> <li>If you have
+raised an objection pursuant to Art. 21(1) GDPR, your rights and our rights will have to be weighed against each
+other. As long as it has not been determined whose interests prevail, you have the right to demand a restriction of
+the processing of your personal data.</li> </ul> <p>If you have restricted the processing of your personal data,
+these data &ndash; with the exception of their archiving &ndash; may be processed only subject to your consent or
+to claim, exercise or defend legal entitlements or to protect the rights of other natural persons or legal entities or for
+important public interest reasons cited by the European Union or a member state of the EU.</p>
+<h3>SSL and/or TLS encryption</h3> <p>For security reasons and to protect the transmission of confidential
+content, such as purchase orders or inquiries you submit to us as the website operator, this website uses either an
+SSL or a TLS encryption program. You can recognize an encrypted connection by checking whether the address line
+of the browser switches from &ldquo;http://&rdquo; to &ldquo;https://&rdquo; and also by the appearance of the
+lock icon in the browser line.</p> <p>If the SSL or TLS encryption is activated, data you transmit to us cannot be
+read by third parties.</p>
+<h3>Rejection of unsolicited e-mails</h3> <p>We herewith object to the use of contact information published in
+conjunction with the mandatory information to be provided in our Site Notice to send us promotional and
+information material that we have not expressly requested. The operators of this website and its pages reserve the
+express right to take legal action in the event of the unsolicited sending of promotional information, for instance via
+SPAM messages.</p>
+<h2>4. Recording of data on this website</h2>
+<h3>Cookies</h3> <p>Our websites and pages use what the industry refers to as &ldquo;cookies.&rdquo; Cookies
+are small data packages that do not cause any damage to your device. They are either stored temporarily for the
+duration of a session (session cookies) or they are permanently archived on your device (permanent cookies).
+Session cookies are automatically deleted once you terminate your visit. Permanent cookies remain archived on
+your device until you actively delete them, or they are automatically eradicated by your web browser.</p>
+<p>Cookies can be issued by us (first-party cookies) or by third-party companies (so-called third-party cookies).
+Third-party cookies enable the integration of certain services of third-party companies into websites (e.g., cookies
+for handling payment services).</p> <p>Cookies have a variety of functions. Many cookies are technically essential
+since certain website functions would not work in the absence of these cookies (e.g., the shopping cart function or
+the display of videos). Other cookies may be used to analyze user behavior or for promotional purposes.</p>
+<p>Cookies, which are required for the performance of electronic communication transactions, for the provision of
+certain functions you want to use (e.g., for the shopping cart function) or those that are necessary for the
+optimization (required cookies) of the website (e.g., cookies that provide measurable insights into the web audience),
+shall be stored on the basis of Art. 6(1)(f) GDPR, unless a different legal basis is cited. The operator of the website has
+a legitimate interest in the storage of required cookies to ensure the technically error-free and optimized provision
+of the operator&rsquo;s services. If your consent to the storage of the cookies and similar recognition technologies
+has been requested, the processing occurs exclusively on the basis of the consent obtained (Art. 6(1)(a) GDPR and
+&sect; 25 (1) TDDDG); this consent may be revoked at any time.</p> <p>You have the option to set up your browser
+in such a manner that you will be notified any time cookies are placed and to permit the acceptance of cookies only in
+specific cases. You may also exclude the acceptance of cookies in certain cases or in general or activate the delete-
+function for the automatic eradication of cookies when the browser closes. If cookies are deactivated, the functions
+of this website may be limited.</p> <p>If other cookies and services are used on this website, you can find this
+information in this privacy policy.</p>
+<h3>Server log files</h3> <p>The provider of this website and its pages automatically collects and stores
+information in so-called server log files, which your browser communicates to us automatically. The information
+comprises:</p> <ul> <li>The type and version of browser used</li> <li>The used operating system</li> <li>Referrer
+URL</li> <li>The hostname of the accessing computer</li> <li>The time of the server inquiry</li> <li>The IP
+address</li> </ul> <p>This data is not merged with other data sources.</p> <p>This data is recorded on the basis of
+Art. 6(1)(f) GDPR. The operator of the website has a legitimate interest in the technically error free depiction and the
+optimization of the operator&rsquo;s website. In order to achieve this, server log files must be recorded.</p>
+<h3>Contact form</h3> <p>If you submit inquiries to us via our contact form, the information provided in the
+contact form as well as any contact information provided therein will be stored by us in order to handle your inquiry
+and in the event that we have further questions. We will not share this information without your consent.</p>
+<p>The processing of these data is based on Art. 6(1)(b) GDPR, if your request is related to the execution of a
+contract or if it is necessary to carry out pre-contractual measures. In all other cases the processing is based on our
+legitimate interest in the effective processing of the requests addressed to us (Art. 6(1)(f) GDPR) or on your
+agreement (Art. 6(1)(a) GDPR) if this has been requested; the consent can be revoked at any time.</p> <p>The
+information you have entered into the contact form shall remain with us until you ask us to eradicate the data,
+revoke your consent to the archiving of data or if the purpose for which the information is being archived no longer
+exists (e.g., after we have concluded our response to your inquiry). This shall be without prejudice to any mandatory
+legal provisions, in particular retention periods.</p>
+<h3>Request by e-mail, telephone, or fax</h3> <p>If you contact us by e-mail, telephone or fax, your request,
+including all resulting personal data (name, request) will be stored and processed by us for the purpose of processing
+your request. We do not pass these data on without your consent.</p> <p>These data are processed on the basis of
+Art. 6(1)(b) GDPR if your inquiry is related to the fulfillment of a contract or is required for the performance of pre-
+contractual measures. In all other cases, the data are processed on the basis of our legitimate interest in the effective
+handling of inquiries submitted to us (Art. 6(1)(f) GDPR) or on the basis of your consent (Art. 6(1)(a) GDPR) if it has
+been obtained; the consent can be revoked at any time.</p> <p>The data sent by you to us via contact requests
+remain with us until you request us to delete, revoke your consent to the storage or the purpose for the data storage
+lapses (e.g. after completion of your request). Mandatory statutory provisions - in particular statutory retention
+periods - remain unaffected.</p>
+<h3>Communication via WhatsApp</h3> <p>For communication with our customers and other third parties, one of
+the services we use is the instant messaging service WhatsApp. The provider is WhatsApp Ireland Limited, Merrion
+Road, Dublin 4, D04 X2K5, Ireland.</p> <p>The communication is encrypted end-to-end (peer-to-peer), which
+prevents WhatsApp or other third parties from gaining access to the communication content. However, WhatsApp
+does gain access to metadata created during the communication process (for example, sender, recipient, and time).
+We would also like to point out that WhatsApp has stated that it shares personal data of its users with its U.S.-based
+parent company Meta. Further details on data processing can be found in the WhatsApp privacy policy at: <a
+href="https://www.whatsapp.com/legal/#privacy-policy" target="_blank" rel="noopener
+noreferrer">https://www.whatsapp.com/legal/#privacy-policy</a>.</p> <p>The use of WhatsApp is based on our
+legitimate interest in communicating as quickly and effectively as possible with customers, interested parties and
+other business and contractual partners (Art. 6(1)(f) GDPR). If a corresponding consent has been requested, data
+processing is carried out exclusively on the basis of the consent; this consent may be revoked at any time with effect
+for the future.</p> <p>The communication content exchanged between you and us on WhatsApp remains with us
+until you request us to delete it, revoke your consent to storage or the purpose for which the data is stored ceases to
+apply (e.g. after your request has been processed). Mandatory legal provisions, in particular retention periods,
+remain unaffected.</p>
+<p>The company is certified in accordance with the &ldquo;EU-US Data Privacy Framework&rdquo; (DPF). The DPF
+is an agreement between the European Union and the US, which is intended to ensure compliance with European
+data protection standards for data processing in the US. Every company certified under the DPF is obliged to comply
+with these data protection standards. For more information, please contact the provider under the following link: <a
+href="https://www.dataprivacyframework.gov/participant/7735" target="_blank" rel="noopener
+noreferrer">https://www.dataprivacyframework.gov/participant/7735</a>.</p>
+<p>We use WhatsApp in the &ldquo;WhatsApp Business&rdquo; variant.</p> <p>Data transmission to the US is
+based on the Standard Contractual Clauses (SCC) of the European Commission. Details can be found here: <a
+href="https://www.whatsapp.com/legal/business-data-transfer-addendum?lang=en" target="_blank"
+rel="noopener noreferrer">https://www.whatsapp.com/legal/business-data-transfer-addendum?lang=en</a>.</p>
+<h2>5. Analysis tools and advertising</h2>
+<h3>Google Analytics</h3> <p>This website uses functions of the web analysis service Google Analytics. The
+provider of this service is Google Ireland Limited (&ldquo;Google&rdquo;), Gordon House, Barrow Street, Dublin 4,
+Ireland.</p> <p>Google Analytics enables the website operator to analyze the behavior patterns of website visitors.
+To that end, the website operator receives a variety of user data, such as pages accessed, time spent on the page, the
+utilized operating system and the user&rsquo;s origin. This data is summarized in a user-ID and assigned to the
+respective end device of the website visitor.</p> <p>Furthermore, Google Analytics allows us to record your mouse
+and scroll movements and clicks, among other things. Google Analytics uses various modeling approaches to
+augment the collected data sets and uses machine learning technologies in data analysis.</p>
+ <p>Google Analytics uses technologies that make the recognition of the user for the purpose of analyzing the user
+behavior patterns (e.g., cookies or device fingerprinting). The website use information recorded by Google is, as a
+rule transferred to a Google server in the United States, where it is stored.</p> <p>The use of these services occurs
+on the basis of your consent pursuant to Art. 6(1)(a) GDPR and &sect; 25(1) TDDDG. You may revoke your consent
+at any time.</p> <p>Data transmission to the US is based on the Standard Contractual Clauses (SCC) of the
+European Commission. Details can be found here: <a
+href="https://business.safety.google/adscontrollerterms/sccs/" target="_blank" rel="noopener
+noreferrer">https://business.safety.google/adscontrollerterms/sccs/</a>.</p> <p>The company is certified in
+accordance with the &ldquo;EU-US Data Privacy Framework&rdquo; (DPF). The DPF is an agreement between the
+European Union and the US, which is intended to ensure compliance with European data protection standards for
+data processing in the US. Every company certified under the DPF is obliged to comply with these data protection
+standards. For more information, please contact the provider under the following link: <a
+href="https://www.dataprivacyframework.gov/participant/5780" target="_blank" rel="noopener
+noreferrer">https://www.dataprivacyframework.gov/participant/5780</a>.</p>
+<h4>IP anonymization</h4> <p>Google Analytics IP anonymization is active. As a result, your IP address will be
+abbreviated by Google within the member states of the European Union or in other states that have ratified the
+Convention on the European Economic Area prior to its transmission to the United States. The full IP address will be
+transmitted to one of Google&rsquo;s servers in the United States and abbreviated there only in exceptional cases.
+On behalf of the operator of this website, Google shall use this information to analyze your use of this website to
+generate reports on website activities and to render other services to the operator of this website that are related to
+the use of the website and the Internet. The IP address transmitted in conjunction with Google Analytics from your
+browser shall not be merged with other data in Google&rsquo;s possession.</p>
+ <h4>Browser plug-in</h4> <p>You can prevent the recording and processing of your data by Google by
+downloading and installing the browser plugin available under the following link: <a
+href="https://tools.google.com/dlpage/gaoptout?hl=en" target="_blank" rel="noopener
+noreferrer">https://tools.google.com/dlpage/gaoptout?hl=en</a>.</p> <p>For more information about the
+handling of user data by Google Analytics, please consult Google&rsquo;s Data Privacy Declaration at: <a
+href="https://support.google.com/analytics/answer/6004245?hl=en" target="_blank" rel="noopener
+noreferrer">https://support.google.com/analytics/answer/6004245?hl=en</a>.</p><h4>Google Signals</h4>
+<p>We use Google Signals. Whenever you visit our website, Google Analytics records, among other things, your
+location, the progression of your search and YouTube progression as well as demographic data (site visitor data).
+This data may be used for customized advertising with the assistance of Google Signal. If you have a Google account,
+your site visitor information will be linked to your Google account by Google Signal and used to send you customized
+promotional messages. The data is also used to compile anonymized statistics of our users&rsquo; online
+patterns.</p>
+<h4>Contract data processing</h4> <p>We have executed a contract data processing agreement with Google and
+are implementing the stringent provisions of the German data protection agencies to the fullest when using Google
+Analytics.</p>
+<h2>6. eCommerce and payment service providers</h2>
+<h3>Processing of Customer and Contract Data</h3> <p>We collect, process, and use personal customer and
+contract data for the establishment, content arrangement and modification of our contractual relationships. Data
+with personal references to the use of this website (usage data) will be collected, processed, and used only if this is
+necessary to enable the user to use our services or required for billing purposes. The legal basis for these processes
+is Art. 6(1)(b) GDPR.</p> <p>The collected customer data shall be deleted upon completion of the order or
+termination of the business relationship and upon expiration of any existing statutory archiving periods. This shall be
+without prejudice to any statutory archiving periods.</p>
+<h3>Data transfer upon closing of contracts for services and digital content</h3> <p>We share personal data with
+third parties only if this is necessary in conjunction with the handling of the contract; for instance, with the financial
+institution tasked with the processing of payments.</p> <p>Any further transfer of data shall not occur or shall only
+occur if you have expressly consented to the transfer. Any sharing of your data with third parties in the absence of
+your express consent, for instance for advertising purposes, shall not occur.</p> <p>The basis for the processing of
+data is Art. 6(1)(b) GDPR, which permits the processing of data for the fulfilment of a contract or for pre-contractual
+actions.</p>

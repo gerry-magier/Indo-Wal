@@ -50,6 +50,9 @@
 
     'impressum.html': 'de/impressum.html',
     'de/impressum.html': 'impressum.html',
+
+    'privacy.html': 'de/privacy.html',
+    'de/privacy.html': 'privacy.html',
     
     // Blog
     'blog/index.html': 'de/blog/index.html',
