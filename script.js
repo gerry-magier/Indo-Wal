@@ -290,27 +290,40 @@
     function setMode(mode) {
       if (!requestType) return;
       const isContact = mode === 'contact';
+      const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
       requestType.value = mode;
       setTabActive(mode);
 
-      if (requestTitle) requestTitle.textContent = isContact ? 'Ask a question' : 'Request expedition';
-      if (requestSubtitle) {
-        requestSubtitle.textContent = isContact
-          ? 'Ask anything — we’ll reply with clear answers and whether it’s a good fit.'
-          : 'Send a non-binding request — we’ll reply with availability + a fit-check. Contract only after we send an offer and you accept it (payment within 5 business days).';
+      if (requestTitle) {
+        requestTitle.textContent = isGerman
+          ? (isContact ? 'Frage stellen' : 'Expedition anfragen')
+          : (isContact ? 'Ask a question' : 'Request expedition');
       }
-      if (submitBtn) submitBtn.textContent = isContact ? 'Send' : 'Send request';
+      if (requestSubtitle) {
+        requestSubtitle.textContent = isGerman
+          ? (isContact
+            ? 'Frag uns alles — wir antworten klar und sagen ehrlich, ob die Reise zu euch passt.'
+            : 'Schickt eine unverbindliche Anfrage — wir antworten mit Verfügbarkeit und einer ehrlichen Einschätzung. Ein Vertrag entsteht erst, wenn ihr unser Angebot annehmt.')
+          : (isContact
+            ? 'Ask anything — we’ll reply with clear answers and whether it’s a good fit.'
+            : 'Send a non-binding request — we’ll reply with availability + a fit-check. Contract only after we send an offer and you accept it (payment within 5 business days).');
+      }
+      if (submitBtn) submitBtn.textContent = isGerman ? (isContact ? 'Senden' : 'Anfrage senden') : (isContact ? 'Send' : 'Send request');
       if (submitHint) {
-        submitHint.textContent = isContact
-          ? 'Questions don’t require passport details. Share expectations and concerns — we’ll be honest.'
-          : 'Passport details are optional now. We’ll collect what’s needed later via a secure channel if required. After contract confirmation, payment is due within 5 business days.';
+        submitHint.textContent = isGerman
+          ? (isContact
+            ? 'Für Fragen brauchen wir keine Passdaten. Teilt Erwartungen und Bedenken gern offen mit — wir antworten ehrlich.'
+            : 'Passdaten sind jetzt optional. Falls nötig, fragen wir später über einen sicheren Kanal nach. Nach Vertragsbestätigung ist die Zahlung innerhalb von 5 Werktagen fällig.')
+          : (isContact
+            ? 'Questions don’t require passport details. Share expectations and concerns — we’ll be honest.'
+            : 'Passport details are optional now. We’ll collect what’s needed later via a secure channel if required. After contract confirmation, payment is due within 5 business days.');
       }
 
       if (passportWrap) passportWrap.hidden = isContact;
       if (agbWrap) agbWrap.hidden = isContact;
 
-      if (startHint) startHint.textContent = isContact ? '(optional for questions)' : '(required for requests)';
-      if (endHint) endHint.textContent = isContact ? '(optional for questions)' : '(required for requests)';
+      if (startHint) startHint.textContent = isGerman ? (isContact ? '(optional bei Fragen)' : '(erforderlich für Anfragen)') : (isContact ? '(optional for questions)' : '(required for requests)');
+      if (endHint) endHint.textContent = isGerman ? (isContact ? '(optional bei Fragen)' : '(erforderlich für Anfragen)') : (isContact ? '(optional for questions)' : '(required for requests)');
 
       if (acceptAgb) {
         acceptAgb.required = !isContact;
@@ -507,7 +520,7 @@
         if (isBlockedDate(d)) {
           cell.disabled = true;
           cell.classList.add('blocked');
-          cell.title = 'Fully booked';
+          cell.title = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de') ? 'Ausgebucht' : 'Fully booked';
         }
 
         const isSelected =
@@ -531,10 +544,12 @@
 
             const n = daysBetweenInclusive(state.start, state.end);
             if (n > MAX_DAYS) {
-              showToast(`Max ${MAX_DAYS} days. Please choose a shorter range.`);
+              const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+              showToast(isGerman ? `Max. ${MAX_DAYS} Tage. Bitte wähle einen kürzeren Zeitraum.` : `Max ${MAX_DAYS} days. Please choose a shorter range.`);
               state.end = null;
             } else if (selectionContainsBlockedDays(state.start, state.end)) {
-              showToast('Your selected range contains fully booked day(s). Please pick different dates.');
+              const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+              showToast(isGerman ? 'Der ausgewählte Zeitraum enthält ausgebuchte Tage. Bitte wähle andere Termine.' : 'Your selected range contains fully booked day(s). Please pick different dates.');
               state.end = null;
             }
           }
@@ -558,17 +573,18 @@
       const sDates = $('#summaryDates');
       const sGuests = $('#summaryGuests');
       const sPrice = $('#summaryPrice');
+      const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
 
-      if (sGuests) sGuests.textContent = `Guests: ${state.persons}`;
+      if (sGuests) sGuests.textContent = isGerman ? `Gäste: ${state.persons}` : `Guests: ${state.persons}`;
 
       if (!meta || !state.start || !state.end) {
-        if (sDates) sDates.textContent = state.start ? `Dates: ${formatNice(state.start)} (end optional)` : 'Dates: (optional)';
-        if (sPrice) sPrice.textContent = 'Price: –';
+        if (sDates) sDates.textContent = state.start ? (isGerman ? `Termine: ${formatNice(state.start)} (Enddatum optional)` : `Dates: ${formatNice(state.start)} (end optional)`) : (isGerman ? 'Termine: (optional)' : 'Dates: (optional)');
+        if (sPrice) sPrice.textContent = isGerman ? 'Preis: –' : 'Price: –';
         return;
       }
 
-      if (sDates) sDates.textContent = `Dates: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} day${meta.nDays > 1 ? 's' : ''})`;
-      if (sPrice) sPrice.textContent = `Total price: €${meta.all.toLocaleString()} fixed`;
+      if (sDates) sDates.textContent = isGerman ? `Termine: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} Tag${meta.nDays > 1 ? 'e' : ''})` : `Dates: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} day${meta.nDays > 1 ? 's' : ''})`;
+      if (sPrice) sPrice.textContent = isGerman ? `Gesamtpreis: €${meta.all.toLocaleString()} fix` : `Total price: €${meta.all.toLocaleString()} fixed`;
     }
 
     function updateMeta(prefix) {
@@ -576,18 +592,19 @@
       const price = $(`#${prefix}Price`);
       const total = $(`#${prefix}TotalPrice`);
       if (!selected || !price || !total) return;
+      const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
 
       if (!state.start) {
-        selected.textContent = 'Select a start date (Oct/Nov only).';
-        price.textContent = 'Price: €0';
+        selected.textContent = isGerman ? 'Wähle ein Startdatum (nur Okt./Nov.).' : 'Select a start date (Oct/Nov only).';
+        price.textContent = isGerman ? 'Preis: €0' : 'Price: €0';
         total.textContent = '';
         updateSummary(null);
         return;
       }
 
       if (state.start && !state.end) {
-        selected.textContent = `Selected: ${formatNice(state.start)} (choose end date, max ${MAX_DAYS} days)`;
-        price.textContent = 'Price: €0';
+        selected.textContent = isGerman ? `Ausgewählt: ${formatNice(state.start)} (Enddatum wählen, max. ${MAX_DAYS} Tage)` : `Selected: ${formatNice(state.start)} (choose end date, max ${MAX_DAYS} days)`;
+        price.textContent = isGerman ? 'Preis: €0' : 'Price: €0';
         total.textContent = '';
         updateSummary(null);
         return;
@@ -597,9 +614,9 @@
       const totalPrice = PRICE_PER_DAY[nDays] || 0;
       const perPerson = state.persons > 0 ? Math.round(totalPrice / state.persons) : 0;
 
-      selected.textContent = `Selected: ${formatNice(state.start)} → ${formatNice(state.end)} (${nDays} day${nDays > 1 ? 's' : ''})`;
-      price.textContent = `Total price: €${totalPrice.toLocaleString()} (€${perPerson.toLocaleString()}/person)`;
-      total.textContent = `Note: Fixed total price regardless of group size`;
+      selected.textContent = isGerman ? `Ausgewählt: ${formatNice(state.start)} → ${formatNice(state.end)} (${nDays} Tag${nDays > 1 ? 'e' : ''})` : `Selected: ${formatNice(state.start)} → ${formatNice(state.end)} (${nDays} day${nDays > 1 ? 's' : ''})`;
+      price.textContent = isGerman ? `Gesamtpreis: €${totalPrice.toLocaleString()} (€${perPerson.toLocaleString()}/Person)` : `Total price: €${totalPrice.toLocaleString()} (€${perPerson.toLocaleString()}/person)`;
+      total.textContent = isGerman ? 'Hinweis: Fester Gesamtpreis unabhängig von der Gruppengröße' : 'Note: Fixed total price regardless of group size';
 
       updateSummary({ nDays, all: totalPrice });
     }
@@ -676,11 +693,13 @@
 
         const n = daysBetweenInclusive(state.start, state.end);
         if (n > MAX_DAYS) {
-          showToast(`Max ${MAX_DAYS} days. Please choose a shorter range.`);
+          const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+          showToast(isGerman ? `Max. ${MAX_DAYS} Tage. Bitte wähle einen kürzeren Zeitraum.` : `Max ${MAX_DAYS} days. Please choose a shorter range.`);
           state.end = null;
           tourEnd.value = '';
         } else if (selectionContainsBlockedDays(state.start, state.end)) {
-          showToast('Your selected range contains fully booked day(s). Please pick different dates.');
+          const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+          showToast(isGerman ? 'Der ausgewählte Zeitraum enthält ausgebuchte Tage. Bitte wähle andere Termine.' : 'Your selected range contains fully booked day(s). Please pick different dates.');
           state.end = null;
           tourEnd.value = '';
         }
@@ -803,9 +822,10 @@
     }
 
     async function loadAvailability() {
+      const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
       if (!AVAILABILITY_CSV_URL) {
-        if (availabilityNote) availabilityNote.textContent = 'Availability feed: not connected yet (paste Google Sheet CSV URL in script.js).';
-        if (availabilityNoteField) availabilityNoteField.value = 'Availability feed not connected.';
+        if (availabilityNote) availabilityNote.textContent = isGerman ? 'Verfügbarkeit: noch nicht verbunden.' : 'Availability feed: not connected yet (paste Google Sheet CSV URL in script.js).';
+        if (availabilityNoteField) availabilityNoteField.value = isGerman ? 'Verfügbarkeit nicht verbunden.' : 'Availability feed not connected.';
         return;
       }
 
@@ -821,12 +841,16 @@
         }
 
         renderAllCalendars();
-        if (availabilityNote) availabilityNote.textContent = blockedDays.size ? `Fully booked dates are blocked automatically (${blockedDays.size} day(s)).` : 'No booked dates loaded (or none marked as booked).';
-        if (availabilityNoteField) availabilityNoteField.value = blockedDays.size ? `Blocked booked days: ${blockedDays.size}` : 'No blocked days.';
+        if (availabilityNote) {
+          availabilityNote.textContent = isGerman
+            ? (blockedDays.size ? `Ausgebuchte Tage werden automatisch blockiert (${blockedDays.size} Tag(e)).` : 'Keine gebuchten Tage geladen oder markiert.')
+            : (blockedDays.size ? `Fully booked dates are blocked automatically (${blockedDays.size} day(s)).` : 'No booked dates loaded (or none marked as booked).');
+        }
+        if (availabilityNoteField) availabilityNoteField.value = isGerman ? (blockedDays.size ? `Blockierte gebuchte Tage: ${blockedDays.size}` : 'Keine blockierten Tage.') : (blockedDays.size ? `Blocked booked days: ${blockedDays.size}` : 'No blocked days.');
       } catch (e) {
         console.error(e);
-        if (availabilityNote) availabilityNote.textContent = 'Availability feed failed to load (calendar still works).';
-        if (availabilityNoteField) availabilityNoteField.value = 'Availability feed failed.';
+        if (availabilityNote) availabilityNote.textContent = isGerman ? 'Verfügbarkeit konnte nicht geladen werden (Kalender funktioniert trotzdem).' : 'Availability feed failed to load (calendar still works).';
+        if (availabilityNoteField) availabilityNoteField.value = isGerman ? 'Verfügbarkeit konnte nicht geladen werden.' : 'Availability feed failed.';
       }
     }
 
@@ -860,12 +884,14 @@
       }
 
       if (selectionContainsBlockedDays(state.start, state.end)) {
-        showToast('Your range includes fully booked day(s). Please choose different dates.');
+        const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+        showToast(isGerman ? 'Der Zeitraum enthält ausgebuchte Tage. Bitte wähle andere Termine.' : 'Your range includes fully booked day(s). Please choose different dates.');
         return false;
       }
 
       if (acceptAgb && !acceptAgb.checked) {
-        showToast('Please accept the Terms & Conditions to send a request.');
+        const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+        showToast(isGerman ? 'Bitte akzeptiere die AGB, um die Anfrage zu senden.' : 'Please accept the Terms & Conditions to send a request.');
         acceptAgb.closest('label')?.classList.add('needs-attention');
         setTimeout(() => acceptAgb.closest('label')?.classList.remove('needs-attention'), 1600);
         return false;
@@ -927,20 +953,24 @@
             const formSel = $('#tourPersons');
             if (formSel) formSel.value = String(state.persons);
 
-            showToast(mode === 'contact' 
-              ? 'Message sent - we will reply soon.' 
-              : 'Request sent - we will reply with next steps.');
+            const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+            showToast(isGerman
+              ? (mode === 'contact' ? 'Nachricht gesendet - wir melden uns bald.' : 'Anfrage gesendet - wir melden uns mit den nächsten Schritten.')
+              : (mode === 'contact' ? 'Message sent - we will reply soon.' : 'Request sent - we will reply with next steps.'));
             closeModal();
           } else {
             throw new Error(result.message || 'Submission failed');
           }
         } catch (err) {
           console.error('Form submission error:', err);
-          showToast('Submission failed. Please try again or email us directly.');
+          showToast(document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de')
+            ? 'Senden fehlgeschlagen. Bitte versuche es erneut oder schreib uns direkt per E-Mail.'
+            : 'Submission failed. Please try again or email us directly.');
         } finally {
           if (submit) {
             submit.disabled = false;
-            submit.textContent = oldText || (mode === 'contact' ? 'Send' : 'Send request');
+            const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+            submit.textContent = oldText || (isGerman ? (mode === 'contact' ? 'Senden' : 'Anfrage senden') : (mode === 'contact' ? 'Send' : 'Send request'));
           }
         }
       });
