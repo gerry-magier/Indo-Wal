@@ -417,7 +417,7 @@ a:hover{color:#2d7ea5}
 }
 .hero-banner-bg{
   position:absolute;inset:0;
-  background:url("./assets/hero.jpg");
+  background:url("./assets/optimized/hero.jpg");
   background-size:cover;
   background-position:center;
   background-color:#06141e;
@@ -991,7 +991,7 @@ input:focus,select:focus,textarea:focus{
   position:fixed;
   inset:-18px;
   z-index:-2;
-  background:url("/assets/berg2.jpg") center right / cover no-repeat;
+  background:url("/assets/optimized/berg2.jpg") center right / cover no-repeat;
   filter:blur(12px);
   transform:scale(1.03);
 }
@@ -1885,3 +1885,4 @@ a:hover,
 .cookie-policy-btn:hover{
   color:var(--brand2);
 }
+
