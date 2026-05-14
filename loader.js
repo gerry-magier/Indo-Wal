@@ -15,7 +15,7 @@
     }
 
     try {
-      const res = await fetch(url, { cache: "default" });
+      const res = await fetch(url, { cache: "no-cache" });
       if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
       el.innerHTML = await res.text();
       console.log(`✓ Loaded ${url}`);
