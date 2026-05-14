@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="home-page">
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- Navbar will be loaded here -->
@@ -157,38 +157,43 @@
           </p>
         </div>
 
-        <div class="reveal" style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem; margin-top: 4rem;">
+        <div class="expedition-grid reveal" style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem; margin-top: 4rem;">
 
           <!-- TIMOR-LESTE TOUR -->
-          <article class="card reveal" style="overflow: hidden; padding: 0; min-height: 600px; display: flex; flex-direction: column;">
-            <a href="/timor-leste-blue-whale.html" style="position: relative; height: 350px; overflow: hidden; display:block;">
+          <article class="card reveal expedition-card" style="overflow: hidden; padding: 0; min-height: 600px; display: flex; flex-direction: column;">
+            <a class="expedition-card-media" href="/timor-leste-blue-whale.html" style="position: relative; height: 350px; overflow: hidden; display:block;">
               <img src="./assets/schwimmen.jpg" alt="Blue whale in Timor-Leste" loading="lazy"
                    style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; cursor: pointer;"
                    onmouseover="this.style.transform='scale(1.05)'"
                    onmouseout="this.style.transform='scale(1)'" />
-              <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,119,182,0.95); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;">
+              <div class="expedition-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(38,76,73,0.95); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;">
                 Oct–Nov 2026
               </div>
             </a>
 
-            <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+            <div class="expedition-card-body" style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
               <div style="flex: 1;">
                 <h3 style="font-size: 2rem; margin: 0 0 1rem 0; color: var(--text);">
-                  🐋 Blue Whales of Timor-Leste
+                  Blue Whales of Timor-Leste
                 </h3>
+                <div class="expedition-meta" aria-label="Expedition details">
+                  <span>Private</span>
+                  <span>Ocean</span>
+                  <span>Oct-Nov</span>
+                </div>
                 <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; font-size: 1.05rem;">
                   Swim with the largest animals on Earth. Private fishing boat expeditions with local crew — calm, respectful, and real.
                 </p>
 
                 <ul class="checklist" style="margin-bottom: 2rem;">
-                  <li>🛶 Private fishing boat expeditions</li>
-                  <li>🐋 Pygmy blue whales (up to 25m long)</li>
-                  <li>♻️ Ethical positioning guidelines</li>
-                  <li>🤝 Local crew & authentic experience</li>
+                  <li>Private fishing boat expeditions</li>
+                  <li>Pygmy blue whales (up to 25m long)</li>
+                  <li>Ethical positioning guidelines</li>
+                  <li>Local crew & authentic experience</li>
                 </ul>
               </div>
 
-              <div style="display: flex; gap: 1rem; margin-top: auto;">
+              <div class="expedition-actions" style="display: flex; gap: 1rem; margin-top: auto;">
                 <a href="/timor-leste-blue-whale.html" class="btn btn-secondary" style="flex: 1; text-align: center; text-decoration: none;">
                   Learn More
                 </a>
@@ -200,35 +205,40 @@
           </article>
 
           <!-- PAPUA TOUR -->
-          <article class="card reveal" style="overflow: hidden; padding: 0; min-height: 600px; display: flex; flex-direction: column; position: relative;">
-            <a href="/papua.html" style="position: relative; height: 350px; overflow: hidden; display:block;">
+          <article class="card reveal expedition-card" style="overflow: hidden; padding: 0; min-height: 600px; display: flex; flex-direction: column; position: relative;">
+            <a class="expedition-card-media" href="/papua.html" style="position: relative; height: 350px; overflow: hidden; display:block;">
               <img src="./assets/hero2.jpg" alt="Remote Indonesia expedition" loading="lazy"
                    style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; cursor: pointer;"
                    onmouseover="this.style.transform='scale(1.05)'"
                    onmouseout="this.style.transform='scale(1)'" />
-              <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,180,216,0.95); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;">
+              <div class="expedition-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(38,76,73,0.95); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;">
                 May-Oct 2026
               </div>
             </a>
 
-            <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+            <div class="expedition-card-body" style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
               <div style="flex: 1;">
                 <h3 style="font-size: 2rem; margin: 0 0 1rem 0; color: var(--text);">
-                  🌴 Papua, Indonesia — Overland & Remote Journeys
+                  Papua, Indonesia — Overland & Remote Journeys
                 </h3>
+                <div class="expedition-meta" aria-label="Expedition details">
+                  <span>Private</span>
+                  <span>Remote</span>
+                  <span>May-Oct</span>
+                </div>
                 <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; font-size: 1.05rem;">
                   Not a resort trip. Think long roads, local encounters, wild places, and routes you won’t find on tourist itineraries.
                 </p>
 
                 <ul class="checklist" style="margin-bottom: 2rem;">
-                  <li>🧭 Remote routes & real local access</li>
-                  <li>🛶 Overland travel & island-to-island logistics</li>
-                  <li>🤝 Cultural encounters done respectfully</li>
-                  <li>🧗 Built for adventure-minded travelers</li>
+                  <li>Remote routes & real local access</li>
+                  <li>Overland travel & island-to-island logistics</li>
+                  <li>Cultural encounters done respectfully</li>
+                  <li>Built for adventure-minded travelers</li>
                 </ul>
               </div>
 
-              <div style="display: flex; gap: 1rem; margin-top: auto;">
+              <div class="expedition-actions" style="display: flex; gap: 1rem; margin-top: auto;">
                 <a href="/papua.html" class="btn btn-secondary" style="flex: 1; text-align: center; text-decoration: none;">
                   Learn More
                 </a>
@@ -240,35 +250,40 @@
           </article>
 
           <!-- FLORES TOUR -->
-          <article class="card reveal" style="overflow: hidden; padding: 0; min-height: 600px; display: flex; flex-direction: column; position: relative;">
-            <a href="/flores.html" style="position: relative; height: 350px; overflow: hidden; display:block;">
+          <article class="card reveal expedition-card" style="overflow: hidden; padding: 0; min-height: 600px; display: flex; flex-direction: column; position: relative;">
+            <a class="expedition-card-media" href="/flores.html" style="position: relative; height: 350px; overflow: hidden; display:block;">
               <img src="./assets/jagd.jpg" alt="Flores overland expedition" loading="lazy"
                    style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; cursor: pointer;"
                    onmouseover="this.style.transform='scale(1.05)'"
                    onmouseout="this.style.transform='scale(1)'" />
-              <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(188,108,37,0.95); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;">
+              <div class="expedition-badge expedition-badge-warm" style="position: absolute; top: 1rem; left: 1rem; background: rgba(166,83,45,0.95); color: white; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;">
                 Flores · Bemo Expedition
               </div>
             </a>
 
-            <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+            <div class="expedition-card-body" style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
               <div style="flex: 1;">
                 <h3 style="font-size: 2rem; margin: 0 0 1rem 0; color: var(--text);">
                   Dragons & Whalers
                 </h3>
+                <div class="expedition-meta" aria-label="Expedition details">
+                  <span>Private</span>
+                  <span>Overland</span>
+                  <span>Bemo route</span>
+                </div>
                 <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; font-size: 1.05rem;">
                   A private overland route from Labuan Bajo to Lamalera by bemo: mountain villages, coffee, weaving, Kelimutu and a raw eastern-Flores finale.
                 </p>
 
                 <ul class="checklist" style="margin-bottom: 2rem;">
-                  <li>🚌 Long-distance bemo adventure</li>
-                  <li>🏘️ Traditional villages & weaving culture</li>
-                  <li>🌋 Kelimutu sunrise & east Flores coast</li>
-                  <li>🐋 Lamalera whaling village finale</li>
+                  <li>Long-distance bemo adventure</li>
+                  <li>Traditional villages & weaving culture</li>
+                  <li>Kelimutu sunrise & east Flores coast</li>
+                  <li>Lamalera whaling village finale</li>
                 </ul>
               </div>
 
-              <div style="display: flex; gap: 1rem; margin-top: auto;">
+              <div class="expedition-actions" style="display: flex; gap: 1rem; margin-top: auto;">
                 <a href="/flores.html" class="btn btn-secondary" style="flex: 1; text-align: center; text-decoration: none;">
                   Learn More
                 </a>
