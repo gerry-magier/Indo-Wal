@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <script data-cfasync="false" src="/analytics.js" defer></script>
+  <script data-cfasync="false" src="/analytics.js"></script>
 
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "@id": "https://twinexpeditions.com/faq.html#breadcrumb", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twinexpeditions.com/" }, { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://twinexpeditions.com/faq.html" }] }
@@ -40,7 +40,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: var(--faq-bg, url("/assets/optimized/hero.jpg"));
+      background-image: var(--faq-bg, url("/assets/hero.jpg"));
       background-size: cover;
       background-position: center;
       opacity: .42;
@@ -128,7 +128,7 @@
   <div id="navbar-placeholder"></div>
   
   <main id="main">
-    <section class="section faq-hero" id="faqRegionHero" style="--faq-bg:url('/assets/optimized/hero.jpg');">
+    <section class="section faq-hero" id="faqRegionHero" style="--faq-bg:url('/assets/hero.jpg');">
       <div class="wrap">
         <div class="section-head">
           <h1 class="section-title">FAQ</h1>
@@ -450,9 +450,9 @@
       const tabs = Array.from(document.querySelectorAll('[data-faq-region]'));
       const panels = Array.from(document.querySelectorAll('[data-faq-panel]'));
       const backgrounds = {
-        timor: '/assets/optimized/hero.jpg',
-        papua: '/assets/optimized/hero2.jpg',
-        flores: '/assets/optimized/lamaleraalt2.jpg'
+        timor: '/assets/hero.jpg',
+        papua: '/assets/hero2.jpg',
+        flores: '/assets/lamaleraalt2.jpg'
       };
 
       function setRegion(region) {
@@ -489,6 +489,7 @@
   <script src="/cookies.js"></script>
 </body>
 </html>
+
 
 
 
