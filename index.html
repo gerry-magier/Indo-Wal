@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <script data-cfasync="false" src="/analytics.js"></script>
+  <script data-cfasync="false" src="/analytics.js" defer></script>
 
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "@id": "https://twinexpeditions.com/#breadcrumb", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twinexpeditions.com/" }] }
@@ -36,6 +36,7 @@
   <meta property="og:description" content="For adventurers, not tourists. Local · Private · Respectful." />
   <meta property="og:image" content="assets/berg2.jpg" />
 
+  <link rel="preload" as="image" href="assets/berg2.jpg">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -604,7 +605,7 @@
       
       #contact-paradise {
         padding: 3rem 0 !important;
-        background-attachment: fixed !important;
+        background-attachment: scroll !important;
       }
       
       .cta-row {

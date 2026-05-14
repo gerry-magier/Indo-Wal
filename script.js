@@ -830,7 +830,7 @@
       }
 
       try {
-        const res = await fetch(AVAILABILITY_CSV_URL, { cache: 'no-store' });
+        const res = await fetch(AVAILABILITY_CSV_URL, { cache: 'default' });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const text = await res.text();
         const rows = parseCsv(text);
