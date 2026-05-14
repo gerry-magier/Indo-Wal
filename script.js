@@ -1396,6 +1396,25 @@
     loadAvailability();
   });
 })();
+
+/* === LIGHTWEIGHT YOUTUBE THUMBNAILS === */
+(function () {
+  document.addEventListener('click', function (event) {
+    const button = event.target.closest('.youtube-lite');
+    if (!button) return;
+
+    const id = button.getAttribute('data-youtube-id');
+    if (!id) return;
+
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0&modestbranding=1';
+    iframe.title = button.getAttribute('aria-label') || 'YouTube video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+
+    button.replaceWith(iframe);
+  });
+})();
 /* === GLOBAL AGB SELECTOR (Option B) === */
 (function () {
 
