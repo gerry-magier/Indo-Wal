@@ -121,7 +121,7 @@ class BlogLoader {
 
     // image
     const imgEl = doc.querySelector('.blog-featured-image, img');
-    let image = imgEl?.getAttribute('src') || '/assets/hero.jpg';
+    let image = imgEl?.getAttribute('src') || '/assets/optimized/hero.jpg';
     if (image && !image.startsWith('http') && !image.startsWith('/')) {
       image = '/' + image;
     }

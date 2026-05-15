@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <script data-cfasync="false" src="/analytics.js"></script>
@@ -40,7 +40,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: var(--faq-bg, url("/assets/hero.jpg"));
+      background-image: var(--faq-bg, url("/assets/optimized/hero.jpg"));
       background-size: cover;
       background-position: center;
       opacity: .42;
@@ -128,7 +128,7 @@
   <div id="navbar-placeholder"></div>
   
   <main id="main">
-    <section class="section faq-hero" id="faqRegionHero" style="--faq-bg:url('/assets/hero.jpg');">
+    <section class="section faq-hero" id="faqRegionHero" style="--faq-bg:url('/assets/optimized/hero.jpg');">
       <div class="wrap">
         <div class="section-head">
           <h1 class="section-title">FAQ</h1>
@@ -229,7 +229,7 @@
   </main>
   
   <div id="footer-placeholder"></div>
-  <button class="to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">?</button>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   <section class="booking-view" id="bookingView" aria-hidden="true">
     <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Request form">
@@ -241,7 +241,7 @@
             Frag einfach. Wir antworten klar und sagen dir ehrlich, was realistisch ist.
           </p>
         </div>
-        <button class="icon-btn" id="closeBooking" type="button" aria-label="Anfrage schließen">✕</button>
+        <button class="icon-btn" id="closeBooking" type="button" aria-label="Anfrage schließen">?</button>
       </div>
 
       <div class="booking-body">
@@ -450,9 +450,9 @@
       const tabs = Array.from(document.querySelectorAll('[data-faq-region]'));
       const panels = Array.from(document.querySelectorAll('[data-faq-panel]'));
       const backgrounds = {
-        timor: '/assets/hero.jpg',
-        papua: '/assets/hero2.jpg',
-        flores: '/assets/lamaleraalt2.jpg'
+        timor: '/assets/optimized/hero.jpg',
+        papua: '/assets/optimized/hero2.jpg',
+        flores: '/assets/optimized/lamaleraalt2.jpg'
       };
 
       function setRegion(region) {
