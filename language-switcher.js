@@ -35,9 +35,24 @@
     // Hauptseiten
     'timor-leste-blue-whale.html': 'de/timor-leste-blue-whale.html',
     'de/timor-leste-blue-whale.html': 'timor-leste-blue-whale.html',
+
+    'timor-leste-whale-season.html': 'de/timor-leste-walsaison.html',
+    'de/timor-leste-walsaison.html': 'timor-leste-whale-season.html',
+
+    'blue-whale-swimming-timor-leste.html': 'de/blauwale-schwimmen-timor-leste.html',
+    'de/blauwale-schwimmen-timor-leste.html': 'blue-whale-swimming-timor-leste.html',
     
     'papua.html': 'de/papua.html',
     'de/papua.html': 'papua.html',
+
+    'korowai-expedition.html': 'de/korowai-expedition.html',
+    'de/korowai-expedition.html': 'korowai-expedition.html',
+
+    'asmat-expedition.html': 'de/asmat-expedition.html',
+    'de/asmat-expedition.html': 'asmat-expedition.html',
+
+    'nabire-whale-shark-swimming.html': 'de/nabire-walhaie.html',
+    'de/nabire-walhaie.html': 'nabire-whale-shark-swimming.html',
 
     'flores.html': 'de/flores.html',
     'de/flores.html': 'flores.html',
