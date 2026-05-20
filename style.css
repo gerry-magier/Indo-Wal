@@ -353,7 +353,8 @@ a:hover{color:#2d7ea5}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text)}
 .brand-text{display:grid;line-height:1.1}
 .brand-name{font-weight:950;letter-spacing:-0.02em}
-.brand-sub{font-weight:750;color:var(--muted2);font-size:.92rem;display:grid;line-height:1.12}
+.brand-sub{font-weight:750;color:var(--muted2);font-size:.92rem;display:block;line-height:1.12}
+.brand-sub > span{display:block}
 
 .nav{display:flex;gap:.25rem;flex-wrap:wrap;justify-content:center}
 .nav a{
