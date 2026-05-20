@@ -283,6 +283,26 @@ body{
 a{color:var(--brand)}
 a:hover{color:#2d7ea5}
 
+.section-lead a,
+.card p a,
+.faq-a a,
+.blog-content p a,
+.blog-content li a,
+.micro a{
+  color:#17485f;
+  text-decoration:none;
+  font-weight:800;
+}
+.section-lead a:hover,
+.card p a:hover,
+.faq-a a:hover,
+.blog-content p a:hover,
+.blog-content li a:hover,
+.micro a:hover{
+  color:#2d7ea5;
+  text-decoration:none;
+}
+
 .skip{
   position:absolute;left:-999px;top:12px;
   background:var(--surface);border:1px solid var(--stroke2);
@@ -333,7 +353,7 @@ a:hover{color:#2d7ea5}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text)}
 .brand-text{display:grid;line-height:1.1}
 .brand-name{font-weight:950;letter-spacing:-0.02em}
-.brand-sub{font-weight:750;color:var(--muted2);font-size:.92rem}
+.brand-sub{font-weight:750;color:var(--muted2);font-size:.92rem;display:grid;line-height:1.12}
 
 .nav{display:flex;gap:.25rem;flex-wrap:wrap;justify-content:center}
 .nav a{
