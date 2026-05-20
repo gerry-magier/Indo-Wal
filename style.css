@@ -49,6 +49,16 @@
   color:#2d7ea5;
 }
 
+.home-page .text-link{
+  position:relative;
+  z-index:2;
+  pointer-events:auto;
+  color:var(--brand);
+  font-weight:850;
+  text-decoration-thickness:2px;
+  text-underline-offset:.18em;
+}
+
 .home-page :focus-visible{
   outline-color:rgba(45,126,165,.55);
 }
