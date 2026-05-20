@@ -99,8 +99,12 @@
   box-shadow:0 18px 46px rgba(10,32,48,.10);
 }
 
+.home-page #tours .wrap{
+  width:min(1480px,94vw);
+}
+
 .home-page #tours .expedition-grid{
-  gap:1.2rem !important;
+  gap:1.35rem !important;
   align-items:stretch;
 }
 
@@ -122,7 +126,8 @@
 }
 
 .home-page #tours .expedition-card-media{
-  height:clamp(380px,42vw,520px) !important;
+  height:auto !important;
+  aspect-ratio:16 / 9;
   border-radius:12px 12px 0 0;
 }
 
@@ -248,13 +253,14 @@
 
 @media (min-width:1181px){
   .home-page #tours .expedition-grid{
-    grid-template-columns:1.08fr .96fr .96fr !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
   }
 }
 
 @media (max-width:760px){
   .home-page #tours .expedition-card-media{
-    height:clamp(300px,78vw,420px) !important;
+    height:auto !important;
+    aspect-ratio:16 / 9;
   }
   .home-page #tours .expedition-actions{
     flex-direction:column;
