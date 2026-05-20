@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <script data-cfasync="false" src="/analytics.js"></script>
@@ -203,7 +203,18 @@
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- Navbar will be loaded here -->
-  <div id="navbar-placeholder"></div>
+  <div id="navbar-placeholder">
+  <noscript>
+    <nav class="fallback-nav" aria-label="Site links">
+      <a href="/">Home</a>
+      <a href="/timor-leste-blue-whale.html">Blue whale expedition</a>
+      <a href="/papua.html">Papua expeditions</a>
+      <a href="/flores.html">Flores expedition</a>
+      <a href="/blog/">Expedition journal</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </noscript></div>
 
   <main id="main">
     <section class="section">
@@ -217,7 +228,17 @@
         
         <!-- Blog Posts Container (automatically populated) -->
         <div id="blog-posts-container">
-          <!-- Blog cards will be loaded here by blog-loader.js -->
+          <div class="blog-grid">
+            <article class="blog-card"><a class="blog-card-link" href="/blog/timor-leste-arrival.html"><div class="blog-card-content"><h2 class="blog-card-title">Timor-Leste arrival and blue whale planning</h2><p class="blog-card-excerpt">First impressions from Dili and how local contacts shaped our blue whale idea.</p><span class="blog-card-readmore">Read the Timor-Leste story</span></div></a></article>
+            <article class="blog-card"><a class="blog-card-link" href="/blog/nabire-kaimana-whale-sharks.html"><div class="blog-card-content"><h2 class="blog-card-title">Nabire whale shark swimming guide</h2><p class="blog-card-excerpt">Practical notes for Cenderawasih Bay whale shark logistics from Nabire.</p><span class="blog-card-readmore">Plan Nabire whale sharks</span></div></a></article>
+            <article class="blog-card"><a class="blog-card-link" href="/blog/agats-asmat-papua.html"><div class="blog-card-content"><h2 class="blog-card-title">Agats and the Asmat</h2><p class="blog-card-excerpt">A Papua story about river travel, village life and Asmat woodcarving.</p><span class="blog-card-readmore">Read about the Asmat</span></div></a></article>
+            <article class="blog-card"><a class="blog-card-link" href="/blog/dekai-korowai-papua.html"><div class="blog-card-content"><h2 class="blog-card-title">Dekai and the Korowai</h2><p class="blog-card-excerpt">Permits, pressure and the reality behind Korowai travel in Papua.</p><span class="blog-card-readmore">Read the Korowai story</span></div></a></article>
+            <article class="blog-card"><a class="blog-card-link" href="/blog/jayapura-papua-arrival.html"><div class="blog-card-content"><h2 class="blog-card-title">Arriving in Jayapura</h2><p class="blog-card-excerpt">First steps into Papua, permits and the start of a harder journey east.</p><span class="blog-card-readmore">Read the Jayapura story</span></div></a></article>
+            <article class="blog-card"><a class="blog-card-link" href="/blog/labuan-bajo-worth-it.html"><div class="blog-card-content"><h2 class="blog-card-title">Labuan Bajo: the things worth doing</h2><p class="blog-card-excerpt">How to connect Komodo, Flores and a deeper overland route.</p><span class="blog-card-readmore">Explore Labuan Bajo</span></div></a></article>
+            <article class="blog-card"><a class="blog-card-link" href="/blog/lamalera-whaling-village-journey.html"><div class="blog-card-content"><h2 class="blog-card-title">Lamalera whaling village journey</h2><p class="blog-card-excerpt">The cultural finale behind our Flores expedition route.</p><span class="blog-card-readmore">Read the Lamalera story</span></div></a></article>
+            <article class="blog-card"><a class="blog-card-link" href="/blog/raja-ampat-travel-stories.html"><div class="blog-card-content"><h2 class="blog-card-title">Raja Ampat travel stories</h2><p class="blog-card-excerpt">A quieter Papua finale with diving dreams, reef stories and remote island context.</p><span class="blog-card-readmore">Read the Raja Ampat story</span></div></a></article>
+            <article class="blog-card"><a class="blog-card-link" href="/blog/malaira-dengue-papua.html"><div class="blog-card-content"><h2 class="blog-card-title">Malaria and dengue in Papua</h2><p class="blog-card-excerpt">Health lessons from remote Papua travel and why preparation matters.</p><span class="blog-card-readmore">Read the Papua health notes</span></div></a></article>
+          </div>
         </div>
         
       </div>
@@ -225,7 +246,18 @@
   </main>
 
   <!-- Footer will be loaded here -->
-  <div id="footer-placeholder"></div>
+  <div id="footer-placeholder">
+  <noscript>
+    <footer class="fallback-footer" aria-label="Footer links">
+      <a href="/timor-leste-blue-whale.html">Timor-Leste blue whales</a>
+      <a href="/papua.html">Papua expeditions</a>
+      <a href="/flores.html">Flores overland expedition</a>
+      <a href="/blog/">Travel stories</a>
+      <a href="/contact.html">Request travel advice</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/impressum.html">Impressum</a>
+    </footer>
+  </noscript></div>
 
   <!-- REQUEST MODAL -->
   <section class="booking-view" id="bookingView" aria-hidden="true">
@@ -235,7 +267,7 @@
           <div class="booking-kicker">Request</div>
           <h2 id="requestTitle">Ask a question</h2>
           <p class="micro subtle" id="requestSubtitle">
-            Ask anything â€” we'll reply with clear answers and whether it's a good fit.
+            Ask anything — we'll reply with clear answers and whether it's a good fit.
           </p>
         </div>
         <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">&times;</button>
@@ -277,7 +309,7 @@
 
               <div class="cal-meta">
                 <div id="bookingSelectedDays" class="meta-line"></div>
-                <div id="bookingPrice" class="meta-line strong">Price: â‚¬0</div>
+                <div id="bookingPrice" class="meta-line strong">Price: €0</div>
                 <div id="bookingTotalPrice" class="meta-line"></div>
               </div>
             </div>
@@ -363,7 +395,7 @@
                   <h4>Passport details (optional)</h4>
                   <p class="micro subtle">
                     Only required for trip paperwork <strong>after</strong> we confirm availability.
-                    If you prefer, leave it blank â€” we'll collect it later via a secure channel.
+                    If you prefer, leave it blank — we'll collect it later via a secure channel.
                   </p>
                 </div>
 
@@ -396,7 +428,7 @@
                 <h4>Terms &amp; Conditions</h4>
                 <div class="agb">
                   <p class="micro subtle" style="margin-top:0;">
-                    Cancellation: up to and including 60 days before start â€” 50% fee. Less than 60 days or no-show â€” 100% fee.
+                    Cancellation: up to and including 60 days before start — 50% fee. Less than 60 days or no-show — 100% fee.
                     Tours may change/cancel for safety or force majeure.
                   </p>
                 </div>
@@ -428,12 +460,12 @@
       </div>
 
       <div class="booking-foot">
-        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> Â· Or <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
+        <div class="micro subtle">Prefer email? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> · Or <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
       </div>
     </div>
   </section>
 
-  <button class="to-top" id="toTop" type="button" aria-label="Back to top">â†‘</button>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">?</button>
 
   <!-- Scripts: loader.js MUST be loaded before script.js -->
   <script src="/loader.js"></script>
