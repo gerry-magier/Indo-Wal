@@ -930,14 +930,14 @@
           // Prepare form data for Web3Forms
           const formData = new FormData(requestForm);
           
-          // Add Web3Forms access key
-          formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+          // Ensure fallback-hidden fields and JS fields never duplicate each other.
+          formData.set('access_key', WEB3FORMS_ACCESS_KEY);
           
           // Add custom subject line based on mode
           const subject = mode === 'contact' 
             ? '🐋 New Question - Blue Whales Timor Leste'
             : '🐋 New Expedition Request - Blue Whales Timor Leste';
-          formData.append('subject', subject);
+          formData.set('subject', subject);
 
           // Send to Web3Forms
           const response = await fetch('https://api.web3forms.com/submit', {

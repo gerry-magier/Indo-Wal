@@ -174,7 +174,9 @@
           </div>
 
           <div class="booking-right">
-            <form class="card reveal" id="requestForm" method="POST">
+            <form class="card reveal" id="requestForm" method="POST" action="https://api.web3forms.com/submit">
+              <input type="hidden" name="access_key" value="3831585c-b896-4509-8b56-d697171762c8" />
+              <input type="hidden" name="subject" value="New Twin Expeditions website request" />
               <input type="hidden" name="requestType" id="requestType" value="contact" />
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
@@ -191,7 +193,7 @@
                 </div>
                 <div>
                   <label for="lastName">Last name</label>
-                  <input id="lastName" name="lastName" type="text" required />
+                  <input id="lastName" name="lastName" type="text" />
                 </div>
               </div>
 
