@@ -238,7 +238,6 @@
     const requestSubtitle = $('#requestSubtitle');
     const requestType = $('#requestType');
 
-    const passportWrap = $('#passportWrap');
     const agbWrap = $('#agbWrap');
     const acceptAgb = $('#acceptAgb');
 
@@ -247,7 +246,6 @@
     const tourStart = $('#tourStart');
     const tourEnd = $('#tourEnd');
     const submitBtn = $('#submitBtn');
-    const submitHint = $('#submitHint');
 
     // Modal scroll lock (prevents scrolling behind)
     let lockedScrollY = 0;
@@ -309,17 +307,6 @@
             : 'Send a non-binding request — we’ll reply with availability + a fit-check. Contract only after we send an offer and you accept it (payment within 5 business days).');
       }
       if (submitBtn) submitBtn.textContent = isGerman ? (isContact ? 'Senden' : 'Anfrage senden') : (isContact ? 'Send' : 'Send request');
-      if (submitHint) {
-        submitHint.textContent = isGerman
-          ? (isContact
-            ? 'Für Fragen brauchen wir keine Passdaten. Teilt Erwartungen und Bedenken gern offen mit — wir antworten ehrlich.'
-            : 'Passdaten sind jetzt optional. Falls nötig, fragen wir später über einen sicheren Kanal nach. Nach Vertragsbestätigung ist die Zahlung innerhalb von 5 Werktagen fällig.')
-          : (isContact
-            ? 'Questions don’t require passport details. Share expectations and concerns — we’ll be honest.'
-            : 'Passport details are optional now. We’ll collect what’s needed later via a secure channel if required. After contract confirmation, payment is due within 5 business days.');
-      }
-
-      if (passportWrap) passportWrap.hidden = isContact;
       if (agbWrap) agbWrap.hidden = isContact;
 
       if (startHint) startHint.textContent = isGerman ? (isContact ? '(optional bei Fragen)' : '(erforderlich für Anfragen)') : (isContact ? '(optional for questions)' : '(required for requests)');
@@ -344,7 +331,7 @@
       lockPageScroll();
       setMode(mode);
 
-      const first = $('#firstName', bookingView) || bookingView;
+      const first = $('#name', bookingView) || bookingView;
       try { first.focus({ preventScroll: true }); } catch(_) {}
     }
 
@@ -716,6 +703,7 @@
       additionalGuests.innerHTML = '';
 
       const extra = Math.max(0, state.persons - 1);
+      const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
       for (let i = 0; i < extra; i++) {
         const idx = i + 2;
         const wrap = document.createElement('div');
@@ -724,7 +712,7 @@
         const head = document.createElement('button');
         head.type = 'button';
         head.className = 'guest-head';
-        head.innerHTML = `<span>Guest ${idx} details (optional)</span><span>+</span>`;
+        head.innerHTML = `<span>${isGerman ? `Gast ${idx}` : `Guest ${idx}`} (optional)</span><span>+</span>`;
 
         const body = document.createElement('div');
         body.className = 'guest-body';
@@ -733,12 +721,8 @@
         body.innerHTML = `
           <div class="form-grid" style="margin-top:.8rem;">
             <div>
-              <label for="g${idx}First">First name</label>
-              <input id="g${idx}First" name="g${idx}First" type="text" />
-            </div>
-            <div>
-              <label for="g${idx}Last">Last name</label>
-              <input id="g${idx}Last" name="g${idx}Last" type="text" />
+              <label for="g${idx}Name">Name</label>
+              <input id="g${idx}Name" name="g${idx}Name" type="text" />
             </div>
           </div>
         `;

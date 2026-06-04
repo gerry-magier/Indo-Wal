@@ -1,490 +1,878 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html lang="de">
+
 <head>
+
   <script data-cfasync="false" src="/analytics.js"></script>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+
   <link rel="canonical" href="https://twinexpeditions.com/de/blog/timor-leste-arrival.html" />
+
   <link rel="alternate" hreflang="en" href="https://twinexpeditions.com/blog/timor-leste-arrival.html" />
+
   <link rel="alternate" hreflang="de" href="https://twinexpeditions.com/de/blog/timor-leste-arrival.html" />
+
   <link rel="alternate" hreflang="x-default" href="https://twinexpeditions.com/blog/timor-leste-arrival.html" />
 
+
+
   <title>Timor-Leste: Blauwale, Dili und mehr (Blogbeitrag)</title>
+
   <meta name="description" content="Wie wir nach Timor-Leste gekommen sind, wie sich Dili am ersten Tag anfühlt, lokaler Transport, erste Pläne mit Fischern und der Krokodil-Mythos im Herzen des Landes." />
+
+
 
   <link rel="stylesheet" href="/style.css" />
 
+
+
   <style>
+
     /* Footer enhancements (same as main index) */
+
     .footer-links {
+
       display: flex;
+
       gap: 1.5rem;
+
       align-items: center;
+
       flex-wrap: wrap;
+
     }
+
     .footer-link {
+
       text-decoration: none;
+
       color: var(--muted);
+
       font-weight: 750;
+
       transition: color 0.2s ease;
+
     }
+
     .footer-link:hover {
+
       color: var(--brand);
+
       text-decoration: underline;
+
     }
+
     .footer-link-btn {
+
       background: none;
+
       border: none;
+
       color: var(--muted);
+
       font-weight: 750;
+
       cursor: pointer;
+
       padding: 0;
+
       font-family: inherit;
+
       font-size: inherit;
+
       transition: color 0.2s ease;
+
     }
+
     .footer-link-btn:hover {
+
       color: var(--brand);
+
       text-decoration: underline;
+
     }
+
     @media (max-width: 680px) {
+
       .footer-inner {
+
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 1rem;
+
       }
+
       .footer-links {
+
         width: 100%;
+
       }
+
     }
+
+
 
     /* Blog post specific styles */
+
     .blog-post { max-width: 720px; margin: 0 auto; padding: 3rem 0; }
+
     .blog-back { display:inline-flex;align-items:center;gap:.5rem;margin-bottom:2rem;color:var(--muted);text-decoration:none;font-weight:700;font-size:.95rem;transition:color .2s ease; }
+
     .blog-back:hover { color: var(--brand); }
+
     .blog-back:before { content:'\2039'; font-size:1.1rem; }
+
     .blog-header { margin-bottom: 2.5rem; }
+
     .blog-date { color: var(--muted2); font-weight: 650; font-size: 0.95rem; margin-bottom: 0.8rem; }
+
     .blog-title { margin: 0 0 1rem; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -0.03em; line-height: 1.2; }
+
     .blog-subtitle { color: var(--muted); font-size: 1.2rem; font-weight: 650; line-height: 1.5; margin: 0; }
+
     .blog-featured-image { width: 100%; height: auto; border-radius: var(--rLg); margin: 2rem 0 2.5rem; box-shadow: var(--shadowSoft); }
+
     .blog-content { line-height: 1.8; color: var(--text); }
+
     .blog-content h2 { margin: 2.5rem 0 1rem; font-size: 1.8rem; letter-spacing: -0.02em; font-weight: 850; }
+
     .blog-content h3 { margin: 2rem 0 0.8rem; font-size: 1.4rem; letter-spacing: -0.02em; font-weight: 800; }
+
     .blog-content p { margin: 0 0 1.2rem; font-weight: 600; }
+
     .blog-content img { width: 100%; height: auto; border-radius: var(--rMd); margin: 2rem 0; box-shadow: var(--shadowSoft); }
+
     .blog-content blockquote { margin: 2rem 0; padding: 1.5rem 1.8rem; background: rgba(0,180,216,.06); border-left: 4px solid var(--brand); border-radius: var(--rMd); font-style: italic; color: var(--muted); }
+
     .blog-content blockquote p { margin: 0; }
+
     .blog-content ul, .blog-content ol { margin: 1.2rem 0; padding-left: 1.8rem; }
+
     .blog-content li { margin: 0.5rem 0; font-weight: 600; }
+
     .blog-content a { color: var(--brand); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; transition: color 0.2s ease; }
+
     .blog-content a:hover { color: #056aa2; }
+
     .blog-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--stroke); }
+
     .blog-cta { background: linear-gradient(135deg, rgba(0,180,216,.08), rgba(0,119,182,.06)); border: 1px solid var(--stroke); border-radius: var(--rLg); padding: 2rem; text-align: center; }
+
     .blog-cta h3 { margin: 0 0 0.8rem; font-size: 1.5rem; letter-spacing: -0.02em; }
+
     .blog-cta p { margin: 0 0 1.5rem; color: var(--muted); font-weight: 650; }
+
     .blog-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
     @media (max-width: 768px) {
+
       .blog-post { padding: 2rem 0; }
+
       .blog-cta-buttons { flex-direction: column; }
+
     }
+
   </style>
+
 </head>
 
+
+
 <body>
+
   <!-- BLOG METADATA -->
+
   <script type="application/json" data-blog-metadata>
+
   {
+
     "title": "Timor-Leste",
-    "subtitle": "Ankunft, erste Eindrücke und ein ganz eigenes Gefühl",
-    "excerpt": "Timor-Leste ist kein Ort, an dem man zufällig landet. So sind wir angekommen, so fühlte sich Dili an — und wie ein paar Fischer unseren ersten großen Plan geprägt haben.",
+
+    "subtitle": "Ankunft, erste Eindrücke und ein ganz eigenes Gef—hl",
+
+    "excerpt": "Timor-Leste ist kein Ort, an dem man zufällig landet. So sind wir angekommen, so fühlte sich Dili an — und wie ein paar Fischer unseren ersten großen Plan gepr—gt haben.",
+
     "image": "/assets/optimized/hero.jpg",
+
     "date": "2025-10-15",
+
     "author": "Twin Expeditions"
+
   }
+
   </script>
+
+
 
   <a class="skip" href="#main">Zum Inhalt springen</a>
 
+
+
   <div id="navbar-placeholder">
+
   <noscript>
+
     <nav class="fallback-nav" aria-label="Seitenlinks">
+
       <a href="/de/">Home</a>
+
       <a href="/de/timor-leste-blue-whale.html">Blauwal Expedition</a>
+
       <a href="/de/papua.html">Papua Expeditionen</a>
+
       <a href="/de/flores.html">Flores Reise</a>
+
       <a href="/de/blog/">Expeditions-Journal</a>
+
       <a href="/de/faq.html">FAQ</a>
+
       <a href="/de/contact.html">Kontakt</a>
+
     </nav>
+
   </noscript></div>
 
+
+
   <main id="main">
+
     <article class="section">
+
       <div class="wrap">
+
         <div class="blog-post">
+
+
 
           <a href="/blog/index.html" class="blog-back">Zurück zum Blog</a>
 
+
+
           <header class="blog-header">
+
             <div class="blog-date">October 15, 2025</div>
+
             <h1 class="blog-title">Timor-Leste</h1>
+
             <p class="blog-subtitle">
-              Ankunft, erste Eindrücke und ein ganz eigenes Gefühl
+
+              Ankunft, erste Eindrücke und ein ganz eigenes Gef—hl
+
             </p>
+
           </header>
+
+
 
           <img src="/blog/assets/optimized/locallegend.jpg" alt="Erste Eindrücke von Timor-Leste" class="blog-featured-image" />
 
+
+
           <div class="blog-content">
+
             <p>
+
               Timor-Leste ist kein Land, in das man zufällig stolpert. Es gibt nur wenige Wege hinein — und genau das macht es so spannend.
+
             </p>
+
+
 
             <h2>Anreise nach Timor-Leste</h2>
-            <p>Es gibt Direktflüge:</p>
+
+            <p>Es gibt Direktfl—ge:</p>
+
             <ul>
+
               <li>von Denpasar (Bali) — die einfachste Option</li>
+
               <li>von Kuala Lumpur (neu)</li>
+
               <li>von Darwin (nur gelegentlich)</li>
+
               <li>von Singapur (nur gelegentlich)</li>
+
             </ul>
 
+
+
             <p>
+
               Wir entschieden uns bewusst für den Landweg — weil es sich wie ein kleines Abenteuer anfühlte. Unser Startpunkt war Kupang in Indonesien.
-              Von dort nahmen wir einen Bus für eine etwa 12-ständige Fahrt nach Dili.
+
+              Von dort nahmen wir einen Bus für eine etwa 12-stündige Fahrt nach Dili.
+
             </p>
 
+
+
             <p>
-              <strong>Kosten:</strong> etwa €16 pro Person.  
+
+              <strong>Kosten:</strong> etwa —16 pro Person.  
+
               Wenn du ein bisschen Abenteuer magst, etwas Unbequemlichkeit aushältst und Geld sparen willst, ist die Landüberquerung eine großartige Wahl.
+
             </p>
 
-            <h2>Dili: andere Preise, andere Währung, andere Geschichte</h2>
+
+
+            <h2>Dili: andere Preise, andere W—hrung, andere Geschichte</h2>
+
             <p>
+
               Sobald man in Dili ankommt, merkt man schnell, dass das Preisniveau anders ist als in Indonesien. Wir suchten eine Weile nach einer bezahlbaren Unterkunft
+
               und landeten schließlich im Casa Minha Hostel.
+
             </p>
 
+
+
             <p>
+
               Wir zahlten 20 US-Dollar pro Nacht für ein Doppelzimmer — denn ja, Timor-Leste nutzt den US-Dollar.
+
             </p>
 
+
+
             <p>
+
               Timor-Leste ist außerdem das jüngste Land Asiens. Es wurde erst 2002 unabhängig, und das spürt man im Alltag — in der Infrastruktur
+
               und in der Art, wie Menschen auftreten.
+
             </p>
+
+
 
             <h2>Portugiesischer Einfluss und Alltag in Dili</h2>
-            <p>
-              Am Tag nach unserer Ankunft erkundeten wir die Stadt. Portugiesischer Einfluss ist überall sichtbar — in der Architektur, der Sprache und besonders im Essen.
-            </p>
 
             <p>
-              Früh am Morgen fanden wir plötzlich richtig gute Brötchen — etwas, das man in Südostasien nicht unbedingt erwartet.
+
+              Am Tag nach unserer Ankunft erkundeten wir die Stadt. Portugiesischer Einfluss ist überall sichtbar — in der Architektur, der Sprache und besonders im Essen.
+
             </p>
+
+
+
+            <p>
+
+              Früh am Morgen fanden wir plötzlich richtig gute Brötchen — etwas, das man in Südostasien nicht unbedingt erwartet.
+
+            </p>
+
+
 
             <h3>Fortbewegung: Bemo statt Taxi</h3>
-            <p>
-              Die beste Art, sich in Dili zu bewegen, ist der Bemo. Allein in Dili gibt es 13 verschiedene Linien mit gut erkennbaren Routennummern.
-            </p>
 
             <p>
-              Die wichtigste Regel: Egal wie weit du fährst, es kostet immer ein Viertel Dollar (0,25 $).  
-              Zum Aussteigen klopft man einfach eine Münze gegen eine Aluminiumstange im Bus — und der Fahrer hält.  
-              Einfach, günstig, effektiv.
+
+              Die beste Art, sich in Dili zu bewegen, ist der Bemo. Allein in Dili gibt es 13 verschiedene Linien mit gut erkennbaren Routennummern.
+
             </p>
+
+
+
+            <p>
+
+              Die wichtigste Regel: Egal wie weit du f—hrst, es kostet immer ein Viertel Dollar (0,25 $).  
+
+              Zum Aussteigen klopft man einfach eine Münze gegen eine Aluminiumstange im Bus — und der Fahrer hält.  
+
+              Einfach, günstig, effektiv.
+
+            </p>
+
+
 
             <img src="/assets/optimized/walsuchen.jpg" alt="Auf dem Weg zum Hafen auf der Suche nach Walen" />
 
+
+
             <h2>Fischer, Blauwale und große Pläne</h2>
+
             <p>
+
               Schließlich gingen wir zum Hafen. Nach Stunden des Herumfragens trafen wir drei lokale Fischer, die bereit waren,
+
               etwas Besonderes mit uns zu versuchen: <a href="/de/blauwale-schwimmen-timor-leste.html">mit Blauwalen zu schwimmen</a>.
+
             </p>
+
+
 
             <p>
+
               Allein diese Möglichkeit zeigt, wie roh und untouristisch Timor-Leste noch ist. Vieles läuft über persönliche Kontakte,
+
               Vertrauen und spontane Absprachen.
+
             </p>
 
-            <img src="/blog/assets/optimized/kroko.jpg" alt="Krokodile sind zentral für die Identität Timor-Lestes" />
+
+
+            <img src="/blog/assets/optimized/kroko.jpg" alt="Krokodile sind zentral für die Identit—t Timor-Lestes" />
+
+
 
             <h2>Das Krokodil: Mythos und Herz von Timor-Leste</h2>
-            <p>
-              Wir lernten auch etwas Zentrales über die Kultur des Landes: die Bedeutung des Krokodils.
-              Einer bekannten Legende zufolge entstand Timor-Leste aus einem Krokodil, das von Indonesien hierher schwamm
-              und schließlich zu Land wurde.
-            </p>
 
             <p>
-              Krokodile tragen bis heute eine starke spirituelle Bedeutung. So sehr, dass eine Polizeieinheit — das Batalhão de Ordem Pública (BOP) — drei Krokodile als "Haustiere" hält.
-              Besucher können sie sehen, müssen aber als "Eintritt" frisches oder gefrorenes Huhn mitbringen.
+
+              Wir lernten auch etwas Zentrales über die Kultur des Landes: die Bedeutung des Krokodils.
+
+              Einer bekannten Legende zufolge entstand Timor-Leste aus einem Krokodil, das von Indonesien hierher schwamm
+
+              und schließlich zu Land wurde.
+
             </p>
+
+
+
+            <p>
+
+              Krokodile tragen bis heute eine starke spirituelle Bedeutung. So sehr, dass eine Polizeieinheit — das Batalhão de Ordem Pública (BOP) — drei Krokodile als "Haustiere" hält.
+
+              Besucher können sie sehen, müssen aber als "Eintritt" frisches oder gefrorenes Huhn mitbringen.
+
+            </p>
+
+
 
             <h2>Timor-Leste mit dem Roller erkunden</h2>
-            <p>
-              Wenn du mehr Zeit hast, lohnt es sich sehr, Timor-Leste mit dem Roller zu erkunden. Dich erwarten leere, traumhafte Strände,
-              raue und unberührte Natur — und vor allem unglaublich freundliche, offene Menschen.
-            </p>
 
             <p>
-              Genau diese Mischung machte Dili für uns praktisch, warm und noch weit weg von einer glatten Tourismusstrecke.
+
+              Wenn du mehr Zeit hast, lohnt es sich sehr, Timor-Leste mit dem Roller zu erkunden. Dich erwarten leere, traumhafte Str—nde,
+
+              raue und unberührte Natur — und vor allem unglaublich freundliche, offene Menschen.
+
             </p>
+
+
+
+            <p>
+
+              Genau diese Mischung machte Dili für uns praktisch, warm und noch weit weg von einer glatten Tourismusstrecke.
+
+            </p>
+
           </div>
 
+
+
             <div class="related-links">
+
               <h3>Mehr zur Timor-Leste Planung</h3>
+
               <div class="related-grid">
+
                 <a class="related-link" href="/de/timor-leste-blue-whale.html">Private Blauwal Expedition<span>Termine, Preislogik und Anfrage f&uuml;r Timor-Leste.</span></a>
+
                 <a class="related-link" href="/de/timor-leste-walsaison.html">Timor-Leste Walsaison<span>Beste Monate und Saisonkontext f&uuml;r Blauwale.</span></a>
+
                 <a class="related-link" href="/de/blauwale-schwimmen-timor-leste.html">Guide zum Schwimmen mit Blauwalen<span>Worum es beim Erlebnis im Wasser wirklich geht.</span></a>
+
               </div>
+
             </div>
+
+
 
           <footer class="blog-footer">
+
             <div class="blog-cta">
+
               <h3>Bereit für deine eigene Blauwal-Begegnung?</h3>
+
               <p>Begleite uns auf eine private Blauwal Expedition in Timor Leste</p>
+
               <div class="blog-cta-buttons">
+
                 <a href="/de/timor-leste-blue-whale.html" class="btn btn-secondary">Blauwal Expedition ansehen</a>
+
                 <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Expedition anfragen</button>
+
               </div>
+
             </div>
+
           </footer>
 
+
+
         </div>
+
       </div>
+
     </article>
+
   </main>
 
+
+
   <div id="footer-placeholder">
+
   <noscript>
+
     <footer class="fallback-footer" aria-label="Footer-Links">
+
       <a href="/de/timor-leste-blue-whale.html">Timor-Leste Blauwal Expedition</a>
+
       <a href="/de/papua.html">Papua Expeditionen</a>
+
       <a href="/de/flores.html">Flores Rundreise</a>
+
       <a href="/de/blog/">Reiseberichte</a>
+
       <a href="/de/contact.html">Reiseberatung anfragen</a>
-      <a href="/de/privacy.html">Datenschutzerkl�rung</a>
+
+      <a href="/de/privacy.html">Datenschutzerklärung</a>
+
       <a href="/de/impressum.html">Impressum</a>
+
     </footer>
+
   </noscript></div>
 
+
+
   <!-- REQUEST MODAL + main script -->
+
   <section class="booking-view" id="bookingView" aria-hidden="true">
+
     <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Anfrageformular">
+
       <div class="booking-head">
+
         <div class="booking-title">
+
           <div class="booking-kicker">Anfrage</div>
+
           <h2 id="requestTitle">Eine Frage stellen</h2>
+
           <p class="micro subtle" id="requestSubtitle">
+
             Frag einfach. Wir antworten klar und sagen dir, was realistisch ist.
+
           </p>
+
         </div>
+
         <button class="icon-btn" id="closeBooking" type="button" aria-label="Anfrage schließen">&times;</button>
+
       </div>
 
+
+
       <div class="booking-body">
+
         <div class="mode-tabs" role="tablist" aria-label="Anfrage-Modus">
+
           <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Eine Frage stellen</button>
+
           <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Expedition anfragen</button>
+
         </div>
 
+
+
         <div class="booking-grid">
+
           <div class="booking-left">
+
             <div class="card reveal" id="bookingCalendarCard">
+
               <h3>Termine</h3>
 
+
+
               <div class="cal-top">
+
                 <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Vorheriger Monat">&lsaquo;</button>
+
                 <div class="cal-title" id="bookingMonthName">Oktober 2026</div>
+
                 <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Nächster Monat">&rsaquo;</button>
+
               </div>
 
+
+
               <div class="cal-weekdays" aria-hidden="true">
+
                 <span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span>
+
               </div>
+
+
 
               <div class="calendar" id="bookingCalendar"></div>
 
+
+
               <div class="cal-controls">
+
                 <label for="bookingPersons">Gäste</label>
+
                 <select id="bookingPersons">
+
                   <option value="1">1 Person</option>
+
                   <option value="2">2 Personen</option>
+
                   <option value="3">3 Personen</option>
+
                   <option value="4">4 Personen</option>
+
                   <option value="5">5 Personen</option>
+
                 </select>
+
               </div>
+
+
 
               <div class="cal-meta">
+
                 <div id="bookingSelectedDays" class="meta-line"></div>
-                <div id="bookingPrice" class="meta-line strong">Preis: €0</div>
+
+                <div id="bookingPrice" class="meta-line strong">Preis: —0</div>
+
                 <div id="bookingTotalPrice" class="meta-line"></div>
+
               </div>
+
             </div>
+
+
 
             <div class="card reveal">
+
               <h3>Zusammenfassung</h3>
+
               <p id="summaryDates">Termine: (optional)</p>
-              <p id="summaryGuests">Gäste: –</p>
-              <p id="summaryPrice">Preis: –</p>
+
+              <p id="summaryGuests">Gäste: —</p>
+
+              <p id="summaryPrice">Preis: —</p>
+
               <p class="micro subtle"><strong>Hinweis:</strong> Der Gesamtpreis ist unabhängig von der Gruppengröße fest. Der angezeigte Pro-Person-Betrag dient nur zur Orientierung.</p>
+
             </div>
+
           </div>
 
+
+
           <div class="booking-right">
+
             <form class="card reveal" id="requestForm" method="POST" action="https://api.web3forms.com/submit">
+
               <input type="hidden" name="access_key" value="3831585c-b896-4509-8b56-d697171762c8" />
+
               <input type="hidden" name="subject" value="New Twin Expeditions website request" />
+
               <input type="hidden" name="requestType" id="requestType" value="contact" />
+
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
+
+
               <p class="honeypot" aria-hidden="true">
+
                 <label>Bitte nicht ausfüllen: <input name="bot-field" /></label>
+
               </p>
 
+
+
               <h3>Deine Angaben</h3>
-
-              <div class="form-grid">
-                <div>
-                  <label for="firstName">Vorname</label>
-                  <input id="firstName" name="firstName" type="text" required />
-                </div>
-                <div>
-                  <label for="lastName">Nachname</label>
-                  <input id="lastName" name="lastName" type="text" />
-                </div>
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
               </div>
 
+
+
               <div class="form-grid">
+
                 <div>
+
                   <label for="email">E-Mail</label>
+
                   <input id="email" name="email" type="email" required />
+
                 </div>
+
                 <div>
+
                   <label for="whatsapp">WhatsApp (optional)</label>
+
                   <input id="whatsapp" name="whatsapp" type="tel" />
+
                 </div>
+
               </div>
 
+
+
               <div class="form-grid">
+
                 <div>
+
                   <label for="tourStart">Startdatum <span class="mini-hint" id="startHint">(optional für Fragen)</span></label>
+
                   <input id="tourStart" name="tourStart" type="date" />
+
                 </div>
+
                 <div>
+
                   <label for="tourEnd">Enddatum <span class="mini-hint" id="endHint">(optional für Fragen)</span></label>
+
                   <input id="tourEnd" name="tourEnd" type="date" />
+
                 </div>
+
               </div>
 
+
+
               <div class="form-grid">
+
                 <div>
+
                   <label for="tourPersons">Gäste</label>
+
                   <select id="tourPersons" name="tourPersons" required>
+
                     <option value="1">1 Person</option>
+
                     <option value="2">2 Personen</option>
+
                     <option value="3">3 Personen</option>
+
                     <option value="4">4 Personen</option>
+
                     <option value="5">5 Personen</option>
+
                   </select>
+
                 </div>
-                <div>
-                  <label for="swimLevel">Schwimmniveau (optional)</label>
-                  <input id="swimLevel" name="swimLevel" type="text" placeholder="z. B. sicher im offenen Wasser / Anfänger / etc." />
-                </div>
+
               </div>
+
+
 
               <div>
+
                 <label for="message">Nachricht</label>
+
                 <textarea id="message" name="message" rows="5" required
-                  placeholder="Erzähl uns kurz, wohin du möchtest, wann du reisen willst und welche Fragen offen sind."></textarea>
+
+                  placeholder="Erz—hl uns kurz, wohin du möchtest, wann du reisen willst und welche Fragen offen sind."></textarea>
+
               </div>
 
-              <div class="passport-wrap" id="passportWrap" hidden>
-                <div class="passport-head">
-                  <h4>Passdaten (optional)</h4>
-                  <p class="micro subtle">
-                    Nur nötig für die Reiseunterlagen, <strong>nachdem</strong> wir die Verfügbarkeit bestätigt haben.
-                    Wenn du möchtest, lass es leer — wir holen es später über einen sicheren Kanal ein.
-                  </p>
-                </div>
 
-                <div class="form-grid">
-                  <div>
-                    <label for="nationality">Staatsangehörigkeit (optional)</label>
-                    <input id="nationality" name="nationality" type="text" />
-                  </div>
-                  <div>
-                    <label for="passport">Passnummer (optional)</label>
-                    <input id="passport" name="passport" type="text" />
-                  </div>
-                </div>
-
-                <div class="form-grid">
-                  <div>
-                    <label for="issueDate">Ausstellungsdatum des Passes (optional)</label>
-                    <input id="issueDate" name="issueDate" type="date" />
-                  </div>
-                  <div>
-                    <label for="expiryDate">Ablaufdatum des Passes (optional)</label>
-                    <input id="expiryDate" name="expiryDate" type="date" />
-                  </div>
-                </div>
-              </div>
 
               <div id="additionalGuests"></div>
 
+
+
               <div class="agb-wrap" id="agbWrap" hidden>
+
                 <h4>AGB</h4>
+
                 <div class="agb">
+
                   <p class="micro subtle" style="margin-top:0;">
+
                     Stornierung: bis einschließlich 60 Tage vor Start — 50% Gebühr. Weniger als 60 Tage oder No-Show — 100% Gebühr.
+
                     Touren können aus Sicherheitsgründen oder höherer Gewalt geändert/abgesagt werden.
+
                   </p>
+
                 </div>
 
+
+
                 <label class="check" id="termsCheck">
+
                   <input type="checkbox" id="acceptAgb" name="acceptAgb" />
+
                   <span>Ich habe die AGB gelesen und akzeptiere sie.</span>
+
                 </label>
+
               </div>
+
+
 
               <p class="micro subtle" style="margin-top:.95rem;">
+
                 Mit dem Absenden erlaubst du uns, dich zu deiner Anfrage zu kontaktieren.
-                Lies unsere <a href="#" id="openPrivacyInline">Datenschutzerklärung</a> und <a href="#" id="openAgbInline">AGB</a>.
+
+                Lies unsere <a href="#" id="openPrivacyInline">Datenschutzerkl—rung</a> und <a href="#" id="openAgbInline">AGB</a>.
+
               </p>
 
+
+
               <div class="form-actions">
+
                 <button class="btn btn-primary" type="submit" id="submitBtn">Senden</button>
-                <p class="micro subtle" id="submitHint">
-                  Für einfache Fragen brauchen wir keine Passdaten. Eine Anfrage ist erst nach unserer Rückmeldung verbindlich.
-                </p>
+
               </div>
 
-              <div class="micro subtle">
-                <strong>Datenminimierung:</strong> Passfelder sind optional und können später über einen sicheren Kanal erhoben werden.
-              </div>
             </form>
+
           </div>
+
         </div>
+
       </div>
+
+
 
       <div class="booking-foot">
-        <div class="micro subtle">Lieber per E-Mail? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> — Oder <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
+
+        <div class="micro subtle">Lieber per E-Mail— <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> — Oder <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
+
       </div>
+
     </div>
+
   </section>
 
+
+
   <script src="/language-switcher.js"></script>
+
   <script src="/script.js" data-cfasync="false"></script>
+
   <script src="/cookies.js"></script>
+
 </body>
+
 </html>
+
+
+
+
+
+
 
 
 

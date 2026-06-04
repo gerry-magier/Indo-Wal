@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <script data-cfasync="false" src="/analytics.js"></script>
@@ -321,16 +321,9 @@
               </p>
 
               <h3>Your details</h3>
-
-              <div class="form-grid">
-                <div>
-                  <label for="firstName">First name</label>
-                  <input id="firstName" name="firstName" type="text" required />
-                </div>
-                <div>
-                  <label for="lastName">Last name</label>
-                  <input id="lastName" name="lastName" type="text" />
-                </div>
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
               </div>
 
               <div class="form-grid">
@@ -374,38 +367,6 @@
                   placeholder="Tell us your expectations (and any concerns). We'll reply honestly about fit + feasibility."></textarea>
               </div>
 
-              <div class="passport-wrap" id="passportWrap" hidden>
-                <div class="passport-head">
-                  <h4>Passport details (optional)</h4>
-                  <p class="micro subtle">
-                    Only required for trip paperwork <strong>after</strong> we confirm availability.
-                    If you prefer, leave it blank — we'll collect it later via a secure channel.
-                  </p>
-                </div>
-
-                <div class="form-grid">
-                  <div>
-                    <label for="nationality">Nationality (optional)</label>
-                    <input id="nationality" name="nationality" type="text" />
-                  </div>
-                  <div>
-                    <label for="passport">Passport number (optional)</label>
-                    <input id="passport" name="passport" type="text" />
-                  </div>
-                </div>
-
-                <div class="form-grid">
-                  <div>
-                    <label for="issueDate">Passport issue date (optional)</label>
-                    <input id="issueDate" name="issueDate" type="date" />
-                  </div>
-                  <div>
-                    <label for="expiryDate">Passport expiry date (optional)</label>
-                    <input id="expiryDate" name="expiryDate" type="date" />
-                  </div>
-                </div>
-              </div>
-
               <div id="additionalGuests"></div>
 
               <div class="agb-wrap" id="agbWrap" hidden>
@@ -430,13 +391,6 @@
 
               <div class="form-actions">
                 <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
-                <p class="micro subtle" id="submitHint">
-                  Questions don't require passport details. Requests are confirmed only after our reply.
-                </p>
-              </div>
-
-              <div class="micro subtle">
-                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
               </div>
             </form>
           </div>

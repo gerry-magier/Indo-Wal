@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <script data-cfasync="false" src="/analytics.js"></script>
@@ -11,7 +11,7 @@
   <link rel="alternate" hreflang="x-default" href="https://twinexpeditions.com/blog/nabire-kaimana-whale-sharks.html" />
 
   <title>Nabire Whale Shark Swimming & Cenderawasih Bay Booking Guide</title>
-  <meta name="description" content="How to book a Nabire whale shark swimming trip in Cenderawasih Bay: 2-3h transport from Nabire airport, overnight options, boat logistics, whale shark sightings, and Kaimana comparison." />
+  <meta name="description" content="How to book a Nabire whale shark swimming trip in Cenderawasih Bay: 2–3h transport from Nabire airport, overnight options, boat logistics, whale shark sightings, and Kaimana comparison." />
 
   <link rel="stylesheet" href="/style.css" />
 
@@ -387,16 +387,9 @@
               </p>
 
               <h3>Your details</h3>
-
-              <div class="form-grid">
-                <div>
-                  <label for="firstName">First name</label>
-                  <input id="firstName" name="firstName" type="text" required />
-                </div>
-                <div>
-                  <label for="lastName">Last name</label>
-                  <input id="lastName" name="lastName" type="text" />
-                </div>
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
               </div>
 
               <div class="form-grid">
@@ -432,10 +425,6 @@
                     <option value="5">5 guests</option>
                   </select>
                 </div>
-                <div>
-                  <label for="swimLevel">Swim level (optional)</label>
-                  <input id="swimLevel" name="swimLevel" type="text" placeholder="e.g., confident swimmer / beginner / etc." />
-                </div>
               </div>
 
               <div>
@@ -443,60 +432,13 @@
                 <textarea id="message" name="message" rows="5" required
                   placeholder="Tell us your rough dates, group size, and any questions (moon phase, sea conditions, pickup plan in Nabire, etc.)."></textarea>
               </div>
-
-              <div class="passport-wrap" id="passportWrap" hidden>
-                <div class="passport-head">
-                  <h4>Passport details (optional)</h4>
-                  <p class="micro subtle">
-                    Only required for trip paperwork <strong>after</strong> we confirm availability.
-                    If you prefer, leave it blank — we'll collect it later via a secure channel.
-                  </p>
-                </div>
-
-                <div class="form-grid">
-                  <div>
-                    <label for="nationality">Nationality (optional)</label>
-                    <input id="nationality" name="nationality" type="text" />
-                  </div>
-                  <div>
-                    <label for="passportNumber">Passport number (optional)</label>
-                    <input id="passportNumber" name="passportNumber" type="text" />
-                  </div>
-                </div>
-
-                <div class="form-grid">
-                  <div>
-                    <label for="passportIssue">Issue date (optional)</label>
-                    <input id="passportIssue" name="passportIssue" type="date" />
-                  </div>
-                  <div>
-                    <label for="passportExpiry">Expiry date (optional)</label>
-                    <input id="passportExpiry" name="passportExpiry" type="date" />
-                  </div>
-                </div>
-              </div>
-
-              <div class="privacy-grid">
-                <label class="checkbox">
-                  <input type="checkbox" id="agree" required />
-                  <span>I agree to be contacted about my request.</span>
-                </label>
-              </div>
-
-              <p class="micro subtle" style="margin-top:.95rem;">
+<p class="micro subtle" style="margin-top:.95rem;">
                 By submitting, you agree that we contact you about your request.
                 Read our <a href="#" id="openPrivacyInline">Privacy Policy</a> and <a href="#" id="openAgbInline">Terms & Conditions</a>.
               </p>
 
               <div class="form-actions">
                 <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
-                <p class="micro subtle" id="submitHint">
-                  Questions don't require passport details. Requests are confirmed only after our reply.
-                </p>
-              </div>
-
-              <div class="micro subtle">
-                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
               </div>
             </form>
           </div>

@@ -1,581 +1,1067 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html lang="de">
+
 <head>
+
   <script data-cfasync="false" src="/analytics.js"></script>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+
   <link rel="canonical" href="https://twinexpeditions.com/de/blog/agats-asmat-papua.html" />
+
   <link rel="alternate" hreflang="en" href="https://twinexpeditions.com/blog/agats-asmat-papua.html" />
+
   <link rel="alternate" hreflang="de" href="https://twinexpeditions.com/de/blog/agats-asmat-papua.html" />
+
   <link rel="alternate" hreflang="x-default" href="https://twinexpeditions.com/blog/agats-asmat-papua.html" />
 
+
+
   <title>Agats und die Asmat: Papua Reiseblog</title>
-  <meta name="description" content="Nachdem Dekai nicht geklappt hat, reisten wir nach Agats, um die Asmat zu treffen: Homestays, Bootsfahrten durch Mangroven, weltberühmte Holzschnitzkunst und eine lange Nacht auf dem Fluss auf Krokodilsuche." />
+
+  <meta name="description" content="Nachdem Dekai nicht geklappt hat, reisten wir nach Agats, um die Asmat zu treffen: Homestays, Bootsfahrten durch Mangroven, weltber—hmte Holzschnitzkunst und eine lange Nacht auf dem Fluss auf Krokodilsuche." />
+
+
 
   <link rel="stylesheet" href="/style.css" />
 
+
+
   <style>
+
     /* Footer enhancements (same as main index) */
+
     .footer-links {
+
       display: flex;
+
       gap: 1.5rem;
+
       align-items: center;
+
       flex-wrap: wrap;
+
     }
+
     .footer-link {
+
       text-decoration: none;
+
       color: var(--muted);
+
       font-weight: 750;
+
       transition: color 0.2s ease;
+
     }
+
     .footer-link:hover {
+
       color: var(--brand);
+
       text-decoration: underline;
+
     }
+
     .footer-link-btn {
+
       background: none;
+
       border: none;
+
       color: var(--muted);
+
       font-weight: 750;
+
       cursor: pointer;
+
       padding: 0;
+
       font-family: inherit;
+
       font-size: inherit;
+
       transition: color 0.2s ease;
+
     }
+
     .footer-link-btn:hover {
+
       color: var(--brand);
+
       text-decoration: underline;
+
     }
+
     @media (max-width: 680px) {
+
       .footer-inner {
+
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 1rem;
+
       }
+
       .footer-links {
+
         width: 100%;
+
       }
+
     }
+
+
 
     /* Blog post specific styles */
+
     .blog-post { max-width: 720px; margin: 0 auto; padding: 3rem 0; }
+
     .blog-back { display:inline-flex;align-items:center;gap:.5rem;margin-bottom:2rem;color:var(--muted);text-decoration:none;font-weight:700;font-size:.95rem;transition:color .2s ease; }
+
     .blog-back:hover { color: var(--brand); }
+
     .blog-back:before { content:'\2039'; font-size:1.1rem; }
+
     .blog-header { margin-bottom: 2.5rem; }
+
     .blog-date { color: var(--muted2); font-weight: 650; font-size: 0.95rem; margin-bottom: 0.8rem; }
+
     .blog-title { margin: 0 0 1rem; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -0.03em; line-height: 1.2; }
+
     .blog-subtitle { color: var(--muted); font-size: 1.2rem; font-weight: 650; line-height: 1.5; margin: 0; }
+
     .blog-featured-image { width: 100%; height: auto; border-radius: var(--rLg); margin: 2rem 0 2.5rem; box-shadow: var(--shadowSoft); }
+
     .blog-content { line-height: 1.8; color: var(--text); }
+
     .blog-content h2 { margin: 2.5rem 0 1rem; font-size: 1.8rem; letter-spacing: -0.02em; font-weight: 850; }
+
     .blog-content h3 { margin: 2rem 0 0.8rem; font-size: 1.4rem; letter-spacing: -0.02em; font-weight: 800; }
+
     .blog-content p { margin: 0 0 1.2rem; font-weight: 600; }
+
     .blog-content img { width: 100%; height: auto; border-radius: var(--rMd); margin: 2rem 0; box-shadow: var(--shadowSoft); }
+
     .blog-content blockquote { margin: 2rem 0; padding: 1.5rem 1.8rem; background: rgba(0,180,216,.06); border-left: 4px solid var(--brand); border-radius: var(--rMd); font-style: italic; color: var(--muted); }
+
     .blog-content blockquote p { margin: 0; }
+
     .blog-content ul, .blog-content ol { margin: 1.2rem 0; padding-left: 1.8rem; }
+
     .blog-content li { margin: 0.5rem 0; font-weight: 600; }
+
     .blog-content a { color: var(--brand); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; transition: color 0.2s ease; }
+
     .blog-content a:hover { color: #056aa2; }
+
     .blog-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--stroke); }
+
     .blog-cta { background: linear-gradient(135deg, rgba(0,180,216,.08), rgba(0,119,182,.06)); border: 1px solid var(--stroke); border-radius: var(--rLg); padding: 2rem; text-align: center; }
+
     .blog-cta h3 { margin: 0 0 0.8rem; font-size: 1.5rem; letter-spacing: -0.02em; }
+
     .blog-cta p { margin: 0 0 1.5rem; color: var(--muted); font-weight: 650; }
+
     .blog-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
     @media (max-width: 768px) {
+
       .blog-post { padding: 2rem 0; }
+
       .blog-cta-buttons { flex-direction: column; }
+
     }
+
   </style>
+
 </head>
 
+
+
 <body>
+
   <!-- ============================================ -->
+
   <!-- BLOG METADATA - FOR AUTOMATIC INDEX LOADING -->
+
   <!-- ============================================ -->
+
   <script type="application/json" data-blog-metadata>
+
   {
+
     "title": "Agats und die Asmat",
+
     "subtitle": "Endlich ein lokaler Stamm in Papua",
+
     "excerpt": "Nachdem unser Korowai-Plan auseinanderfiel, folgten wir einer unerwarteten Empfehlung nach Agats — eine Reise durch Mangroven, Asmat-Dörfer, sakrale Holzschnitzkunst und eine lange Nacht auf dem Fluss.",
+
     "image": "/blog/assets/optimized/asmat.jpg",
+
     "date": "2025-08-18",
+
     "author": "Twin Expeditions"
+
   }
+
   </script>
+
   <!-- ============================================ -->
+
+
 
   <a class="skip" href="#main">Zum Inhalt springen</a>
 
+
+
   <div id="navbar-placeholder">
+
   <noscript>
+
     <nav class="fallback-nav" aria-label="Seitenlinks">
+
       <a href="/de/">Home</a>
+
       <a href="/de/timor-leste-blue-whale.html">Blauwal Expedition</a>
+
       <a href="/de/papua.html">Papua Expeditionen</a>
+
       <a href="/de/flores.html">Flores Reise</a>
+
       <a href="/de/blog/">Expeditions-Journal</a>
+
       <a href="/de/faq.html">FAQ</a>
+
       <a href="/de/contact.html">Kontakt</a>
+
     </nav>
+
   </noscript></div>
 
+
+
   <main id="main">
+
     <article class="section">
+
       <div class="wrap">
+
         <div class="blog-post">
+
+
 
           <a href="/blog/index.html" class="blog-back">Zurück zum Blog</a>
 
+
+
           <header class="blog-header">
+
             <div class="blog-date">18. August 2025</div>
+
             <h1 class="blog-title">Agats und die Asmat</h1>
+
             <p class="blog-subtitle">
+
               Endlich ein lokaler Stamm in Papua
+
             </p>
+
           </header>
+
+
 
           <img src="/blog/assets/optimized/asmat.jpg" alt="Agats und die Asmat-Region in Papua" class="blog-featured-image" />
 
+
+
           <div class="blog-content">
-            <p>
-              Nachdem unser ursprünglicher Plan, einen lokalen Stamm nahe Dekai zu besuchen, nicht geklappt hat, entschieden wir uns für eine Alternative — und was für eine Alternative das war.
-              Unser Ziel: die Asmat.
-            </p>
 
             <p>
-              Interessanterweise kam die Idee nicht einmal von uns. Sie wurde uns vom Polizeichef in Dekai empfohlen.
-              Agats sei derzeit deutlich sicherer, sagte er, und besser geeignet, um echte Einblicke in das Leben eines lokalen Stammes zu bekommen.
+
+              Nachdem unser ursprünglicher Plan, einen lokalen Stamm nahe Dekai zu besuchen, nicht geklappt hat, entschieden wir uns für eine Alternative — und was für eine Alternative das war.
+
+              Unser Ziel: die Asmat.
+
             </p>
+
+
+
+            <p>
+
+              Interessanterweise kam die Idee nicht einmal von uns. Sie wurde uns vom Polizeichef in Dekai empfohlen.
+
+              Agats sei derzeit deutlich sicherer, sagte er, und besser geeignet, um echte Einblicke in das Leben eines lokalen Stammes zu bekommen.
+
+            </p>
+
+
 
             <h2>Nach Agats kommen</h2>
+
             <p>
+
               Die Anreise war lang, aber machbar: Von Dekai flogen wir zurück nach Jayapura, dann weiter nach Timika und schließlich nach Agats.
+
               Und dann — endlich — waren wir da.
+
             </p>
 
+
+
             <h2>Ankunft in Agats: Hauptstadt der Asmat-Region</h2>
+
             <p>
+
               Um vom Flughafen ins eigentliche Zentrum von Agats zu gelangen, muss man ein Wassertaxi nehmen.
+
               Allein diese kurze Bootsfahrt fühlte sich schon wie ein Erlebnis an — Holzstege, Kanäle, Stelzenhäuser.
+
               Man merkt sofort: In Agats läuft alles in einem anderen Rhythmus.
+
             </p>
+
+
 
             <img src="/blog/assets/optimized/papuaboot.jpg" alt="Bootsfahrt durch die Wasserwege in Agats" />
 
+
+
             <p>
+
               Im Vergleich zu Dekai ist Agats deutlich besser auf Besucher vorbereitet. Ein Grund ist das große Asmat-Festival, das jedes Jahr im Oktober stattfindet — mit traditionellen Tänzen, Musik, Bootsrennen — und vor allem Holzschnitzerei.
+
             </p>
+
+
 
             <h2>Homestay-Leben und erste Kontakte</h2>
+
             <p>
+
               In Agats kann man in mehreren lokalen Homestays übernachten. Wir nahmen das erste, das wir fanden — und hatten Glück.
-              Schon am ersten Tag knüpften wir Kontakte, die später entscheidend werden sollten.
+
+              Schon am ersten Tag kn—pften wir Kontakte, die später entscheidend werden sollten.
+
             </p>
 
+
+
             <p>
-              Unser Ziel war klar: ein lokales Asmat-Dorf zu besuchen. Als wir das dem Team in unserem Homestay erzählten, waren sie sichtbar begeistert.
+
+              Unser Ziel war klar: ein lokales Asmat-Dorf zu besuchen. Als wir das dem Team in unserem Homestay erz—hlten, waren sie sichtbar begeistert.
+
               Sie erklärten, wir könnten ihr eigenes <em>kampung</em> besuchen — ihr Dorf.
+
             </p>
 
+
+
             <p>
+
               Wir einigten uns schnell auf einen Preis, und am nächsten Morgen ging es los.
+
             </p>
+
+
 
             <h2>Drei Stunden mit dem Boot durch Mangroven</h2>
-            <p>
-              Mit ihrem Boot fuhren wir rund drei Stunden lang tief in die Mangrovenwälder hinein.
-              Die Fahrt war fast magisch: dichte Vegetation, braunes Wasser und absolute Stille.
-            </p>
 
             <p>
-              Wir hielten Ausschau nach Schlangen und Krokodilen — aber zunächst sahen wir keine. Das sollte sich später ändern.
+
+              Mit ihrem Boot fuhren wir rund drei Stunden lang tief in die Mangrovenw—lder hinein.
+
+              Die Fahrt war fast magisch: dichte Vegetation, braunes Wasser und absolute Stille.
+
             </p>
+
+
+
+            <p>
+
+              Wir hielten Ausschau nach Schlangen und Krokodilen — aber zunächst sahen wir keine. Das sollte sich später ändern.
+
+            </p>
+
+
 
             <h2>Besuch eines Asmat-Dorfes</h2>
-            <p>
-              Als wir ankamen, wurden wir herzlich empfangen. Das Erste, was sie uns zeigten, war das Männerhaus — eine riesige Gemeinschaftshätte, in der viele Männer schlafen.
-            </p>
 
             <p>
-              Die Verständigung war nicht immer einfach. Unser Indonesisch half, aber in diesem abgelegenen Teil Papuas wurde es deutlich weniger verstanden als anderswo.
-              Ein kurzer Hinweis warum: Indonesien ist Heimat von mehr als 800 Sprachen.
+
+              Als wir ankamen, wurden wir herzlich empfangen. Das Erste, was sie uns zeigten, war das Männerhaus — eine riesige Gemeinschaftshütte, in der viele Männer schlafen.
+
             </p>
+
+
+
+            <p>
+
+              Die Verständigung war nicht immer einfach. Unser Indonesisch half, aber in diesem abgelegenen Teil Papuas wurde es deutlich weniger verstanden als anderswo.
+
+              Ein kurzer Hinweis warum: Indonesien ist Heimat von mehr als 800 Sprachen.
+
+            </p>
+
+
 
             <img src="/blog/assets/optimized/dorfasmat.jpg" alt="Stelzendorf-Alltag in der Asmat-Region" />
 
+
+
             <h2>Die Asmat und ihre Holzschnitzkunst</h2>
-            <p>
-              Die Asmat sind weltweit berühmt für ihre Holzschnitzkunst. Diese Kunst ist tief spirituell, und ihre Werke sind in Museen auf der ganzen Welt vertreten.
-            </p>
 
             <p>
+
+              Die Asmat sind weltweit ber—hmt für ihre Holzschnitzkunst. Diese Kunst ist tief spirituell, und ihre Werke sind in Museen auf der ganzen Welt vertreten.
+
+            </p>
+
+
+
+            <p>
+
               Ihr Ruf reicht über Kunst hinaus: 1961 verschwand Michael Rockefeller nach einem Besuch bei den Asmat spurlos.
+
               Bis heute können Einheimische weder bestätigen noch verneinen, was damals wirklich passiert ist.
+
             </p>
 
+
+
             <p>
+
               Als wir fragten, ob wir ihnen beim Schnitzen zusehen dürfen, änderte sich die Stimmung sofort.
+
               Mehrere Männer griffen zu ihren Macheten, suchten passendes Holz, und ein kleiner spontaner Wettbewerb begann.
+
             </p>
 
+
+
             <p>
+
               Wir erklärten offen, dass wir nur drei Stücke kaufen können, weil die Einfuhr von mehr nach Deutschland nicht erlaubt wäre.
+
               über zwei Stunden schnitzten die Männer alles Mögliche: Skulpturen, Dekorationen, sogar Aschenbecher.
+
               Am Ende kauften wir drei Werke, bezahlten die Schnitzer fair und waren mehr als zufrieden mit dem Ergebnis.
+
             </p>
+
+
 
             <img src="/blog/assets/optimized/holzasmat.jpg" alt="Asmat-Holzschnitzerei in Arbeit" />
 
+
+
             <h2>Krokodile, Pythons und Leben in den Mangroven</h2>
+
             <p>
+
               Dann erwähnte einer der Männer ganz beiläufig, dass mindestens einmal pro Woche riesige Pythons gesichtet werden — und fragte, ob wir mitkommen wollen, um gemeinsam zu suchen.
+
             </p>
 
+
+
             <p>
+
               Das Dorf ist auf Stelzen gebaut, direkt im Mangrovenwald — perfektes Gebiet für Schlangen und für Krokodile.
+
             </p>
 
+
+
             <p>
-              Uns wurde erzählt, dass seit der Gründung des Dorfes zwei Menschen von Krokodilen getötet wurden.
+
+              Uns wurde erz—hlt, dass seit der Gr—ndung des Dorfes zwei Menschen von Krokodilen get—tet wurden.
+
               Jedes Mal habe sich das ganze Dorf versammelt, um genau dieses Tier zu jagen.
-              Sie zeigten uns sogar ein Foto von einem Krokodil mit über sechs Metern Länge.
+
+              Sie zeigten uns sogar ein Foto von einem Krokodil mit über sechs Metern L—nge.
+
             </p>
+
+
 
             <h2>Eine Nacht auf dem Fluss: Krokodiljagd</h2>
+
             <p>
+
               Ein weiteres Highlight stand noch bevor. Einer der Männer ging auf seine wöchentliche Krokodiljagd und lud uns ein — unter der Bedingung, dass wir Kaffee, Zigaretten und Taschenlampen übernehmen.
+
               Wir sagten sofort zu.
+
             </p>
 
+
+
             <p>
+
               Um 22 Uhr, bei leichtem Nieselregen, starteten wir. Die Methode ist simpel:
+
               Ein Scout leuchtet mit der Taschenlampe über den Fluss und sucht nach dem Reflex der Krokodilaugen.
+
               Dann nähert sich das Boot leise, und das Tier wird mit einem kleinen Harpunenspeer erlegt.
+
             </p>
 
+
+
             <p>
+
               In diesem Teil Papuas ist das Jagen und Essen von Krokodilen normal. Für uns verlief die Nacht jedoch anders als erwartet.
+
               Stundenlang fanden wir keine großen Tiere.
+
             </p>
 
+
+
             <p>
+
               Ein Begleiter fing ein wenige Tage altes Baby-Krokodil mit bloßen Händen — und ließ es wieder frei.
-              Andere, etwas größere Tiere hatten nicht so viel Glück.
+
+              Andere, etwas gr—ere Tiere hatten nicht so viel Glück.
+
             </p>
+
+
 
             <img src="/blog/assets/optimized/kleineskroko.jpg" alt="Ein kleines Krokodil während der Nacht auf dem Fluss" />
 
+
+
             <p>
+
               Wir verbrachten rund sieben Stunden im Regen auf dem Boot.
+
               Das Erlebnis war unglaublich besonders — und körperlich anstrengend.
+
             </p>
+
+
 
             <h2>Abreise aus der Asmat-Region</h2>
-            <p>
-              Nach mehr als vier Tagen in der Asmat-Region verließen wir Agats — erschöpft, aber glücklich.
-            </p>
 
             <p>
-              Wir erlebten endlich das, was wir uns in Papua erhofft hatten: echten Kontakt mit einem lokalen Stamm, Begegnungen auf Augenhöhe,
-              und einen tiefen Einblick in eine Welt, die nur wenige Reisende jemals zu sehen bekommen.
+
+              Nach mehr als vier Tagen in der Asmat-Region verließen wir Agats — erschöpft, aber glücklich.
+
             </p>
+
+
+
+            <p>
+
+              Wir erlebten endlich das, was wir uns in Papua erhofft hatten: echten Kontakt mit einem lokalen Stamm, Begegnungen auf Augenh—he,
+
+              und einen tiefen Einblick in eine Welt, die nur wenige Reisende jemals zu sehen bekommen.
+
+            </p>
+
           </div>
 
+
+
             <div class="related-links">
+
               <h3>Papua Route weiterdenken</h3>
+
               <div class="related-grid">
+
                 <a class="related-link" href="/de/asmat-expedition.html">Asmat Expedition ab Agats<span>Aus dieser Geschichte wird eine private Asmat Route.</span></a>
+
                 <a class="related-link" href="/de/papua.html#asmat-itinerary">Papua Asmat Ablauf<span>Vergleiche Asmat mit Korowai und Nabire.</span></a>
+
                 <a class="related-link" href="/de/blog/dekai-korowai-papua.html">Dekai und die Korowai<span>Das h&auml;rtere Kapitel im Inland von Papua.</span></a>
+
               </div>
+
             </div>
+
+
 
           <footer class="blog-footer">
+
             <div class="blog-cta">
+
               <h3>Erlebe die Asmat selbst</h3>
+
               <p>5 Tage / 4 Nächte — Agats, Flussfahrten, Dorf Warse und authentische Asmat-Holzschnitzkunst</p>
+
               <div class="blog-cta-buttons">
+
                 <a href="/de/asmat-expedition.html" class="btn btn-secondary">Details Asmat</a>
+
                 <button class="btn btn-primary" data-open-request data-mode="contact" data-tour="Asmat 5D/4N" type="button">Asmat-Expedition anfragen</button>
+
               </div>
+
             </div>
+
           </footer>
 
+
+
         </div>
+
       </div>
+
     </article>
+
   </main>
 
+
+
   <div id="footer-placeholder">
+
   <noscript>
+
     <footer class="fallback-footer" aria-label="Footer-Links">
+
       <a href="/de/timor-leste-blue-whale.html">Timor-Leste Blauwal Expedition</a>
+
       <a href="/de/papua.html">Papua Expeditionen</a>
+
       <a href="/de/flores.html">Flores Rundreise</a>
+
       <a href="/de/blog/">Reiseberichte</a>
+
       <a href="/de/contact.html">Reiseberatung anfragen</a>
-      <a href="/de/privacy.html">Datenschutzerkl�rung</a>
+
+      <a href="/de/privacy.html">Datenschutzerklärung</a>
+
       <a href="/de/impressum.html">Impressum</a>
+
     </footer>
+
   </noscript></div>
 
+
+
   <!-- REQUEST MODAL + main script -->
+
   <section class="booking-view" id="bookingView" aria-hidden="true">
+
     <div class="booking-panel" role="dialog" aria-modal="true" aria-label="Anfrageformular">
+
       <div class="booking-head">
+
         <div class="booking-title">
+
           <div class="booking-kicker">Anfrage</div>
+
           <h2 id="requestTitle">Eine Frage stellen</h2>
+
           <p class="micro subtle" id="requestSubtitle">
+
             Frag einfach. Wir antworten klar und sagen dir, was realistisch ist.
+
           </p>
+
         </div>
+
         <button class="icon-btn" id="closeBooking" type="button" aria-label="Anfrage schließen">&times;</button>
+
       </div>
 
+
+
       <div class="booking-body">
+
         <div class="mode-tabs" role="tablist" aria-label="Anfrage-Modus">
+
           <button class="mode-tab active" id="tabContact" type="button" data-set-mode="contact" role="tab" aria-selected="true">Eine Frage stellen</button>
+
           <button class="mode-tab" id="tabBooking" type="button" data-set-mode="booking" role="tab" aria-selected="false">Expedition anfragen</button>
+
         </div>
 
+
+
         <div class="booking-grid">
+
           <div class="booking-left">
+
             <div class="card reveal" id="bookingCalendarCard">
+
               <h3>Termine</h3>
 
+
+
               <div class="cal-top">
+
                 <button class="cal-nav" id="bookingPrevMonth" type="button" aria-label="Vorheriger Monat">&lsaquo;</button>
+
                 <div class="cal-title" id="bookingMonthName">Oktober 2026</div>
+
                 <button class="cal-nav" id="bookingNextMonth" type="button" aria-label="Nächster Monat">&rsaquo;</button>
+
               </div>
 
+
+
               <div class="cal-weekdays" aria-hidden="true">
+
                 <span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span>
+
               </div>
+
+
 
               <div class="calendar" id="bookingCalendar"></div>
 
+
+
               <div class="cal-controls">
+
                 <label for="bookingPersons">Gäste</label>
+
                 <select id="bookingPersons">
+
                   <option value="1">1 Person</option>
+
                   <option value="2">2 Personen</option>
+
                   <option value="3">3 Personen</option>
+
                   <option value="4">4 Personen</option>
+
                   <option value="5">5 Personen</option>
+
                 </select>
+
               </div>
+
+
 
               <div class="cal-meta">
+
                 <div id="bookingSelectedDays" class="meta-line"></div>
-                <div id="bookingPrice" class="meta-line strong">Preis: €0</div>
+
+                <div id="bookingPrice" class="meta-line strong">Preis: —0</div>
+
                 <div id="bookingTotalPrice" class="meta-line"></div>
+
               </div>
+
             </div>
+
             
+
             <div class="card reveal" id="papuaOptionCard">
+
               <h3>Papua-Expedition</h3>
+
               <label for="papuaTourSelect">Wähle deine Expedition</label>
+
               <select id="papuaTourSelect" style="width:100%; padding: 0.75rem; border: 1px solid var(--stroke2); border-radius: 0.5rem;">
+
                 <option value="Asmat Expedition">Asmat Expedition</option>
+
                 <option value="Asmat + Korowai Expedition">Asmat + Korowai Expedition</option>
+
               </select>
+
               <p class="micro subtle" style="margin-top:.75rem;">
+
                 Reise eigenständig nach <strong>Agats (Ewer)</strong>. Ab Agats organisieren wir die gesamte Logistik.
+
               </p>
+
             </div>
+
+
 
             <div class="card reveal">
+
               <h3>Zusammenfassung</h3>
+
               <p id="summaryDates">Termine: (optional)</p>
-              <p id="summaryGuests">Gäste: –</p>
-              <p id="summaryPrice">Preis: –</p>
+
+              <p id="summaryGuests">Gäste: —</p>
+
+              <p id="summaryPrice">Preis: —</p>
+
               <p class="micro subtle"><strong>Hinweis:</strong> Der Gesamtpreis ist unabhängig von der Gruppengröße fest. Der angezeigte Pro-Person-Betrag dient nur zur Orientierung.</p>
+
             </div>
+
           </div>
 
+
+
           <div class="booking-right">
+
             <form class="card reveal" id="requestForm" method="POST" action="https://api.web3forms.com/submit">
+
               <input type="hidden" name="access_key" value="3831585c-b896-4509-8b56-d697171762c8" />
+
               <input type="hidden" name="subject" value="New Twin Expeditions website request" />
+
               <input type="hidden" name="requestType" id="requestType" value="contact" />
+
               <!-- PAPUA CONTEXT -->
+
               <input type="hidden" name="expedition" value="Papua" />
+
               <input type="hidden" name="papuaTour" id="papuaTourField" value="Asmat Expedition" />
+
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
 
+
+
               <p class="honeypot" aria-hidden="true">
+
                 <label>Bitte nicht ausfüllen: <input name="bot-field" /></label>
+
               </p>
 
+
+
               <h3>Deine Angaben</h3>
-
-              <div class="form-grid">
-                <div>
-                  <label for="firstName">Vorname</label>
-                  <input id="firstName" name="firstName" type="text" required />
-                </div>
-                <div>
-                  <label for="lastName">Nachname</label>
-                  <input id="lastName" name="lastName" type="text" />
-                </div>
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
               </div>
 
+
+
               <div class="form-grid">
+
                 <div>
+
                   <label for="email">E-Mail</label>
+
                   <input id="email" name="email" type="email" required />
+
                 </div>
+
                 <div>
+
                   <label for="whatsapp">WhatsApp (optional)</label>
+
                   <input id="whatsapp" name="whatsapp" type="tel" />
+
                 </div>
+
               </div>
 
+
+
               <div class="form-grid">
+
                 <div>
+
                   <label for="tourStart">Startdatum <span class="mini-hint" id="startHint">(optional für Fragen)</span></label>
+
                   <input id="tourStart" name="tourStart" type="date" />
+
                 </div>
+
                 <div>
+
                   <label for="tourEnd">Enddatum <span class="mini-hint" id="endHint">(optional für Fragen)</span></label>
+
                   <input id="tourEnd" name="tourEnd" type="date" />
+
                 </div>
+
               </div>
 
+
+
               <div class="form-grid">
+
                 <div>
+
                   <label for="tourPersons">Gäste</label>
+
                   <select id="tourPersons" name="tourPersons" required>
+
                     <option value="1">1 Person</option>
+
                     <option value="2">2 Personen</option>
+
                     <option value="3">3 Personen</option>
+
                     <option value="4">4 Personen</option>
+
                     <option value="5">5 Personen</option>
+
                   </select>
+
                 </div>
+
               </div>
+
+
 
               <div>
+
                 <label for="message">Nachricht</label>
+
                 <textarea id="message" name="message" rows="5" required
-                  placeholder="Erzähl uns kurz, wohin du möchtest, wann du reisen willst und welche Fragen offen sind."></textarea>
+
+                  placeholder="Erz—hl uns kurz, wohin du möchtest, wann du reisen willst und welche Fragen offen sind."></textarea>
+
               </div>
 
-              <div class="passport-wrap" id="passportWrap" hidden>
-                <div class="passport-head">
-                  <h4>Passdaten (optional)</h4>
-                  <p class="micro subtle">
-                    Nur nötig für die Reiseunterlagen, <strong>nachdem</strong> wir die Verfügbarkeit bestätigt haben.
-                    Wenn du möchtest, lass es leer — wir holen es später über einen sicheren Kanal ein.
-                  </p>
-                </div>
 
-                <div class="form-grid">
-                  <div>
-                    <label for="nationality">Staatsangehörigkeit (optional)</label>
-                    <input id="nationality" name="nationality" type="text" />
-                  </div>
-                  <div>
-                    <label for="passport">Passnummer (optional)</label>
-                    <input id="passport" name="passport" type="text" />
-                  </div>
-                </div>
-
-                <div class="form-grid">
-                  <div>
-                    <label for="issueDate">Ausstellungsdatum des Passes (optional)</label>
-                    <input id="issueDate" name="issueDate" type="date" />
-                  </div>
-                  <div>
-                    <label for="expiryDate">Ablaufdatum des Passes (optional)</label>
-                    <input id="expiryDate" name="expiryDate" type="date" />
-                  </div>
-                </div>
-              </div>
 
               <div id="additionalGuests"></div>
 
+
+
               <div class="agb-wrap" id="agbWrap" hidden>
+
                 <h4>AGB</h4>
+
                 <div class="agb">
+
                   <p class="micro subtle" style="margin-top:0;">
+
                     Stornierung: bis einschließlich 60 Tage vor Start — 50% Gebühr. Weniger als 60 Tage oder No-Show — 100% Gebühr.
+
                     Touren können aus Sicherheitsgründen oder höherer Gewalt geändert/abgesagt werden.
+
                   </p>
+
                 </div>
 
+
+
                 <label class="check" id="termsCheck">
+
                   <input type="checkbox" id="acceptAgb" name="acceptAgb" />
+
                   <span>Ich habe die AGB gelesen und akzeptiere sie.</span>
+
                 </label>
+
               </div>
+
+
 
               <p class="micro subtle" style="margin-top:.95rem;">
+
                 Mit dem Absenden erlaubst du uns, dich zu deiner Anfrage zu kontaktieren.
-                Lies unsere <a href="#" id="openPrivacyInline">Datenschutzerklärung</a> und <a href="#" id="openAgbInline">AGB</a>.
+
+                Lies unsere <a href="#" id="openPrivacyInline">Datenschutzerkl—rung</a> und <a href="#" id="openAgbInline">AGB</a>.
+
               </p>
 
+
+
               <div class="form-actions">
+
                 <button class="btn btn-primary" type="submit" id="submitBtn">Senden</button>
-                <p class="micro subtle" id="submitHint">
-                  Für einfache Fragen brauchen wir keine Passdaten. Eine Anfrage ist erst nach unserer Rückmeldung verbindlich.
-                </p>
+
               </div>
 
-              <div class="micro subtle">
-                <strong>Datenminimierung:</strong> Passfelder sind optional und können später über einen sicheren Kanal erhoben werden.
-              </div>
             </form>
+
           </div>
+
         </div>
+
       </div>
+
+
 
       <div class="booking-foot">
-        <div class="micro subtle">Lieber per E-Mail? <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> — Oder <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
+
+        <div class="micro subtle">Lieber per E-Mail— <a href="mailto:requesttwinexpeditions@gmail.com">requesttwinexpeditions@gmail.com</a> — Oder <a href="https://wa.me/message/OQN3BLTZ47FPE1" target="_blank" rel="noopener">WhatsApp</a></div>
+
       </div>
+
     </div>
+
   </section>
 
+
+
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
   document.addEventListener('DOMContentLoaded', function () {
+
     const select = document.getElementById('papuaTourSelect');
+
     const hidden = document.getElementById('papuaTourField');
+
+
 
     if (!select || !hidden) return;
 
+
+
     // init
+
     hidden.value = select.value;
 
+
+
     // keep hidden field in sync with dropdown
+
     select.addEventListener('change', function () {
+
       hidden.value = this.value;
+
     });
+
+
 
     // allow buttons to preselect via data-tour
+
     document.querySelectorAll('[data-tour]').forEach(btn => {
+
       btn.addEventListener('click', () => {
+
         const tour = btn.getAttribute('data-tour');
+
         const match = Array.from(select.options).find(o => o.value === tour);
+
         if (match) {
+
           select.value = tour;
+
           hidden.value = tour;
+
         }
+
       });
+
     });
+
   });
+
   </script>
 
+
+
 <script src="/language-switcher.js"></script>
+
   <script src="/script.js" data-cfasync="false"></script>
+
   <script src="/cookies.js"></script>
+
 </body>
+
 </html>
+
+
+
+
+
 
 
 

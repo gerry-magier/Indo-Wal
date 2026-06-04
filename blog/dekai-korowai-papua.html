@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <script data-cfasync="false" src="/analytics.js"></script>
@@ -214,7 +214,7 @@
             </p>
 
             <p>
-              Mosquito coils are common and are meant to smolder through the night. We used them too —
+              Mosquito coils are common and are meant to smolder through the night. We used them too ?
               and still, I later got malaria. We'll share more in our Raja Ampat report.
             </p>
 
@@ -229,7 +229,7 @@
             </p>
 
             <p>
-              George told us we were the first tourists in months. Armed pickup trucks drove through the streets —
+              George told us we were the first tourists in months. Armed pickup trucks drove through the streets ?
               according to George, they belonged to local gold miners.
             </p>
 
@@ -240,7 +240,7 @@
             <img src="/blog/assets/optimized/kinderessen.jpg" alt="Sharing a meal and meeting locals in Dekai" />
 
             <p>
-              A small spark of hope appeared when people told us the authorities might be exaggerating the situation —
+              A small spark of hope appeared when people told us the authorities might be exaggerating the situation ?
               and that some tour guides allegedly pay fees to pass through.
               Even though corruption isn't an unknown topic in Indonesia, this did not feel like something we wanted to rely on.
             </p>
@@ -365,7 +365,7 @@
               </div>
             </div>
 
-            <!-- ? NEU (nur Request-Feld): Papua expedition Auswahl-Card wie bei agats -->
+            <!-- — NEU (nur Request-Feld): Papua expedition Auswahl-Card wie bei agats -->
             <div class="card reveal" id="papuaOptionCard">
               <h3>Papua expedition</h3>
               <label for="papuaTourSelect">Choose your expedition</label>
@@ -394,7 +394,7 @@
               
               <!-- PAPUA CONTEXT -->
               <input type="hidden" name="expedition" value="Papua" />
-              <!-- ? geändert (nur Request-Feld): id hinzugefügt wie bei agats -->
+              <!-- — ge?ndert (nur Request-Feld): id hinzugef?gt wie bei agats -->
               <input type="hidden" name="papuaTour" id="papuaTourField" value="Korowai Expedition" />
 
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
@@ -404,16 +404,9 @@
               </p>
 
               <h3>Your details</h3>
-
-              <div class="form-grid">
-                <div>
-                  <label for="firstName">First name</label>
-                  <input id="firstName" name="firstName" type="text" required />
-                </div>
-                <div>
-                  <label for="lastName">Last name</label>
-                  <input id="lastName" name="lastName" type="text" />
-                </div>
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
               </div>
 
               <div class="form-grid">
@@ -457,38 +450,6 @@
                   placeholder="Tell us your expectations (and any concerns). We'll reply honestly about fit + feasibility."></textarea>
               </div>
 
-              <div class="passport-wrap" id="passportWrap" hidden>
-                <div class="passport-head">
-                  <h4>Passport details (optional)</h4>
-                  <p class="micro subtle">
-                    Only required for trip paperwork <strong>after</strong> we confirm availability.
-                    If you prefer, leave it blank — we'll collect it later via a secure channel.
-                  </p>
-                </div>
-
-                <div class="form-grid">
-                  <div>
-                    <label for="nationality">Nationality (optional)</label>
-                    <input id="nationality" name="nationality" type="text" />
-                  </div>
-                  <div>
-                    <label for="passport">Passport number (optional)</label>
-                    <input id="passport" name="passport" type="text" />
-                  </div>
-                </div>
-
-                <div class="form-grid">
-                  <div>
-                    <label for="issueDate">Passport issue date (optional)</label>
-                    <input id="issueDate" name="issueDate" type="date" />
-                  </div>
-                  <div>
-                    <label for="expiryDate">Passport expiry date (optional)</label>
-                    <input id="expiryDate" name="expiryDate" type="date" />
-                  </div>
-                </div>
-              </div>
-
               <div id="additionalGuests"></div>
 
               <div class="agb-wrap" id="agbWrap" hidden>
@@ -513,13 +474,6 @@
 
               <div class="form-actions">
                 <button class="btn btn-primary" type="submit" id="submitBtn">Send</button>
-                <p class="micro subtle" id="submitHint">
-                  Questions don't require passport details. Requests are confirmed only after our reply.
-                </p>
-              </div>
-
-              <div class="micro subtle">
-                <strong>Data minimisation:</strong> passport fields are optional and can be collected later via a secure channel.
               </div>
             </form>
           </div>
@@ -532,7 +486,7 @@
     </div>
   </section>
 
-  <!-- ? NEU (nur Request-Feld): Sync Script wie bei agats -->
+  <!-- — NEU (nur Request-Feld): Sync Script wie bei agats -->
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.addEventListener('DOMContentLoaded', function () {
     const select = document.getElementById('papuaTourSelect');

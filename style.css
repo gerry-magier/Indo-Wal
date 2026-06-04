@@ -879,7 +879,7 @@ a:hover{color:#2d7ea5}
 
 /* Footer */
 .footer{padding:1.4rem 0 1.6rem;color:var(--muted2);background:#f5f7f8}
-.footer-inner{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
 .footer-note{font-weight:650}
 
 .fallback-nav,
@@ -986,8 +986,6 @@ input:focus,select:focus,textarea:focus{
 .check{display:flex;gap:.6rem;align-items:center;margin-top:.85rem;font-weight:800;color:var(--muted)}
 .check input{width:18px;height:18px}
 .mini-hint{font-weight:700;color:rgba(20,41,54,.55);font-size:.9rem}
-.passport-wrap{margin-top:1rem}
-.passport-head h4{margin:.2rem 0 .2rem;letter-spacing:-0.01em}
 .agb-wrap{margin-top:1rem}
 .agb{
   max-height:240px;overflow:auto;padding:.9rem 1rem;border-radius:var(--rLg);
