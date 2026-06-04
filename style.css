@@ -454,11 +454,17 @@ a:hover{color:#2d7ea5}
 }
 .hero-banner-bg{
   position:absolute;inset:0;
-  background:url("./assets/optimized/hero.jpg");
+  background-image:var(--hero-bg, url("./assets/optimized/hero.jpg"));
   background-size:cover;
   background-position:center;
   background-color:#06141e;
   transform:scale(1.01);
+  filter:saturate(1.04) contrast(1.04);
+}
+@media (min-width:1180px){
+  .hero-banner-bg{
+    background-image:var(--hero-bg-lg, var(--hero-bg, url("./assets/optimized/hero.jpg")));
+  }
 }
 .hero-grad{
   position:absolute;left:0;right:0;
