@@ -568,6 +568,90 @@ a:hover{color:#2d7ea5}
 
 .cta-row,.cta-mini{margin-top:1.2rem;display:flex;gap:.7rem;flex-wrap:wrap}
 
+/* Long-form guides */
+.guide-page .section-head{max-width:920px}
+.guide-page .section-lead{max-width:78ch}
+.guide-page .guide-facts .card{
+  border-top:4px solid var(--brand2);
+  box-shadow:none;
+}
+.guide-feature-media{
+  margin:1.4rem 0 0;
+  overflow:hidden;
+  border:1px solid var(--stroke);
+  border-radius:var(--rLg);
+  background:var(--card);
+  box-shadow:var(--shadowSoft);
+}
+.guide-feature-media picture{display:block}
+.guide-feature-media img{
+  display:block;
+  width:100%;
+  height:clamp(320px,48vw,620px);
+  object-fit:cover;
+  object-position:center;
+}
+.guide-feature-media figcaption{
+  padding:.85rem 1.1rem;
+  color:var(--muted);
+  font-weight:660;
+}
+.guide-table-wrap{
+  overflow-x:auto;
+  padding:0;
+}
+.guide-table{
+  width:100%;
+  min-width:680px;
+  border-collapse:collapse;
+  line-height:1.5;
+}
+.guide-table caption{
+  padding:1.15rem 1.15rem .75rem;
+  margin:0 !important;
+  color:var(--brand);
+  font-size:1.05rem;
+}
+.guide-table th{
+  background:var(--brand);
+  color:#fff;
+  font-size:.9rem;
+  letter-spacing:.01em;
+}
+.guide-table th,
+.guide-table td{
+  padding:.85rem 1rem !important;
+  border-bottom:1px solid var(--stroke) !important;
+  vertical-align:top;
+}
+.guide-table tbody tr:nth-child(even){background:rgba(45,126,165,.045)}
+.guide-table tbody tr:last-child td{border-bottom:0 !important}
+.guide-table .recommended-row{background:rgba(45,126,165,.13) !important}
+.guide-table .recommended-row td:first-child{color:var(--brand)}
+.guide-page .twin-table td:first-child{width:34%;color:var(--brand)}
+.guide-steps .card{
+  position:relative;
+  padding-top:3.4rem;
+  box-shadow:none;
+}
+.step-number{
+  position:absolute;
+  top:1rem;
+  left:1.15rem;
+  display:grid;
+  place-items:center;
+  width:2rem;
+  height:2rem;
+  border-radius:50%;
+  background:var(--brand);
+  color:#fff;
+  font-weight:950;
+}
+@media (max-width:680px){
+  .guide-feature-media img{height:280px}
+  .guide-table{min-width:620px}
+}
+
 /* FULL BLEED (drohne.jpg BIG) */
 .full-bleed{
   margin:1.25rem 0 0;
