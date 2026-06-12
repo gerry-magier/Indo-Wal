@@ -571,6 +571,22 @@ a:hover{color:#2d7ea5}
 /* Long-form guides */
 .guide-page .section-head{max-width:920px}
 .guide-page .section-lead{max-width:78ch}
+.guide-title-de{
+  font-size:clamp(2.35rem,4vw,3.25rem);
+}
+.guide-title-line{
+  display:block;
+  white-space:nowrap;
+}
+@media (max-width:980px){
+  .guide-title-line{
+    display:inline;
+    white-space:normal;
+  }
+  .guide-title-line + .guide-title-line::before{
+    content:" ";
+  }
+}
 .guide-page .guide-facts .card{
   border-top:4px solid var(--brand2);
   box-shadow:none;
