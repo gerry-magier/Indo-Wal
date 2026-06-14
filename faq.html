@@ -454,7 +454,7 @@
         tabs.forEach((tab) => {
           const active = tab.dataset.faqRegion === region;
           tab.classList.toggle('is-active', active);
-          tab.setAttribute('aria-selected', active — 'true' : 'false');
+          tab.setAttribute('aria-selected', active ? 'true' : 'false');
         });
 
         panels.forEach((panel) => {
