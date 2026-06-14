@@ -190,8 +190,8 @@ class BlogLoader {
   }
 
   renderBlogCard(blog) {
-    // IMPORTANT: build link from filename + current language folder (never fall back to EN)
-    const postUrl = this.buildPostUrl(blog.filename);
+    // Metadata can point a guide-style card to its dedicated landing page.
+    const postUrl = blog.link || this.buildPostUrl(blog.filename);
 
     return `
       <article class="blog-card">
