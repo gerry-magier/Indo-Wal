@@ -827,8 +827,8 @@
         renderAllCalendars();
         if (availabilityNote) {
           availabilityNote.textContent = isGerman
-            ? (blockedDays.size ? `Ausgebuchte Tage werden automatisch blockiert (${blockedDays.size} Tag(e)).` : 'Keine gebuchten Tage geladen oder markiert.')
-            : (blockedDays.size ? `Fully booked dates are blocked automatically (${blockedDays.size} day(s)).` : 'No booked dates loaded (or none marked as booked).');
+            ? (blockedDays.size ? 'Ausgebuchte Tage werden automatisch blockiert.' : 'Keine gebuchten Tage geladen oder markiert.')
+            : (blockedDays.size ? 'Fully booked dates are blocked automatically.' : 'No booked dates loaded (or none marked as booked).');
         }
         if (availabilityNoteField) availabilityNoteField.value = isGerman ? (blockedDays.size ? `Blockierte gebuchte Tage: ${blockedDays.size}` : 'Keine blockierten Tage.') : (blockedDays.size ? `Blocked booked days: ${blockedDays.size}` : 'No blocked days.');
       } catch (e) {
