@@ -383,6 +383,49 @@
       });
     }
 
+    function initImageSlider() {
+      const slider = document.querySelector('.image-slider');
+      const track = slider?.querySelector('.image-slider-track');
+      const dots = slider?.querySelector('.image-slider-dots');
+      if (!slider || !track || !dots) return;
+
+      const slides = Array.from(track.children);
+      if (slides.length < 2) return;
+
+      let index = 0;
+      let timer = null;
+
+      function render() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        Array.from(dots.children).forEach((dot, dotIndex) => {
+          dot.classList.toggle('active', dotIndex === index);
+        });
+      }
+
+      function start() {
+        clearInterval(timer);
+        timer = setInterval(() => {
+          index = (index + 1) % slides.length;
+          render();
+        }, 5000);
+      }
+
+      slides.forEach((_, slideIndex) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Show image ${slideIndex + 1}`);
+        dot.addEventListener('click', () => {
+          index = slideIndex;
+          render();
+          start();
+        });
+        dots.appendChild(dot);
+      });
+
+      render();
+      start();
+    }
+
     // ============================================================
     // CALENDAR + AVAILABILITY (Oct/Nov only, jump years)
     // ============================================================
@@ -390,6 +433,7 @@
     const MIN_YEAR = 2026;
     const MAX_YEAR = 2029;
     const MAX_DAYS = 5;
+    const is2027Page = window.location.pathname.includes('timor-leste-blue-whale-2027');
 
     // Fixed pricing per day (total, not per person)
     const PRICE_PER_DAY = {
@@ -405,7 +449,7 @@
     const AVAILABILITY_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSnt-PosUrWCjXTaoxy0nq9-phcCmBkonDjtQ3kF9VRaexQ5QCxaDnk3H85-Sg3ZIlTm3H7NFI6s-bQ/pub?gid=0&single=true&output=csv";
 
     const blockedDays = new Set();
-    const state = { year: 2026, month: 9, start: null, end: null, persons: 1 };
+    const state = { year: is2027Page ? 2027 : 2026, month: 9, start: null, end: null, persons: 1 };
 
     function dateToISO(d) {
       const yyyy = d.getFullYear();

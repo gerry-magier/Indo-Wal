@@ -361,8 +361,8 @@ a:hover{color:#2d7ea5}
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text)}
-.brand-text{display:grid;line-height:1.1}
-.brand-name{font-weight:950;letter-spacing:-0.02em}
+.brand-text{display:grid;line-height:1.1;white-space:nowrap}
+.brand-name{font-weight:950;letter-spacing:-0.02em;white-space:nowrap;display:inline-block}
 .brand-sub{font-weight:750;color:var(--muted2);font-size:.92rem;display:block;line-height:1.12}
 .brand-sub > span{display:block}
 
@@ -2170,6 +2170,62 @@ a:hover,
 .footer-link-btn:hover,
 .cookie-policy-btn:hover{
   color:var(--brand2);
+}
+
+.image-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  box-shadow: var(--shadowSoft);
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+}
+
+.image-slider.no-frame {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.image-slider-track {
+  display: flex;
+  transition: transform 0.45s ease;
+}
+
+.image-slider-track img {
+  width: 100%;
+  min-width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 0 1rem;
+}
+
+.image-slider-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(20, 60, 90, 0.28);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.image-slider-dots button.active {
+  background: var(--brand2);
+  transform: scale(1.15);
+}
+
+@media (max-width: 700px) {
+  .image-slider-track img {
+    height: 280px;
+  }
 }
 
 

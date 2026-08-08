@@ -36,6 +36,9 @@
     'timor-leste-blue-whale.html': 'de/timor-leste-blue-whale.html',
     'de/timor-leste-blue-whale.html': 'timor-leste-blue-whale.html',
 
+    'timor-leste-blue-whale-2027.html': 'de/timor-leste-blue-whale-2027.html',
+    'de/timor-leste-blue-whale-2027.html': 'timor-leste-blue-whale-2027.html',
+
     'timor-leste-whale-season.html': 'de/timor-leste-walsaison.html',
     'de/timor-leste-walsaison.html': 'timor-leste-whale-season.html',
 
