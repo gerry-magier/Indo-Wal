@@ -784,7 +784,6 @@
     }
 
     // ============================================================
-    // Availability CSV (Google Sheet)
     // ============================================================
     const availabilityNote = $('#availabilityNote');
     const availabilityNoteField = $('#availabilityNoteField');
