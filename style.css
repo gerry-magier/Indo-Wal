@@ -594,8 +594,73 @@ a:hover{color:#2d7ea5}
 .guide-page .hero-line{
   text-shadow:0 2px 10px rgba(0,0,0,.95),0 12px 32px rgba(0,0,0,.55);
 }
+.guide-action-bar{
+  border-bottom:1px solid var(--stroke);
+  background:var(--surface);
+}
+.guide-action-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+  padding:1.35rem 0;
+}
+.guide-action-copy h2{
+  margin:.15rem 0 .35rem;
+  font-size:clamp(1.15rem,2vw,1.55rem);
+}
+.guide-action-copy p{
+  max-width:62ch;
+  margin:0;
+  color:var(--muted);
+}
+.guide-action-links{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:.65rem;
+  flex-wrap:wrap;
+  flex-shrink:0;
+}
+.guide-whatsapp-link,
+.guide-home-link{
+  color:var(--text);
+  font-weight:800;
+  white-space:nowrap;
+}
+.guide-whatsapp-link{color:#168447}
+@media (max-width:900px){
+  .guide-action-inner{align-items:flex-start;flex-direction:column}
+  .guide-action-links{justify-content:flex-start}
+}
+.swimming-guide-page .hero-inner{
+  text-align:left !important;
+}
+.swimming-guide-page .hero-top,
+.swimming-guide-page .hero-bottom{
+  width:min(560px,100%);
+  justify-self:end;
+  margin-left:0;
+}
+.swimming-guide-page .hero-bottom{
+  margin-bottom:clamp(3rem,8vh,6rem);
+}
+.swimming-guide-page .hero-tag{
+  margin-left:0;
+}
+@media (min-width:681px){
+  .swimming-guide-page .hero-top{
+    transform:translate(2cm,1.5rem);
+  }
+  .swimming-guide-page .hero-bottom{
+    transform:translate(2cm,0);
+  }
+}
 .guide-title-de{
   font-size:clamp(2.35rem,4vw,3.25rem);
+}
+.guide-title-de .guide-title-line{
+  white-space:normal;
 }
 .guide-title-line{
   display:block;
@@ -624,6 +689,21 @@ a:hover{color:#2d7ea5}
   .guide-page .hero-sub{
     max-width:32ch;
     font-size:1.05rem;
+  }
+  .swimming-guide-page .hero-inner{
+    text-align:left !important;
+  }
+  .swimming-guide-page .hero-top,
+  .swimming-guide-page .hero-bottom{
+    width:calc(100% - 1rem);
+    justify-self:end;
+    margin-left:0;
+  }
+  .swimming-guide-page .hero-bottom{
+    margin-bottom:2rem;
+  }
+  .swimming-guide-page .hero-tag{
+    margin-left:0;
   }
 }
 .guide-page .guide-facts .card{
