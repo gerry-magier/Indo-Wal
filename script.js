@@ -443,6 +443,13 @@
       4: 3600,
       5: 3800
     };
+    const USD_PRICE_PER_DAY = {
+      1: 3500,
+      2: 3750,
+      3: 4000,
+      4: 4250,
+      5: 4500
+    };
 
     // ---- Google Sheet availability (CSV)
     // Paste your published CSV URL here:
@@ -615,7 +622,7 @@
       }
 
       if (sDates) sDates.textContent = isGerman ? `Termine: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} Tag${meta.nDays > 1 ? 'e' : ''})` : `Dates: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} day${meta.nDays > 1 ? 's' : ''})`;
-      if (sPrice) sPrice.textContent = isGerman ? `Gesamtpreis: €${meta.all.toLocaleString()} fix` : `Total price: €${meta.all.toLocaleString()} fixed`;
+      if (sPrice) sPrice.textContent = isGerman ? `Gesamtpreis: €${meta.all.toLocaleString()} / ≈ US$${meta.usd.toLocaleString()} fix` : `Total price: €${meta.all.toLocaleString()} / ≈ US$${meta.usd.toLocaleString()} fixed`;
     }
 
     function updateMeta(prefix) {
@@ -627,7 +634,7 @@
 
       if (!state.start) {
         selected.textContent = isGerman ? 'Wähle ein Startdatum (nur Okt./Nov.).' : 'Select a start date (Oct/Nov only).';
-        price.textContent = isGerman ? 'Preis: €0' : 'Price: €0';
+        price.textContent = isGerman ? 'Preis: €0 / ≈ US$0' : 'Price: €0 / ≈ US$0';
         total.textContent = '';
         updateSummary(null);
         return;
@@ -635,7 +642,7 @@
 
       if (state.start && !state.end) {
         selected.textContent = isGerman ? `Ausgewählt: ${formatNice(state.start)} (Enddatum wählen, max. ${MAX_DAYS} Tage)` : `Selected: ${formatNice(state.start)} (choose end date, max ${MAX_DAYS} days)`;
-        price.textContent = isGerman ? 'Preis: €0' : 'Price: €0';
+        price.textContent = isGerman ? 'Preis: €0 / ≈ US$0' : 'Price: €0 / ≈ US$0';
         total.textContent = '';
         updateSummary(null);
         return;
@@ -643,13 +650,15 @@
 
       const nDays = daysBetweenInclusive(state.start, state.end);
       const totalPrice = PRICE_PER_DAY[nDays] || 0;
+      const totalUsdPrice = USD_PRICE_PER_DAY[nDays] || 0;
       const perPerson = state.persons > 0 ? Math.round(totalPrice / state.persons) : 0;
+      const perPersonUsd = state.persons > 0 ? Math.round(totalUsdPrice / state.persons) : 0;
 
       selected.textContent = isGerman ? `Ausgewählt: ${formatNice(state.start)} → ${formatNice(state.end)} (${nDays} Tag${nDays > 1 ? 'e' : ''})` : `Selected: ${formatNice(state.start)} → ${formatNice(state.end)} (${nDays} day${nDays > 1 ? 's' : ''})`;
-      price.textContent = isGerman ? `Gesamtpreis: €${totalPrice.toLocaleString()} (€${perPerson.toLocaleString()}/Person)` : `Total price: €${totalPrice.toLocaleString()} (€${perPerson.toLocaleString()}/person)`;
-      total.textContent = isGerman ? 'Hinweis: Fester Gesamtpreis unabhängig von der Gruppengröße' : 'Note: Fixed total price regardless of group size';
+      price.textContent = isGerman ? `Gesamtpreis: €${totalPrice.toLocaleString()} / ≈ US$${totalUsdPrice.toLocaleString()} (Richtwert pro Person: €${perPerson.toLocaleString()} / ≈ US$${perPersonUsd.toLocaleString()})` : `Total price: €${totalPrice.toLocaleString()} / ≈ US$${totalUsdPrice.toLocaleString()} (per-person reference: €${perPerson.toLocaleString()} / ≈ US$${perPersonUsd.toLocaleString()})`;
+      total.textContent = isGerman ? 'Hinweis: Fester Gesamtpreis; der Richtwert pro Person wird durch die Gruppengröße geteilt.' : 'Note: Fixed total price; the per-person reference is calculated by dividing it by the group size.';
 
-      updateSummary({ nDays, all: totalPrice });
+      updateSummary({ nDays, all: totalPrice, usd: totalUsdPrice });
     }
 
     function bindCalendarNav(prefix) {
