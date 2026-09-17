@@ -531,6 +531,120 @@ a:hover{color:#2d7ea5}
     white-space:nowrap;
   }
 }
+@media (max-width: 680px){
+  .wrap{
+    width:min(100%, calc(100vw - 1.1rem));
+  }
+  .nav{
+    display:none;
+  }
+  .header-inner{
+    padding:.7rem 0;
+    gap:.5rem;
+  }
+  .brand-sub{
+    display:none;
+  }
+  .brand-name{
+    font-size:.95rem;
+  }
+  .header-actions{
+    gap:.45rem;
+  }
+  .header-actions .btn,
+  .header-actions .lang-switcher{
+    display:none;
+  }
+  .burger{
+    display:inline-block;
+  }
+  .mobile-inner{
+    gap:.55rem;
+  }
+  .mobile-inner a,
+  .mobile-inner button{
+    font-size:.98rem;
+    padding:.8rem .9rem;
+    border-radius:12px;
+  }
+  .mobile-cta-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:.6rem;
+    margin-top:.2rem;
+  }
+  .mobile-cta-row .btn{
+    width:100%;
+    justify-content:center;
+  }
+  .section{
+    padding:2.2rem 0;
+  }
+  .section-head{
+    margin-bottom:1rem;
+  }
+  .section-title{
+    font-size:clamp(1.4rem,7vw,2rem);
+    line-height:1.18;
+  }
+  .section-lead{
+    font-size:.97rem;
+    line-height:1.6;
+  }
+  .hero-banner{
+    min-height:clamp(440px,62vh,560px);
+    overflow:hidden;
+  }
+  .hero-banner-bg{
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-color:#0f2d42;
+    transform:none;
+  }
+  .hero-inner{
+    padding:1rem 0 1.15rem;
+    width:min(100%, calc(100vw - 1rem));
+  }
+  .hero-top,
+  .hero-bottom{
+    width:100%;
+    max-width:none;
+  }
+  .hero-tag{
+    font-size:.78rem;
+    padding:.38rem .58rem;
+    max-width:100%;
+  }
+  .hero-title{
+    font-size:clamp(2.1rem,8vw,3rem);
+    letter-spacing:-.04em;
+  }
+  .hero-sub{
+    font-size:clamp(1rem,4vw,1.2rem);
+    line-height:1.35;
+  }
+  .hero-line{
+    font-size:.98rem;
+    line-height:1.55;
+    margin-bottom:.8rem;
+  }
+  .hero-cta{
+    gap:.6rem;
+  }
+  .hero-cta .btn{
+    width:100%;
+    justify-content:center;
+  }
+  .btn{
+    width:100%;
+    justify-content:center;
+  }
+  .grid.two,
+  .grid.three{
+    grid-template-columns:1fr;
+  }
+}
 .hero-cta{display:flex;gap:.75rem;flex-wrap:wrap}
 .hero-note{
   margin:.9rem 0 0;
