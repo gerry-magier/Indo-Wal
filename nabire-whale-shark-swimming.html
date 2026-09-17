@@ -215,5 +215,14 @@
   <script src="/script.js" data-cfasync="false"></script>
   <script src="/language-switcher.js"></script>
   <script src="/cookies.js"></script>
+  <script>
+    document.addEventListener('click', function (event) {
+      const requestButton = event.target.closest('[data-open-request]');
+      if (requestButton && !document.getElementById('bookingView')) {
+        event.preventDefault();
+        window.location.href = '/contact.html?request=1';
+      }
+    });
+  </script>
 </body>
 </html>

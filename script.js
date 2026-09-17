@@ -81,6 +81,71 @@
       sections.forEach((s) => io.observe(s));
     }
 
+    function bindHeroSwipe() {
+      if (!window.matchMedia('(max-width: 680px)').matches) return;
+
+      $$('.hero-banner-bg').forEach((heroBg) => {
+        let startX = 0;
+        let shift = 0;
+        let dragging = false;
+
+        heroBg.addEventListener('pointerdown', (event) => {
+          if (event.pointerType === 'mouse' && event.button !== 0) return;
+          startX = event.clientX;
+          dragging = false;
+          heroBg.setPointerCapture?.(event.pointerId);
+        });
+
+        heroBg.addEventListener('pointermove', (event) => {
+          const delta = event.clientX - startX;
+          if (Math.abs(delta) < 8) return;
+          dragging = true;
+          shift = Math.max(-180, Math.min(180, shift + delta));
+          startX = event.clientX;
+          heroBg.style.setProperty('--hero-shift', `${shift}px`);
+          event.preventDefault();
+        });
+
+        heroBg.addEventListener('pointerup', () => {
+          dragging = false;
+          heroBg.classList.remove('is-dragging');
+        });
+
+        heroBg.addEventListener('pointercancel', () => {
+          dragging = false;
+          heroBg.classList.remove('is-dragging');
+        });
+
+        heroBg.addEventListener('pointermove', () => {
+          if (dragging) heroBg.classList.add('is-dragging');
+        });
+      });
+    }
+
+    function bindMobileHeroCopy() {
+      if (document.querySelector('.mobile-hero-copy-section, .mobile-hero-copy')) return;
+
+      $$('.hero-banner').forEach((hero) => {
+        const heroInner = hero.querySelector('.hero-inner');
+        if (!heroInner) return;
+
+        const clone = heroInner.cloneNode(true);
+        clone.classList.remove('hero-inner');
+        clone.classList.add('mobile-hero-copy');
+
+        const section = document.createElement('section');
+        section.className = 'mobile-hero-copy-section';
+        section.setAttribute('aria-label', 'Mobile hero copy');
+
+        const wrap = document.createElement('div');
+        wrap.className = 'wrap';
+        wrap.appendChild(clone);
+        section.appendChild(wrap);
+
+        hero.insertAdjacentElement('afterend', section);
+      });
+    }
+
     // ===== Mobile menu
     function bindMobileMenu() {
       const burger = $('#burger');
@@ -320,7 +385,8 @@
 
     function openModal(mode = 'contact') {
       if (!bookingView) {
-        showToast('Booking module missing in HTML (bookingView not found).');
+        const contactPath = document.documentElement.lang?.toLowerCase().startsWith('de') ? '/de/contact.html' : '/contact.html';
+        window.location.href = `${contactPath}?request=1`;
         return;
       }
       closeMobileMenu();
@@ -1406,11 +1472,16 @@
     // ===== Init
     bindSmoothScroll();
     bindActiveNav();
+    bindHeroSwipe();
+    bindMobileHeroCopy();
     bindMobileMenu();
     bindReveal();
     bindToTop();
     bindFaq();
     bindModal();
+    if (new URLSearchParams(window.location.search).get('request') === '1') {
+      window.setTimeout(() => openModal('booking'), 0);
+    }
     bindTerms();
     bindPrivacy();
     bindAgb();

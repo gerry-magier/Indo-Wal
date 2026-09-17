@@ -461,6 +461,16 @@ a:hover{color:#2d7ea5}
   transform:scale(1.01);
   filter:saturate(1.04) contrast(1.04);
 }
+@media (max-width:680px){
+  .hero-banner-bg{
+    touch-action:pan-y;
+    cursor:grab;
+    background-position:calc(50% + var(--hero-shift, 0px)) center !important;
+  }
+  .hero-banner-bg.is-dragging{
+    cursor:grabbing;
+  }
+}
 @media (min-width:1180px){
   .hero-banner-bg{
     background-image:var(--hero-bg-lg, var(--hero-bg, url("./assets/optimized/hero.jpg")));
@@ -595,12 +605,74 @@ a:hover{color:#2d7ea5}
     min-height:clamp(440px,62vh,560px);
     overflow:hidden;
   }
+  .hero-banner .hero-inner{
+    display:none !important;
+  }
+  .mobile-hero-copy-section{
+    display:block;
+    background:rgba(232,240,243,.95);
+    padding:1.25rem 0 1.1rem;
+    border-bottom:1px solid rgba(19,39,52,.08);
+  }
+  .mobile-hero-copy{
+    display:block;
+    width:100%;
+  }
+  .mobile-hero-copy .hero-tag,
+  .mobile-hero-copy .hero-sub,
+  .mobile-hero-copy .hero-title,
+  .mobile-hero-copy .hero-line,
+  .mobile-hero-copy .hero-note,
+  .mobile-hero-copy .hero-cta{
+    display:block;
+  }
+  .mobile-hero-copy .hero-tag{
+    display:inline-flex;
+    justify-content:center !important;
+    background:rgba(255,255,255,.7);
+    color:#0f2e45;
+    border-color:rgba(15,46,69,.1);
+    font-size:.78rem;
+    padding:.38rem .58rem;
+  }
+  .mobile-hero-copy .hero-title{
+    margin:0.9rem 0 0.4rem;
+    font-size:clamp(2.1rem,9vw,3.1rem);
+    line-height:.98;
+    letter-spacing:-.06em;
+    color:#0d2a3b;
+    text-shadow:none;
+  }
+  .mobile-hero-copy .hero-sub{
+    font-size:clamp(1rem,4vw,1.3rem);
+    margin-bottom:0.5rem;
+    color:#1f3d4f;
+    text-shadow:none;
+    font-weight:800;
+  }
+  .mobile-hero-copy .hero-line{
+    margin:0;
+    text-align:center;
+    font-size:clamp(.95rem,3.7vw,1.1rem);
+    color:#1f3d4f;
+    line-height:1.5;
+    font-weight:700;
+    text-shadow:none;
+  }
+  .mobile-hero-copy .hero-cta,
+  .mobile-hero-copy .hero-note{
+    display:none;
+  }
   .hero-banner-bg{
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center center;
     background-color:#0f2d42;
     transform:none;
+  }
+  .timor-whale-hero-bg{
+    background-size:cover !important;
+    background-position:calc(84% + var(--hero-shift, 0px)) center !important;
   }
   .hero-inner{
     padding:1rem 0 1.15rem;
@@ -643,6 +715,12 @@ a:hover{color:#2d7ea5}
   .grid.two,
   .grid.three{
     grid-template-columns:1fr;
+  }
+}
+
+@media (min-width:681px){
+  .mobile-hero-copy-section{
+    display:none !important;
   }
 }
 .hero-cta{display:flex;gap:.75rem;flex-wrap:wrap}
