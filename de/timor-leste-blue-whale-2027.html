@@ -383,5 +383,26 @@
   <script src="/script.js" data-cfasync="false"></script>
   <script src="/language-switcher.js"></script>
   <script src="/cookies.js"></script>
+  <script>
+    (function () {
+      const hero = document.querySelector('.timor-whale-hero-bg');
+      if (!hero || !window.matchMedia('(max-width: 680px)').matches) return;
+      hero.style.touchAction = 'pan-y';
+      let startX = 0;
+      let shift = 0;
+      hero.addEventListener('pointerdown', (event) => {
+        startX = event.clientX;
+        hero.setPointerCapture?.(event.pointerId);
+      });
+      hero.addEventListener('pointermove', (event) => {
+        const delta = event.clientX - startX;
+        if (Math.abs(delta) < 6) return;
+        shift = Math.max(-180, Math.min(180, shift + delta));
+        startX = event.clientX;
+        hero.style.backgroundPosition = `calc(84% + ${shift}px) center`;
+        event.preventDefault();
+      });
+    }());
+  </script>
 </body>
 </html>
