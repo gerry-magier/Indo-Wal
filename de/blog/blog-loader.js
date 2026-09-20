@@ -49,6 +49,7 @@ class BlogLoader {
   // ============================================
   getBlogPosts() {
     return [
+      'timor-leste-blue-whales-and-culture.html',
       'lamalera-whaling-village-journey.html',
       'labuan-bajo-worth-it.html',
       'timor-leste-arrival.html',
