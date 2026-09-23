@@ -311,6 +311,12 @@
     const tourStart = $('#tourStart');
     const tourEnd = $('#tourEnd');
     const submitBtn = $('#submitBtn');
+    const bookingCalendarCard = $('#bookingCalendarCard');
+    const bookingSummaryCard = $('#bookingSummaryCard');
+    const sharedTripCard = $('#sharedTripCard');
+    const sharedDays = $('#sharedDays');
+    const sharedDaysValue = $('#sharedDaysValue');
+    const sharedPrice = $('#sharedPrice');
 
     // Modal scroll lock (prevents scrolling behind)
     let lockedScrollY = 0;
@@ -343,7 +349,7 @@
 
     function setTabActive(mode) {
       if (!tabContact || !tabBooking) return;
-      const isContact = mode === 'contact';
+      const isContact = mode !== 'booking';
       tabContact.classList.toggle('active', isContact);
       tabBooking.classList.toggle('active', !isContact);
       tabContact.setAttribute('aria-selected', String(isContact));
@@ -352,35 +358,58 @@
 
     function setMode(mode) {
       if (!requestType) return;
-      const isContact = mode === 'contact';
+      const isContact = mode === 'contact' || mode === 'shared';
+      const isShared = mode === 'shared';
       const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
       requestType.value = mode;
       setTabActive(mode);
 
+      if (bookingCalendarCard) bookingCalendarCard.hidden = isShared;
+      if (bookingSummaryCard) bookingSummaryCard.hidden = isShared;
+      if (sharedTripCard) sharedTripCard.hidden = !isShared;
+      if (isShared) updateSharedTrip();
+
       if (requestTitle) {
         requestTitle.textContent = isGerman
-          ? (isContact ? 'Frage stellen' : 'Expedition anfragen')
-          : (isContact ? 'Ask a question' : 'Request expedition');
+          ? (isShared ? 'Shared Trip vormerken' : (isContact ? 'Frage stellen' : 'Expedition anfragen'))
+          : (isShared ? 'Join Shared Trip / Join waitlist' : (isContact ? 'Ask a question' : 'Request expedition'));
       }
       if (requestSubtitle) {
         requestSubtitle.textContent = isGerman
-          ? (isContact
-            ? 'Frag uns alles — wir antworten klar und sagen ehrlich, ob die Reise zu euch passt.'
-            : 'Schickt eine unverbindliche Anfrage — wir antworten mit Verfügbarkeit und einer ehrlichen Einschätzung. Ein Vertrag entsteht erst, wenn ihr unser Angebot annehmt.')
-          : (isContact
-            ? 'Ask anything — we’ll reply with clear answers and whether it’s a good fit.'
-            : 'Send a non-binding request — we’ll reply with availability + a fit-check. Contract only after we send an offer and you accept it (payment within 5 business days).');
+          ? (isShared
+            ? 'Nenne uns deine Wunschmonate und Gruppengröße. Wir informieren dich über Shared-Termine und setzen dich auf die Interessentenliste.'
+            : (isContact
+              ? 'Frag uns alles — wir antworten klar und sagen ehrlich, ob die Reise zu euch passt.'
+              : 'Schickt eine unverbindliche Anfrage — wir antworten mit Verfügbarkeit und einer ehrlichen Einschätzung. Ein Vertrag entsteht erst, wenn ihr unser Angebot annehmt.'))
+          : (isShared
+            ? 'Tell us your preferred months and group size. We will share available dates and add you to the interested-traveler list.'
+            : (isContact
+              ? 'Ask anything — we’ll reply with clear answers and whether it’s a good fit.'
+              : 'Send a non-binding request — we’ll reply with availability + a fit-check. Contract only after we send an offer and you accept it (payment within 5 business days).'));
       }
-      if (submitBtn) submitBtn.textContent = isGerman ? (isContact ? 'Senden' : 'Anfrage senden') : (isContact ? 'Send' : 'Send request');
+      if (submitBtn) submitBtn.textContent = isGerman ? (isShared ? 'Für Shared Trip vormerken' : (isContact ? 'Senden' : 'Anfrage senden')) : (isShared ? 'Join waitlist' : (isContact ? 'Send' : 'Send request'));
       if (agbWrap) agbWrap.hidden = isContact;
 
-      if (startHint) startHint.textContent = isGerman ? (isContact ? '(optional bei Fragen)' : '(erforderlich für Anfragen)') : (isContact ? '(optional for questions)' : '(required for requests)');
-      if (endHint) endHint.textContent = isGerman ? (isContact ? '(optional bei Fragen)' : '(erforderlich für Anfragen)') : (isContact ? '(optional for questions)' : '(required for requests)');
+      if (startHint) startHint.textContent = isGerman ? (isShared ? '(Wunschdatum optional)' : (isContact ? '(optional bei Fragen)' : '(erforderlich für Anfragen)')) : (isShared ? '(preferred date optional)' : (isContact ? '(optional for questions)' : '(required for requests)'));
+      if (endHint) endHint.textContent = isGerman ? (isShared ? '(Wunschdatum optional)' : (isContact ? '(optional bei Fragen)' : '(erforderlich für Anfragen)')) : (isShared ? '(preferred date optional)' : (isContact ? '(optional for questions)' : '(required for requests)'));
 
       if (acceptAgb) {
         acceptAgb.required = !isContact;
         if (isContact) acceptAgb.checked = false;
       }
+    }
+
+    function updateSharedTrip() {
+      if (!sharedPrice) return;
+      const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+      const days = Number(sharedDays?.value) || 1;
+      const price = SHARED_PRICE_PER_PERSON?.[days];
+      if (!price) return;
+      if (sharedDaysValue) sharedDaysValue.value = String(days);
+
+      sharedPrice.textContent = isGerman
+        ? `Pro Person: US$${price.usd.toLocaleString()} / €${price.eur.toLocaleString()} für ${days} Tag${days > 1 ? 'e' : ''}`
+        : `Per person: US$${price.usd.toLocaleString()} / €${price.eur.toLocaleString()} for ${days} day${days > 1 ? 's' : ''}`;
     }
 
     function openModal(mode = 'contact') {
@@ -433,6 +462,7 @@
 
       if (tabContact) tabContact.addEventListener('click', () => setMode('contact'));
       if (tabBooking) tabBooking.addEventListener('click', () => setMode('booking'));
+      if (sharedDays) sharedDays.addEventListener('change', updateSharedTrip);
     }
 
     // ===== FAQ accordion
@@ -501,21 +531,51 @@
     const MAX_DAYS = 5;
     const is2027Page = window.location.pathname.includes('timor-leste-blue-whale-2027');
 
-    // Fixed pricing per day (total, not per person)
-    const PRICE_PER_DAY = {
+    const PRIVATE_PRICE_2026 = {
       1: 3000,
       2: 3200,
       3: 3400,
       4: 3600,
       5: 3800
     };
-    const USD_PRICE_PER_DAY = {
+    const PRIVATE_USD_2026 = {
       1: 3500,
       2: 3750,
       3: 4000,
       4: 4250,
       5: 4500
     };
+    const PRIVATE_PRICE_2027 = {
+      1: 2750,
+      2: 3400,
+      3: 4050,
+      4: 4750,
+      5: 5500
+    };
+    const PRIVATE_USD_2027 = {
+      1: 3250,
+      2: 4000,
+      3: 4750,
+      4: 5550,
+      5: 6450
+    };
+    const SHARED_PRICE_PER_PERSON = {
+      1: { usd: 400, eur: 350 },
+      2: { usd: 700, eur: 600 },
+      3: { usd: 950, eur: 800 }
+    };
+
+    function getPrivatePriceSet() {
+      return state.year >= 2027 ? {
+        eur: PRIVATE_PRICE_2027,
+        usd: PRIVATE_USD_2027,
+        label: '2027+ fixed private prices'
+      } : {
+        eur: PRIVATE_PRICE_2026,
+        usd: PRIVATE_USD_2026,
+        label: '2026 private pricing'
+      };
+    }
 
     // ---- Google Sheet availability (CSV)
     // Paste your published CSV URL here:
@@ -688,7 +748,7 @@
       }
 
       if (sDates) sDates.textContent = isGerman ? `Termine: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} Tag${meta.nDays > 1 ? 'e' : ''})` : `Dates: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} day${meta.nDays > 1 ? 's' : ''})`;
-      if (sPrice) sPrice.textContent = isGerman ? `Gesamtpreis: €${meta.all.toLocaleString()} / ≈ US$${meta.usd.toLocaleString()} fix` : `Total price: €${meta.all.toLocaleString()} / ≈ US$${meta.usd.toLocaleString()} fixed`;
+      if (sPrice) sPrice.textContent = isGerman ? `Gesamtpreis: US$${meta.usd.toLocaleString()} / €${meta.all.toLocaleString()} fest` : `Total price: US$${meta.usd.toLocaleString()} / €${meta.all.toLocaleString()} fixed`;
     }
 
     function updateMeta(prefix) {
@@ -700,7 +760,7 @@
 
       if (!state.start) {
         selected.textContent = isGerman ? 'Wähle ein Startdatum (nur Okt./Nov.).' : 'Select a start date (Oct/Nov only).';
-        price.textContent = isGerman ? 'Preis: €0 / ≈ US$0' : 'Price: €0 / ≈ US$0';
+        price.textContent = isGerman ? 'Preis: US$0 / €0' : 'Price: US$0 / €0';
         total.textContent = '';
         updateSummary(null);
         return;
@@ -708,21 +768,24 @@
 
       if (state.start && !state.end) {
         selected.textContent = isGerman ? `Ausgewählt: ${formatNice(state.start)} (Enddatum wählen, max. ${MAX_DAYS} Tage)` : `Selected: ${formatNice(state.start)} (choose end date, max ${MAX_DAYS} days)`;
-        price.textContent = isGerman ? 'Preis: €0 / ≈ US$0' : 'Price: €0 / ≈ US$0';
+        price.textContent = isGerman ? 'Preis: US$0 / €0' : 'Price: US$0 / €0';
         total.textContent = '';
         updateSummary(null);
         return;
       }
 
       const nDays = daysBetweenInclusive(state.start, state.end);
-      const totalPrice = PRICE_PER_DAY[nDays] || 0;
-      const totalUsdPrice = USD_PRICE_PER_DAY[nDays] || 0;
+      const priceSet = getPrivatePriceSet();
+      const totalPrice = priceSet.eur[nDays] || 0;
+      const totalUsdPrice = priceSet.usd[nDays] || 0;
       const perPerson = state.persons > 0 ? Math.round(totalPrice / state.persons) : 0;
       const perPersonUsd = state.persons > 0 ? Math.round(totalUsdPrice / state.persons) : 0;
 
       selected.textContent = isGerman ? `Ausgewählt: ${formatNice(state.start)} → ${formatNice(state.end)} (${nDays} Tag${nDays > 1 ? 'e' : ''})` : `Selected: ${formatNice(state.start)} → ${formatNice(state.end)} (${nDays} day${nDays > 1 ? 's' : ''})`;
-      price.textContent = isGerman ? `Gesamtpreis: €${totalPrice.toLocaleString()} / ≈ US$${totalUsdPrice.toLocaleString()} (Richtwert pro Person: €${perPerson.toLocaleString()} / ≈ US$${perPersonUsd.toLocaleString()})` : `Total price: €${totalPrice.toLocaleString()} / ≈ US$${totalUsdPrice.toLocaleString()} (per-person reference: €${perPerson.toLocaleString()} / ≈ US$${perPersonUsd.toLocaleString()})`;
-      total.textContent = isGerman ? 'Hinweis: Fester Gesamtpreis; der Richtwert pro Person wird durch die Gruppengröße geteilt.' : 'Note: Fixed total price; the per-person reference is calculated by dividing it by the group size.';
+      price.textContent = isGerman ? `Gesamtpreis: US$${totalUsdPrice.toLocaleString()} / €${totalPrice.toLocaleString()} (Richtwert pro Person: US$${perPersonUsd.toLocaleString()} / €${perPerson.toLocaleString()})` : `Total price: US$${totalUsdPrice.toLocaleString()} / €${totalPrice.toLocaleString()} (per-person reference: US$${perPersonUsd.toLocaleString()} / €${perPerson.toLocaleString()})`;
+      total.textContent = isGerman
+        ? (state.year >= 2027 ? 'Hinweis: Fester Gesamtpreis in beiden Währungen ab 2027; der Richtwert pro Person dient nur zur Orientierung.' : 'Hinweis: 2026 private pricing. Zusätzlich verfügbar: Shared Trip ab US$400 / €350 pro Person.')
+        : (state.year >= 2027 ? 'Note: Fixed total price in both currencies from 2027 onward; the per-person reference is for orientation only.' : 'Note: 2026 private pricing. Also available: Shared Trip from US$400 / €350 per person.');
 
       updateSummary({ nDays, all: totalPrice, usd: totalUsdPrice });
     }
@@ -1036,9 +1099,11 @@
           formData.set('access_key', WEB3FORMS_ACCESS_KEY);
           
           // Add custom subject line based on mode
-          const subject = mode === 'contact' 
+          const subject = mode === 'contact'
             ? '🐋 New Question - Blue Whales Timor Leste'
-            : '🐋 New Expedition Request - Blue Whales Timor Leste';
+            : (mode === 'shared'
+              ? '🐋 Shared Trip Interest / Waitlist - Blue Whales Timor Leste'
+              : '🐋 New Expedition Request - Blue Whales Timor Leste');
           formData.set('subject', subject);
 
           // Send to Web3Forms
@@ -1072,7 +1137,7 @@
           if (submit) {
             submit.disabled = false;
             const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
-            submit.textContent = oldText || (isGerman ? (mode === 'contact' ? 'Senden' : 'Anfrage senden') : (mode === 'contact' ? 'Send' : 'Send request'));
+            submit.textContent = oldText || (isGerman ? (mode === 'shared' ? 'Für Shared Trip vormerken' : (mode === 'contact' ? 'Senden' : 'Anfrage senden')) : (mode === 'shared' ? 'Join waitlist' : (mode === 'contact' ? 'Send' : 'Send request')));
           }
         }
       });

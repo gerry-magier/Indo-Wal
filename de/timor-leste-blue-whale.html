@@ -250,7 +250,7 @@
 
             <div id="mainSelectedDays" class="meta-line"></div>
 
-            <div id="mainPrice" class="meta-line strong">Preis: €0 / ≈ US$0</div>
+            <div id="mainPrice" class="meta-line strong">Preis: US$0 / €0</div>
 
             <div id="mainTotalPrice" class="meta-line"></div>
 
@@ -268,19 +268,18 @@
 
 
 
+
             <p class="micro subtle">
 
               <strong>Privat:</strong> Wenn ihr zu dritt anfragt, seid ihr auch zu dritt auf dem Boot. Wir füllen die Plätze nicht mit anderen Gästen auf.
 
             </p>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line);">
+              <p class="micro subtle" style="margin: 0 0 .7rem;"><strong>Allein oder in einer kleinen Gruppe unterwegs?</strong> Dann ist der Shared Trip vielleicht passend.</p>
+              <button class="btn btn-secondary" data-open-request data-mode="shared" type="button">Shared-Trip-Optionen ansehen</button>
+            </div>
 
 
-
-            <p class="micro subtle" style="margin-top: 0.75rem; padding: 1rem; background: var(--surface); border-radius: 0.5rem;">
-
-              <strong>Preis-Hinweis:</strong> Der Tagespreis bleibt gleich, egal ob ihr zu zweit, dritt oder mit bis zu 5 Personen kommt. Die Anzeige pro Person dient nur zur Orientierung.
-
-            </p>
 
           </div>
 
@@ -1163,7 +1162,22 @@
 
 
 
-            <div class="card reveal">
+            <div class="card reveal" id="sharedTripCard" hidden>
+              <h3>So funktioniert der Shared Trip</h3>
+              <p>Shared Trips finden nur an ausgewählten Terminen im Blauwal-Zeitraum Oktober und November statt und nur, wenn genügend interessierte Gäste zusammenpassen. Hier wählst du keinen privaten Expeditionstermin; nenne uns deinen Wunschzeitraum und wir bestätigen die nächsten möglichen Shared-Termine.</p>
+              <div class="cal-controls">
+                <label for="sharedDays">Dauer</label>
+                <select id="sharedDays" name="sharedDays">
+                  <option value="1">1 Tag</option>
+                  <option value="2">2 Tage</option>
+                  <option value="3">3 Tage</option>
+                </select>
+              </div>
+              <p id="sharedPrice" class="meta-line strong">Pro Person: US$400 / €350 für 1 Tag</p>
+              <p class="micro subtle">Der Preis gilt immer pro Person. Wir melden uns mit verfügbaren Shared-Terminen, freien Plätzen und den nächsten Schritten.</p>
+            </div>
+
+            <div class="card reveal" id="bookingSummaryCard">
 
               <h3>Zusammenfassung</h3>
 
@@ -1194,6 +1208,7 @@
               <input type="hidden" name="requestType" id="requestType" value="contact" />
 
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
+              <input type="hidden" name="sharedDays" id="sharedDaysValue" value="1" />
 
 
 

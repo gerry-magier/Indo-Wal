@@ -116,7 +116,7 @@
           </div>
           <div class="cal-meta">
             <div id="mainSelectedDays" class="meta-line"></div>
-            <div id="mainPrice" class="meta-line strong">Price: €0 / ≈ US$0</div>
+            <div id="mainPrice" class="meta-line strong">Price: US$0 / €0</div>
             <div id="mainTotalPrice" class="meta-line"></div>
             <div id="availabilityNote" class="meta-line micro subtle"></div>
           </div>
@@ -126,9 +126,10 @@
             <p class="micro subtle">
               <strong>Private:</strong> If you request for 3 people, you go as 3 — we don't combine groups.
             </p>
-            <p class="micro subtle" style="margin-top: 0.75rem; padding: 1rem; background: var(--surface); border-radius: 0.5rem;">
-              <strong>Pricing note:</strong> The total price is fixed per day regardless of group size. Shown per-person amounts are for reference only and do not represent a volume discount.
-            </p>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line);">
+              <p class="micro subtle" style="margin: 0 0 .7rem;"><strong>Travelling alone or in a small group?</strong> Join a Shared Trip instead.</p>
+              <button class="btn btn-secondary" data-open-request data-mode="shared" type="button">See Shared Trip options</button>
+            </div>
           </div>
         </div>
       </div>
@@ -585,7 +586,21 @@
                 <div id="bookingTotalPrice" class="meta-line"></div>
               </div>
             </div>
-            <div class="card reveal">
+            <div class="card reveal" id="sharedTripCard" hidden>
+              <h3>How Shared Trip works</h3>
+              <p>Shared trips run only during selected October-November dates in the blue whale season and only when enough interested guests match. You do not choose a private expedition date here; send your preferred period and we will confirm the next possible shared dates.</p>
+              <div class="cal-controls">
+                <label for="sharedDays">Trip length</label>
+                <select id="sharedDays" name="sharedDays">
+                  <option value="1">1 day</option>
+                  <option value="2">2 days</option>
+                  <option value="3">3 days</option>
+                </select>
+              </div>
+              <p id="sharedPrice" class="meta-line strong">Per person: US$400 / €350 for 1 day</p>
+              <p class="micro subtle">The price is always per person. We will contact you with the available shared dates, places and next steps.</p>
+            </div>
+            <div class="card reveal" id="bookingSummaryCard">
               <h3>Summary</h3>
               <p id="summaryDates">Dates: (optional)</p>
               <p id="summaryGuests">Guests: –</p>
@@ -600,6 +615,7 @@
               <input type="hidden" name="subject" value="New Twin Expeditions website request" />
               <input type="hidden" name="requestType" id="requestType" value="contact" />
               <input type="hidden" name="availabilityNote" id="availabilityNoteField" value="" />
+              <input type="hidden" name="sharedDays" id="sharedDaysValue" value="1" />
               <p class="honeypot" aria-hidden="true">
                 <label>Don't fill this out: <input name="bot-field" /></label>
               </p>
