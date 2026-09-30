@@ -565,6 +565,13 @@
       3: { usd: 950, eur: 800 }
     };
 
+    function fromPriceText(isGerman) {
+      const set = getPrivatePriceSet();
+      return isGerman
+        ? `Privat ab US$${set.usd[1].toLocaleString('de-DE')} / €${set.eur[1].toLocaleString('de-DE')} pro Gruppe (1 Tag, bis 5 Gäste)`
+        : `Private from US$${set.usd[1].toLocaleString('en-US')} / €${set.eur[1].toLocaleString('en-US')} per group (1 day, up to 5 guests)`;
+    }
+
     function getPrivatePriceSet() {
       return state.year >= 2027 ? {
         eur: PRIVATE_PRICE_2027,
@@ -760,7 +767,7 @@
 
       if (!state.start) {
         selected.textContent = isGerman ? 'Wähle ein Startdatum (nur Okt./Nov.).' : 'Select a start date (Oct/Nov only).';
-        price.textContent = isGerman ? 'Preis: US$0 / €0' : 'Price: US$0 / €0';
+        price.textContent = fromPriceText(isGerman);
         total.textContent = '';
         updateSummary(null);
         return;
@@ -768,7 +775,7 @@
 
       if (state.start && !state.end) {
         selected.textContent = isGerman ? `Ausgewählt: ${formatNice(state.start)} (Enddatum wählen, max. ${MAX_DAYS} Tage)` : `Selected: ${formatNice(state.start)} (choose end date, max ${MAX_DAYS} days)`;
-        price.textContent = isGerman ? 'Preis: US$0 / €0' : 'Price: US$0 / €0';
+        price.textContent = fromPriceText(isGerman);
         total.textContent = '';
         updateSummary(null);
         return;

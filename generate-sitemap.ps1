@@ -48,4 +48,6 @@ foreach ($url in $urls) {
 $writer.WriteEndElement()
 $writer.WriteEndDocument()
 $writer.Dispose()
-[System.IO.File]::WriteAllText((Join-Path $root 'sitemap.xml'), $output.ToString(), [System.Text.UTF8Encoding]::new($false))
+# StringBuilder output always declares utf-16; the file is written as UTF-8, so fix the declaration
+$sitemap = $output.ToString() -replace 'encoding="utf-16"', 'encoding="UTF-8"'
+[System.IO.File]::WriteAllText((Join-Path $root 'sitemap.xml'), $sitemap, [System.Text.UTF8Encoding]::new($false))
