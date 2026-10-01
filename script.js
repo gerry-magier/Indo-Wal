@@ -314,13 +314,14 @@
     const bookingCalendarCard = $('#bookingCalendarCard');
     const bookingSummaryCard = $('#bookingSummaryCard');
     const sharedTripCard = $('#sharedTripCard');
+    const sharedSelectedDates = $('#sharedSelectedDates');
     const sharedDays = $('#sharedDays');
     const sharedDaysValue = $('#sharedDaysValue');
     const sharedPrice = $('#sharedPrice');
 
     // Modal scroll lock (prevents scrolling behind)
     let lockedScrollY = 0;
-    let prevBody = { overflow:'', position:'', top:'', width:'', touchAction:'' };
+    let prevBody = { overflow:'', position:'', top:'', width:'' };
 
     function lockPageScroll() {
       lockedScrollY = window.scrollY || window.pageYOffset || 0;
@@ -329,13 +330,10 @@
       prevBody.position = document.body.style.position;
       prevBody.top = document.body.style.top;
       prevBody.width = document.body.style.width;
-      prevBody.touchAction = document.body.style.touchAction;
-
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
       document.body.style.top = `-${lockedScrollY}px`;
       document.body.style.width = '100%';
-      document.body.style.touchAction = 'none';
     }
 
     function unlockPageScroll() {
@@ -343,7 +341,6 @@
       document.body.style.position = prevBody.position || '';
       document.body.style.top = prevBody.top || '';
       document.body.style.width = prevBody.width || '';
-      document.body.style.touchAction = prevBody.touchAction || '';
       window.scrollTo(0, lockedScrollY);
     }
 
@@ -363,11 +360,20 @@
       const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
       requestType.value = mode;
       setTabActive(mode);
+      updateEndDateConstraints();
 
-      if (bookingCalendarCard) bookingCalendarCard.hidden = isShared;
+      if (isShared && state.start && state.end && daysBetweenInclusive(state.start, state.end) > MAX_SHARED_DAYS) {
+        state.start = null;
+        state.end = null;
+        syncFormDates();
+      }
+      if (bookingCalendarCard) bookingCalendarCard.hidden = false;
       if (bookingSummaryCard) bookingSummaryCard.hidden = isShared;
       if (sharedTripCard) sharedTripCard.hidden = !isShared;
-      if (isShared) updateSharedTrip();
+      if (isShared) {
+        updateSharedTrip();
+        updateSharedSelection();
+      }
 
       if (requestTitle) {
         requestTitle.textContent = isGerman
@@ -410,6 +416,29 @@
       sharedPrice.textContent = isGerman
         ? `Pro Person: US$${price.usd.toLocaleString()} / €${price.eur.toLocaleString()} für ${days} Tag${days > 1 ? 'e' : ''}`
         : `Per person: US$${price.usd.toLocaleString()} / €${price.eur.toLocaleString()} for ${days} day${days > 1 ? 's' : ''}`;
+    }
+
+    function updateSharedSelection() {
+      if (!sharedSelectedDates) return;
+      const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+      if (!state.start) {
+        sharedSelectedDates.textContent = isGerman ? 'Noch keine Wunschtermine ausgewählt.' : 'No preferred dates selected yet.';
+        return;
+      }
+
+      if (!state.end) {
+        if (sharedDays) sharedDays.value = '1';
+        sharedSelectedDates.textContent = isGerman
+          ? `Start: ${formatNice(state.start)}. Enddatum wählen, maximal ${MAX_SHARED_DAYS} Tage.`
+          : `Start: ${formatNice(state.start)}. Choose an end date, up to ${MAX_SHARED_DAYS} days.`;
+      } else {
+        const days = daysBetweenInclusive(state.start, state.end);
+        if (sharedDays) sharedDays.value = String(days);
+        sharedSelectedDates.textContent = isGerman
+          ? `Wunschzeitraum: ${formatNice(state.start)} → ${formatNice(state.end)} (${days} ${days === 1 ? 'Tag' : 'Tage'})`
+          : `Preferred dates: ${formatNice(state.start)} → ${formatNice(state.end)} (${days} day${days === 1 ? '' : 's'})`;
+      }
+      updateSharedTrip();
     }
 
     function openModal(mode = 'contact') {
@@ -529,6 +558,7 @@
     const MIN_YEAR = 2026;
     const MAX_YEAR = 2029;
     const MAX_DAYS = 5;
+    const MAX_SHARED_DAYS = 3;
     const is2027Page = window.location.pathname.includes('timor-leste-blue-whale-2027');
 
     const PRIVATE_PRICE_2026 = {
@@ -591,6 +621,10 @@
     const blockedDays = new Set();
     const state = { year: is2027Page ? 2027 : 2026, month: 9, start: null, end: null, persons: 1 };
 
+    function getMaxSelectionDays(prefix) {
+      return prefix === 'booking' && requestType?.value === 'shared' ? MAX_SHARED_DAYS : MAX_DAYS;
+    }
+
     function dateToISO(d) {
       const yyyy = d.getFullYear();
       const mm = String(d.getMonth() + 1).padStart(2, '0');
@@ -598,9 +632,21 @@
       return `${yyyy}-${mm}-${dd}`;
     }
 
-    function parseISO(s) {
-      const [y, m, d] = s.split('-').map(Number);
-      return new Date(y, m - 1, d);
+    function formatDateInput(date, input) {
+      if (input?.type === 'date') return dateToISO(date);
+      return `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth() + 1).padStart(2, '0')}.${date.getFullYear()}`;
+    }
+
+    function parseDateInput(value) {
+      const text = value.trim();
+      const match = text.match(/^(?:(\d{4})-(\d{2})-(\d{2})|(\d{2})[./-](\d{2})[./-](\d{4}))$/);
+      if (!match) return null;
+
+      const year = Number(match[1] || match[6]);
+      const month = Number(match[2] || match[5]);
+      const day = Number(match[3] || match[4]);
+      const date = new Date(year, month - 1, day);
+      return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day ? date : null;
     }
 
     function sameDay(a, b) {
@@ -617,7 +663,7 @@
     }
 
     function formatNice(d) {
-      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+      return `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.${d.getFullYear()}`;
     }
 
     function monthName(y, m) {
@@ -689,9 +735,10 @@
         }
 
         if (isBlockedDate(d)) {
-          cell.disabled = true;
           cell.classList.add('blocked');
-          cell.title = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de') ? 'Ausgebucht' : 'Fully booked';
+          cell.title = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de')
+            ? 'Als ausgebucht markiert – Anfrage trotzdem möglich'
+            : 'Marked as booked - you can still send an inquiry';
         }
 
         const isSelected =
@@ -714,18 +761,19 @@
             else { state.end = d; }
 
             const n = daysBetweenInclusive(state.start, state.end);
-            if (n > MAX_DAYS) {
+            const maxDays = getMaxSelectionDays(prefix);
+            if (n > maxDays) {
               const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
-              showToast(isGerman ? `Max. ${MAX_DAYS} Tage. Bitte wähle einen kürzeren Zeitraum.` : `Max ${MAX_DAYS} days. Please choose a shorter range.`);
+              showToast(isGerman ? `Maximal ${maxDays} Tage. Bitte wähle einen kürzeren Zeitraum.` : `Maximum ${maxDays} days. Please choose a shorter range.`);
               state.end = null;
             } else if (selectionContainsBlockedDays(state.start, state.end)) {
               const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
-              showToast(isGerman ? 'Der ausgewählte Zeitraum enthält ausgebuchte Tage. Bitte wähle andere Termine.' : 'Your selected range contains fully booked day(s). Please pick different dates.');
-              state.end = null;
+              showToast(isGerman ? 'Der Zeitraum enthält ausgebuchte Tage. Du kannst ihn trotzdem anfragen.' : 'The range includes booked days. You can still request it.');
             }
           }
 
           syncFormDates();
+          if (requestType?.value === 'shared') updateSharedSelection();
           updateMeta('main');
           updateMeta('booking');
           renderAllCalendars();
@@ -764,6 +812,18 @@
       const total = $(`#${prefix}TotalPrice`);
       if (!selected || !price || !total) return;
       const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+      const maxDays = getMaxSelectionDays(prefix);
+
+      if (prefix === 'booking' && requestType?.value === 'shared') {
+        selected.textContent = !state.start
+          ? (isGerman ? 'Wähle einen Wunschstart im Kalender.' : 'Choose a preferred start date in the calendar.')
+          : (!state.end
+            ? (isGerman ? `Ausgewählt: ${formatNice(state.start)} (Enddatum wählen, maximal ${maxDays} Tage)` : `Selected: ${formatNice(state.start)} (choose an end date, up to ${maxDays} days)`)
+            : (isGerman ? `Wunschzeitraum: ${formatNice(state.start)} → ${formatNice(state.end)} (${daysBetweenInclusive(state.start, state.end)} Tage)` : `Preferred dates: ${formatNice(state.start)} → ${formatNice(state.end)} (${daysBetweenInclusive(state.start, state.end)} days)`));
+        price.textContent = '';
+        total.textContent = '';
+        return;
+      }
 
       if (!state.start) {
         selected.textContent = isGerman ? 'Wähle ein Startdatum (nur Okt./Nov.).' : 'Select a start date (Oct/Nov only).';
@@ -774,7 +834,7 @@
       }
 
       if (state.start && !state.end) {
-        selected.textContent = isGerman ? `Ausgewählt: ${formatNice(state.start)} (Enddatum wählen, max. ${MAX_DAYS} Tage)` : `Selected: ${formatNice(state.start)} (choose end date, max ${MAX_DAYS} days)`;
+        selected.textContent = isGerman ? `Ausgewählt: ${formatNice(state.start)} (Enddatum wählen, max. ${maxDays} Tage)` : `Selected: ${formatNice(state.start)} (choose end date, max ${maxDays} days)`;
         price.textContent = fromPriceText(isGerman);
         total.textContent = '';
         updateSummary(null);
@@ -843,44 +903,136 @@
 
     function syncFormDates() {
       if (!tourStart || !tourEnd) return;
-      if (state.start) tourStart.value = dateToISO(state.start);
-      if (state.end) tourEnd.value = dateToISO(state.end);
-      if (state.start && !state.end) tourEnd.value = '';
+      tourStart.value = state.start ? formatDateInput(state.start, tourStart) : '';
+      tourEnd.value = state.end ? formatDateInput(state.end, tourEnd) : '';
+      updateEndDateConstraints();
+    }
+
+    function isSeasonDate(date) {
+      return !isOutsideAllowedYear(date.getFullYear()) && SEASON_MONTHS.includes(date.getMonth());
+    }
+
+    function updateEndDateConstraints() {
+      if (!tourEnd) return;
+      if (!state.start || requestType?.value !== 'booking' || tourEnd.type !== 'date') {
+        tourEnd.removeAttribute('min');
+        tourEnd.removeAttribute('max');
+        return;
+      }
+
+      const latestEnd = new Date(state.start);
+      latestEnd.setDate(latestEnd.getDate() + MAX_DAYS - 1);
+      while (latestEnd >= state.start && !isSeasonDate(latestEnd)) {
+        latestEnd.setDate(latestEnd.getDate() - 1);
+      }
+      tourEnd.min = dateToISO(state.start);
+      tourEnd.max = dateToISO(latestEnd);
     }
 
     function bindDateInputs() {
       if (!tourStart || !tourEnd) return;
 
+      [tourStart, tourEnd].forEach((input) => {
+        if (input.type === 'date') return;
+        input.addEventListener('input', () => {
+          const caret = input.selectionStart ?? input.value.length;
+          const digitsBeforeCaret = input.value.slice(0, caret).replace(/\D/g, '').length;
+          const digits = input.value.replace(/\D/g, '').slice(0, 8);
+          const formatted = digits.length >= 4
+            ? `${digits.slice(0, 2)}.${digits.slice(2, 4)}.${digits.slice(4)}`
+            : (digits.length >= 2 ? `${digits.slice(0, 2)}.${digits.slice(2)}` : digits);
+
+          if (formatted === input.value) return;
+          input.value = formatted;
+          const separatorCount = Number(digitsBeforeCaret >= 2) + Number(digitsBeforeCaret >= 4);
+          const nextCaret = Math.min(formatted.length, digitsBeforeCaret + separatorCount);
+          input.setSelectionRange(nextCaret, nextCaret);
+        });
+      });
+
+      tourEnd.addEventListener('input', () => {
+        if (tourEnd.value.length === 10) tourEnd.dispatchEvent(new Event('change'));
+      });
+
       tourStart.addEventListener('change', () => {
-        if (!tourStart.value) return;
-        state.start = parseISO(tourStart.value);
+        if (!tourStart.value) {
+          state.start = null;
+          state.end = null;
+          syncFormDates();
+          renderAllCalendars();
+          updateMeta('main'); updateMeta('booking');
+          return;
+        }
+
+        const start = parseDateInput(tourStart.value);
+        if (!start) {
+          const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+          state.start = null;
+          state.end = null;
+          showToast(isGerman ? 'Das Wunschdatum wird manuell geprüft. Du kannst die Anfrage trotzdem senden.' : 'We will check this preferred date manually. You can still send the request.');
+          renderAllCalendars();
+          updateMeta('main'); updateMeta('booking');
+          return;
+        }
+        if (requestType?.value === 'booking' && (!isSeasonDate(start) || isBlockedDate(start))) {
+          const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+          showToast(isGerman ? 'Das Datum ist als nicht verfügbar markiert. Du kannst es trotzdem anfragen.' : 'This date is marked unavailable. You can still request it.');
+        }
+
+        state.start = start;
         state.end = null;
+        state.year = start.getFullYear();
+        state.month = start.getMonth();
+        syncFormDates();
         renderAllCalendars();
         updateMeta('main'); updateMeta('booking');
       });
 
       tourEnd.addEventListener('change', () => {
-        if (!tourEnd.value) return;
-        if (!state.start) { state.start = parseISO(tourEnd.value); state.end = null; return; }
+        if (!tourEnd.value) {
+          state.end = null;
+          updateMeta('main'); updateMeta('booking');
+          return;
+        }
+        if (!state.start) {
+          const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+          showToast(isGerman ? 'Das Wunschdatum wird manuell geprüft. Du kannst die Anfrage trotzdem senden.' : 'We will check these preferred dates manually. You can still send the request.');
+          return;
+        }
 
-        const e = parseISO(tourEnd.value);
-        if (e < state.start) { state.end = state.start; state.start = e; }
-        else { state.end = e; }
+        const e = parseDateInput(tourEnd.value);
+        if (!e) {
+          const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+          state.end = null;
+          showToast(isGerman ? 'Das Enddatum wird manuell geprüft. Du kannst die Anfrage trotzdem senden.' : 'We will check this end date manually. You can still send the request.');
+          renderAllCalendars();
+          updateMeta('main'); updateMeta('booking');
+          return;
+        }
+        if (e < state.start) {
+          state.end = null;
+          const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+          showToast(isGerman ? 'Das Enddatum liegt vor dem Startdatum. Du kannst die Wunschdaten trotzdem anfragen.' : 'The end date is before the start date. You can still submit the preferred dates.');
+          renderAllCalendars();
+          updateMeta('main'); updateMeta('booking');
+          return;
+        }
 
+        state.end = e;
         const n = daysBetweenInclusive(state.start, state.end);
-        if (n > MAX_DAYS) {
+        const maxDays = getMaxSelectionDays('booking');
+        if (n > maxDays) {
           const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
-          showToast(isGerman ? `Max. ${MAX_DAYS} Tage. Bitte wähle einen kürzeren Zeitraum.` : `Max ${MAX_DAYS} days. Please choose a shorter range.`);
+          showToast(isGerman ? `Maximal ${maxDays} Tage. Bitte wähle einen kürzeren Zeitraum.` : `Maximum ${maxDays} days. Please choose a shorter range.`);
           state.end = null;
           tourEnd.value = '';
-        } else if (selectionContainsBlockedDays(state.start, state.end)) {
+        } else if (!isSeasonDate(e) || selectionContainsBlockedDays(state.start, state.end)) {
           const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
-          showToast(isGerman ? 'Der ausgewählte Zeitraum enthält ausgebuchte Tage. Bitte wähle andere Termine.' : 'Your selected range contains fully booked day(s). Please pick different dates.');
-          state.end = null;
-          tourEnd.value = '';
+          showToast(isGerman ? 'Der Zeitraum ist teilweise nicht verfügbar. Du kannst ihn trotzdem anfragen.' : 'Part of this range is marked unavailable. You can still request it.');
         }
 
         renderAllCalendars();
+        if (requestType?.value === 'shared') updateSharedSelection();
         updateMeta('main'); updateMeta('booking');
       });
     }
@@ -984,7 +1136,7 @@
         if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
 
         const status = statusIdx >= 0
-          ? (((cols[statusIdx] || '').trim().toLowerCase()) || 'booked')
+          ? (cols[statusIdx] || '').trim().toLowerCase()
           : 'booked';
 
         out.push({ date, status });
@@ -1015,8 +1167,8 @@
         renderAllCalendars();
         if (availabilityNote) {
           availabilityNote.textContent = isGerman
-            ? (blockedDays.size ? 'Ausgebuchte Tage werden automatisch blockiert.' : 'Keine gebuchten Tage geladen oder markiert.')
-            : (blockedDays.size ? 'Fully booked dates are blocked automatically.' : 'No booked dates loaded (or none marked as booked).');
+            ? (blockedDays.size ? 'Ausgebuchte Tage sind markiert. Anfragen dazu sind trotzdem möglich.' : 'Keine gebuchten Tage geladen oder markiert.')
+            : (blockedDays.size ? 'Booked dates are marked, but you can still request them.' : 'No booked dates loaded (or none marked as booked).');
         }
         if (availabilityNoteField) availabilityNoteField.value = isGerman ? (blockedDays.size ? `Blockierte gebuchte Tage: ${blockedDays.size}` : 'Keine blockierten Tage.') : (blockedDays.size ? `Blocked booked days: ${blockedDays.size}` : 'No blocked days.');
       } catch (e) {
@@ -1044,20 +1196,22 @@
     }
 
     function validateBeforeSubmit(mode) {
-      const isContact = mode === 'contact';
-      if (isContact) return true;
-
-      if (!state.start || !state.end) {
-        showToast('For requests, please select a date range (start + end).');
-        const calCard = $('#bookingCalendarCard');
-        if (calCard) calCard.classList.add('needs-attention');
-        setTimeout(() => calCard && calCard.classList.remove('needs-attention'), 1600);
+      const isContact = mode === 'contact' || mode === 'shared';
+      const maxDays = getMaxSelectionDays('booking');
+      if (state.start && state.end && daysBetweenInclusive(state.start, state.end) > maxDays) {
+        const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+        showToast(isGerman ? `Maximal ${maxDays} Tage. Bitte wähle einen kürzeren Zeitraum.` : `Maximum ${maxDays} days. Please choose a shorter range.`);
         return false;
       }
 
-      if (selectionContainsBlockedDays(state.start, state.end)) {
+      if (isContact) return true;
+
+      if (!tourStart?.value || !tourEnd?.value) {
         const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
-        showToast(isGerman ? 'Der Zeitraum enthält ausgebuchte Tage. Bitte wähle andere Termine.' : 'Your range includes fully booked day(s). Please choose different dates.');
+        showToast(isGerman ? 'Bitte gib einen Start- und Endtermin ein. Nicht verfügbare Wunschtermine kannst du trotzdem anfragen.' : 'Please enter a start and end date. You can still request unavailable preferred dates.');
+        const calCard = $('#bookingCalendarCard');
+        if (calCard) calCard.classList.add('needs-attention');
+        setTimeout(() => calCard && calCard.classList.remove('needs-attention'), 1600);
         return false;
       }
 
@@ -1088,8 +1242,8 @@
           return;
         }
 
-        if (tourStart && state.start) tourStart.value = dateToISO(state.start);
-        if (tourEnd && state.end) tourEnd.value = dateToISO(state.end);
+        if (tourStart && state.start) tourStart.value = formatDateInput(state.start, tourStart);
+        if (tourEnd && state.end) tourEnd.value = formatDateInput(state.end, tourEnd);
 
         const submit = $('#submitBtn');
         const oldText = submit ? submit.textContent : '';

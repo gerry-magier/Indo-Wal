@@ -1111,10 +1111,10 @@ a:hover{color:#2d7ea5}
 .cell.selected{background:rgba(20,60,90,.14);border-color:rgba(20,60,90,.18);color:var(--brand)}
 .cell.blocked{
   opacity:.45;
-  cursor:not-allowed;
+  cursor:pointer;
   background:rgba(20,41,54,.04);
 }
-.cell.blocked:hover{background:rgba(20,41,54,.04)}
+.cell.blocked:hover{background:rgba(20,41,54,.08);border-color:var(--stroke2)}
 .cell.blocked::after{
   content:"x";
   position:absolute;top:6px;right:10px;
@@ -1441,7 +1441,7 @@ a:hover{color:#2d7ea5}
   background:rgba(243,247,249,.90);cursor:pointer;font-size:1.1rem;font-weight:950;color:rgba(20,60,90,.85);
 }
 .icon-btn:hover{background:rgba(255,255,255,.98)}
-.booking-body{overflow:auto;padding:1.15rem 1.25rem 1.25rem}
+.booking-body{overflow:auto;padding:1.15rem 1.25rem 1.25rem;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .booking-grid{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
 @media (max-width:980px){.booking-grid{grid-template-columns:1fr}}
 

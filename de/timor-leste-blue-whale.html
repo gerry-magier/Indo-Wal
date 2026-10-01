@@ -1167,7 +1167,8 @@
 
             <div class="card reveal" id="sharedTripCard" hidden>
               <h3>So funktioniert der Shared Trip</h3>
-              <p>Shared Trips finden nur an ausgewählten Terminen im Blauwal-Zeitraum Oktober und November statt und nur, wenn genügend interessierte Gäste zusammenpassen. Hier wählst du keinen privaten Expeditionstermin; nenne uns deinen Wunschzeitraum und wir bestätigen die nächsten möglichen Shared-Termine.</p>
+              <p>Wähle bis zu drei Wunschtermine direkt im Kalender. Auch markierte, ausgebuchte Tage kannst du anfragen; wir prüfen Verfügbarkeit und passende Mitreisende vor der Bestätigung.</p>
+              <p id="sharedSelectedDates" class="meta-line">Noch keine Wunschtermine ausgewählt.</p>
               <div class="cal-controls">
                 <label for="sharedDays">Dauer</label>
                 <select id="sharedDays" name="sharedDays">
@@ -1257,17 +1258,17 @@
 
                 <div>
 
-                  <label for="tourStart">Startdatum <span class="mini-hint" id="startHint">(optional bei Fragen)</span></label>
+                  <label for="tourStart">Startdatum <span class="mini-hint" id="startHint">(optional bei Fragen)</span> <span class="mini-hint">TT.MM.JJJJ</span></label>
 
-                  <input id="tourStart" name="tourStart" type="date" />
+                  <input id="tourStart" name="tourStart" type="text" inputmode="numeric" placeholder="TT.MM.JJJJ" maxlength="10" pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}" title="TT.MM.JJJJ" autocomplete="off" />
 
                 </div>
 
                 <div>
 
-                  <label for="tourEnd">Enddatum <span class="mini-hint" id="endHint">(optional bei Fragen)</span></label>
+                  <label for="tourEnd">Enddatum <span class="mini-hint" id="endHint">(optional bei Fragen)</span> <span class="mini-hint">TT.MM.JJJJ</span></label>
 
-                  <input id="tourEnd" name="tourEnd" type="date" />
+                  <input id="tourEnd" name="tourEnd" type="text" inputmode="numeric" placeholder="TT.MM.JJJJ" maxlength="10" pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}" title="TT.MM.JJJJ" autocomplete="off" />
 
                 </div>
 
