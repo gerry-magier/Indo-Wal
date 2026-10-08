@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^python -c \"from html\\.parser import HTMLParser; P = type\\('P', \\(HTMLParser,\\), \\{\\}\\); P\\(\\)\\.feed\\(open\\(r'C:\\\\Users\\\\gerre\\\\Desktop\\\\Programmieren\\\\Website\\\\Indo-Wal\\\\blog\\\\timor-leste-blue-whales-and-culture\\.html', encoding='utf-8'\\)\\.read\\(\\)\\); print\\('HTML parse OK'\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
