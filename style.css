@@ -1051,6 +1051,65 @@ a:hover{color:#2d7ea5}
 @media (max-width:680px){
   .guide-feature-media img{height:280px}
   .guide-table{min-width:620px}
+  .twin-table-wrap{
+    overflow-x:visible;
+    padding:0 .9rem .9rem;
+  }
+  .twin-table-wrap .guide-table{
+    min-width:0;
+    table-layout:fixed;
+  }
+  .twin-table-wrap .guide-table thead{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+  }
+  .twin-table-wrap .guide-table caption{
+    padding:1rem 0 .65rem;
+    text-align:left !important;
+  }
+  .twin-table-wrap .guide-table tbody tr{
+    display:block;
+    margin-bottom:.65rem;
+    overflow:hidden;
+    border:1px solid var(--stroke);
+    border-radius:var(--rMd);
+    background:var(--surface);
+  }
+  .twin-table-wrap .guide-table tbody tr:last-child{
+    margin-bottom:0;
+  }
+  .twin-table-wrap .guide-table tbody td{
+    display:block;
+    width:auto !important;
+    padding:.7rem .8rem !important;
+    overflow-wrap:anywhere;
+    border-bottom:0 !important;
+  }
+  .twin-table-wrap .guide-table tbody td:first-child{
+    padding-bottom:.25rem !important;
+    color:var(--brand);
+    font-weight:850;
+  }
+  .twin-table-wrap .guide-table tbody td:last-child{
+    padding-top:.25rem !important;
+  }
+  .twin-table-wrap .cta-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:.55rem;
+    margin-top:.75rem;
+  }
+  .twin-table-wrap .cta-row .btn{
+    width:100%;
+    text-align:center;
+  }
 }
 
 /* FULL BLEED (drohne.jpg BIG) */
@@ -2495,5 +2554,4 @@ a:hover,
     height: 280px;
   }
 }
-
 
