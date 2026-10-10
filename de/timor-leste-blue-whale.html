@@ -193,6 +193,15 @@
 
         <div class="calendar-card reveal" id="mainCalendarCard">
 
+          <aside class="open-trip-callout" aria-label="Offener Shared Trip">
+            <div>
+              <p class="open-trip-kicker">OFFENER SHARED TRIP</p>
+              <p class="open-trip-dates">28.–30. Oktober 2026</p>
+              <p class="open-trip-seats">3 Reisende sind dabei · nur noch 2 Plätze frei</p>
+            </div>
+            <button class="btn btn-primary" data-join-open-trip type="button">Platz anfragen</button>
+          </aside>
+
           <div class="cal-top">
 
             <button class="cal-nav" id="mainPrevMonth" type="button" aria-label="Vorheriger Monat">&lsaquo;</button>
@@ -211,6 +220,8 @@
 
           </div>
 
+
+          <p class="open-trip-legend"><span aria-hidden="true"></span>Grün markierte Tage gehören zu diesem offenen Trip</p>
 
 
           <div class="calendar" id="mainCalendar"></div>
@@ -1137,6 +1148,7 @@
 
             <div class="card reveal" id="sharedTripCard" hidden>
               <h3>So funktioniert der Shared Trip</h3>
+              <p class="open-trip-modal-note"><strong>Offener Trip: 28.–30. Oktober 2026 · noch 2 Plätze frei.</strong> Frag an, ob du mitreisen kannst.</p>
               <p>Wähle bis zu drei Wunschtermine direkt im Kalender. Auch markierte, ausgebuchte Tage kannst du anfragen; wir prüfen Verfügbarkeit und passende Mitreisende vor der Bestätigung.</p>
               <p id="sharedSelectedDates" class="meta-line">Noch keine Wunschtermine ausgewählt.</p>
               <div class="cal-controls">
@@ -1496,8 +1508,6 @@
 </body>
 
 </html>
-
-
 
 
 

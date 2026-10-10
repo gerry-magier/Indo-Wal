@@ -1147,6 +1147,33 @@ a:hover{color:#2d7ea5}
   box-shadow:var(--shadow);
   padding:1.25rem 1.25rem 1.1rem;
 }
+.open-trip-callout{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  margin-bottom:1.1rem;padding:1rem 1.1rem;border:1px solid rgba(28,112,84,.24);
+  border-radius:18px;background:rgba(224,245,235,.72);
+}
+.open-trip-callout p{margin:0}
+.open-trip-kicker{font-size:.76rem;font-weight:950;letter-spacing:.08em;color:#176b4c}
+.open-trip-dates{margin-top:.15rem!important;font-size:1.15rem;font-weight:950;color:var(--text)}
+.open-trip-seats{margin-top:.15rem!important;font-weight:750;color:#176b4c}
+.open-trip-callout .btn{flex:none}
+.open-trip-legend{
+  display:flex;align-items:center;gap:.45rem;margin:0 0 .45rem;
+  font-size:.82rem;font-weight:750;color:var(--muted);
+}
+.open-trip-legend span{
+  width:12px;height:12px;border:1px solid rgba(28,112,84,.5);
+  border-radius:4px;background:rgba(57,154,111,.22);
+}
+.open-trip-modal-note{
+  padding:.8rem .9rem;border-radius:14px;background:rgba(224,245,235,.72);
+  color:#176b4c;
+}
+.cell.open-shared-trip{
+  background:rgba(57,154,111,.16);border-color:rgba(28,112,84,.5);color:#145d42;
+  box-shadow:inset 0 -3px 0 rgba(28,112,84,.3);
+}
+.cell.open-shared-trip:hover{background:rgba(57,154,111,.25)}
 .cal-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.8rem}
 .cal-title{font-weight:950;color:var(--brand);letter-spacing:-0.01em}
 .cal-nav{
@@ -1168,6 +1195,9 @@ a:hover{color:#2d7ea5}
 .cell:hover{background:rgba(45,126,165,.08)}
 .cell.blank{border-color:transparent;background:transparent;cursor:default}
 .cell.selected{background:rgba(20,60,90,.14);border-color:rgba(20,60,90,.18);color:var(--brand)}
+.cell.selected.open-shared-trip{
+  background:rgba(57,154,111,.2);border-color:rgba(28,112,84,.58);color:#145d42;
+}
 .cell.blocked{
   opacity:.45;
   cursor:pointer;
@@ -1190,6 +1220,10 @@ a:hover{color:#2d7ea5}
 .cal-cta{margin-top:1rem;display:grid;gap:.45rem}
 .cal-cta.two-cta{grid-template-columns:1fr 1fr}
 @media (max-width:680px){.cal-cta.two-cta{grid-template-columns:1fr}}
+@media (max-width:560px){
+  .open-trip-callout{align-items:stretch;flex-direction:column}
+  .open-trip-callout .btn{width:100%}
+}
 
 /* HOW */
 .how-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;align-items:start}
@@ -2554,4 +2588,3 @@ a:hover,
     height: 280px;
   }
 }
-

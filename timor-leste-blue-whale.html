@@ -94,6 +94,14 @@
           </p>
         </div>
         <div class="calendar-card reveal" id="mainCalendarCard">
+          <aside class="open-trip-callout" aria-label="Open shared trip">
+            <div>
+              <p class="open-trip-kicker">OPEN SHARED TRIP</p>
+              <p class="open-trip-dates">28–30 October 2026</p>
+              <p class="open-trip-seats">3 travelers already joining · only 2 places left</p>
+            </div>
+            <button class="btn btn-primary" data-join-open-trip type="button">Ask about this trip</button>
+          </aside>
           <div class="cal-top">
             <button class="cal-nav" id="mainPrevMonth" type="button" aria-label="Previous month">&lsaquo;</button>
             <div class="cal-title" id="mainMonthName">October 2026</div>
@@ -102,6 +110,7 @@
           <div class="cal-weekdays" aria-hidden="true">
             <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
           </div>
+          <p class="open-trip-legend"><span aria-hidden="true"></span>Green dates mark this open trip</p>
           <div class="calendar" id="mainCalendar"></div>
           <div class="cal-controls">
             <label for="mainPersons">Guests</label>
@@ -568,6 +577,7 @@
             </div>
             <div class="card reveal" id="sharedTripCard" hidden>
               <h3>How Shared Trip works</h3>
+              <p class="open-trip-modal-note"><strong>Open trip: 28–30 October 2026 · 2 places available.</strong> Ask to join this group.</p>
               <p>Choose up to three preferred days in the calendar. Dates marked as booked can still be requested; we will check availability and matching travelers before confirming a Shared Trip.</p>
               <p id="sharedSelectedDates" class="meta-line">No preferred dates selected yet.</p>
               <div class="cal-controls">
@@ -714,8 +724,6 @@
   </script>
 </body>
 </html>
-
-
 
 
 

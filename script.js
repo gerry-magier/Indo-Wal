@@ -474,6 +474,26 @@
           e.preventDefault();
           openModal(btn.dataset.mode || 'contact');
         }
+
+        const openTripBtn = e.target.closest('[data-join-open-trip]');
+        if (openTripBtn) {
+          e.preventDefault();
+          state.year = 2026;
+          state.month = 9;
+          state.start = new Date(2026, 9, 28);
+          state.end = new Date(2026, 9, 30);
+          syncFormDates();
+          renderAllCalendars();
+          updateMeta('main');
+          openModal('shared');
+          updateMeta('booking');
+          if (availabilityNoteField) {
+            const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+            availabilityNoteField.value = isGerman
+              ? `Offener Shared Trip 28.–30.10.2026: noch ${OPEN_SHARED_TRIP.availableSpots} Plätze frei.`
+              : `Open shared trip 28–30 Oct 2026: ${OPEN_SHARED_TRIP.availableSpots} places available.`;
+          }
+        }
       });
 
       if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -619,6 +639,11 @@
     const AVAILABILITY_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSnt-PosUrWCjXTaoxy0nq9-phcCmBkonDjtQ3kF9VRaexQ5QCxaDnk3H85-Sg3ZIlTm3H7NFI6s-bQ/pub?gid=0&single=true&output=csv";
 
     const blockedDays = new Set();
+    const OPEN_SHARED_TRIP = {
+      start: '2026-10-28',
+      end: '2026-10-30',
+      availableSpots: 2
+    };
     const state = { year: is2027Page ? 2027 : 2026, month: 9, start: null, end: null, persons: 1 };
 
     function getMaxSelectionDays(prefix) {
@@ -690,6 +715,11 @@
       return blockedDays.has(dateToISO(d));
     }
 
+    function isOpenSharedTripDate(d) {
+      const date = dateToISO(d);
+      return date >= OPEN_SHARED_TRIP.start && date <= OPEN_SHARED_TRIP.end;
+    }
+
     function selectionContainsBlockedDays(start, end) {
       if (!start || !end) return false;
       const a = new Date(start.getFullYear(), start.getMonth(), start.getDate());
@@ -734,7 +764,16 @@
           continue;
         }
 
-        if (isBlockedDate(d)) {
+        if (isOpenSharedTripDate(d)) {
+          const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+          const dateLabel = d.toLocaleDateString(isGerman ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+          const openTripLabel = isGerman
+            ? `Offener Shared Trip – noch ${OPEN_SHARED_TRIP.availableSpots} Plätze frei`
+            : `Open shared trip – ${OPEN_SHARED_TRIP.availableSpots} places available`;
+          cell.classList.add('open-shared-trip');
+          cell.title = `${dateLabel}: ${openTripLabel}`;
+          cell.setAttribute('aria-label', `${dateLabel}: ${openTripLabel}`);
+        } else if (isBlockedDate(d)) {
           cell.classList.add('blocked');
           cell.title = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de')
             ? 'Als ausgebucht markiert – Anfrage trotzdem möglich'
