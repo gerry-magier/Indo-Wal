@@ -385,13 +385,13 @@
           ? (isShared
             ? 'Nenne uns deine Wunschmonate und Gruppengröße. Wir informieren dich über Shared-Termine und setzen dich auf die Interessentenliste.'
             : (isContact
-              ? 'Frag uns alles — wir antworten klar und sagen ehrlich, ob die Reise zu euch passt.'
-              : 'Schickt eine unverbindliche Anfrage — wir antworten mit Verfügbarkeit und einer ehrlichen Einschätzung. Ein Vertrag entsteht erst, wenn ihr unser Angebot annehmt.'))
+              ? 'Frag uns alles. Wir antworten klar und sagen ehrlich, ob die Reise zu euch passt.'
+              : 'Schickt eine unverbindliche Anfrage. Wir antworten mit Verfügbarkeit und einer ehrlichen Einschätzung. Ein Vertrag entsteht erst, wenn ihr unser Angebot annehmt.'))
           : (isShared
             ? 'Tell us your preferred months and group size. We will share available dates and add you to the interested-traveler list.'
             : (isContact
-              ? 'Ask anything — we’ll reply with clear answers and whether it’s a good fit.'
-              : 'Send a non-binding request — we’ll reply with availability + a fit-check. Contract only after we send an offer and you accept it (payment within 5 business days).'));
+              ? 'Ask us anything. We’ll answer clearly and let you know whether the trip is right for you.'
+              : 'Send a no-obligation inquiry. We’ll reply with availability and an honest assessment. No contract is formed until you accept our offer. Payment is due within 5 business days.'));
       }
       if (submitBtn) submitBtn.textContent = isGerman ? (isShared ? 'Für Shared Trip vormerken' : (isContact ? 'Senden' : 'Anfrage senden')) : (isShared ? 'Join waitlist' : (isContact ? 'Send' : 'Send request'));
       if (agbWrap) agbWrap.hidden = isContact;
@@ -447,6 +447,9 @@
         window.location.href = `${contactPath}?request=1`;
         return;
       }
+      if (mode === 'booking' && isOpenSharedTripRange(state.start, state.end || state.start)) {
+        mode = 'shared';
+      }
       closeMobileMenu();
 
       document.body.classList.add('booking-open');
@@ -478,10 +481,15 @@
         const openTripBtn = e.target.closest('[data-join-open-trip]');
         if (openTripBtn) {
           e.preventDefault();
-          state.year = 2026;
-          state.month = 9;
-          state.start = new Date(2026, 9, 28);
-          state.end = new Date(2026, 9, 30);
+          const tripStart = parseDateInput(openTripBtn.dataset.start || OPEN_SHARED_TRIPS[0].start);
+          const tripEnd = parseDateInput(openTripBtn.dataset.end || OPEN_SHARED_TRIPS[0].end);
+          if (!tripStart || !tripEnd) {
+            throw new Error('Open trip button has an invalid date range.');
+          }
+          state.year = tripStart.getFullYear();
+          state.month = tripStart.getMonth();
+          state.start = tripStart;
+          state.end = tripEnd;
           syncFormDates();
           renderAllCalendars();
           updateMeta('main');
@@ -489,9 +497,10 @@
           updateMeta('booking');
           if (availabilityNoteField) {
             const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
+            const formatTripDate = (date) => date.toLocaleDateString(isGerman ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
             availabilityNoteField.value = isGerman
-              ? `Offener Shared Trip 28.–30.10.2026: noch ${OPEN_SHARED_TRIP.availableSpots} Plätze frei.`
-              : `Open shared trip 28–30 Oct 2026: ${OPEN_SHARED_TRIP.availableSpots} places available.`;
+              ? `Offener Shared Trip ${formatTripDate(state.start)}–${formatTripDate(state.end)}: Plätze verfügbar.`
+              : `Open shared trip ${formatTripDate(state.start)}–${formatTripDate(state.end)}: places available.`;
           }
         }
       });
@@ -615,6 +624,25 @@
       3: { usd: 950, eur: 800 }
     };
 
+    function isOpenSharedTripRange(start, end) {
+      if (!start || !end) return false;
+      const date = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+      const lastDate = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+      for (; date <= lastDate; date.setDate(date.getDate() + 1)) {
+        if (!isOpenSharedTripDate(date)) return false;
+      }
+      return daysBetweenInclusive(start, end) <= MAX_SHARED_DAYS;
+    }
+
+    function formatSharedPrice(price, days, isGerman) {
+      const locale = isGerman ? 'de-DE' : 'en-US';
+      const formattedUsd = price.usd.toLocaleString(locale);
+      const formattedEur = price.eur.toLocaleString(locale);
+      return isGerman
+        ? `Offener Trip: US$${formattedUsd} / €${formattedEur} pro Person für ${days} ${days === 1 ? 'Tag' : 'Tage'}`
+        : `Open trip: US$${formattedUsd} / €${formattedEur} per person for ${days} day${days === 1 ? '' : 's'}`;
+    }
+
     function fromPriceText(isGerman) {
       const set = getPrivatePriceSet();
       return isGerman
@@ -639,11 +667,10 @@
     const AVAILABILITY_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSnt-PosUrWCjXTaoxy0nq9-phcCmBkonDjtQ3kF9VRaexQ5QCxaDnk3H85-Sg3ZIlTm3H7NFI6s-bQ/pub?gid=0&single=true&output=csv";
 
     const blockedDays = new Set();
-    const OPEN_SHARED_TRIP = {
-      start: '2026-10-28',
-      end: '2026-10-30',
-      availableSpots: 2
-    };
+    const OPEN_SHARED_TRIPS = [
+      { start: '2026-10-28', end: '2026-10-30' },
+      { start: '2026-11-22', end: '2026-11-24' }
+    ];
     const state = { year: is2027Page ? 2027 : 2026, month: 9, start: null, end: null, persons: 1 };
 
     function getMaxSelectionDays(prefix) {
@@ -717,7 +744,7 @@
 
     function isOpenSharedTripDate(d) {
       const date = dateToISO(d);
-      return date >= OPEN_SHARED_TRIP.start && date <= OPEN_SHARED_TRIP.end;
+      return OPEN_SHARED_TRIPS.some((trip) => date >= trip.start && date <= trip.end);
     }
 
     function selectionContainsBlockedDays(start, end) {
@@ -768,16 +795,16 @@
           const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
           const dateLabel = d.toLocaleDateString(isGerman ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
           const openTripLabel = isGerman
-            ? `Offener Shared Trip – noch ${OPEN_SHARED_TRIP.availableSpots} Plätze frei`
-            : `Open shared trip – ${OPEN_SHARED_TRIP.availableSpots} places available`;
+            ? 'Offener Shared Trip, Plätze verfügbar · US$400 / €350 pro Person und Tag'
+            : 'Open shared trip, places available · US$400 / €350 per person per day';
           cell.classList.add('open-shared-trip');
           cell.title = `${dateLabel}: ${openTripLabel}`;
           cell.setAttribute('aria-label', `${dateLabel}: ${openTripLabel}`);
         } else if (isBlockedDate(d)) {
           cell.classList.add('blocked');
           cell.title = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de')
-            ? 'Als ausgebucht markiert – Anfrage trotzdem möglich'
-            : 'Marked as booked - you can still send an inquiry';
+            ? 'Als ausgebucht markiert, Anfrage trotzdem möglich'
+            : 'Marked as booked, but you can still send an inquiry';
         }
 
         const isSelected =
@@ -811,6 +838,9 @@
             }
           }
 
+          if (prefix === 'booking' && requestType?.value === 'booking' && isOpenSharedTripRange(state.start, state.end || state.start)) {
+            setMode('shared');
+          }
           syncFormDates();
           if (requestType?.value === 'shared') updateSharedSelection();
           updateMeta('main');
@@ -835,14 +865,20 @@
 
       if (sGuests) sGuests.textContent = isGerman ? `Gäste: ${state.persons}` : `Guests: ${state.persons}`;
 
-      if (!meta || !state.start || !state.end) {
-        if (sDates) sDates.textContent = state.start ? (isGerman ? `Termine: ${formatNice(state.start)} (Enddatum optional)` : `Dates: ${formatNice(state.start)} (end optional)`) : (isGerman ? 'Termine: (optional)' : 'Dates: (optional)');
+      if (!meta || !state.start) {
+        if (sDates) sDates.textContent = state.start
+          ? (isGerman ? `Termine: ${formatNice(state.start)}${state.end ? ` → ${formatNice(state.end)}` : ' (Enddatum optional)'}` : `Dates: ${formatNice(state.start)}${state.end ? ` → ${formatNice(state.end)}` : ' (end optional)'}`)
+          : (isGerman ? 'Termine: (optional)' : 'Dates: (optional)');
         if (sPrice) sPrice.textContent = isGerman ? 'Preis: –' : 'Price: –';
         return;
       }
 
-      if (sDates) sDates.textContent = isGerman ? `Termine: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} Tag${meta.nDays > 1 ? 'e' : ''})` : `Dates: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} day${meta.nDays > 1 ? 's' : ''})`;
-      if (sPrice) sPrice.textContent = isGerman ? `Gesamtpreis: US$${meta.usd.toLocaleString()} / €${meta.all.toLocaleString()} fest` : `Total price: US$${meta.usd.toLocaleString()} / €${meta.all.toLocaleString()} fixed`;
+      if (sDates) sDates.textContent = state.end
+        ? (isGerman ? `Termine: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} Tag${meta.nDays > 1 ? 'e' : ''})` : `Dates: ${formatNice(state.start)} → ${formatNice(state.end)} (${meta.nDays} day${meta.nDays > 1 ? 's' : ''})`)
+        : (isGerman ? `Termin: ${formatNice(state.start)}` : `Date: ${formatNice(state.start)}`);
+      if (sPrice) sPrice.textContent = meta.shared
+        ? (isGerman ? `Shared Trip: US$${meta.usd.toLocaleString()} / €${meta.all.toLocaleString()} pro Person` : `Shared trip: US$${meta.usd.toLocaleString()} / €${meta.all.toLocaleString()} per person`)
+        : (isGerman ? `Gesamtpreis: US$${meta.usd.toLocaleString()} / €${meta.all.toLocaleString()} fest` : `Total price: US$${meta.usd.toLocaleString()} / €${meta.all.toLocaleString()} fixed`);
     }
 
     function updateMeta(prefix) {
@@ -852,16 +888,19 @@
       if (!selected || !price || !total) return;
       const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
       const maxDays = getMaxSelectionDays(prefix);
+      const isSharedRequest = prefix === 'booking' && requestType?.value === 'shared';
 
-      if (prefix === 'booking' && requestType?.value === 'shared') {
+      if (isSharedRequest) {
         selected.textContent = !state.start
           ? (isGerman ? 'Wähle einen Wunschstart im Kalender.' : 'Choose a preferred start date in the calendar.')
           : (!state.end
             ? (isGerman ? `Ausgewählt: ${formatNice(state.start)} (Enddatum wählen, maximal ${maxDays} Tage)` : `Selected: ${formatNice(state.start)} (choose an end date, up to ${maxDays} days)`)
             : (isGerman ? `Wunschzeitraum: ${formatNice(state.start)} → ${formatNice(state.end)} (${daysBetweenInclusive(state.start, state.end)} Tage)` : `Preferred dates: ${formatNice(state.start)} → ${formatNice(state.end)} (${daysBetweenInclusive(state.start, state.end)} days)`));
-        price.textContent = '';
-        total.textContent = '';
-        return;
+        if (!state.start) {
+          price.textContent = '';
+          total.textContent = '';
+          return;
+        }
       }
 
       if (!state.start) {
@@ -873,6 +912,25 @@
       }
 
       if (state.start && !state.end) {
+        if (isOpenSharedTripRange(state.start, state.start)) {
+          const sharedPrice = SHARED_PRICE_PER_PERSON[1];
+          const totalUsd = sharedPrice.usd * state.persons;
+          const totalEur = sharedPrice.eur * state.persons;
+          selected.textContent = isGerman
+            ? `Offener Trip: ${formatNice(state.start)} · Plätze verfügbar`
+            : `Open trip: ${formatNice(state.start)} · places available`;
+          price.textContent = `${formatSharedPrice(sharedPrice, 1, isGerman)}${state.persons > 1
+            ? (isGerman ? ` · Gesamt für ${state.persons}: US$${totalUsd.toLocaleString('de-DE')} / €${totalEur.toLocaleString('de-DE')}` : ` · total for ${state.persons}: US$${totalUsd.toLocaleString('en-US')} / €${totalEur.toLocaleString('en-US')}`)
+            : ''}`;
+          total.textContent = isGerman ? 'Shared-Trip-Preis statt Privat-Expeditionspreis.' : 'Shared trip price, not the private expedition price.';
+          updateSummary({ nDays: 1, all: sharedPrice.eur, usd: sharedPrice.usd, shared: true });
+          return;
+        }
+        if (isSharedRequest) {
+          price.textContent = '';
+          total.textContent = '';
+          return;
+        }
         selected.textContent = isGerman ? `Ausgewählt: ${formatNice(state.start)} (Enddatum wählen, max. ${maxDays} Tage)` : `Selected: ${formatNice(state.start)} (choose end date, max ${maxDays} days)`;
         price.textContent = fromPriceText(isGerman);
         total.textContent = '';
@@ -881,6 +939,25 @@
       }
 
       const nDays = daysBetweenInclusive(state.start, state.end);
+      if (isOpenSharedTripRange(state.start, state.end)) {
+        const sharedPrice = SHARED_PRICE_PER_PERSON[nDays];
+        const totalUsd = sharedPrice.usd * state.persons;
+        const totalEur = sharedPrice.eur * state.persons;
+        selected.textContent = isGerman
+          ? `Offener Trip: ${formatNice(state.start)} → ${formatNice(state.end)} (${nDays} Tage) · Plätze verfügbar`
+          : `Open trip: ${formatNice(state.start)} → ${formatNice(state.end)} (${nDays} days) · places available`;
+        price.textContent = `${formatSharedPrice(sharedPrice, nDays, isGerman)}${state.persons > 1
+          ? (isGerman ? ` · Gesamt für ${state.persons}: US$${totalUsd.toLocaleString('de-DE')} / €${totalEur.toLocaleString('de-DE')}` : ` · total for ${state.persons}: US$${totalUsd.toLocaleString('en-US')} / €${totalEur.toLocaleString('en-US')}`)
+          : ''}`;
+        total.textContent = isGerman ? 'Shared-Trip-Preis statt Privat-Expeditionspreis.' : 'Shared trip price, not the private expedition price.';
+        updateSummary({ nDays, all: sharedPrice.eur, usd: sharedPrice.usd, shared: true });
+        return;
+      }
+      if (isSharedRequest) {
+        price.textContent = '';
+        total.textContent = '';
+        return;
+      }
       const priceSet = getPrivatePriceSet();
       const totalPrice = priceSet.eur[nDays] || 0;
       const totalUsdPrice = priceSet.usd[nDays] || 0;
@@ -1121,7 +1198,6 @@
 
     // ============================================================
     // ============================================================
-    const availabilityNote = $('#availabilityNote');
     const availabilityNoteField = $('#availabilityNoteField');
 
         function parseCsv(text) {
@@ -1187,7 +1263,6 @@
     async function loadAvailability() {
       const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
       if (!AVAILABILITY_CSV_URL) {
-        if (availabilityNote) availabilityNote.textContent = isGerman ? 'Verfügbarkeit: noch nicht verbunden.' : 'Availability feed: not connected yet (paste Google Sheet CSV URL in script.js).';
         if (availabilityNoteField) availabilityNoteField.value = isGerman ? 'Verfügbarkeit nicht verbunden.' : 'Availability feed not connected.';
         return;
       }
@@ -1204,15 +1279,9 @@
         }
 
         renderAllCalendars();
-        if (availabilityNote) {
-          availabilityNote.textContent = isGerman
-            ? (blockedDays.size ? 'Ausgebuchte Tage sind markiert. Anfragen dazu sind trotzdem möglich.' : 'Keine gebuchten Tage geladen oder markiert.')
-            : (blockedDays.size ? 'Booked dates are marked, but you can still request them.' : 'No booked dates loaded (or none marked as booked).');
-        }
         if (availabilityNoteField) availabilityNoteField.value = isGerman ? (blockedDays.size ? `Blockierte gebuchte Tage: ${blockedDays.size}` : 'Keine blockierten Tage.') : (blockedDays.size ? `Blocked booked days: ${blockedDays.size}` : 'No blocked days.');
       } catch (e) {
         console.error(e);
-        if (availabilityNote) availabilityNote.textContent = isGerman ? 'Verfügbarkeit konnte nicht geladen werden (Kalender funktioniert trotzdem).' : 'Availability feed failed to load (calendar still works).';
         if (availabilityNoteField) availabilityNoteField.value = isGerman ? 'Verfügbarkeit konnte nicht geladen werden.' : 'Availability feed failed.';
       }
     }
@@ -1300,10 +1369,10 @@
           
           // Add custom subject line based on mode
           const subject = mode === 'contact'
-            ? '🐋 New Question - Blue Whales Timor Leste'
+            ? '🐋 New Question: Blue Whales Timor Leste'
             : (mode === 'shared'
-              ? '🐋 Shared Trip Interest / Waitlist - Blue Whales Timor Leste'
-              : '🐋 New Expedition Request - Blue Whales Timor Leste');
+              ? '🐋 Shared Trip Interest / Waitlist: Blue Whales Timor Leste'
+              : '🐋 New Expedition Request: Blue Whales Timor Leste');
           formData.set('subject', subject);
 
           // Send to Web3Forms
@@ -1322,8 +1391,8 @@
 
             const isGerman = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith('de');
             showToast(isGerman
-              ? (mode === 'contact' ? 'Nachricht gesendet - wir melden uns bald.' : 'Anfrage gesendet - wir melden uns mit den nächsten Schritten.')
-              : (mode === 'contact' ? 'Message sent - we will reply soon.' : 'Request sent - we will reply with next steps.'));
+              ? (mode === 'contact' ? 'Nachricht gesendet. Wir melden uns bald.' : 'Anfrage gesendet. Wir melden uns mit den nächsten Schritten.')
+              : (mode === 'contact' ? 'Message sent. We will reply soon.' : 'Request sent. We will reply with next steps.'));
             closeModal();
           } else {
             throw new Error(result.message || 'Submission failed');

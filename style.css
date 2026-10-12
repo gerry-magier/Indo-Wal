@@ -1147,18 +1147,23 @@ a:hover{color:#2d7ea5}
   box-shadow:var(--shadow);
   padding:1.25rem 1.25rem 1.1rem;
 }
+.open-trip-list{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-bottom:1rem;
+}
 .open-trip-callout{
   display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  margin-bottom:1.1rem;padding:1rem 1.1rem;border:1px solid rgba(28,112,84,.24);
-  border-radius:18px;background:rgba(224,245,235,.72);
+  min-width:0;margin:0;padding:.75rem .85rem;border:1px solid rgba(28,112,84,.24);
+  border-radius:16px;background:rgba(224,245,235,.72);
 }
+.open-trip-details{min-width:0}
 .open-trip-callout p{margin:0}
-.open-trip-kicker{font-size:.76rem;font-weight:950;letter-spacing:.08em;color:#176b4c}
-.open-trip-dates{margin-top:.15rem!important;font-size:1.15rem;font-weight:950;color:var(--text)}
-.open-trip-seats{margin-top:.15rem!important;font-weight:750;color:#176b4c}
-.open-trip-callout .btn{flex:none}
+.open-trip-kicker{font-size:.68rem;font-weight:950;letter-spacing:.08em;color:#176b4c}
+.open-trip-dates{margin-top:.1rem!important;font-size:1rem;font-weight:950;color:var(--text)}
+.open-trip-seats{margin-top:.1rem!important;font-size:.88rem;font-weight:750;color:#176b4c}
+.open-trip-price{margin-top:.1rem!important;font-size:.92rem;font-weight:900;color:var(--text)}
+.open-trip-callout .btn{flex:none;padding:.7rem .85rem}
 .open-trip-legend{
-  display:flex;align-items:center;gap:.45rem;margin:0 0 .45rem;
+  display:flex;align-items:center;gap:.45rem;margin:0 0 .4rem;
   font-size:.82rem;font-weight:750;color:var(--muted);
 }
 .open-trip-legend span{
@@ -1167,7 +1172,7 @@ a:hover{color:#2d7ea5}
 }
 .open-trip-modal-note{
   padding:.8rem .9rem;border-radius:14px;background:rgba(224,245,235,.72);
-  color:#176b4c;
+  color:#176b4c;font-size:1rem;line-height:1.55;
 }
 .cell.open-shared-trip{
   background:rgba(57,154,111,.16);border-color:rgba(28,112,84,.5);color:#145d42;
@@ -1221,6 +1226,7 @@ a:hover{color:#2d7ea5}
 .cal-cta.two-cta{grid-template-columns:1fr 1fr}
 @media (max-width:680px){.cal-cta.two-cta{grid-template-columns:1fr}}
 @media (max-width:560px){
+  .open-trip-list{grid-template-columns:1fr}
   .open-trip-callout{align-items:stretch;flex-direction:column}
   .open-trip-callout .btn{width:100%}
 }

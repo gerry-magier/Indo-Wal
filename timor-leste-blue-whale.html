@@ -79,7 +79,7 @@
           <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
           <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
         </div>
-        <p class="hero-note"><strong>From about US$175 per person per day</strong> for a full private group. The lower private rate applies when the whole boat is booked for your group; shared trips are quoted separately.</p>
+        <p class="hero-note"><strong>From about US$175 per person per day.</strong></p>
       </div>
     </div>
   </section>
@@ -90,18 +90,30 @@
         <div class="section-head">
           <h2 class="section-title">Availability</h2>
           <p class="section-lead">
-            Select your dates (max 5 days) + group size. "Private" means we do not mix groups — your booking stays your group.
+            Select your dates (up to 5 days) and group size. A private booking is just for your group; we don’t add other guests.
           </p>
         </div>
         <div class="calendar-card reveal" id="mainCalendarCard">
-          <aside class="open-trip-callout" aria-label="Open shared trip">
-            <div>
-              <p class="open-trip-kicker">OPEN SHARED TRIP</p>
-              <p class="open-trip-dates">28–30 October 2026</p>
-              <p class="open-trip-seats">3 travelers already joining · only 2 places left</p>
-            </div>
-            <button class="btn btn-primary" data-join-open-trip type="button">Ask about this trip</button>
-          </aside>
+          <div class="open-trip-list">
+            <aside class="open-trip-callout" aria-label="Open shared trip">
+              <div class="open-trip-details">
+                <p class="open-trip-kicker">OPEN SHARED TRIP</p>
+                <p class="open-trip-dates">28–30 October 2026</p>
+                <p class="open-trip-seats">Places available. Join us.</p>
+                <p class="open-trip-price">3-day trip: US$950 / €800 per person</p>
+              </div>
+              <button class="btn btn-primary" data-join-open-trip data-start="2026-10-28" data-end="2026-10-30" type="button">Ask about this trip</button>
+            </aside>
+            <aside class="open-trip-callout" aria-label="Open shared trip">
+              <div class="open-trip-details">
+                <p class="open-trip-kicker">OPEN SHARED TRIP</p>
+                <p class="open-trip-dates">22–24 November 2026</p>
+                <p class="open-trip-seats">Places available. Join us.</p>
+                <p class="open-trip-price">3-day trip: US$950 / €800 per person</p>
+              </div>
+              <button class="btn btn-primary" data-join-open-trip data-start="2026-11-22" data-end="2026-11-24" type="button">Ask about this trip</button>
+            </aside>
+          </div>
           <div class="cal-top">
             <button class="cal-nav" id="mainPrevMonth" type="button" aria-label="Previous month">&lsaquo;</button>
             <div class="cal-title" id="mainMonthName">October 2026</div>
@@ -110,7 +122,7 @@
           <div class="cal-weekdays" aria-hidden="true">
             <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
           </div>
-          <p class="open-trip-legend"><span aria-hidden="true"></span>Green dates mark this open trip</p>
+          <p class="open-trip-legend"><span aria-hidden="true"></span>Green dates are open trips</p>
           <div class="calendar" id="mainCalendar"></div>
           <div class="cal-controls">
             <label for="mainPersons">Guests</label>
@@ -126,13 +138,12 @@
             <div id="mainSelectedDays" class="meta-line"></div>
             <div id="mainPrice" class="meta-line strong">Private group from about US$3,500 / €3,000 for 1 day, up to 5 guests</div>
             <div id="mainTotalPrice" class="meta-line"></div>
-            <div id="availabilityNote" class="meta-line micro subtle">The lower private rate applies when the whole boat is booked for your group over up to 5 days. The exact total depends on dates, group size and trip length. Shared trip pricing is separate.</div>
           </div>
           <div class="cal-cta two-cta">
             <button class="btn btn-secondary" data-open-request data-mode="contact" type="button">Ask a question</button>
             <button class="btn btn-primary" data-open-request data-mode="booking" type="button">Request expedition</button>
             <p class="micro subtle">
-              <strong>Private:</strong> If you request for 3 people, you go as 3 — we don't combine groups.
+              <strong>Private:</strong> If you book for three people, the trip is just for your group. We don’t combine groups.
             </p>
             <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line);">
               <p class="micro subtle" style="margin: 0 0 .7rem;"><strong>Travelling alone or in a small group?</strong> Join a Shared Trip instead.</p>
@@ -170,13 +181,13 @@
           <figure class="dual-image-item">
             <img src="./assets/optimized/ausschau.jpg" alt="Drone view: expedition scale and coastline" loading="lazy" data-lightbox />
             <figcaption>
-              Private expeditions, local scale — built around the ocean morning, not a timetable.
+              Private expeditions with local crews, planned around the morning on the water rather than a fixed timetable.
             </figcaption>
           </figure>
           <figure class="dual-image-item">
             <img src="./assets/optimized/timor.jpg" alt="Timor Leste coastline beauty" loading="lazy" data-lightbox />
             <figcaption>
-              Timor Leste — where early mornings meet warm light and vast ocean horizons.
+              In Timor Leste, early mornings bring soft light and wide ocean horizons.
             </figcaption>
           </figure>
         </div>
@@ -192,17 +203,17 @@
         <div class="section-head">
           <h2 class="section-title">Blue Whales in Timor Leste</h2>
           <p class="section-lead">
-            Two moments that capture what we're here for — blue whales in their natural habitat.
+            Two moments that capture why we’re here: blue whales in their natural habitat.
           </p>
         </div>
         <div class="whale-photo-grid reveal">
           <figure class="whale-photo-item">
             <img src="./assets/optimized/schwimmen.jpg" alt="Swimming with blue whale" loading="lazy" data-lightbox />
-            <figcaption>Quiet encounters — swimming alongside the largest animal on Earth.</figcaption>
+            <figcaption>A quiet encounter alongside the largest animal on Earth.</figcaption>
           </figure>
           <figure class="whale-photo-item">
             <img src="./assets/optimized/pusten.jpg" alt="Blue whale blow at surface" loading="lazy" data-lightbox />
-            <figcaption>The distinctive blow — a blue whale surfaces to breathe.</figcaption>
+            <figcaption>A blue whale surfaces to breathe.</figcaption>
           </figure>
         </div>
       </div>
@@ -213,7 +224,7 @@
         <div class="section-head">
           <h2 class="section-title">How it works</h2>
           <p class="section-lead">
-            Read direction, position ahead, wait, enter calmly — never chase.
+            Read the whale’s direction, move ahead, and wait. We enter the water calmly and never chase.
           </p>
         </div>
         <div class="how-grid">
@@ -228,7 +239,7 @@
             </div>
             <div class="step reveal">
               <div class="step-ic">3</div>
-              <div><h3>Position ahead</h3><p>Estimate direction and speed, then wait in front — not behind.</p></div>
+              <div><h3>Position ahead</h3><p>We estimate the whale’s direction and speed, then wait ahead of it.</p></div>
             </div>
             <div class="step reveal">
               <div class="step-ic">4</div>
@@ -250,7 +261,7 @@
               <img src="./assets/optimized/walroute.jpg" alt="Whale route and positioning concept" loading="lazy" data-lightbox />
             </div>
             <p class="micro subtle" style="margin: .75rem 0 0;">
-              The core idea: we position ahead and wait — no chasing.
+              The idea is simple: we position ourselves ahead and wait. We never chase.
             </p>
           </aside>
         </div>
@@ -304,7 +315,7 @@
               <li>Seabirds, bait balls and more dolphin groups</li>
             </ul>
             <p class="micro subtle" style="margin: .75rem 0 0;">
-              Some surveys around Timor Leste (e.g., Atauro area) have even been described as among the most biodiverse reef waters recorded — which matches what you feel out there.
+              Some surveys describe the reefs around Timor Leste, including Atauro, as among the most biodiverse on record. That richness is easy to feel when you’re out on the water.
             </p>
           </article>
         </div>
@@ -339,7 +350,7 @@
         <div class="section-head">
           <h2 class="section-title">What's included</h2>
           <p class="section-lead">
-            Clear checklists reduce uncertainty — and keep expectations honest.
+            Clear checklists help you know what to expect.
           </p>
         </div>
         <div class="grid two">
@@ -369,7 +380,7 @@
           We do not provide wetsuits, and one is not needed for the standard snorkeling experience. Weight belts and weights are available on request for experienced freedivers.
         </div>
         <div class="micro subtle reveal">
-          <strong>Short cancellation summary:</strong> up to and including 60 days before start &mdash; 50% fee. Less than 60 days or no-show &mdash; 100% fee.
+          <strong>Short cancellation summary:</strong> Cancellations made at least 60 days before the start date carry a 50% fee. Later cancellations and no-shows carry a 100% fee.
         </div>
       </div>
     </section>
@@ -536,7 +547,7 @@
           <div class="booking-kicker">Request</div>
           <h2 id="requestTitle">Ask a question</h2>
           <p class="micro subtle" id="requestSubtitle">
-            Ask anything — we'll reply with clear answers and whether it's a good fit.
+            Ask us anything. We’ll give you a clear answer and let you know whether the trip is right for you.
           </p>
         </div>
         <button class="icon-btn" id="closeBooking" type="button" aria-label="Close request">&times;</button>
@@ -577,7 +588,7 @@
             </div>
             <div class="card reveal" id="sharedTripCard" hidden>
               <h3>How Shared Trip works</h3>
-              <p class="open-trip-modal-note"><strong>Open trip: 28–30 October 2026 · 2 places available.</strong> Ask to join this group.</p>
+              <p class="open-trip-modal-note"><strong>Open trips: 28–30 October and 22–24 November 2026. Places are available.</strong> The three-day trip costs US$950 / €800 per person. Join us.</p>
               <p>Choose up to three preferred days in the calendar. Dates marked as booked can still be requested; we will check availability and matching travelers before confirming a Shared Trip.</p>
               <p id="sharedSelectedDates" class="meta-line">No preferred dates selected yet.</p>
               <div class="cal-controls">
@@ -658,7 +669,7 @@
                 <h4>Terms &amp; Conditions</h4>
                 <div class="agb">
                   <p class="micro subtle" style="margin-top:0;">
-                Cancellation: up to and including 60 days before start &mdash; 50% fee. Less than 60 days or no-show &mdash; 100% fee.
+                Cancellations made at least 60 days before the start date carry a 50% fee. Later cancellations and no-shows carry a 100% fee.
                     Tours may change/cancel for safety or force majeure.
                   </p>
                 </div>
@@ -724,7 +735,3 @@
   </script>
 </body>
 </html>
-
-
-
-
