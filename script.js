@@ -668,10 +668,9 @@
 
     const blockedDays = new Set();
     const OPEN_SHARED_TRIPS = [
-      { start: '2026-10-28', end: '2026-10-30' },
       { start: '2026-11-22', end: '2026-11-24' }
     ];
-    const state = { year: is2027Page ? 2027 : 2026, month: 9, start: null, end: null, persons: 1 };
+    const state = { year: is2027Page ? 2027 : 2026, month: is2027Page ? 9 : 10, start: null, end: null, persons: 1 };
 
     function getMaxSelectionDays(prefix) {
       return prefix === 'booking' && requestType?.value === 'shared' ? MAX_SHARED_DAYS : MAX_DAYS;
